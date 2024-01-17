@@ -8,12 +8,19 @@ export const PriceContext = createContext();
 
 export function PriceProvider ({children}) 
 {
-    const [price, setPrice] = useState(0);
+    const [panelPrice, setPanelPrice] = useState(0);
+    const [gatePrice, setGatePrice] = useState(0); 
+
+    const [urlFence, setUrlFence] = useState(0);
+    const [urlGate, setUrlGate] = useState(0);
   
     return (
     <PriceContext.Provider value={{
-         price,
-         setPrice
+         panelPrice, setPanelPrice,
+         gatePrice, setGatePrice,
+         urlFence,setUrlFence,
+         urlGate, setUrlGate
+         
     }}>
         {children}
     </PriceContext.Provider>    

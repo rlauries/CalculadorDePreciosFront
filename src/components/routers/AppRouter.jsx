@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { CompatRouter, Route, Routes } from "react-router-dom-v5-compat";
 import { App } from '../../App';
 
-import { AluminumFence } from '../AluminumFence';
+import { AluminumCustomFence } from '../AluminumCustomFence'; 
 import { ChainLinkFence } from '../ChainLinkFence';
 import { DuraFence } from '../DuraFence';
 import { AddEmployee } from '../AddEmployee';
@@ -12,6 +12,7 @@ import { Service } from '../Service';
 
 import { ContactForm } from '../ContactForm';
 import { Gallery } from '../Gallery';
+
 
 
 export const AppRouter = () => {
@@ -33,7 +34,7 @@ export const AppRouter = () => {
 
                 <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
                 <Route path="/durafence" element={<DuraFence/>} /> 
-                <Route path="/aluminumfence" element={<AluminumFence/>} /> 
+                <Route path="/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
 
 
                 <Route path="/addemployees" element={<AddEmployee/>} /> 

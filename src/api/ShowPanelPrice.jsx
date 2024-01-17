@@ -10,16 +10,16 @@ var config = {
   headers: { 'Access-Control-Allow-Origin': '*' }
 };
 
-export const ShowPrice = ({url}) => {
+export const ShowPanelPrice = ({url}) => {
   
   
-    const {price, setPrice} = useContext(PriceContext);
+    const {panelPrice, setPanelPrice} = useContext(PriceContext);
     //const [price, setPrice] = useState(0);
 
     const fetchInfo = () => {
         return axios.get(url, config)
-                .then((response) =>{setPrice(response.data)})
-                .catch(error => {setPrice("Error:" + error)});
+                .then((response) =>{setPanelPrice(response.data)})
+                .catch(error => {setPanelPrice("Error:" + error)});
     }
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export const ShowPrice = ({url}) => {
     }, [url])
 
   return (
-    <div>{price}</div>
+    <div>{panelPrice}</div>
     
         
   )

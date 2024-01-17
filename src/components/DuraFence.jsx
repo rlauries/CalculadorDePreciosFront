@@ -1,34 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import { Box, Button, Container, Input, TextField } from '@mui/material';
-import durafence from '../ImgFence/DuraFence.jpg';
+import durafence from '../ImgFence/durafence.jpg';
 import duraFenceGate from '../ImgFence/DuraFenceGate.jpg';
+
+
+import { PriceContext } from '../context/PriceContext';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { Gates } from './Gates';
+import { ShowPanelPrice } from '../api/ShowPanelPrice';
 
-import { ContactForm } from './ContactForm'; 
-import { Contador } from './Contador';
-import { ShowPrice } from '../api/ShowPrice';
+ 
+
 
 export const DuraFence = () => {
   
-  const mainPath = 'http://localhost:3000/';
+  const {gatePrice, panelPrice, urlFence, setUrlFence} = useContext(PriceContext);
   
-  const [sqFeet, setSqFeet] = useState('')
-  const [horizontalTubes, setHorizontalTubes] = useState('')
+  const [sqFeet, setSqFeet] = useState(0);
+  const [horizontalTubes, setHorizontalTubes] = useState(2)
 
-  const [urlFence, setUrlFence] = useState("");
+  
 
-
-  function sqFeetOnChangeHandler(e)
+  function handleSqureFeetUrlOnChange(e)
   {
-      setSqFeet(e.target.value);
+    let sFeet = e.target.value;
+    let url = `https://localhost:7156/api/precio/duraFence/${sFeet},${horizontalTubes}`;
+    setUrlFence(url);
+    setSqFeet(sFeet);
+    
+
+      
+        
   }
 
   function horizontalOnChangeHandler(e)
   {
-      setHorizontalTubes(e.target.value);
+      let horizonTubesValue = e.target.value;
+      let url = `https://localhost:7156/api/precio/duraFence/${sqFeet},${horizonTubesValue}`;
+      setUrlFence(url);
+      setHorizontalTubes(horizonTubesValue);
+      
+      console.log(url);
+      console.log(urlFence);
   }
 
 
@@ -64,23 +80,30 @@ export const DuraFence = () => {
                           justifyContent: 'space-evenly',
                           
                       } }>
-                          <TextField 
-                                label="Square Feet" 
-                                text="Square Feet"
-                                onChange={sqFeetOnChangeHandler}
+                        <label>Square Feet:
+                            <input className='sqFeet'
+                                id='sqFeetInput'
+                                placeholder='0'
+                                type="number" 
+                                name='sqFeet'
+                                
+                                required 
+                                
+                                onChange={handleSqureFeetUrlOnChange}
+                            />
+                        </label>
+                      
+                        <label>Select Horizontal Rows
+                          <select
+                                onChange={horizontalOnChangeHandler} 
                           >
+                            <option value="2">2</option>
+                            <option value="3">3</option>                              
+                          </select>
+                        </label>
 
-                          </TextField>
-                          <fieldset>
-                            <legend>Select Horizontal Rows</legend>
-                            <select>
-                              <option value="2">2</option>
-                              <option value="3">3</option>                              
-                            </select>
-                          </fieldset>
-                          
                           <button >
-                            The Fence Quote is: <ShowPrice url = {urlFence}/>
+                            The Fence Quote is: <ShowPanelPrice url={urlFence}/>
                           </button>   
               
                     
@@ -92,6 +115,7 @@ export const DuraFence = () => {
                 </Box>
                 
           </Box>
+
           <fieldset>
               <legend>Number of Gates Needed for Your Project:</legend>
               <Box sx={{display: "flex",
@@ -101,12 +125,12 @@ export const DuraFence = () => {
                   
                   <img src= {duraFenceGate} 
                       alt="Chain Link Gate"
-                      width= "260"
+                      
                   />
                   
                       
-                <Box padding={2} >
-                  <Contador />
+                <Box  >
+                  <Gates/>
                 </Box>
               </Box>
               
@@ -115,7 +139,9 @@ export const DuraFence = () => {
             
           
         </fieldset>
-        
+        <button >
+            Total Price : $  {gatePrice + panelPrice}
+          </button>
       </Container>
       <Footer/>
     </>     

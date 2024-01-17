@@ -66,51 +66,7 @@ export const Home = () => {
 
 
 
-        <div className="business">
-            <div className="container">
-              <div className="row">
-                  <div className="col-md-7">
-                    <div className="titlepage">
-                        <h2><strong className="yellow">CREATE</strong><br/>PERSONALISED Business</h2>
-                        <p>ss normal distribution of letters, as opposed to using </p>
-                    </div>
-                  </div>
-              </div>
-              <div className="row">
-                  <div className="col-md-3 col-sm-6">
-                    <div id="ho_color" className="business_box">
-                        <i><img src="images/business_icon1.png" alt="#" /></i>
-                        <h3>23</h3>
-                        <p>NOMINATIONS </p>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-6">
-                    <div id="ho_color" className="business_box">
-                        <i><img src="images/business_icon2.png" alt="#" /></i>
-                        <h3>31</h3>
-                        <p>AGENCIES</p>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-6">
-                    <div id="ho_color" className="business_box">
-                        <i><img src="images/business_icon3.png" alt="#" /></i>
-                        <h3>7</h3>
-                        <p>AWARDS</p>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-6">
-                    <div id="ho_color" className="business_box">
-                        <i><img src="images/business_icon4.png" alt="#" /></i>
-                        <h3>8</h3>
-                        <p>Supported </p>
-                    </div>
-                  </div>
-                  <div className="col-md-12">
-                    <a className="read_more" href="#">Read More</a>
-                  </div>
-              </div>
-            </div>
-        </div>
+       
         <div id="team" className="team">
             <div className="container">
               <div className="row">
@@ -287,7 +243,7 @@ export const Home = () => {
               <div className="row">
                   <div className="col-md-12">
                     <div className="titlepage">
-                        <h2><strong className="yellow">testimonial</strong><br/>What is Syas our clients</h2>
+                        <h2><strong className="yellow">testimonial</strong><br/>What is Says our clients</h2>
                     </div>
                   </div>
               </div>

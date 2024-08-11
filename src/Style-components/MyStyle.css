@@ -1,0 +1,282 @@
+
+
+.background-container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    position: relative;
+    
+}
+.background-container img{
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: left;
+    
+}
+
+
+.background-container .containerInside .dinamic-form{
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    border-radius: 20px;
+
+    background-color: rgba(62, 83, 66, 0.5);
+    backdrop-filter: blur(100px);
+    
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    margin-left: 10px;
+    padding: 20px;
+    display: flex; 
+    flex-direction:column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    height: 850px;
+    width: 850px;
+    text-shadow: 0 2px 3px rgb(0, 0, 0);
+}
+
+
+
+.background-container .containerInside .dinamic-form input{
+    
+    font-weight: 400;
+    font-size: 16px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    text-align: center;
+    border-radius: 10px;
+    text-shadow: 0 2px 3px rgb(0, 0, 0);
+    width: 60%;
+    height: 30px;
+    padding: 10px;
+    margin: 0 20px;
+    min-width: 50px; /* Ancho mínimo */
+    max-width: 200px; /* Ancho máximo*/
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #0a0a0a;
+    color: white;
+    margin-bottom: 30px;
+    
+}
+.background-container .dinamic-form label{
+    color: #f0f1f3;
+    font-size: 15px;
+    transform: translate(2%); 
+    transition: .4s;
+    
+}
+.sqFeet-row, 
+.flex-container, 
+.tax-from, 
+.sqFeet-select-span{
+    border-bottom: 2px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}   
+
+.background-container .dinamic-form .Legenda{
+    position: absolute;
+    top: 1.5%;
+    padding: 5px;
+    width: 600px;
+    color: #f1683a;
+    font-size: 4.5em;
+    font-weight: bold;
+    /* -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;  */
+    /* backdrop-filter: blur(50px); */
+    /* text-shadow: 0 2px 3px rgb(0, 0, 0);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid white; */
+    /* border-bottom: 2px solid black; */
+    /* border-radius: 20px; */
+    text-align: center;
+    margin: 10px;
+    margin-left: 10%;
+    /* letter-spacing: 10px; */
+    
+} 
+
+
+span{
+    color: white;
+    
+    font-weight: bolder;
+    
+    /* -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: white; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 26px;
+    
+}
+/*Para los <span>*/
+.bold-text {
+    
+    font-weight: bold;
+    font-size: 26px; /* Ajusta el tamaño según tu preferencia */
+    align-items: center;
+    justify-content: right;
+    color: #f7fafd;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+   
+}
+
+.Legenda#TypeInfo{
+    margin-left: 20%;
+    font-size: 60px;
+    
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.city-list-container {
+    position: absolute;
+    
+}
+
+.city-list {
+    position: absolute;
+    top: 100%; /* Ajusta la posición debajo del input */
+    
+    background-color: rgb(153, 152, 152); /* Estilo opcional */
+    border-radius: 20px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 0; /* Para evitar el espaciado predeterminado de la lista */
+    margin: 0; /* Para evitar el espaciado predeterminado de la lista */
+    list-style: none; /* Para quitar los puntos de la lista */
+    margin-left : 245px;
+    margin-top: 60px;
+    
+}
+.city-list-li{ 
+    display :flex;  
+    align-items: center; 
+    cursor: grabbing;
+    padding: 0.5rem;  
+    width: 100%;
+    box-sizing: border-box;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    backdrop-filter: blur(30px); 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    
+    border-radius: 20px;
+    
+}
+.city-list-li:hover {
+    background-color: #90b4f2;
+    
+}
+.sqFeet-select{
+    display: flex;
+    flex-direction: column;
+}
+.sqFeet-select-span{
+    display: flex;
+    flex-direction: row;
+}
+
+.select-horizontal, 
+.select-horizontal option,
+.select-horizontal-Tube-size, 
+.select-horizontal-Tube-size option,
+.select-gap,
+.select-gap option {
+    backdrop-filter: blur(30px); 
+    border-radius: 10px;
+    width: 60%;
+    height: 30px;
+    
+    font-weight: 600;
+    font-size: 16px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    text-align: center;
+    
+    color: white;
+    margin: 0 15px; 
+    min-width: 50px; /*Ancho mínimo */
+    max-width: 200px; /* Ancho máximo*/
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0) ;
+    text-shadow: 0 2px 3px rgb(0, 0, 0);
+    
+}
+.select-horizontal option, 
+.select-horizontal-Tube-size option,
+.select-gap option{
+   display: flex;
+    background-color: rgba(20, 15, 15, 0.215); 
+    text-align: center;
+    align-content: center;
+    width: 60%;
+    color: black;
+}
+.selector{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+}
+.totalPrice{
+    margin-left: 30%;
+}
+
+.dinamic-form .lastSection .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 40px;
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.dinamic-form .lastSection button{
+    width: 150px;
+    background-color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 0 5px 9px black;
+    
+}
+.dinamic-form .lastSection button:hover{
+    box-shadow: 0 8px 15px black;
+}
+.dinamic-form .lastSection .contactUsButton{
+    background-color: transparent;
+    color: white;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+    border: 1.5px solid white;
+}
+.dinamic-form .lastSection{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}

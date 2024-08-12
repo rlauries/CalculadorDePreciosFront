@@ -33,5 +33,4 @@ jobs:
         server: "ftps://waws-prod-blu-357.ftp.azurewebsites.windows.net/site/wwwroot"
         username: "CalculatorAppViewUser"
         password: "Estadosunidos#01"
-        local-dir: ./your-build-directory
-        server-dir: /site/wwwroot
+        server-dir: "/site/wwwroot"

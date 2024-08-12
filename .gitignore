@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+build/
+dist/
 
 # misc
 .DS_Store
@@ -18,6 +19,27 @@
 .env.test.local
 .env.production.local
 
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Misc
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+yarn.lock

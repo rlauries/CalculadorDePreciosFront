@@ -30,7 +30,7 @@ jobs:
     - name: Deploy using FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: "ftps://waws-prod-blu-357.ftp.azurewebsites.windows.net/site/wwwroot"
+        server: "waws-prod-blu-357.ftp.azurewebsites.windows.net"
         username: "CalculatorAppViewUser"
         password: "Estadosunidos#01"
-        server-dir: "/site/wwwroot"
+        server-dir: "/site/wwwroot/"

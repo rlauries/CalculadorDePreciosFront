@@ -45,7 +45,7 @@ const TaxForm = () => {
         .then((response) =>{setTaxRate(response.data)})
         .catch(error => {setTaxRate(0)});
     return(
-      <div>{taxRate}</div>
+      responses.data
     ) 
   }
 

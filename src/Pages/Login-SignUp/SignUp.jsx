@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer} from '../Layouts/Footer'
 import { Header} from '../Layouts/Header';
-import axios from "axios";
+
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import WarningIcon from '@mui/icons-material/Warning';
@@ -9,7 +9,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 import '../../Style-components/SignUp.css';
 
-import SignUpForAPI from '../../Models/SignUpForAPI';
+
 
 export const SignUp = () => {
 

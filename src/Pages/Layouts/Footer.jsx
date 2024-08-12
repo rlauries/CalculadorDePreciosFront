@@ -10,22 +10,22 @@ export const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <a className="logo2"><img src="images/loogo2.png" alt="#"/></a>
+                            <img src="images/loogo2.png" alt="#"/>
                         </div>
                         <div id='in-footer' className="col-lg-5 col-md-6 col-sm-6">
                             <h3>Contact Us</h3>
                             <ul className="location_icon">
-                                <li><a><i className="fa fa-map-marker" aria-hidden="true"></i></a> 11350 nw South River Dr. Medley, Fl 33178
+                                <li><i className="fa fa-map-marker" aria-hidden="true"></i> 11350 nw South River Dr. Medley, Fl 33178
                                     <br/> United State 
                                 </li>
-                                <li><a><i className="fa fa-envelope" aria-hidden="true"></i></a>sales@lauriesGW.com<br/> admin@lauriesGW.com</li>
-                                <li><a><i className="fa fa-volume-control-phone" aria-hidden="true"></i></a>305-805-0555<br/>786-237-1470</li>
+                                <li><i className="fa fa-envelope" aria-hidden="true"></i>sales@lauriesGW.com<br/> admin@lauriesGW.com</li>
+                                <li><i className="fa fa-volume-control-phone" aria-hidden="true"></i>305-805-0555<br/>786-237-1470</li>
                             </ul>
                             <ul className="social_icon">
-                                <li> <a><i className="fa fa-facebook-f"></i></a></li>
-                                <li> <a><i className="fa fa-twitter"></i></a></li>
-                                <li> <a><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li> <a><i className="fa fa-instagram"></i></a></li>
+                                <li> <i className="fa fa-facebook-f"></i></li>
+                                <li> <i className="fa fa-twitter"></i></li>
+                                <li> <i className="fa fa-linkedin" aria-hidden="true"></i></li>
+                                <li> <i className="fa fa-instagram"></i></li>
                             </ul>
                         </div>
                         <div className="col-lg-2 col-md-6 col-sm-6">
@@ -43,9 +43,9 @@ export const Footer = () => {
                 <div className="copyright">
                     <div className="container">
                         <div className="row">
-                        <div className="col-md-12">
-                            <p>© 2019 All Rights Reserved.<a href="https://html.design/"> Free  html Templates</a></p>
-                        </div>
+                            <div className="col-md-12">
+                                <p>© 2019 All Rights Reserved.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

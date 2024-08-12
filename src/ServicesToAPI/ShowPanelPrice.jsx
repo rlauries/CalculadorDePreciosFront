@@ -11,7 +11,7 @@ import { PriceContext } from '../context/PriceContext';
 export const ShowPanelPrice = ({ fenceModel}) => {
   
   
-    let {panelPrice, setPanelPrice, urlPanel, panelObject} = useContext(PriceContext);
+    let {panelPrice, setPanelPrice, urlPanel} = useContext(PriceContext);
     
 
     const fetchInfo = useCallback(() => {
@@ -23,7 +23,7 @@ export const ShowPanelPrice = ({ fenceModel}) => {
           .catch(error => {setPanelPrice(0)});
       console.log(responses);
       return responses;
-    }, [urlPanel, fenceModel]);
+    }, [urlPanel, fenceModel, setPanelPrice]);
   
     useEffect(() => {
         fetchInfo();

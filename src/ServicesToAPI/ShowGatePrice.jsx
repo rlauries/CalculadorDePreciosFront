@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 
 import axios from "axios";
 import { PriceContext } from '../context/PriceContext';
@@ -16,22 +16,22 @@ export const ShowGatePrice = ({url}) => {
     const {gatePrice, setGatePrice} = useContext(PriceContext);
     //const [price, setPrice] = useState(0);
 
-    const fetchInfo = () => {
-        return axios
-                .get(url, config)
-                .then((response) => {
-                  if(!isNaN(response.data)){
-                    setGatePrice(response.data)
-                  }
-                  else
-                  {setGatePrice('')};
-                })
-                .catch(error => {setGatePrice(0)});
-   }
+    const fetchInfo = useCallback(() => {
+      return axios
+              .get(url, config)
+              .then((response) => {
+                if(!isNaN(response.data)){
+                  setGatePrice(response.data)
+                }
+                else
+                {setGatePrice('')};
+              })
+              .catch(error => {setGatePrice(0)});
+    }, [url, setGatePrice])
 
     useEffect(() => {
-        fetchInfo();
-    }, [url])
+      fetchInfo();
+    }, [fetchInfo]);
 
   return (
     <div>{gatePrice.toFixed(2)}</div>

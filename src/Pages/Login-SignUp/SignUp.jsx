@@ -10,7 +10,6 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import '../../Style-components/SignUp.css';
 
 import SignUpForAPI from '../../Models/SignUpForAPI';
-import { FetchSignUp } from '../../ServicesToAPI/FetchSignUp';
 
 export const SignUp = () => {
 
@@ -113,21 +112,21 @@ export const SignUp = () => {
     }
     const submitForm = () => {
         
-        //Create Objects
-        let userName = document.getElementById('username').value;
-        let password = document.getElementById('password').value;
-        let customerId = document.getElementById('customerId').value;
-        let myUser = new SignUpForAPI(userName, password, customerId);
-        //fetch the EndPoint
-        let url = 'https://localhost:7142/api/User/SignUp';
-        let responses = axios
-                        .post(url, myUser)
-                        .then((response) => {
+        // //Create Objects
+        // let userName = document.getElementById('username').value;
+        // let password = document.getElementById('password').value;
+        // let customerId = document.getElementById('customerId').value;
+        // let myUser = new SignUpForAPI(userName, password, customerId);
+        // //fetch the EndPoint
+        // let url = 'https://localhost:7142/api/User/SignUp';
+        // let responses = axios
+        //                 .post(url, myUser)
+        //                 .then((response) => {
                             
-                            const UserName = response.data;
-                            alert(`Congratulation ${UserName} your username and password have been added`);
-                        })
-                        .catch((error)=>{console.error('Error en la solicitud:', error);}); 
+        //                     const UserName = response.data;
+        //                     alert(`Congratulation ${UserName} your username and password have been added`);
+        //                 })
+        //                 .catch((error)=>{console.error('Error en la solicitud:', error);}); 
 
     }
     const inputsValidated = {

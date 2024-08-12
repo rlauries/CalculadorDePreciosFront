@@ -14,7 +14,7 @@ import '../../Style-components/MyStyle.css';
 
 export const ChainLinkFence = () => {
 
-  let {taxRate, setTaxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
+  let {taxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
   
   function handleSqureFeetUrlOnChange(e){
     let sFeet = e.target.value;

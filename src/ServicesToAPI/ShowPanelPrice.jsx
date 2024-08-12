@@ -1,14 +1,12 @@
 import React from 'react'
 import { useContext } from 'react';
 
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 
 import axios from "axios";
 import { PriceContext } from '../context/PriceContext';
 
-var config = {
-  headers: { 'Access-Control-Allow-Origin': '*' }
-};
+
 
 export const ShowPanelPrice = ({ fenceModel}) => {
   
@@ -16,19 +14,20 @@ export const ShowPanelPrice = ({ fenceModel}) => {
     let {panelPrice, setPanelPrice, urlPanel, panelObject} = useContext(PriceContext);
     
 
-    const fetchInfo = () => {
+    const fetchInfo = useCallback(() => {
       let responses = axios
-                .post(urlPanel, fenceModel)
-                .then((response) =>{setPanelPrice(response.data);
-                  })
-                .catch(error => {setPanelPrice(0)});
+          .post(urlPanel, fenceModel)
+          .then((response) => {
+              setPanelPrice(response.data);
+          })
+          .catch(error => {setPanelPrice(0)});
       console.log(responses);
-      return responses; 
-    }
-
+      return responses;
+    }, [urlPanel, fenceModel]);
+  
     useEffect(() => {
         fetchInfo();
-    }, [panelObject])
+    }, [fetchInfo]);
 
   return (
     <div>{panelPrice.toFixed(2)}</div>

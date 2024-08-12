@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, {useContext } from 'react'
 
 import { Box } from '@mui/material';
 
@@ -19,7 +19,7 @@ import '../../Style-components/MyStyle.css';
 
 export const DuraFence = () => {
   
-  let {taxRate, setTaxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
+  let {taxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
   
   function handleSqFeetOnChange(e)
   {

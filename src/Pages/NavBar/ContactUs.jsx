@@ -1,18 +1,18 @@
-import React, {useContext, useState, useEffect, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { PriceContext } from '../../context/PriceContext'; 
+import React, {useState} from 'react';
+//import emailjs from '@emailjs/browser';
+ 
 import { Header } from '../Layouts/Header';
 import { Footer } from '../Layouts/Footer';
 import InputMask from 'react-input-mask';
 import  CustomerModelForAPI  from '../../Models/CustomerModelForAPI';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import '../../Style-components/FormStyle.css';
 
 
 
 export const ContactUs = () => {
 
-    let [customerFromDb, setCustomerFromDb] = useState(''); 
+    let [setCustomerFromDb] = useState(''); 
     
     //Create object from ContactForm View
     const handleOnClick = (mycustomer) => {
@@ -27,7 +27,7 @@ export const ContactUs = () => {
         let zipCode = document.getElementById('zipcode').value;    
         
         mycustomer = new CustomerModelForAPI(
-            id=1,
+            id,
             name,
             lastName,
             email,

@@ -24,17 +24,19 @@ const TaxForm = () => {
     }
   };
      
-  const fetchCities = () => {
+  const fetchCities = useCallback(() => {
     let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
     let responses = axios.get(url)
-              .then((response) =>{setCities(response.data)})
-              .catch(error => {setCities("Error:" + error)});
+              .then((response) => { setCities(response.data); })
+              .catch(error => { setCities("Error:" + error); });
     console.log(responses);
-    return responses; 
-  }
+    return responses;
+  }, [stateName]);
+  
   useEffect(() => {
     fetchCities();
-  }, [stateName])
+  }, [fetchCities]);
+  
 
   const fetchTaxByCity = (name) => {
     let url =`https://localhost:7142/api/price/GetStateTaxRate/${name}`;

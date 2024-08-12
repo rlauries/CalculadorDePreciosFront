@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '../Layouts/Header'
 import { Footer } from '../Layouts/Footer'
-import { FrequentlyAskQuestion } from '../Layouts/FrequentlyAskQuestion'
 import '../../Style-components/Home.css';
 export const Home = () => {
   return (

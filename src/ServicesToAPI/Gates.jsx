@@ -2,14 +2,13 @@ import React from 'react'
 import { ShowGatePrice } from './ShowGatePrice';
 import { useContext } from 'react';
 import { PriceContext } from '../context/PriceContext';
-import { Box } from '@mui/material';
 import '../Style-components/MyStyle.css';
 import '../Style-components/InsideFenceStyles.css'
 
 
 export const Gates = () => {
 
-    const {gatePrice,urlGate, setUrlGate} = useContext(PriceContext);
+    const {urlGate, setUrlGate} = useContext(PriceContext);
   
     function handleGatesUrlOnChange(e){
         let numeroDePuertas = e.target.value;

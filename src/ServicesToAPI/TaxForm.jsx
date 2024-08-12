@@ -1,6 +1,7 @@
 
 import axios from 'axios';
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useCallback } from 'react';
 import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import NorthWestOutlinedIcon from '@mui/icons-material/NorthWestOutlined';

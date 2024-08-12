@@ -27,7 +27,7 @@ jobs:
     # - name: Run tests
     #   run: npm test
 
-    - name: Deploy using FTPS
+    - name: Deploy using FTP
       uses: waws-prod-blu-357.ftp.azurewebsites.windows.net/
       with:
         server: ${{ secrets.FTP_SERVER }}

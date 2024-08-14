@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import { useCallback } from 'react';
+
 import { useEffect} from 'react';
 
 import axios from "axios";
@@ -14,7 +14,7 @@ export const ShowPanelPrice = ({ fenceModel}) => {
     let {panelPrice, setPanelPrice, urlPanel} = useContext(PriceContext);
     
 
-    const fetchInfo = useCallback(() => {
+    const fetchInfo = () => {
       let responses = axios
           .post(urlPanel, fenceModel)
           .then((response) => {
@@ -23,11 +23,11 @@ export const ShowPanelPrice = ({ fenceModel}) => {
           .catch(error => {setPanelPrice(0)});
       console.log(responses);
       return responses;
-    }, [urlPanel, fenceModel, setPanelPrice]);
+    };
   
     useEffect(() => {
         fetchInfo();
-    }, [fetchInfo]);
+    }, [fenceModel]);
 
   return (
     <div>{panelPrice.toFixed(2)}</div>

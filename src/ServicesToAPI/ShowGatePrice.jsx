@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext} from 'react';
-import { useCallback } from 'react';
+
 import { useEffect} from 'react';
 
 import axios from "axios";
@@ -16,7 +16,7 @@ export const ShowGatePrice = ({url}) => {
     const {gatePrice, setGatePrice} = useContext(PriceContext);
     //const [price, setPrice] = useState(0);
 
-    const fetchInfo = useCallback(() => {
+    const fetchInfo = () => {
       return axios
               .get(url, config)
               .then((response) => {
@@ -27,11 +27,11 @@ export const ShowGatePrice = ({url}) => {
                 {setGatePrice('')};
               })
               .catch(error => {setGatePrice(0)});
-    }, [url, setGatePrice])
+    }
 
     useEffect(() => {
       fetchInfo();
-    }, [fetchInfo]);
+    }, [url]);
 
   return (
     <div>{gatePrice.toFixed(2)}</div>

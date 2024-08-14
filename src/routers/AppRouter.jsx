@@ -28,9 +28,9 @@ export const AppRouter = () => {
                 <Route path="/service" element={<Service/>} /> 
                 <Route path="/contactus" element={<ContactUs/>} /> 
                 
-                <Route path="/service/chainlinkfence" element={<ChainLinkFence/>} /> 
-                <Route path="/service/durafence" element={<DuraFence/>} /> 
-                <Route path="/service/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
+                <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
+                <Route path="/durafence" element={<DuraFence/>} /> 
+                <Route path="/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
                 <Route path="/SignUp" element={<SignUp/>} />
     
             </Routes> 

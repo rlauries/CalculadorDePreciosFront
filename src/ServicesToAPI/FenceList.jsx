@@ -113,7 +113,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/chainlinkfence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={()=>window.location.href = "/service/chainlinkfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/durafence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={()=>window.location.href = "/service/durafence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/aluminumcustomfence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={()=>window.location.href = "/service/aluminumcustomfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                     </div>
                 </div>

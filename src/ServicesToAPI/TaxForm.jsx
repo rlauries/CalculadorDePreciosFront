@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
-import { useCallback } from 'react';
+
 import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import NorthWestOutlinedIcon from '@mui/icons-material/NorthWestOutlined';
@@ -25,18 +25,18 @@ const TaxForm = () => {
     }
   };
      
-  const fetchCities = useCallback(() => {
+  const fetchCities = () => {
     let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
     let responses = axios.get(url)
               .then((response) => { setCities(response.data); })
               .catch(error => { setCities("Error:" + error); });
     console.log(responses);
     return responses;
-  }, [stateName]);
+  }
   
   useEffect(() => {
     fetchCities();
-  }, [fetchCities]);
+  }, [stateName]);
   
 
   const fetchTaxByCity = (name) => {

@@ -1,7 +1,7 @@
 
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
-import { useCallback } from 'react';
+//import { useCallback } from 'react';
 import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import NorthWestOutlinedIcon from '@mui/icons-material/NorthWestOutlined';
@@ -25,29 +25,31 @@ const TaxForm = () => {
     }
   };
      
-  const fetchCities = useCallback(() => {
-    let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
-    let responses = axios.get(url)
-              .then((response) => { setCities(response.data); })
-              .catch(error => { setCities("Error:" + error); });
-    console.log(responses);
-    return responses;
-  }, [stateName]);
-  
+  // const fetchCities = useCallback(() => {
+  //   let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
+  //   let responses = axios.get(url)
+  //             .then((response) => { setCities(response.data); })
+  //             .catch(error => { setCities("Error:" + error); });
+  //   console.log(responses);
+  //   return responses;
+  // }, [stateName]);
+  const fetchCities = () =>{
+
+  }
   useEffect(() => {
     fetchCities();
   }, [fetchCities]);
   
 
   const fetchTaxByCity = (name) => {
-    let url =`https://localhost:7142/api/price/GetStateTaxRate/${name}`;
-    let responses = axios
-        .get(url)
-        .then((response) =>{setTaxRate(response.data)})
-        .catch(error => {setTaxRate(0)});
-    return(
-      responses.data
-    ) 
+    // let url =`https://localhost:7142/api/price/GetStateTaxRate/${name}`;
+    // let responses = axios
+    //     .get(url)
+    //     .then((response) =>{setTaxRate(response.data)})
+    //     .catch(error => {setTaxRate(0)});
+    // return(
+    //   responses.data
+    // ) 
   }
 
   const handleClick = (city) => {

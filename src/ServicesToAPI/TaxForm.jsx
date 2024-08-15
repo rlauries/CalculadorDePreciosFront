@@ -1,6 +1,6 @@
 
 //import axios from 'axios';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 //import { useCallback } from 'react';
 import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
@@ -18,7 +18,7 @@ const TaxForm = () => {
   const handleStateNameChange = (e) => {
     let state = e.target.value;
     setStateName(state);
-    fetchCities(state);
+    //fetchCities(state);
     setClicked(false);
     if (state === "") {
         setTaxRate(""); // Establecer taxRate en vacío cuando el estado está vacío
@@ -33,12 +33,12 @@ const TaxForm = () => {
   //   console.log(responses);
   //   return responses;
   // }, [stateName]);
-  const fetchCities = () =>{
+  // const fetchCities = () =>{
 
-  }
-  useEffect(() => {
-    fetchCities();
-  }, [fetchCities]);
+  // }
+  // useEffect(() => {
+  //   fetchCities();
+  // }, [fetchCities]);
   
 
   const fetchTaxByCity = (name) => {

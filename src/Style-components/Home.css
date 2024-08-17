@@ -24,7 +24,7 @@
 }
 .home-container .hero .voice{
     font-size: 4.0em;
-    
+    font-weight: bold;
 }
 .home-container .hero .mission{
     color: #f1683a;
@@ -78,16 +78,16 @@
 
 @media screen and (max-width: 450px){
     .home-container{
-        height: 732px;
-        width: 550px;
+        height: 932px;
+        width: 430px;
     } 
     .home-container img{
-        width: 600px;
-        height: 732px;
+        width: 430px;
+        height: 932px;
     }
     .home-container .hero {
         padding-right: 10px;
-        width: 90%;
+        width: 430px;
         height: auto;
         top: 40px;
         
@@ -95,18 +95,19 @@
     .home-container .hero .voice{
         font-size: 35px;
         width: 100%;
+        font-weight: bold;
     }
     .home-container .hero .mission{
         
         font-size: 4.0em;
-        width: 500px    
+        width: 430px    
     }
     .home-container .hero .paragraph{
         padding: 20px;
-        height: 450px;
-        width: 450px;
-        
-        border: 1px solid orange;
+        height: auto;
+        width: 400px;
+        font-size: 15px;
+        /* border: 1px solid orange; */
         overflow: hidden;
     }
    

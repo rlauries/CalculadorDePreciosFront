@@ -148,7 +148,8 @@ export const SignUp = () => {
 
 
   return (
-    <>
+    <div className='viewport'>
+    
         <Header/>
         <section className='signUpContainer'>
             <img src="images/Signup.jpg" alt="" />
@@ -271,6 +272,6 @@ export const SignUp = () => {
         </section>
         <Footer/>
         
-    </>
+    </div>
   )
 }

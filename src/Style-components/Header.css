@@ -1,12 +1,14 @@
 @import url('normalize.css');
-header{
+.container{
 
     position: relative;
-    width: 100%;
+    width: 700px;
     height: 50px;
+    margin-left: 0px;
     display: flex;
     align-items:center;
     align-content: space-evenly;
+    
     z-index: 100;
 
     background-color: rgba(62, 83, 66, 0.3);
@@ -20,30 +22,29 @@ header{
     flex-grow: 1;
 }
 a {
+    width: 120px;
     color:white;
     font-weight:bold ;
-    transition: background-color 0.3s ease;
+    transition: background-color 3s ease;
     padding: 20px;
+    justify-content: center;
+    text-align: center;
+    
 }
 a:hover{
-    display: flex;
-    margin-top: 6px;
+   
     background: white;
     color: black;
-    text-shadow: 0 2px 3px rgb(129, 127, 127);
-    height: 50px;
-    border-radius: 25%;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
+    
 }
 
 nav {
     display: flex;
-    margin-left: 130px;
+    height: 50px;
+    margin-left: 0px;
     justify-items: center;
     font-size: 12px;
-    text-shadow: 0 2px 3px rgb(0, 0, 0);
+    color: black;
 }
 .login{
     background: transparent;
@@ -55,4 +56,24 @@ nav {
     width: 40px;
     border-radius: 20px;
 
+}
+@media screen and (max-width: 450px){
+    .container{
+        width: 430px;
+    }
+    .container .nav-bar{
+        margin-left: 0px;
+        width: 430px;
+        
+    }
+    .container .nav-bar a{
+        width: 100px
+    }
+    .container .nav-bar .contactus{
+        font-size: 10px;
+        width: 150px;
+        justify-content: center;
+        text-align: center;
+        
+    }
 }

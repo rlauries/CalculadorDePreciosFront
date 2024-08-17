@@ -4,7 +4,7 @@ import { Footer } from '../Layouts/Footer'
 import '../../Style-components/Home.css';
 export const Home = () => {
   return (
-    <div>
+    <div className='viewport'>
         
         <Header/>
         <section className='home-container'>
@@ -12,10 +12,10 @@ export const Home = () => {
             <div className='hero'>
                 <div className='voice'>Where Ideas Become Reality</div>
                 <div className="mission">Creating solutions that shape tomorrow</div>
-                <div>
-                    <p> We believe in the power of collaboration and innovation.</p>
-                    <p>Whether you're looking to transform your business, enhance your products, or pioneer new technologies, our dedicated team is here to support and guide you through the entire process. </p>
-                    <p>Join us on this exciting journey.</p>
+                <div className='parragraph'>
+                    <div>We believe in the power of collaboration and innovation.</div>
+                    <div>Whether you're looking to transform your business, enhance your products, or pioneer new technologies, our dedicated team is here to support and guide you through the entire process. </div>
+                    <div>Join us on this exciting journey.</div>
                 </div>
                 <div className='buttons-home'>
                     <button className='service-home' onClick={()=>window.location.href = "/service"}>Check Our Services</button>

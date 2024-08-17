@@ -57,7 +57,7 @@ export const ContactUs = () => {
     
 
   return (
-    <section>
+    <div className='viewport'>
         <Header/>
         <div className='container-contact-form'
             id='container-contact-id'
@@ -214,6 +214,6 @@ export const ContactUs = () => {
             </div>
         </div>
         <Footer/>
-    </section>
+    </div>
   )
 }

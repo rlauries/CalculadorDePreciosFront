@@ -5,7 +5,7 @@ import { FenceList } from '../../ServicesToAPI/FenceList';
 
 export const Service = () => {
   return (
-    <div >
+    <div className='viewport'>
         <Header/>
         <FenceList/>
         <Footer/>

@@ -17,7 +17,8 @@
     "react-input-mask": "^2.0.4",
     "react-router-dom-v5-compat": "^6.18.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "normalize.css": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

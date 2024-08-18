@@ -60,20 +60,26 @@ nav {
 @media screen and (max-width: 450px){
     .container{
         width: 430px;
+        justify-content: center;  /* Alinea horizontalmente al centro */
+        align-items: center;      /* Alinea verticalmente al centro */
+         
     }
     .container .nav-bar{
+        display: flex;
+        justify-content: space-evenly;
         margin-left: 0px;
         width: 430px;
         
     }
     .container .nav-bar a{
-        width: 100px
+        width: 60px;
+        line-height: 10px;
     }
     .container .nav-bar .contactus{
-        font-size: 10px;
-        width: 150px;
+        width: 120px;
         justify-content: center;
-        text-align: center;
-        
+        text-align: right;
+       
     }
+  
 }

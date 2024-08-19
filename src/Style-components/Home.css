@@ -112,3 +112,74 @@
     }
    
 }
+@media screen and (max-width: 850px){
+    .home-container{
+        height: 932px;
+        width: 800px;
+    }
+    .home-container img{
+        width: 825px;
+        height: 932px;
+    } 
+    .home-container .hero {
+        padding-right: 10px;
+        width: 825px;
+        height: auto;
+        top: 40px;
+        
+    }
+    .home-container .hero .voice{
+        font-size: 35px;
+        width: 100%;
+        font-weight: bold;
+    }
+    .home-container .hero .mission{
+        
+        font-size: 80px;
+        width: 700px    
+    }
+    .home-container .hero .paragraph{
+        padding: 20px;
+        height: auto;
+        width: 700px;
+        font-size: 20px;
+        /* border: 1px solid orange; */
+        overflow: hidden;
+    }
+    
+}
+@media screen and (max-width: 1300px){
+    .home-container{
+        height: 932px;
+        width: 1250px;
+    }
+    .home-container img{
+        width: 1300px;
+        height: 932px;
+    } 
+    .home-container .hero {
+        padding-right: 10px;
+        width: 825px;
+        height: auto;
+        top: 40px;
+    }
+    .home-container .hero .voice{
+        font-size: 40px;
+        width: 100%;
+        font-weight: bold;
+    }
+    .home-container .hero .mission{
+        
+        font-size: 90px;
+        width: 900px    
+    }
+    .home-container .hero .paragraph{
+        padding: 20px;
+        height: auto;
+        width: 700px;
+        font-size: 20px;
+        /* border: 1px solid orange; */
+        overflow: hidden;
+    }
+
+}

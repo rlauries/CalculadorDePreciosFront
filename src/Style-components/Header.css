@@ -45,6 +45,7 @@ nav {
     justify-items: center;
     font-size: 12px;
     color: black;
+    line-height: 10px;
 }
 .login{
     background: transparent;
@@ -73,7 +74,7 @@ nav {
     }
     .container .nav-bar a{
         width: 60px;
-        line-height: 10px;
+        
     }
     .container .nav-bar .contactus{
         width: 120px;
@@ -83,3 +84,4 @@ nav {
     }
   
 }
+

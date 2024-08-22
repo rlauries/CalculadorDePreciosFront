@@ -76,41 +76,42 @@
 
 /* -------media queries------- */
 
-@media screen and (max-width: 450px){
+
+
+@media screen and (max-width: 1300px){
     .home-container{
         height: 932px;
-        width: 430px;
-    } 
-    .home-container img{
-        width: 430px;
-        height: 932px;
+        width: 1250px;
     }
+    .home-container img{
+        width: 1300px;
+        height: 932px;
+    } 
     .home-container .hero {
         padding-right: 10px;
-        width: 430px;
+        width: 825px;
         height: auto;
         top: 40px;
-        
     }
     .home-container .hero .voice{
-        font-size: 35px;
+        font-size: 40px;
         width: 100%;
         font-weight: bold;
     }
     .home-container .hero .mission{
         
-        font-size: 4.0em;
-        width: 430px    
+        font-size: 90px;
+        width: 900px    
     }
     .home-container .hero .paragraph{
         padding: 20px;
         height: auto;
-        width: 400px;
-        font-size: 15px;
+        width: 700px;
+        font-size: 20px;
         /* border: 1px solid orange; */
         overflow: hidden;
     }
-   
+
 }
 @media screen and (max-width: 850px){
     .home-container{
@@ -148,38 +149,40 @@
     }
     
 }
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 450px){
     .home-container{
         height: 932px;
-        width: 1250px;
-    }
-    .home-container img{
-        width: 1300px;
-        height: 932px;
+        width: 430px;
     } 
+    .home-container img{
+        width: 430px;
+        height: 932px;
+    }
     .home-container .hero {
         padding-right: 10px;
-        width: 825px;
+        width: 430px;
         height: auto;
         top: 40px;
+        
     }
     .home-container .hero .voice{
-        font-size: 40px;
+        font-size: 25px;
         width: 100%;
         font-weight: bold;
+        width: 400px;
     }
     .home-container .hero .mission{
         
-        font-size: 90px;
-        width: 900px    
+        font-size: 3.0em;
+        width: 400px    
     }
     .home-container .hero .paragraph{
         padding: 20px;
         height: auto;
-        width: 700px;
-        font-size: 20px;
-        /* border: 1px solid orange; */
+        width: 400px;
+        font-size: 14px;
+        
         overflow: hidden;
     }
-
+   
 }

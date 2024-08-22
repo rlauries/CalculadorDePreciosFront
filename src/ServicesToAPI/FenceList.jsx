@@ -82,33 +82,33 @@ export const FenceList = () => {
                       <ul>
                         <li>
                             <h3>Overview:</h3>
-                            <p>
+                            <div>
                                • A chain link fence is a versatile and cost-effective fencing option that provides robust security and durability for a wide range of applications. Whether for residential, commercial, or industrial use, chain link fences offer a reliable solution to keep your property safe and secure.
-                            </p>
+                            </div>
                             </li>
                         <li>
                             <h3>Durability:</h3>
-                            <p>
+                            <div>
                             • Made from high-quality galvanized steel, chain link fences are designed to withstand harsh weather conditions and resist corrosion.
-                            </p>
+                            </div>
                         </li>
                         <li>
                           <h3>Versatility:</h3>
-                          <p>
+                          <div>
                             • Ideal for a variety of applications including residential yards, sports fields, playgrounds, schools, parks, industrial areas, and construction sites.
-                        </p>
+                        </div>
                           </li>
                         <li>
                           <h3>Low Maintenance:</h3>
-                          <p>
+                          <div>
                             • Requires minimal upkeep compared to other fencing materials.
-                          </p>
+                          </div>
                           </li>
                         <li>
                           <h3>Aesthetic Options:</h3>
-                          <p>
+                          <div>
                             • Available in different coatings and colors, including the classic silver galvanized finish and colored vinyl coatings such as black or green to blend with the environment or match your property’s aesthetic.
-                          </p>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -127,33 +127,33 @@ export const FenceList = () => {
                       <ul>
                         <li>
                           <h3>Overview:</h3>
-                          <p>
+                          <div>
                             • Dura Fence is the ultimate fencing solution designed to offer unmatched strength, durability, and aesthetic appeal. Ideal for both residential and commercial applications, Dura Fence provides a secure and stylish boundary that stands the test of time.
-                          </p>
+                          </div>
                           </li>
                         <li>
                           <h3>Durability:</h3>
-                          <p>
+                          <div>
                             • Constructed from high-grade, heavy-duty galvanized steel panels and posts, Dura Fence is built to withstand extreme weather conditions, including strong winds, heavy rain, and intense sunlight.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Security:</h3>
-                          <p>
+                          <div>
                             • The robust steel construction provides a formidable barrier that deters unauthorized access and enhances the security of your property.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Low Maintenance:</h3>
-                          <p>
+                          <div>
                           • The galvanized and coated steel panels require minimal upkeep.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Aesthetic Options:</h3>
-                          <p>
+                          <div>
                             • Combines functionality with aesthetics, featuring a sleek, modern design that complements any property.
-                          </p>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -172,33 +172,34 @@ export const FenceList = () => {
                       <ul>
                         <li>
                           <h3>Overview:</h3>
-                          <p>
-                            • Elevate Your Property with Style and Functionality. Crafted with precision engineering and high-quality materials, our modern fencing solution offers a sleek aesthetic that enhances the beauty of any property while providing unmatched strength and longevity.</p>
+                          <div>
+                            • Elevate Your Property with Style and Functionality. Crafted with precision engineering and high-quality materials, our modern fencing solution offers a sleek aesthetic that enhances the beauty of any property while providing unmatched strength and longevity.
+                          </div>
                         </li>
                         
                         <li>
                           <h3>Sleek and Stylish Design:</h3>
-                          <p>
+                          <div>
                             • Boasts clean lines, minimalist profiles, and sleek finishes, adding a touch of elegance and sophistication to your outdoor space.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Weather-Resistant:</h3>
-                          <p>
+                          <div>
                             • The corrosion-resistant properties of aluminum ensure that your fence maintains its pristine appearance for years to come with minimal maintenance required.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Versatile Customization:</h3>
-                          <p>
+                          <div>
                             • Tailor your Aluminum Modern Fence to suit your unique preferences with a variety of design options, including different heights, panel widths, and color choices.
-                          </p>
+                          </div>
                         </li>
                         <li>
                           <h3>Low Maintenance:</h3>
-                          <p>
+                          <div>
                             • Our aluminum modern fences are resistant to rust, rot, and corrosion, ensuring long-lasting performance without the need for repainting or staining.
-                          </p>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -212,24 +213,28 @@ export const FenceList = () => {
         {/* ...thumbnail... */}
         <div className='thumbnail' ref={thumbnailRef}>
             <div className="item">
+              <a href="/durafence">
                 <img src="images/durafence.jpg" alt="" />
                 <div className="content">
                     <div className='fenceName'>DuraFence </div>
                 </div>
-                
+              </a>  
             </div>
             <div className="item">
+              <a href="/aluminumcustomfence">
                 <img src="images/aluminumcustomfence.jpg" alt="" />
                 <div className="content">
                     <div className='fenceName'>Aluminum Custom</div>
                 </div>
-                
+              </a>  
             </div>
             <div className="item">
+              <a href="/chainlinkfence">
                 <img src="images/chainlinkfence.jpg" alt="" />
                 <div className="content">
                     <div className='fenceName'>Chain Link </div>
                 </div>
+              </a>
             </div>
         </div>
         {/* ...arrows... */}

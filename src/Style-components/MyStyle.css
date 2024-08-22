@@ -28,10 +28,10 @@
     top: 10%;
     left: 4%;
     border-radius: 20px;
-    background-image: url("../Assets/libretaRayadaAbierta.jpg");
+    
 
-    background-color: rgba(62, 83, 66, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(150, 155, 151, 0.5);
+    backdrop-filter: blur(80px);
     
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     border: 1px solid white;
@@ -52,7 +52,8 @@
     
     font-weight: 600;
     font-size: 16px;
-    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     opacity: 1;
     text-align: center;
@@ -64,7 +65,7 @@
     margin: 0 20px;
     min-width: 50px; /* Ancho mínimo */
     max-width: 200px; /* Ancho máximo*/
-    background: transparent;
+    /* background: transparent; */
     border: none;
     border-bottom: 2px solid #0a0a0a;
     color: black;
@@ -93,23 +94,15 @@
     top: 1.5%;
     padding: 5px;
     width: 600px;
-    color: #862020;
+    color: #f1683a;
     font-size: 4.5em;
     font-weight: bold;
-    /* -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: black;  */
-    /* backdrop-filter: blur(50px); */
-    /* text-shadow: 0 2px 3px rgb(0, 0, 0);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid white; */
-    /* border-bottom: 2px solid black; */
-    /* border-radius: 20px; */
+    
     text-align: center;
     margin: 10px;
     margin-left: 10%;
-    text-shadow: 0 2px 3px rgb(150, 145, 145);
-    /* letter-spacing: 10px; */
-   
+    text-shadow: 0 2px 3px rgb(16, 16, 16);
+    
     
 } 
 
@@ -261,24 +254,26 @@ span{
 }
 .dinamic-form .lastSection button{
     width: 150px;
-    background-color: #862020;
+    background-color: #f1683a;
     color: white;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 22px;
     border-radius: 20px;
     box-shadow: 0 5px 9px black;
     border: 1.5px solid white;
-    
+    text-shadow: 0 2px 3px rgb(9, 9, 9);
 }
 .dinamic-form .lastSection button:hover{
     box-shadow: 0 8px 15px black;
 }
 .dinamic-form .lastSection .contactUsButton{
     background-color: transparent;
-    color: #862020;
-    text-shadow: 1px 2px 3px rgb(141, 136, 136);
-    border: 1.5px solid #862020;
+    color: #f1683a;
+    /* text-shadow: 1px 2px 3px rgb(141, 136, 136); */
+    border: 1.5px solid #f1683a;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .dinamic-form .lastSection{
     display: flex;

@@ -190,17 +190,18 @@ export const FenceList = () => {
                           </div>
                         </li>
                         <li>
+                          <h3>Low Maintenance:</h3>
+                          <div>
+                            • Our aluminum modern fences are resistant to rust, rot, and corrosion
+                          </div>
+                        </li>
+                        <li>
                           <h3>Versatile Customization:</h3>
                           <div>
                             • Tailor your Aluminum Modern Fence to suit your unique preferences with a variety of design options, including different heights, panel widths, and color choices.
                           </div>
                         </li>
-                        <li>
-                          <h3>Low Maintenance:</h3>
-                          <div>
-                            • Our aluminum modern fences are resistant to rust, rot, and corrosion, ensuring long-lasting performance without the need for repainting or staining.
-                          </div>
-                        </li>
+                        
                       </ul>
                     </div>
                     <div className="buttons">

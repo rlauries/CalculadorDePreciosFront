@@ -278,7 +278,7 @@
 }
 
 /* -----Media Queries------------ */
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1280px) {
     .carousel .list .item .content{
         margin-left: -250px;
         margin-top: -80px;
@@ -287,7 +287,7 @@
         width: 500px;
     }
     .carousel .list .item img{
-        width: 1030px;
+        width: 1230px;
         height: 780px;
     }
     .carousel .list .item .content .fenceType{
@@ -344,26 +344,30 @@
     
     
 }
-@media screen and (min-width: 750px) and (max-width: 920px) {
+@media screen and (max-width: 720px) and (min-width: 551px) {
+    
     .carousel .list .item .content{
-        margin-left: -250px;
-        margin-top: -200px;
+        margin-left: -270px;
+        margin-top: -80px;
         position: absolute;
-        height: 600px;
+        height: 550px;
         width: 500px;
     }
+  
     .carousel .list .item img{
-        width: 920px;
-        height: 780px;
+        width: 880px;
+        height: 8 80px;
+        margin-left: 0%;
+        object-fit: cover;
     }
     .carousel .list .item .content .fenceType{
-        font-size: 17px;
+        font-size: 14px;
     }
     .carousel .list .item .content .fenceName{
         font-size: 2em;
     }
     .carousel .list .item .content .description li{
-        margin-bottom: 15px;
+        margin-bottom: 4px;
     }
     .carousel .list .item .content .description li h3{
         font-size: 12px;
@@ -383,8 +387,8 @@
     }
     
     .thumbnail{
-        top: 570px;
-        left: 58%;
+        top: 680px;
+        left: 18%;
         
     }
     .thumbnail .item{
@@ -398,8 +402,8 @@
     }
     .arrows{
         position: absolute;
-        top: 520px;
-        left: 70%;
+        top: 720px;
+        left: 10%;
         
     }
     .arrows button{
@@ -422,13 +426,12 @@
         margin-top: -80px;
         height: 500px;
         width: 480px;
-        padding: 0px;
-        padding-left: 0px;
+        
     }
 
     .carousel .list .item img{
         position: absolute;
-        width: 550px;
+        width: 650px;
         height: 920px;
         
     }

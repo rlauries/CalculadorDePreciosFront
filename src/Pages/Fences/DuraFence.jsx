@@ -12,7 +12,7 @@ import { Gates } from '../../ServicesToAPI/Gates';
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/MyStyle.css';
+import '../../Style-components/ServicePriceCard.css'
 
  
 

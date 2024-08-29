@@ -6,7 +6,7 @@ import { Footer } from '../Layouts/Footer';
 import InputMask from 'react-input-mask';
 import  CustomerModelForAPI  from '../../Models/CustomerModelForAPI';
 import axios from 'axios';
-import '../../Style-components/FormStyle.css';
+import '../../Style-components/Contactus.css';
 
 
 

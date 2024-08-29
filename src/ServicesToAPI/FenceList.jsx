@@ -1,6 +1,7 @@
   import React, { useRef} from 'react';
 
   import '../Style-components/FenceList.css';
+  import '../Style-components/ServicePriceCard.css';
 
 export const FenceList = () => {
   

@@ -5,7 +5,7 @@ import React, { useState, useContext } from 'react';
 import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import NorthWestOutlinedIcon from '@mui/icons-material/NorthWestOutlined';
-import '../Style-components/MyStyle.css';
+import '../Style-components/ServicePriceCard.css';
 
 
 const TaxForm = () => {

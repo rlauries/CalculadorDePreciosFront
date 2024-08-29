@@ -10,7 +10,7 @@ import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { Gates } from '../../ServicesToAPI/Gates';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/MyStyle.css';
+import '../../Style-components/ServicePriceCard.css'
 
 export const ChainLinkFence = () => {
 

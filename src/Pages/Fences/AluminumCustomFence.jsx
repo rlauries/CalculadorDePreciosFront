@@ -9,6 +9,7 @@ import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { PriceContext } from '../../context/PriceContext'; 
 import { Gates } from '../../ServicesToAPI/Gates';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
+import '../../Style-components/ServicePriceCard.css'
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { ShowGatePrice } from './ShowGatePrice';
 import { useContext } from 'react';
 import { PriceContext } from '../context/PriceContext';
-import '../Style-components/MyStyle.css';
+import '../Style-components/ServicePriceCard.css';
 import '../Style-components/InsideFenceStyles.css'
 
 
@@ -13,7 +13,7 @@ export const Gates = () => {
     function handleGatesUrlOnChange(e){
         let numeroDePuertas = e.target.value;
         if(numeroDePuertas >= 0){
-          let url = `https://localhost:7142/api/Gates/StandardDoor/${numeroDePuertas}`;
+          let url = `https://lauries-estimate-calculator-api-d8gmadfhcvcrdzfv.eastus-01.azurewebsites.net/api/Gates/StandardDoor/${numeroDePuertas}`;
           setUrlGate(url);
           
         } 

@@ -1,42 +1,42 @@
-// import React from 'react'
-// import { useContext} from 'react';
-// import { useCallback } from 'react';
-// import { useEffect} from 'react';
+import React from 'react'
+import { useContext} from 'react';
+import { useCallback } from 'react';
+import { useEffect} from 'react';
 
-// import axios from "axios";
-// import { PriceContext } from '../context/PriceContext';
+import axios from "axios";
+import { PriceContext } from '../context/PriceContext';
 
-// var config = {
-//   headers: { 'Access-Control-Allow-Origin': '*' }
-// };
+var config = {
+  headers: { 'Access-Control-Allow-Origin': '*' }
+};
 
 export const ShowGatePrice = ({url}) => {
   
   
-  //   const {gatePrice, setGatePrice} = useContext(PriceContext);
-  //   //const [price, setPrice] = useState(0);
+    const {gatePrice, setGatePrice} = useContext(PriceContext);
+    
 
-  //   const fetchInfo = useCallback(() => {
-  //     return axios
-  //             .get(url, config)
-  //             .then((response) => {
-  //               if(!isNaN(response.data)){
-  //                 setGatePrice(response.data)
-  //               }
-  //               else
-  //               {setGatePrice('')};
-  //             })
-  //             .catch(error => {setGatePrice(0)});
-  //   }, [url, setGatePrice])
+    const fetchInfo = useCallback(() => {
+      return axios
+              .get(url, config)
+              .then((response) => {
+                if(!isNaN(response.data)){
+                  setGatePrice(response.data)
+                }
+                else
+                {setGatePrice(0)};
+              })
+              .catch(error => {setGatePrice(0)});
+    }, [url, setGatePrice])
 
-  //   useEffect(() => {
-  //     fetchInfo();
-  //   }, [fetchInfo]);
+    useEffect(() => {
+      fetchInfo();
+    }, [fetchInfo]);
 
-  // return (
-  //   <div>{gatePrice.toFixed(2)}</div>
+  return (
+    <div>{gatePrice.toFixed(2)}</div>
     
         
-  // )
+  )
 }
 

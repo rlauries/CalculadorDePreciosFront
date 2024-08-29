@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../Style-components/InsideFenceStyles.css'
-import '../../Style-components/MyStyle.css';
+import '../../Style-components/ServicePriceCard.css';
 
 export const Footer = () => {
   return (

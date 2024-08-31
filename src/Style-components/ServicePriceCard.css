@@ -297,14 +297,14 @@ span{
 }
 
 @media screen and (max-width: 750px){
-    .background-container{
+    /* .background-container{
         width: 150vw;
         height: 150vh;
         overflow: hidden;
         margin-top: -50px;
         position: relative;
         
-    }
+    } */
     .background-container .containerInside .dinamic-form{
         width: 449px;
         display: flex;

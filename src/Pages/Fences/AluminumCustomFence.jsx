@@ -18,7 +18,7 @@ import '../../Style-components/AluminumCustomFence.css';
 
 export const AluminumCustomFence = () => {
 
-  let {taxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
+  let {panelObject, setPanelObject, urlPanel} = useContext(PriceContext);
   
   
   //------Create Aluminum Custom Object---------- 

@@ -1,16 +1,10 @@
 import React, { useContext } from 'react'
-import axios from 'axios';
 import { Box} from '@mui/material';
-
 import { Header } from '../Layouts/Header';
-import { Footer } from '../Layouts/Footer';
-
 import { PriceContext } from '../../context/PriceContext';
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
 import '../../Style-components/ServicePriceCard.css'
-
-
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import { Gates } from '../../ServicesToAPI/Gates';
 import { TotalPrice } from '../../ServicesToAPI/TotalPrice';

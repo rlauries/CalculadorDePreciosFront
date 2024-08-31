@@ -1,13 +1,6 @@
 import React, {useContext } from 'react'
-
-import { Box } from '@mui/material';
-
-
 import { PriceContext } from '../../context/PriceContext';
-
 import { Header } from '../Layouts/Header';
-import { Footer } from '../Layouts/Footer';
-
 import { Gates } from '../../ServicesToAPI/Gates';
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
@@ -21,7 +14,7 @@ import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
 
 export const DuraFence = () => {
   
-  let {taxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
+  let {panelObject, setPanelObject, urlPanel} = useContext(PriceContext);
   
   function handleSqFeetOnChange(e)
   {

@@ -2,15 +2,17 @@ import React, {useContext } from 'react'
 
 import { Header } from '../Layouts/Header';
 import { Footer } from '../Layouts/Footer';
-
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
+import { Gates } from '../../ServicesToAPI/Gates';
+import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
+
 
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { PriceContext } from '../../context/PriceContext'; 
-import { Gates } from '../../ServicesToAPI/Gates';
-import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/ServicePriceCard.css'
 
+import FenceModelForAPI from '../../Models/FenceModelForAPI';
+import '../../Style-components/ServicePriceCard.css';
+import '../../Style-components/AluminumCustomFence.css';
 
 
 
@@ -19,7 +21,7 @@ export const AluminumCustomFence = () => {
   let {taxRate, panelObject, setPanelObject, gatePrice, panelPrice, urlPanel} = useContext(PriceContext);
   
   
-  
+  //------Create Aluminum Custom Object---------- 
 
   function sqFeetOnChangeHandler(e)
   {
@@ -53,10 +55,7 @@ export const AluminumCustomFence = () => {
     }
   }
 
-  const totalPrice = () =>{
-    let totalPrice = (gatePrice + panelPrice + (panelPrice + gatePrice) * taxRate /100).toFixed(2);
-    return totalPrice;
-  };
+  
 
   return (
     <>
@@ -71,9 +70,9 @@ export const AluminumCustomFence = () => {
                   <div>
                     <label type='text' className='Legenda'>Aluminum Custom </label>
                   </div>
-                  <div className='sqFeet-select-span'>
+                  <div className='sqFeet-row'>
                           <div className='sqFeet-select'>
-                              <label >Square Feet: 
+                              <label className='sqFeet-input'>Square Feet: 
                                 <input 
                                   id='sqFeet'
                                   type="number"
@@ -113,22 +112,21 @@ export const AluminumCustomFence = () => {
                               </span>
                           </div>
                   </div>
-                  <div  >
+                  <div>
                     <Gates/>
                   </div>
                   <div>
                     <TaxForm/>
                   </div>
-                  <div className='lastSection'>
-                      <div className="buttons">
-                        <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
-                        <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                      </div>
-                      <span className='totalPrice'>
-                          Total Price : $&nbsp;<b className="bold-text" >{totalPrice()}</b>
-                      </span>
+                  <div>
+                    <TotalPrice/>
                   </div>
-                     
+                  <div className='lastSection'>
+                    <div className="buttons">
+                      <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
+                      <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+                    </div>
+                  </div>   
               </div>
               
         </fieldset>

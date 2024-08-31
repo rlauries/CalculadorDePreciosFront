@@ -1,0 +1,28 @@
+.dura-fence-select{
+    position: relative;
+    top: 26%;
+}
+
+@media screen and (max-width: 750px){
+   
+
+    .sqFeet-row-dura-fence{
+        position: absolute;
+        top:10%
+        
+    }
+    .sqFeet-row-dura-fence
+    {  
+        border-bottom: none;  
+    }
+    .dura-fence-dinamic-form .gate-row{
+        position: relative;
+        top: 80%;
+    }
+    .dura-fence-dinamic-form .dura-fence-sqfeet-row-price{
+        position: absolute;
+        top: 280%;
+        left: 16%;
+    }
+    
+}

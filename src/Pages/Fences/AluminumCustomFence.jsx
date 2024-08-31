@@ -66,17 +66,18 @@ export const AluminumCustomFence = () => {
           <img src="images/aluminumcustomfence.jpg" alt="" />
           <fieldset className='containerInside'>  
                     
-              <div  className='dinamic-form' >
+              <div  className='dinamic-form aluminum-custom-dinamic-form' >
                   <div>
                     <label type='text' className='Legenda'>Aluminum Custom </label>
                   </div>
-                  <div className='sqFeet-row'>
+                  <div className='sqFeet-row aluminum-custom-row'>
                           <div className='sqFeet-select'>
                               <label className='sqFeet-input'>Square Feet: 
                                 <input 
                                   id='sqFeet'
                                   type="number"
                                   placeholder='0'
+                                  required
                                   onChange={sqFeetOnChangeHandler}
                                 />
                                 
@@ -106,11 +107,13 @@ export const AluminumCustomFence = () => {
                               </label> 
                           </div>   
                           <input  style={{flexGrow: '1',width:'1%', border:'0',opacity:'0'}}/>
-                          <div> 
-                              <span >
-                                  Panel Price: $&nbsp;<b className="bold-text"><ShowPanelPrice url={urlPanel} fenceModel={panelObject}/></b>
-                              </span>
-                          </div>
+                          <span className='price'>
+                              <div className='text-price'>Panel Price: $&nbsp;</div>
+                              <b className="bold-text">
+                                <ShowPanelPrice url={urlPanel} 
+                                fenceModel={panelObject}/>
+                              </b>
+                          </span>
                   </div>
                   <div>
                     <Gates/>

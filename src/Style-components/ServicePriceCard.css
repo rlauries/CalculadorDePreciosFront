@@ -81,7 +81,7 @@
     height: 10px; 
     
 }
-.sqFeet-row, 
+ 
 .gate-row, 
 .tax-row, 
 .sqFeet-select-span{
@@ -100,7 +100,8 @@
     flex-direction: row;
     align-items: center;
     justify-items:first baseline ;
-    top: 20%;    
+    top: 20%; 
+       
 }
 
 .background-container .dinamic-form .Legenda{
@@ -332,6 +333,39 @@ span{
         
         
     }
+
+    .select-horizontal, 
+    .select-horizontal option{
+        backdrop-filter: blur(30px); 
+        border-radius: 10px;
+        width: 60%;
+        height: 30px;
+        
+        font-weight: 600;
+        font-size: 16px;
+        backdrop-filter: blur(30px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        text-align: center;
+        
+        color: black;
+        margin: 0 15px; 
+        min-width: 50px; /*Ancho mínimo */
+        max-width: 200px; /* Ancho máximo*/
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgb(0, 0, 0) ;
+        text-shadow: 0 2px 3px rgb(99, 97, 97);
+    }
+    .select-horizontal option {
+        display: flex;
+        background-color: rgba(20, 15, 15, 0.215); 
+        text-align: center;
+        align-content: center;
+        width: 60%;
+        color: black;
+    }
+
     /* span for prices  */
     .text-price,
     .bold-text

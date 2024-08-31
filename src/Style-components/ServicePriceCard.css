@@ -306,10 +306,10 @@ span{
         
     } */
     .background-container .containerInside .dinamic-form{
-        width: 449px;
+        width: 429px;
         display: flex;
         flex-direction: column;
-        
+        margin-left: -10px;
     }
     .background-container .containerInside .dinamic-form .Legenda{
         position: absolute;

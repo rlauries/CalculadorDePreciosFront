@@ -13,12 +13,15 @@ export function PriceProvider ({children})
     const [panelPrice, setPanelPrice] = useState(0);
     const [gatePrice, setGatePrice] = useState(0); 
 
-    const [urlPanel, setUrlPanel] = useState(`https://localhost:7142/api/price/PanelPrice`);
+    const [urlPanel, setUrlPanel] = useState(0);
     const [urlGate, setUrlGate] = useState(0);
 
     let [panelObject, setPanelObject] = useState(new FenceModelForAPI(1, 0, 0, 0, 0));
-    const [taxRate, setTaxRate] = useState(0);
     
+    const [taxRate, setTaxRate] = useState(0);
+    const [stateName, setStateName] = useState('');
+    const [cities, setCities] = useState([]);
+    const [clicked, setClicked] = useState(false);
     return (
     <PriceContext.Provider value={{
          panelPrice, setPanelPrice,
@@ -27,7 +30,9 @@ export function PriceProvider ({children})
          urlGate, setUrlGate,
          panelObject, setPanelObject,
          taxRate, setTaxRate,
-         
+         stateName, setStateName,
+         cities, setCities,
+         clicked, setClicked
     }}>
         {children}
     </PriceContext.Provider>    

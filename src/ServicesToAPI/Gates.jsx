@@ -27,29 +27,26 @@ export const Gates = () => {
   
 
   return (
-    
-        <div className="flex-container"  
-        >
-            <label className='gate-row'>Enter Gates:
-                <input 
-                    type="number" 
-                    id='numberOfGatesInput'
-                    placeholder='0'
-                    style={{padding: '0, 50px'}}
-                    onChange={handleGatesUrlOnChange }
-                />
-            </label>
-            <input  style={{flexGrow: '1',width:'1%', border:'0',opacity:'0'}}/>
-             <span >
-                Gate Price: $ &nbsp;
-                <b className="bold-text" >
-                  {<ShowGatePrice url={urlGate}/>}
-                </b>
-            </span>
+    <div className='gate-row'>
+        <label >Enter Gates:
+          <input 
+              type="number" 
+              id='numberOfGatesInput'
+              placeholder='0'
+              
+              onChange={handleGatesUrlOnChange}                                />
+        </label>
+        <input  style={{flexGrow: '1',width:'1%', border:'0',opacity:'0'}}/>
+        <span className='price' >
+          <div className="text-price">
+              Gate Price: $ &nbsp;
+          </div>
             
-        </div>        
-
-    
+            <b className="bold-text" >
+              {<ShowGatePrice url={urlGate}/>}
+            </b>
+        </span>
+    </div>
 
   )
 }

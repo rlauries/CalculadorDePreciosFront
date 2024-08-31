@@ -13,6 +13,8 @@ import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
 import '../../Style-components/ServicePriceCard.css'
+import '../../Style-components/DuraFence.css';
+import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
 
  
 
@@ -40,12 +42,6 @@ export const DuraFence = () => {
     }
   }
 
-
-  const totalPrice = () =>{
-    let totalPrice = (gatePrice + panelPrice + (panelPrice + gatePrice) * taxRate /100).toFixed(2);
-    return totalPrice;
-  };
-
   return (
     <>
       <Header/>
@@ -55,75 +51,63 @@ export const DuraFence = () => {
       >
           <img src="images/durafence.jpg" alt="" />
           <fieldset className='containerInside'>
-            <label type='text' className='Legenda'>Dura Fence</label>
-                      
-            <Box sx={{ display: 'flex', flexDirection: 'row'   }}>
-                
-                  <div className='dinamic-form' >
-                        <div>
-                          <label type='text' className='Legenda' id='duraFence'>Dura Fence</label>
-                        </div>
-                        <div className='sqFeet-select-span'>
-                          <div className='sqFeet-select'>    
-                            <label>Square Feet:
-                                <input className='sqFeet'
-                                    id='sqFeetInput'
-                                    placeholder='0'
-                                    type="number" 
-                                    name='sqFeet'
-                                    required 
-                                    onChange={handleSqFeetOnChange}
-                                    style={{flexGrow: 1}}
-                                        
-                                />
-                            </label>
-                          
-                            <label className='selector'>Select Rows:&nbsp;
-                              <select className='select-horizontal'
-                                      id='selectHorizontalRow'
-                                    onChange={handleHorizantalRowOnChange} 
-                                        
-                              >
-                                <option value="2">2 Tubes</option>
-                                <option value="3">3 Tubes</option>                              
-                              </select>
-                            </label>
-                          </div> 
-                          <input  style={{flexGrow: '1',width:'1%', border:'0',opacity:'0'}}/>
-                          <div> 
-                            <span style={{ marginLeft:'10px' }}>
-                                Panel Price: $&nbsp;<b className="bold-text"><ShowPanelPrice url={urlPanel} fenceModel={panelObject}/></b>
-                            </span>
-                          </div>
-                        </div>      
-                      <div  >
-                        <Gates/>
-                      </div>
-                      <div>
-                        <TaxForm/>
-                      </div>
-                      <div className='lastSection'>
-                        <div className="buttons">
-                          <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
-                          <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                        </div>
-                        <span className='totalPrice'>
-                            Total Price : $&nbsp;<b className="bold-text" >{totalPrice()}</b>
-                        </span>
-                      </div>
-                      
-                  </div>
-                  
-            </Box>
-
-            
-            
-          
+          <div className='dinamic-form dura-fence-dinamic-form' >
+            <div>
+              <label type='text' className='Legenda' id='duraFence'>Dura Fence</label>
+            </div>
+            <div className='sqFeet-row sqFeet-row-dura-fence'>
+              <div className='sqFeet-select dura-fence-select'>    
+                <label>Square Feet:
+                    <input className='sqFeet'
+                        id='sqFeetInput'
+                        placeholder='0'
+                        type="number" 
+                        name='sqFeet'
+                        required 
+                        onChange={handleSqFeetOnChange}
+                    />
+                </label>
+                <label className='selector'>Select Rows:&nbsp;
+                  <select className='select-horizontal'
+                          id='selectHorizontalRow'
+                        onChange={handleHorizantalRowOnChange} 
+                  >
+                    <option value="2">2 Tubes</option>
+                    <option value="3">3 Tubes</option>                              
+                  </select>
+                </label>
+              </div> 
+              <input  style={{flexGrow: '1',width:'1%', border:'0',opacity:'0'}}/>
+              <span className='price dura-fence-sqfeet-row-price'>
+                  <div className='text-price'>Panel Price: $&nbsp;</div>
+                  <b className="bold-text">
+                    <ShowPanelPrice url={urlPanel} 
+                    fenceModel={panelObject}/>
+                  </b>
+              </span>
+            </div>      
+            <div>
+              <Gates/>
+            </div>
+            <div>
+              <TaxForm/>
+            </div>
+            <div>
+              <TotalPrice/>
+            </div>
+            <div className='lastSection'>
+              <div className="buttons">
+                <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
+                <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+              </div>
+            </div>
+              
+          </div>
+      
         </fieldset>
-        
-                              
+                               
       </section>
-      <Footer/>
+      
     </>     
           
 

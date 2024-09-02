@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 //import emailjs from '@emailjs/browser';
  
 import { Header } from '../Layouts/Header';
-import { Footer } from '../Layouts/Footer';
+
 import InputMask from 'react-input-mask';
 import  CustomerModelForAPI  from '../../Models/CustomerModelForAPI';
 import axios from 'axios';
 import '../../Style-components/Contactus.css';
+import { UploadFile } from '../Layouts/UploadFile';
 
 
 
@@ -171,39 +172,45 @@ export const ContactUs = () => {
                         
                     </div>
                 </div>
-                <div>
-                    <label style={{display:'flex',alignItems:'center',alignContent:"baseline", flexDirection: 'row'}}>
-                        Recommended:
-                        <select 
-                            className='floating-label'
-                            name="recommendedBy" 
-                            id="recommendedBy"
-                            placeholder='Select'
-                            defaultValue="Friend" 
-                        >
-                            <option value="">Friend</option>
-                            <option value="">Google Search</option>
-                            <option value="">Others</option>
+                <div className='last-seccion'>
+                    <div>
+                        <label style={{display:'flex',alignItems:'center',alignContent:"baseline", flexDirection: 'row'}}>
+                            Recommended:
+                            <select 
+                                className='floating-label'
+                                name="recommendedBy" 
+                                id="recommendedBy"
+                                placeholder='Select'
+                                defaultValue="Friend" 
+                            >
+                                <option value="">Friend</option>
+                                <option value="">Google Search</option>
+                                <option value="">Others</option>
 
-                        </select>
-                    </label>
-                
+                            </select>
+                        </label>
+                    
+                    </div>
+                    
+                    <div >
+                        <label  >Available Hours:
+                            <input 
+                                className='contact_control'
+                                id="availableHoursTime"
+                                name="availableHoursTime"
+                                
+                                type="time" 
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <UploadFile/>
+                    </div>
                 </div>
                 
-                <div >
-                    <label  >Available Hours:
-                        <input 
-                            className='contact_control'
-                            id="availableHoursTime"
-                            name="availableHoursTime"
-                            
-                            type="time" 
-                        />
-                    </label>
-                </div>
                 <div className="col-md-12">
                     <button 
-                            className="send_btn"
+                            className="send_btn submit-button"
                             type='submit'
                             value='send'
                             onClick={handleOnClick}
@@ -213,7 +220,7 @@ export const ContactUs = () => {
                 </div>
             </div>
         </div>
-        <Footer/>
+        
     </div>
   )
 }

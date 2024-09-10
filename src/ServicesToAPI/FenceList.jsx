@@ -48,24 +48,24 @@ export const FenceList = () => {
     const thumbnailRef = useRef(null);
     
     let timeRunning = 3000;
-    let runTimeOut;
+    //let runTimeOut;
 
     const showSlider = () =>{
       let listItemDom = listRef.current;
       let thumbnailDom = thumbnailRef.current;
 
       let itemSlider = listItemDom.querySelectorAll('.carousel .list .item');
-      let itemThumbnail = thumbnailDom.querySelectorAll('.carousel .thumbnail .item');
+      // let itemThumbnail = thumbnailDom.querySelectorAll('.carousel .thumbnail .item');
       
       
       listItemDom.appendChild(itemSlider[0]);
-      thumbnailDom.appendChild(itemThumbnail[0]);
+      // thumbnailDom.appendChild(itemThumbnail[0]);
       carouselRef.current.classList.add('next');
       
-      clearTimeout(runTimeOut);
-      runTimeOut = setTimeout(() => {
-        carouselRef.current.classList.remove('next');
-      }, timeRunning)
+      //  (runTimeOut);
+      // runTimeOut = setTimeout(() => {
+      //   carouselRef.current.classList.remove('next');
+      // }, timeRunning)
 
     
     }
@@ -116,6 +116,10 @@ export const FenceList = () => {
                     <div className="buttons">
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/chainlinkfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+                      <button id='next' className='next' onClick={showSlider}>
+                        {'<-More'}
+                      </button>
+                      
                     </div>
                 </div>
             </div>
@@ -161,6 +165,10 @@ export const FenceList = () => {
                     <div className="buttons">
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/durafence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+                      <button id='next' className='next' onClick={showSlider}>
+                        {'<-More'}
+                      </button>
+                      
                     </div>
                 </div>
             </div>
@@ -208,12 +216,20 @@ export const FenceList = () => {
                     <div className="buttons">
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/aluminumcustomfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+                      <button id='next' className='next' onClick={showSlider}>
+                        {'<-More'}
+                      </button>
+                      
                     </div>
+                    
                 </div>
             </div>
         </div>
+
+
+
         {/* ...thumbnail... */}
-        <div className='thumbnail' ref={thumbnailRef}>
+        {/* <div className='thumbnail' ref={thumbnailRef}>
             <div className="item">
               <a href="/durafence">
                 <img src="images/durafence.jpg" alt="" />
@@ -240,12 +256,13 @@ export const FenceList = () => {
             </div>
         </div>
         {/* ...arrows... */}
-        <div className="arrows">
+        
+        {/* <div className="arrows">
           <button id='next' className='next' onClick={showSlider}>
             {'<-More'}
           </button>
-        </div>
-        <div className="time"></div>
+        </div> */}
+         
     </div>
   )
 };

@@ -1,21 +1,5 @@
 @import url('normalize.css');
-#container-contact-id::before{
-  content: "";
-  
-  margin:0 auto;
-  position: absolute;
-  margin-left: 105px ;
-  padding: 10px 30px;
-  top: 0;
-  left: 0;
-  width: 84.4%; /* Ajusta el ancho y el alto para cubrir toda el área del contenedor */
-  
-  height: 1400px;
-  background-size: cover; /* La imagen se ajusta para cubrir todo el contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-  background-position: center;
-  z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
-}
+
 .container-contact-form{
     border: 1; 
     margin:0 auto; 
@@ -23,7 +7,7 @@
     padding: 10px 30px; 
     display: 'flex';
     flex-direction: 'column';
-    height: 1330px;
+    height: 1530px;
     background-size: 'cover'; /* Para ajustar la imagen de fondo al tamaño del contenedor */
     background-repeat: 'no-repeat'; /* Para evitar que la imagen de fondo se repita*/
     background-position: 'center'; /* Para centrar*/
@@ -42,18 +26,19 @@
     flex-direction:column;
     justify-content: space-evenly;
     box-sizing: border-box;
-    height: 1090px;
-    width: 60%;
+    height: 1290px;
+    width: 45%;
 
 }
 .legenda-Contact-Form{
-    width: 60%;
+    width: 45%;
     margin-top: 40px;
     margin-left: 2%;
     margin-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #032154;
+    color: #f1683a;
+    text-shadow: 0 2px 3px rgb(16, 16, 16);
     font-size: 60px;
     font-weight: bold;
     /* -webkit-text-stroke-width: 0.2px;
@@ -159,7 +144,9 @@ textarea{
   }
   
   .send_btn {
-    background-color: #f2db18;;
+    background-color: #0b0c5c;
+    background-color: #f1683a;
+    text-shadow: 0 2px 3px rgb(16, 16, 16);
     color: white;
     font-size: 25px;
     font-weight: bold;
@@ -170,8 +157,81 @@ textarea{
     border-radius: 10px;
     width: 220px;
   }
-  
-  .send_btn:hover {
-    background-color: #032154;
+  .submit-button{
+    position: absolute;
+    bottom: 92%;
   }
   
+  .send_btn:active {
+    transform: scale(0.9);
+    transition: 0.2s;
+  }
+  .send_btn:hover{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ----Upload File .Css -------- */
+  /* Style the file input to hide it */
+
+.file-row{
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Style the file input to hide it */
+#fileInput {
+  display: none;
+}
+
+/* Style the custom label to look like a button */
+
+.custom-file-label {
+  position: relative;
+  display: inline-block;
+  background-color: #e6e9ed;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  width: 95%;
+  color: rgb(6, 6, 6);
+  padding: 8px 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  margin: 5px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+.upload-file{
+  height: 43px;
+  font-size: 20px;
+  display: flex; /*Use Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  
+}
+.chosen-file{
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  border-radius: 4px;
+  margin: 15px 55px
+}
+
+/* Hover effect for the custom label */
+.custom-file-label:hover {
+  background-color: #eceef1;
+}
+
+.custom-file-label:active{
+  transform: scale(0.9);
+  transition: 0.2s;
+}

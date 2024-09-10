@@ -1,7 +1,7 @@
 export default class CustomerModelForAPI {
     constructor(id = 0,
         name = "",
-        lastName= "",
+        companyName= "",
         email= "",
         phoneNumber= "",
         address= "",
@@ -12,7 +12,7 @@ export default class CustomerModelForAPI {
     {
         this.id = id;
         this.name = name;
-        this.lastName = lastName;
+        this.companyName = companyName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;

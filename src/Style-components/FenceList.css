@@ -1,7 +1,7 @@
 @import url('normalize.css');
 .carousel{
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     overflow: hidden;
     margin-top: -50px;
     position: relative;
@@ -161,7 +161,7 @@
 
 /* arrows */
 .arrows{
-    position: absolute;
+    position: relative;
     top: 86%;
     right: 45%;
     width: 300px;
@@ -192,9 +192,7 @@
 .arrows button:hover{
     border:1px solid #555;
     
-    /* background-color:rgba(62, 83, 66, 0.5);
-    backdrop-filter: blur(20px);
-    color:white; */
+    
     
 }
 .carousel .list .item:nth-child(1) {
@@ -344,10 +342,29 @@
     
     
 }
+
 @media screen and (max-width: 720px) and (min-width: 551px) {
+    .carousel{
+        width: 150vw;
+        height: 150vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
+    }
     
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
     .carousel .list .item .content{
-        margin-left: -270px;
+        margin-left: -250px;
         margin-top: -80px;
         position: absolute;
         height: 550px;
@@ -415,26 +432,41 @@
     
 }
 
-
-
 @media screen and (max-width: 550px) and (min-width: 451px){
-    .carousel .list .item{
-        width: 550px;
+    .carousel{
+        width: 150vw;
+        height: 150vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
     }
+    
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
+ 
     .carousel .list .item .content{
-        margin-left: -290px;
+        margin-left: -250px;
         margin-top: -80px;
         height: 500px;
         width: 480px;
         
     }
 
-    .carousel .list .item img{
+    /* .carousel .list .item img{
         position: absolute;
         width: 650px;
         height: 920px;
         
-    }
+    } */
     .carousel .list .item .content .fenceType{
         font-size: 14px;
     }
@@ -458,7 +490,7 @@
         height: 0px;
         font-size: 10px;
         border-radius: 5px;
-        margin-left: -60px;
+        margin-left: 0px;
     }
     .carousel .list .item .content button{
         width: 100px;
@@ -493,11 +525,29 @@
 }
 
 @media screen and (max-width: 450px) and (min-width: 401px){
-  
+    .carousel{
+        width: 120vw;
+        height: 120vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
+    }
+    
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
     .carousel .list .item .content{
-        margin-left: -75%;
+        margin-left: -50%;
         margin-top: -17%;
-        height: 500px;
+        height: 550px;
         width: 450px;
         padding: 0px;
         padding-left: 0px;
@@ -520,7 +570,7 @@
         
     }
     .carousel .list .item .content .description li div{
-        width: 300px;
+        width: 320px;
         font-size: 9px;
         
     }
@@ -535,11 +585,13 @@
         height: 0px;
         font-size: 10px;
         border-radius: 5px;
-        margin-left: -60px;
+        margin-left: -40px;
     }
     .carousel .list .item .content button{
-        width: 100px;
+        width: 80px;
         height: 25px;
+        font-size: 7px;
+        
     }
 
     .thumbnail{
@@ -565,16 +617,36 @@
     .arrows button{
         width: 60px;
         height: 25px;
-        font-size: 12px;
+        font-size: 10px;
     }
 }
+
 @media screen and (max-width: 400px) and (min-width: 380px){
+    .carousel{
+        width: 120vw;
+        height: 120vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
+    }
+    
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
     .carousel .list{
         width: 450px;
     }
 
     .carousel .list .item .content{
-        margin-left: -85%;
+        margin-left: -65%;
         margin-top: -17%;
         height: 480px;
         width: 400px;
@@ -623,8 +695,9 @@
         margin-left: -60px;
     }
     .carousel .list .item .content button{
-        width: 100px;
+        width: 80px;
         height: 25px;
+        font-size: 7px;
     }
 
     .thumbnail{
@@ -653,13 +726,33 @@
         font-size: 12px;
     }
 }
-@media screen and (max-width: 380px) and (min-width: 366px){
+
+@media screen and (max-width: 380px) and (min-width: 365px){
+    .carousel{
+        width: 120vw;
+        height: 120vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
+    }
+    
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
     .carousel .list{
         width: 450px;
     }
 
     .carousel .list .item .content{
-        margin-left: -95%;
+        margin-left: -75%;
         margin-top: -17%;
         height: 480px;
         width: 400px;
@@ -708,8 +801,9 @@
         margin-left: -60px;
     }
     .carousel .list .item .content button{
-        width: 100px;
+        width: 80px;
         height: 25px;
+        font-size: 7px;
     }
 
     .thumbnail{
@@ -738,14 +832,34 @@
         font-size: 12px;
     }
 }    
+
 @media screen and (max-width: 365px){
+    .carousel{
+        width: 120vw;
+        height: 120vh;
+        overflow: hidden;
+        margin-top: -50px;
+        position: relative;
+    }
+    
+    
+    .carousel .list .item{
+        position: absolute;
+        inset: 0 0 0 0; 
+    }
+    .carousel .list .item img{
+        width: 150vw;
+        height: 100vh;
+        
+        object-fit: cover;
+    }
     .carousel .list{
         width: 450px;
     }
 
     .carousel .list .item .content{
         position: absolute;
-        margin-left: -105%;
+        margin-left: -80%;
         margin-top: -17%;
         height: 510px;
         width: 450px;
@@ -794,8 +908,9 @@
         margin-left: -60px;
     }
     .carousel .list .item .content button{
-        width: 100px;
+        width: 80px;
         height: 25px;
+        font-size: 7px;
     }
 
     .thumbnail{

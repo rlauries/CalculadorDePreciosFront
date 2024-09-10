@@ -19,7 +19,7 @@ export const ContactUs = () => {
     const handleOnClick = (mycustomer) => {
         let id = 1;
         let name = document.getElementById('name').value;    
-        let lastName = document.getElementById('lastname').value;    
+        let companyName = document.getElementById('company-Name').value;    
         let email = document.getElementById('email').value;    
         let phoneNumber = document.getElementById('phone-Number').value;    
         let address = document.getElementById('address').value;    
@@ -30,7 +30,7 @@ export const ContactUs = () => {
         mycustomer = new CustomerModelForAPI(
             id,
             name,
-            lastName,
+            companyName,
             email,
             phoneNumber,
             address,
@@ -74,18 +74,18 @@ export const ContactUs = () => {
                             id='name'
                             required
                         /> 
-                        <label for="name">Name</label>
+                        <label for="name">Full Name</label>
                 </div>
                 <div className="floating-label">
                     <input 
                         className="contact_control" 
                         placeholder="" 
                         type="text" 
-                        name='lastName'
-                        id='lastname'
-                        required
+                        name='company-Name'
+                        id='company-Name'
+                        
                     /> 
-                    <label for="lastName">Last Name</label>
+                    <label for="lastName">Company Name</label>
                 </div>
                 <div className="floating-label">
                     <input 

@@ -21,10 +21,10 @@
 .carousel .list .item .content{
     padding: 10px;
     
-    margin-left: -20px;
-    margin-top: -130px;
+    margin-left: -80px;
+    margin-top: -150px;
     position: absolute;
-    height: 950px;
+    height: 650px;
     top: 20%;
     width: 720px;
     max-width: 80%;
@@ -48,7 +48,7 @@
 }
 .carousel .list .item .content .fenceType{
     font-weight: bold;
-    font-size: 28px;
+    font-size: 22px;
     letter-spacing: 10px;
     padding-left: 15px;
     width: 700px;
@@ -58,7 +58,7 @@
     padding-left: 15px;
     font-weight: bold;
     width: 700px;
-    font-size: 4.5em;
+    font-size: 3.0em;
     list-style: none;
     color: #f1683a;
 }
@@ -72,12 +72,14 @@
 }
 .carousel .list .item .content .description li{
     margin-bottom: 25px;
+    font-size: 10px;
 }
-.carousel .list .item .content .description li div{
+.carousel .list .item .content .description li div
+{
     margin-left: 20px;
     line-height: 2;
     /* -webkit-text-stroke: 0.3px black; */
-    font-size: 14x;
+    font-size: 10x;
     font-weight: 500;
     width: 95%;
     
@@ -85,7 +87,7 @@
 }
 .carousel .list .item .content .description li h3{
     color: black;
-    font-size: 22px;
+    font-size: 14px;
     text-shadow: 0 2px 3px rgb(133, 131, 131);
     font-weight: 600;
 }
@@ -279,7 +281,7 @@
 @media screen and (max-width: 1280px) {
     .carousel .list .item .content{
         margin-left: -250px;
-        margin-top: -80px;
+        margin-top: -130px;
         position: absolute;
         height: 600px;
         width: 500px;

@@ -45,7 +45,7 @@ export const FenceList = () => {
 
     const carouselRef = useRef(null);
     const listRef = useRef(null);
-    const thumbnailRef = useRef(null);
+    //const thumbnailRef = useRef(null);
     
     // let timeRunning = 3000;
     //let runTimeOut;

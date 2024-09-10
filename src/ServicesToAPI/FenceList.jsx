@@ -47,12 +47,12 @@ export const FenceList = () => {
     const listRef = useRef(null);
     const thumbnailRef = useRef(null);
     
-    let timeRunning = 3000;
+    // let timeRunning = 3000;
     //let runTimeOut;
 
     const showSlider = () =>{
       let listItemDom = listRef.current;
-      let thumbnailDom = thumbnailRef.current;
+      
 
       let itemSlider = listItemDom.querySelectorAll('.carousel .list .item');
       // let itemThumbnail = thumbnailDom.querySelectorAll('.carousel .thumbnail .item');

@@ -1,0 +1,18 @@
+.faqs {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text inside the container */
+    margin: 50px auto; /* Center the block if it has a set width */
+    width: 400px;
+}
+
+h2{
+    font-weight: bold;
+}
+.items{
+    border-bottom: 1px solid;
+    margin: 5px;
+}
+

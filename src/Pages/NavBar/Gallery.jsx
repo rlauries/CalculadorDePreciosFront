@@ -7,7 +7,7 @@ export const Gallery = () => {
     <>
         <Header/>
         <div className="portfolio">
-            <div className="container">
+            <div className="">
                 <div className="row">
                     <div className="col-md-12 ">
                         <div className="titlepage">
@@ -106,7 +106,7 @@ export const Gallery = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="container">
+                        <div className="">
                             <div className="carousel-caption">
                                 <div className="row">
                                     <div className="col-md-3 col-sm-6">

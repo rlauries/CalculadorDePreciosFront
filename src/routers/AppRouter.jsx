@@ -7,6 +7,7 @@ import { ChainLinkFence } from '../Pages/Fences/ChainLinkFence';
 import { DuraFence } from '../Pages/Fences/DuraFence';
 import { Home } from '../Pages/NavBar/Home';
 import { Service } from '../Pages/NavBar/Service';
+import {PergolaList} from '../ServicesToAPI/PergolaList';
 
 import { Gallery } from '../Pages/NavBar/Gallery';
 import { SignUp } from '../Pages/Login-SignUp/SignUp';
@@ -25,8 +26,9 @@ export const AppRouter = () => {
               
                 <Route path="/home" element={<Home/>} />
                 <Route path="/gallery" element={<Gallery/>} />
-                <Route path="/service" element={<Service/>} /> 
+                <Route path="/fences" element={<Service/>} /> 
                 <Route path="/contactus" element={<ContactUs/>} /> 
+                <Route path="/pergolas" element={<PergolaList/>} /> 
                 
                 <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
                 <Route path="/durafence" element={<DuraFence/>} /> 

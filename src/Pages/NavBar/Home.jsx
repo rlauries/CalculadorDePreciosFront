@@ -1,7 +1,9 @@
-import React from 'react'
-import { Header } from '../Layouts/Header'
-// import { Footer } from '../Layouts/Footer'
+import React from 'react';
+import { Header } from '../Layouts/Header';
+import { FrequentlyAskQuestion } from '../Layouts/FrequentlyAskQuestion';
 import '../../Style-components/Home.css';
+import { FenceList } from '../../ServicesToAPI/FenceList';
+import { PergolasToHome } from '../Layouts/PergolasToHome';
 export const Home = () => {
   return (
     <div className='viewport'>
@@ -23,6 +25,15 @@ export const Home = () => {
                 </div>
             </div>
 
+        </section>
+        <section>
+            <PergolasToHome/>
+        </section>
+        <section>
+            <FenceList/>
+        </section>
+        <section>
+            <FrequentlyAskQuestion/>
         </section>
         {/* <!-- end banner -->
         <!-- about section --> 

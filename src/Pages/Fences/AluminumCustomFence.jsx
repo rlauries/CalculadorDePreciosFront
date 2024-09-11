@@ -126,7 +126,7 @@ export const AluminumCustomFence = () => {
                   </div>
                   <div className='lastSection'>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
+                      <button className='getQuoteButton' onClick={()=>window.location.href = "/fences"}>Return</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                     </div>
                   </div>   

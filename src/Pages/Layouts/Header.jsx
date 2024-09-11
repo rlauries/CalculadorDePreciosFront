@@ -11,9 +11,11 @@ export const Header = () => {
             <nav className='nav-bar'>
                <a href="home"> Home  </a>
                <a href="gallery">Gallery</a>
-               <a href="service">Fence/Gate</a>
+               <a href="fences">Fence/Gate</a>
+               <a className="pergolas" href="pergolas">Pergolas/Trellis</a>
                <a className='contactus' href="contactus"> Contact Us </a>
                <a href='SignUp' className='login'>Login</a> 
+
                      
             </nav>
          </div>

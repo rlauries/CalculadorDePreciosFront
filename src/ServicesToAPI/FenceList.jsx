@@ -117,7 +117,7 @@ export const FenceList = () => {
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/chainlinkfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
-                        {'<-More'}
+                        {'Next->'}
                       </button>
                       
                     </div>
@@ -166,7 +166,7 @@ export const FenceList = () => {
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/durafence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
-                        {'<-More'}
+                        {'Next->'}
                       </button>
                       
                     </div>
@@ -217,7 +217,7 @@ export const FenceList = () => {
                       <button className='getQuoteButton' onClick={()=>window.location.href = "/aluminumcustomfence"}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
-                        {'<-More'}
+                        {'Next->'}
                       </button>
                       
                     </div>

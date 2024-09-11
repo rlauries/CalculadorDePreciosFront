@@ -1,9 +1,9 @@
 @import url('normalize.css');
 
 .container-contact-form{
+  
     border: 1; 
     margin:0 auto; 
-    background-image: url("../Assets/contactus.jpg");
     padding: 10px 30px; 
     display: 'flex';
     flex-direction: 'column';
@@ -15,37 +15,34 @@
 }
 .dinamic-form-contact-form{
   
-    margin-left: 2%;
-    border: 1px solid blanchedalmond;
-    border-radius: 20px;
-    backdrop-filter: blur(50px);
+    position: absolute;
+    top: 4%px;
+    left: 4%;
+    
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-
+    border-radius: 10px;
     padding: 25px;
     display: flex; 
     flex-direction:column;
     justify-content: space-evenly;
     box-sizing: border-box;
-    height: 1290px;
+    height: 1520px;
     width: 45%;
 
 }
 .legenda-Contact-Form{
-    width: 45%;
-    margin-top: 40px;
-    margin-left: 2%;
-    margin-bottom: 30px;
+  
+    width: 60%;
+    margin-top: -40px;
+    margin-left: 20%;
+    
     padding-left: 10px;
     padding-right: 10px;
     color: #f1683a;
     text-shadow: 0 2px 3px rgb(16, 16, 16);
-    font-size: 60px;
+    font-size: 2.5em;
     font-weight: bold;
-    /* -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: black;  */
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid white;
+    
     border-radius: 20px;
     text-align: center;
 }
@@ -54,13 +51,12 @@ input{
   
 }
 label{
-    font-size: 30px;
+    font-size: 10px;
 }
 select,option{
   position: relative;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   font-weight: 600;
-  font-size:x-large;
   backdrop-filter: blur(30px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   
@@ -82,16 +78,12 @@ option{
 }
 textarea{
   position: relative;
-  margin-bottom: 1em;
-  font-weight: 600;
-  font-size:x-large;
   backdrop-filter: blur(30px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   opacity: 1;
   border-radius: 10px;
   padding: 20px;
   
-  margin: 20px;
   min-width: 50px; /* Ancho mínimo */
   background: transparent;
   border: none;
@@ -102,14 +94,14 @@ textarea{
 
 .floating-label {
     position: relative;
-    margin-bottom: 1em;
+    
     
   }
   
   .floating-label input {
     width: 100%;
     padding: 8px;
-    font-size: 27px;
+    font-size: 15px;
     border: none;
     border-bottom: 1px solid #ccc;
     outline: none;
@@ -117,7 +109,7 @@ textarea{
   
   .floating-label label {
     font-weight:normal;
-    font-size: 1.4rem;
+    font-size: 9px;
     position: absolute;
     top: 8px;
     left: 8px;
@@ -129,8 +121,8 @@ textarea{
   .floating-label input:not(:placeholder-shown) + label
   {
     top: -12px;
-    font-size: 15px;
-    color: black;
+    font-size: 10px;
+    color: green;
   }
 
   #availableHoursTime{
@@ -142,25 +134,30 @@ textarea{
     
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   }
+  .submit-form{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 1%;
+    left: 0%;
+    gap: 60px;
+  }
   
   .send_btn {
     background-color: #0b0c5c;
     background-color: #f1683a;
     text-shadow: 0 2px 3px rgb(16, 16, 16);
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 10px;
-    width: 220px;
+    width: 180px;
   }
-  .submit-button{
-    position: absolute;
-    bottom: 92%;
-  }
+ 
   
   .send_btn:active {
     transform: scale(0.9);
@@ -200,7 +197,7 @@ textarea{
   width: 95%;
   color: rgb(6, 6, 6);
   padding: 8px 10px;
-  font-size: 20px;
+  font-size: 10px;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
@@ -212,7 +209,7 @@ textarea{
 }
 .upload-file{
   height: 43px;
-  font-size: 20px;
+  font-size: 10px;
   display: flex; /*Use Flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */

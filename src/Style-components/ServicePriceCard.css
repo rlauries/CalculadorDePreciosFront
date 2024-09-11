@@ -2,10 +2,12 @@
 
 .background-container{
     width: 100vw;
-    height: 100vh;
+    height: 250vh;
     overflow: hidden;
     margin-top: -50px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     
 }
 .background-container img{
@@ -25,24 +27,24 @@
 
 .background-container .containerInside .dinamic-form{
     position: absolute;
-    top: 10%;
+    top: 3%;
     left: 4%;
     border-radius: 20px;
     
 
-    background-color: rgba(150, 155, 151, 0.5);
+    /* background-color: rgba(150, 155, 151, 0.5); */
     backdrop-filter: blur(80px);
     
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid white;
-    margin-left: 10px;
+    /* border: 1px solid white;
+    margin-left: 10px; */
     padding: 20px;
     display: flex; 
     flex-direction:column;
     justify-content: space-evenly;
     box-sizing: border-box;
     height: 850px;
-    width: 850px;
+    width: 40%;
     text-shadow: 0 2px 3px rgb(136, 129, 129);
 }
 
@@ -51,7 +53,7 @@
 .background-container .containerInside .dinamic-form input{
     
     font-weight: 600;
-    font-size: 16px;
+    font-size: 12px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -59,7 +61,7 @@
     text-align: center;
     border-radius: 10px;
     text-shadow: 0 2px 3px rgb(92, 89, 89);
-    width: 60%;
+    width: 50%;
     height: 30px;
     padding: 10px;
     margin: 0 20px;
@@ -74,14 +76,14 @@
 }
 .background-container .dinamic-form label{
     color: black;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     transform: translate(2%); 
     transition: .4s;
     height: 10px; 
     
 }
- 
+/* 
 .gate-row, 
 .tax-row, 
 .sqFeet-select-span{
@@ -89,7 +91,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     
-}   
+}    */
 
 .sqFeet-row,
 .gate-row,
@@ -110,7 +112,7 @@
     padding: 5px;
     width: 600px;
     color: #f1683a;
-    font-size: 4.5em;
+    font-size: 2.5em;
     font-weight: bold;
     
     text-align: center;
@@ -131,14 +133,14 @@ span{
     display: flex;
     justify-content: right;
     align-items: center;
-    font-size: 26px;
+    font-size: 16px;
     
 }
 /*Para los <span>*/
 .bold-text {
     
     font-weight: bold;
-    font-size: 26px; /* Ajusta el tamaño según tu preferencia */
+    font-size: 16px; /* Ajusta el tamaño según tu preferencia */
     align-items: center;
     justify-content: right;
     color: #f7fafd;
@@ -229,7 +231,7 @@ span{
     color: white;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 16px;
     border-radius: 20px;
     box-shadow: 0 5px 9px black;
     border: 1.5px solid white;
@@ -256,10 +258,7 @@ span{
 
 @media screen and (max-width: 1300px){
     .background-container{
-        
         height: 150vh;
-        
-        
     }
     
 }
@@ -379,7 +378,7 @@ span{
         justify-content: left;
         margin-top: -80px;
         margin-left: -4%;
-        width: 300px;
+        width: 350px;
     }
     .buttons{
         top: 80%;

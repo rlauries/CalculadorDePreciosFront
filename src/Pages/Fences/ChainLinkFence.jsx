@@ -4,10 +4,13 @@ import { Header } from '../Layouts/Header';
 import { PriceContext } from '../../context/PriceContext';
 import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
 import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/ServicePriceCard.css'
+import '../../Style-components/ServicePriceCard.css';
+import '../../Style-components/Contactus.css';
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import { Gates } from '../../ServicesToAPI/Gates';
 import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
+
+import { ContactForm } from '../Layouts/ContactForm';
 
 
 export const ChainLinkFence = () => {
@@ -41,10 +44,10 @@ export const ChainLinkFence = () => {
       <Header/>
 
 
-      <section className="background-container"  
+      <section className="background-container "  
                id= "chainLink-container"
       >
-          <img src="images/chainlinkfence.jpg" alt="" />
+          {/* <img src="images/chainlinkfence.jpg" alt="" /> */}
           <fieldset className='containerInside'>
                 
                     <Box sx={{display: "flex",
@@ -90,7 +93,7 @@ export const ChainLinkFence = () => {
                             </div>
                             <div className='lastSection'>
                               <div className="buttons">
-                                <button className='getQuoteButton' onClick={()=>window.location.href = "/service"}>Return</button>
+                                <button className='getQuoteButton' onClick={()=>window.location.href = "/fences"}>Return</button>
                                 <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                               </div>
                             </div>
@@ -99,7 +102,8 @@ export const ChainLinkFence = () => {
                     </Box>
                     
                 
-           </fieldset>            
+           </fieldset>     
+                 
       </section>
       
    </>

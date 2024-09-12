@@ -10,7 +10,7 @@ import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import { Gates } from '../../ServicesToAPI/Gates';
 import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
 
-import { ContactForm } from '../Layouts/ContactForm';
+
 
 
 export const ChainLinkFence = () => {

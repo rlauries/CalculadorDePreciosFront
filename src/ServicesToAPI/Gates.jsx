@@ -8,14 +8,14 @@ import '../Style-components/InsideFenceStyles.css'
 
 export const Gates = () => {
 
-    const {urlGate, setUrlGate} = useContext(PriceContext);
+    const {urlGate, setUrlGate, setNumberOfGates} = useContext(PriceContext);
   
     function handleGatesUrlOnChange(e){
         let numeroDePuertas = e.target.value;
         if(numeroDePuertas >= 0){
           let url = `https://lauries-estimate-calculator-api-d8gmadfhcvcrdzfv.eastus-01.azurewebsites.net/api/Gates/StandardDoor/${numeroDePuertas}`;
           setUrlGate(url);
-          
+          setNumberOfGates(numeroDePuertas);
         } 
         else{
           numeroDePuertas = 0;

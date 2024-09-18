@@ -10,16 +10,14 @@ import '../Style-components/ServicePriceCard.css';
 
 
 const TaxForm = () => {
-  const [stateName, setStateName] = useState('');
   const [cities, setCities] = useState([]);
-  
   const [clicked, setClicked] = useState(false);
-  let {taxRate, setTaxRate} = useContext(PriceContext);
+
+  let {taxRate, setTaxRate, stateName, setStateName} = useContext(PriceContext);
 
   const handleStateNameChange = (e) => {
     let state = e.target.value;
     setStateName(state);
-    //fetchCities(state);
     setClicked(false);
     if (state === "") {
         setTaxRate(""); // Establecer taxRate en vacío cuando el estado está vacío

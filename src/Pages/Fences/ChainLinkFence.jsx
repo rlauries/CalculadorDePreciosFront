@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Box} from '@mui/material';
 import { Header } from '../Layouts/Header';
 import { PriceContext } from '../../context/PriceContext';
@@ -9,14 +9,15 @@ import '../../Style-components/Contactus.css';
 import { TaxForm } from '../../ServicesToAPI/TaxForm';
 import { Gates } from '../../ServicesToAPI/Gates';
 import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
-
+import InvoiceModelForAPI from '../../Models/InvoiceModelForAPI';
+import { Invoice } from '../../ServicesToAPI/Invoice';
 
 
 
 export const ChainLinkFence = () => {
 
-  let {panelObject, setPanelObject, urlPanel} = useContext(PriceContext);
-  
+  let {panelObject, numberOfGates, stateName, setPanelObject, setInvoiceModel} = useContext(PriceContext);
+  const [showInvoice, setShowInvoice] = useState(false);
 
 //----- To create Chain Link Object
   function handleSqureFeetUrlOnChange(e){
@@ -32,13 +33,13 @@ export const ChainLinkFence = () => {
     }    
     
   }
-//--------Total Price-------------------------------------
-  
-  
-  
-  
-  
 
+  function handleInvoice(){
+    let invoiceObject = new InvoiceModelForAPI(panelObject, numberOfGates, stateName);
+    setInvoiceModel(invoiceObject);
+    setShowInvoice(true);
+  }
+  
   return (
     <>
       <Header/>
@@ -76,8 +77,7 @@ export const ChainLinkFence = () => {
                                 <span className='price'>
                                     <div className='text-price'>Panel Price: $&nbsp;</div>
                                     <b className="bold-text">
-                                      <ShowPanelPrice url={urlPanel} 
-                                      fenceModel={panelObject}/>
+                                      <ShowPanelPrice fenceModel={panelObject}/>
                                     </b>
                                 </span>
                                 
@@ -95,6 +95,10 @@ export const ChainLinkFence = () => {
                               <div className="buttons">
                                 <button className='getQuoteButton' onClick={()=>window.location.href = "/fences"}>Return</button>
                                 <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
+                                <button className='getQuoteButton' onClick={handleInvoice}>Download Invoice</button>
+                                <div>
+                                  {showInvoice && <Invoice />}
+                                </div>
                               </div>
                             </div>
                         </div>

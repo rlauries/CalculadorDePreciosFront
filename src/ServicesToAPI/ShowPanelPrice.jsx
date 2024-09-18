@@ -9,25 +9,25 @@ import { PriceContext } from '../context/PriceContext';
 
 
 export const ShowPanelPrice = ({ fenceModel}) => {
-  
-  
-    let {panelPrice, setPanelPrice, urlPanel} = useContext(PriceContext);
     
+  
+    let {panelPrice, setPanelPrice} = useContext(PriceContext);
+    let url = 'https://localhost:7142/api/price/PanelPrice';
 
     const fetchInfo = useCallback(() => {
       let responses = axios
-          .post(urlPanel, fenceModel)
+          .post(url, fenceModel)
           .then((response) => {
               setPanelPrice(response.data);
           })
           .catch(error => {setPanelPrice(0)});
       console.log(responses);
       return responses;
-    }, [urlPanel, fenceModel, setPanelPrice]);
+    }, [url, fenceModel, setPanelPrice]);
   
     useEffect(() => {
         fetchInfo();
-    }, [urlPanel, fetchInfo]);
+    }, [url, fetchInfo]);
 
   return (
     <div>{panelPrice.toFixed(2)}</div>

@@ -6,19 +6,29 @@ import { useEffect} from 'react';
 import axios from "axios";
 import { PriceContext } from '../context/PriceContext';
 
-var config = {
-  headers: { 'Access-Control-Allow-Origin': '*' }
-};
+
 
 export const ShowGatePrice = ({url}) => {
   
-  
     const {gatePrice, setGatePrice} = useContext(PriceContext);
     
+    const token = localStorage.getItem("token");
+    const headers = token
+        ? {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        }
+        : null;
 
-    const fetchInfo = useCallback(() => {
-      return axios
-              .get(url, config)
+    const fetchInfo = useCallback(async () => {
+      if (!headers) {
+        console.error("⚠️ No token found, skipping API request.");
+        setGatePrice(0);
+        return;
+      }
+
+      return await axios
+              .get(url, {headers})
               .then((response) => {
                 if(!isNaN(response.data)){
                   setGatePrice(response.data)
@@ -26,7 +36,10 @@ export const ShowGatePrice = ({url}) => {
                 else
                 {setGatePrice(0)};
               })
-              .catch(error => {setGatePrice(0)});
+              .catch(error => {
+                console.error("❌ API request failed:", error);
+                setGatePrice(0);
+              });
     }, [url, setGatePrice])
 
     useEffect(() => {

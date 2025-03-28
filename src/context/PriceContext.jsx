@@ -39,4 +39,5 @@ export function PriceProvider ({children})
         {children}
     </PriceContext.Provider>    
   )
+  
 }

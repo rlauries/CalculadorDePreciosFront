@@ -12,6 +12,7 @@ import {PergolaList} from '../ServicesToAPI/PergolaList';
 import { Gallery } from '../Pages/NavBar/Gallery';
 import { SignUp } from '../Pages/Login-SignUp/SignUp';
 import { ContactUs } from '../Pages/NavBar/ContactUs';
+import { Login } from '../Pages/Login-SignUp/Login';
 
 
 
@@ -33,7 +34,8 @@ export const AppRouter = () => {
                 <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
                 <Route path="/durafence" element={<DuraFence/>} /> 
                 <Route path="/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
-                <Route path="/SignUp" element={<SignUp/>} />
+                <Route path="/signUp" element={<SignUp/>} />
+                <Route path="/login" element={<Login/>} />
     
             </Routes> 
          

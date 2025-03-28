@@ -14,6 +14,14 @@ const TaxForm = () => {
   const [clicked, setClicked] = useState(false);
 
   let {taxRate, setTaxRate, stateName, setStateName} = useContext(PriceContext);
+  let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
+  const token = localStorage.getItem("token");
+  const headers = token
+    ? {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    }
+    : null;
 
   const handleStateNameChange = (e) => {
     let state = e.target.value;
@@ -23,25 +31,32 @@ const TaxForm = () => {
         setTaxRate(""); // Establecer taxRate en vacío cuando el estado está vacío
     }
   };
-     
-  const fetchCities = useCallback(() => {
-    let url = `https://localhost:7142/api/price/GetStateByShortener/${stateName}`;
-    let responses = axios.get(url)
+
+  const fetchCities = useCallback(async () => {
+    try {
+      let responses = await axios
+              .get(url, {headers})
               .then((response) => { setCities(response.data); })
-              .catch(error => { setCities("Error:" + error); });
-    console.log(responses);
-    return responses;
+              
+      console.log(responses);
+      return responses;
+
+    } catch (error) {
+      setCities("Error:" + error);
+      console.error("⚠️ API request failed:", error);
+      setTaxRate(0);
+    }
+    
   }, [stateName]);
   
   useEffect(() => {
     fetchCities();
   }, [fetchCities]);
   
-
   const fetchTaxByCity = (name) => {
     let url =`https://localhost:7142/api/price/GetStateTaxRate/${name}`;
     let responses = axios
-        .get(url)
+        .get(url, {headers})
         .then((response) =>{setTaxRate(response.data)})
         .catch(error => {setTaxRate(0)});
     return(

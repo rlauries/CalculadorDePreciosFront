@@ -13,7 +13,7 @@ export const Gates = () => {
     function handleGatesUrlOnChange(e){
         let numeroDePuertas = e.target.value;
         if(numeroDePuertas >= 0){
-          let url = `https://lauries-estimate-calculator-api-d8gmadfhcvcrdzfv.eastus-01.azurewebsites.net/api/Gates/StandardDoor/${numeroDePuertas}`;
+          let url = `https://localhost:7142/api/Gates/StandardDoor/${numeroDePuertas}`;
           setUrlGate(url);
           setNumberOfGates(numeroDePuertas);
         } 

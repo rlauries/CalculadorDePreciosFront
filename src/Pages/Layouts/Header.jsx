@@ -14,7 +14,7 @@ export const Header = () => {
                <a href="fences">Fence/Gate</a>
                <a className="pergolas" href="pergolas">Pergolas/Trellis</a>
                <a className='contactus' href="contactus"> Contact Us </a>
-               <a href='SignUp' className='login'>Login</a> 
+               <a href='login' className='login'>Login</a> 
 
                      
             </nav>

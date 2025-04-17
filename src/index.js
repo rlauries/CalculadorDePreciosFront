@@ -10,13 +10,16 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { PriceProvider } from './context/PriceContext';
+import { AuthProvider } from './context/AuthContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <PriceProvider>
-    <App/>
-  </PriceProvider>
+  <AuthProvider>
+    <PriceProvider>
+      <App/>
+    </PriceProvider>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

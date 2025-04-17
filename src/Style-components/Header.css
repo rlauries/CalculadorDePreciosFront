@@ -2,7 +2,7 @@
 .container{
 
     position: relative;
-    width: 60%;
+    width: 100vw;
     height: 50px;
     margin-left: 0px;
     display: flex;
@@ -21,7 +21,7 @@
 .flex-grow{
     flex-grow: 1;
 }
-a {
+.nav-btn{
     width: 140px;
     color:white;
     font-weight:bold ;
@@ -29,9 +29,9 @@ a {
     padding: 20px;
     justify-content: center;
     text-align: center;
-    
 }
-a:hover{
+
+.nav-btn:hover{
    
     background: white;
     color: black;
@@ -55,11 +55,15 @@ nav {
     font-weight: bold;
     padding: 20px;
 }
-.logo{
-    width: 40px;
-    border-radius: 20px;
-
+.logout{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
 }
+
+
+
+
 @media screen and (max-width: 450px){
     .container{
         width: 430px;
@@ -100,7 +104,7 @@ nav {
         width: 390px;
         
     }
-    .container .nav-bar a{
+    .container .nav-bar .nav-btn{
         width: 60px;
         
     }

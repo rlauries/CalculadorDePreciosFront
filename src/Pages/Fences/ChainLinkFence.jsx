@@ -11,6 +11,7 @@ import { Gates } from '../../ServicesToAPI/Gates';
 import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
 import InvoiceModelForAPI from '../../Models/InvoiceModelForAPI';
 import { Invoice } from '../../ServicesToAPI/Invoice';
+import { PanelPriceListener } from '../../ServicesToAPI/PanelPriceListener';
 
 
 
@@ -78,6 +79,8 @@ export const ChainLinkFence = () => {
                                     <div className='text-price'>Panel Price: $&nbsp;</div>
                                     <b className="bold-text">
                                       <ShowPanelPrice fenceModel={panelObject}/>
+                                      <PanelPriceListener/>
+                                      
                                     </b>
                                 </span>
                                 

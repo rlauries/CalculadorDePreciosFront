@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import '../../Style-components/Header.css'
 import { AuthContext } from '../../context/AuthContext'
-import { Grow } from '@mui/material';
 
 
 
@@ -24,7 +23,7 @@ export const Header = () => {
                <div className='flex-grow'> </div>
                {user ? (
                   <div className="nav-btn logout">
-                     <span className=''>Welcome, {user.username}</span>
+                     <span className='welcome-user'>Welcome, {user.username}</span>
                      <button className='logout-btn' onClick={logout}>Logout</button>
                   </div>
                ) : (

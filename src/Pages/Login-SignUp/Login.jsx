@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useContext } from 'react'
 import { Footer} from '../Layouts/Footer'
 import { Header} from '../Layouts/Header';
 
@@ -10,9 +10,11 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 import '../../Style-components/Login.css';
 import {useNavigate } from 'react-router-dom-v5-compat';
+import { AuthContext } from '../../context/AuthContext';
 
 export const Login = () => {
     const navigate = useNavigate();
+    const {login} = useContext(AuthContext);
         
     const regex = {
         username : /^[a-zA-Z0-9]+$/,
@@ -77,7 +79,8 @@ export const Login = () => {
                     
             
             submitForm();  
-            resetForm();         
+            resetForm();  
+                   
         }
         else{
             document.getElementById('form-message-error')
@@ -111,15 +114,12 @@ export const Login = () => {
             const data = await response.json();
             localStorage.setItem("token", data.token);
             localStorage.setItem("username", data.username);
-            console.log(data.token);
+            login(data.token);
             console.log("Login successful, token saved");
             navigate("/home");
         } catch (error) {
             console.error("Wrong Username or Password", error);
         }
-
-
-        
     }
     return (
         <div className="viewport">

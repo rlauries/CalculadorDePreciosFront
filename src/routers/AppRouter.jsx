@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter } from "react-router-dom";
-import { CompatRouter, Route, Routes } from "react-router-dom-v5-compat";
+import {Route, Routes } from "react-router-dom-v5-compat";
 
 import { AluminumCustomFence } from '../Pages/Fences/AluminumCustomFence'; 
 import { ChainLinkFence } from '../Pages/Fences/ChainLinkFence';
@@ -18,28 +17,21 @@ import { Login } from '../Pages/Login-SignUp/Login';
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <Routes>
+        <Route path="" element={<Home/>} />
       
-       <CompatRouter>
-          
-            <Routes>
-                <Route path="" element={<Home/>} />
-              
-                <Route path="/home" element={<Home/>} />
-                <Route path="/gallery" element={<Gallery/>} />
-                <Route path="/fences" element={<Service/>} /> 
-                <Route path="/contactus" element={<ContactUs/>} /> 
-                <Route path="/pergolas" element={<PergolaList/>} /> 
-                
-                <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
-                <Route path="/durafence" element={<DuraFence/>} /> 
-                <Route path="/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
-                <Route path="/signUp" element={<SignUp/>} />
-                <Route path="/login" element={<Login/>} />
-    
-            </Routes> 
-         
-       </CompatRouter>
-     </BrowserRouter>
+        <Route path="/home" element={<Home/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        <Route path="/fences" element={<Service/>} /> 
+        <Route path="/contactus" element={<ContactUs/>} /> 
+        <Route path="/pergolas" element={<PergolaList/>} /> 
+        
+        <Route path="/chainlinkfence" element={<ChainLinkFence/>} /> 
+        <Route path="/durafence" element={<DuraFence/>} /> 
+        <Route path="/aluminumcustomfence" element={<AluminumCustomFence/>} /> 
+        <Route path="/signUp" element={<SignUp/>} />
+        <Route path="/login" element={<Login/>} />
+
+    </Routes> 
   )
 }

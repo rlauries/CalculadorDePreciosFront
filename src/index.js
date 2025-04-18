@@ -11,15 +11,18 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { PriceProvider } from './context/PriceContext';
 import { AuthProvider } from './context/AuthContext';
+import { BrowserRouter } from 'react-router-dom-v5-compat';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AuthProvider>
-    <PriceProvider>
-      <App/>
-    </PriceProvider>
-  </AuthProvider>
+  <BrowserRouter>
+    <AuthProvider>
+      <PriceProvider>
+        <App/>
+      </PriceProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

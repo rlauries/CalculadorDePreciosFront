@@ -60,19 +60,22 @@ nav {
     width: 300px;
     display: flex;
     flex-direction: row;
+    color: white;
 }
 .logout .welcome-user{
     
     font-size: large;
+    color: white;
 }
 .logout .logout-btn{
     background: transparent;
-    color: black;
+    
     padding-left: 10px;
     font-weight: bold;
     font-size:20px;
+    color: white;
 }
-.logout:hover{
+.welcome-user:hover{
     background: white;
     color: black;
     

@@ -1,9 +1,9 @@
 import React from 'react';
 //import emailjs from '@emailjs/browser';
  
-import { Header } from '../Layouts/Header';
-import '../../Style-components/Contactus.css';
-import { ContactForm } from '../Layouts/ContactForm';
+import { Header } from '../../../componets/Header';
+import '../../../styles/Contactus.css';
+import { ContactForm } from './ContactForm';
 
 export const ContactUs = () => {
 

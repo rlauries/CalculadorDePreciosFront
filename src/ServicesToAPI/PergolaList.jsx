@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
-import '../Style-components/PergolaList.css'
-import { Header } from '../Pages/Layouts/Header';  
+import '../styles/PergolaList.css'
+import { Header } from '../componets/Header';  
 
 export const PergolaList = () => {
 

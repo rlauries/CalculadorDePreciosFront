@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from '../Layouts/Header';
-import { FrequentlyAskQuestion } from '../Layouts/FrequentlyAskQuestion';
-import '../../Style-components/Home.css';
-import { FenceList } from '../../ServicesToAPI/FenceList';
-import { PergolasToHome } from '../Layouts/PergolasToHome';
+import { Header } from '../../componets/Header';
+import { FrequentlyAskQuestion } from '../../componets/FrequentlyAskQuestion';
+import '../../styles/Home.css';
+import { FenceList } from '../../servicesToAPI/FenceList';
+import { PergolasToHome } from '../public/PergolasToHome';
 export const Home = () => {
   return (
     <div className='viewport'>

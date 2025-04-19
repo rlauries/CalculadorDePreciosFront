@@ -1,17 +1,21 @@
 import React, { useContext, useState } from 'react'
 import { Box} from '@mui/material';
-import { Header } from '../Layouts/Header';
-import { PriceContext } from '../../context/PriceContext';
-import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
-import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/ServicePriceCard.css';
-import '../../Style-components/Contactus.css';
-import { TaxForm } from '../../ServicesToAPI/TaxForm';
-import { Gates } from '../../ServicesToAPI/Gates';
-import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
-import InvoiceModelForAPI from '../../Models/InvoiceModelForAPI';
-import { Invoice } from '../../ServicesToAPI/Invoice';
-import { PanelPriceListener } from '../../ServicesToAPI/PanelPriceListener';
+import { Header } from '../../../componets/Header';
+import { PriceContext } from '../../../context/PriceContext';
+
+import { ShowPanelPrice } from '../../../servicesToAPI/ShowPanelPrice';
+
+import FenceModelForAPI from '../../../models/FenceModelForAPI';
+import '../../../styles/ServicePriceCard.css';
+import '../../../styles/AluminumCustomFence.css';
+
+import { TaxForm } from '../../../servicesToAPI/TaxForm';
+import { Gates } from '../../../servicesToAPI/Gates';
+import { TotalPrice } from '../../../servicesToAPI/TotalPrice';
+
+import InvoiceModelForAPI from '../../../models/InvoiceModelForAPI';
+import { Invoice } from '../../../servicesToAPI/Invoice';
+import { PanelPriceListener } from '../../../servicesToAPI/PanelPriceListener';
 
 
 

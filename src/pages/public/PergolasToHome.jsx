@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../Style-components/PergolasToHome.css"
+import "../../styles/PergolasToHome.css";
 
 
 export const PergolasToHome = () => {

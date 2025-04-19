@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header } from '../Layouts/Header'
-import { Footer } from '../Layouts/Footer'
+import { Header } from '../../componets/Header';
+import { Footer } from '../../componets/Footer';
 
 export const Gallery = () => {
   return (

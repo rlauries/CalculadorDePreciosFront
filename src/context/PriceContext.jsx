@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { createContext } from "react";
-import FenceModelForAPI from '../Models/FenceModelForAPI';
-import InvoiceModelForAPI from '../Models/InvoiceModelForAPI';
+import FenceModelForAPI from '../models/FenceModelForAPI';
+import InvoiceModelForAPI from '../models/InvoiceModelForAPI';
 
 export const PriceContext = createContext();
 

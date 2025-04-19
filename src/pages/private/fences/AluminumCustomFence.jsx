@@ -1,18 +1,18 @@
 import React, {useContext } from 'react'
 
-import { Header } from '../Layouts/Header';
-import { Footer } from '../Layouts/Footer';
-import { TaxForm } from '../../ServicesToAPI/TaxForm';
-import { Gates } from '../../ServicesToAPI/Gates';
-import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
+import { Header } from '../../../componets/Header';
+import { Footer } from '../../../componets/Footer';
+import { TaxForm } from '../../../servicesToAPI/TaxForm';
+import { Gates } from '../../../servicesToAPI/Gates';
+import { TotalPrice } from '../../../servicesToAPI/TotalPrice';
 
 
-import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
-import { PriceContext } from '../../context/PriceContext'; 
+import { ShowPanelPrice } from '../../../servicesToAPI/ShowPanelPrice';
+import { PriceContext } from '../../../context/PriceContext'; 
 
-import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/ServicePriceCard.css';
-import '../../Style-components/AluminumCustomFence.css';
+import FenceModelForAPI from '../../../models/FenceModelForAPI';
+import '../../../styles/ServicePriceCard.css';
+import '../../../styles/AluminumCustomFence.css';
 
 
 

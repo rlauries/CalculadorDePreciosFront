@@ -1,13 +1,15 @@
 import React, {useContext } from 'react'
-import { PriceContext } from '../../context/PriceContext';
-import { Header } from '../Layouts/Header';
-import { Gates } from '../../ServicesToAPI/Gates';
-import { ShowPanelPrice } from '../../ServicesToAPI/ShowPanelPrice';
-import { TaxForm } from '../../ServicesToAPI/TaxForm';
-import FenceModelForAPI from '../../Models/FenceModelForAPI';
-import '../../Style-components/ServicePriceCard.css'
-import '../../Style-components/DuraFence.css';
-import { TotalPrice } from '../../ServicesToAPI/TotalPrice';
+
+import { PriceContext } from '../../../context/PriceContext'; 
+import { Header } from '../../../componets/Header';
+import { Gates } from '../../../servicesToAPI/Gates';
+import { ShowPanelPrice } from '../../../servicesToAPI/ShowPanelPrice';
+import { TaxForm } from '../../../servicesToAPI/TaxForm';
+import FenceModelForAPI from '../../../models/FenceModelForAPI';
+import '../../../styles/ServicePriceCard.css';
+import '../../../styles/DuraFence.css';
+
+import { TotalPrice } from '../../../servicesToAPI/TotalPrice';
 
  
 

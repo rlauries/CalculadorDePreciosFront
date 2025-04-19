@@ -1,16 +1,16 @@
 
 import React, { useContext } from 'react'
-import { Footer} from '../Layouts/Footer'
-import { Header} from '../Layouts/Header';
+import { Footer} from '../../../componets/Footer'
+import { Header} from '../../../componets/Header';
 
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-import '../../Style-components/Login.css';
+import '../../../styles/Login.css';
 import {useNavigate } from 'react-router-dom-v5-compat';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../../context/AuthContext';
 
 export const Login = () => {
     const navigate = useNavigate();

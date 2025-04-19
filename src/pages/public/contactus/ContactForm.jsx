@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import InputMask from 'react-input-mask';
-import { UploadFile } from '../Layouts/UploadFile';
-import  CustomerModelForAPI  from '../../Models/CustomerModelForAPI';
-import '../../Style-components/Contactus.css';
+import { UploadFile } from './UploadFile';
+import  CustomerModelForAPI  from '../../../models/CustomerModelForAPI';
+import '../../../styles/Contactus.css';
 import axios from 'axios';
 
 export const ContactForm = () => {

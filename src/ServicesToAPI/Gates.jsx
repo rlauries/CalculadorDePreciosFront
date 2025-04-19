@@ -2,8 +2,8 @@ import React from 'react'
 import { ShowGatePrice } from './ShowGatePrice';
 import { useContext } from 'react';
 import { PriceContext } from '../context/PriceContext';
-import '../Style-components/ServicePriceCard.css';
-import '../Style-components/InsideFenceStyles.css'
+import '../styles/ServicePriceCard.css';
+import '../styles/InsideFenceStyles.css'
 
 
 export const Gates = () => {

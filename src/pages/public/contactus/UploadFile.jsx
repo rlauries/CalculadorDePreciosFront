@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {BlobServiceClient} from '@azure/storage-blob'; 
-import '../../Style-components/Contactus.css';
+import '../../../styles/Contactus.css';
 
 export const UploadFile = () => {
   

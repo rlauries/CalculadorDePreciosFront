@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import '../../Style-components/Header.css'
-import { AuthContext } from '../../context/AuthContext'
+import '../styles/Header.css'
+import { AuthContext } from '../context/AuthContext';
 
 
 

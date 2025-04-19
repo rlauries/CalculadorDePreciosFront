@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { PriceContext } from '../context/PriceContext';
-import '../Style-components/ServicePriceCard.css'
+import '../styles/ServicePriceCard.css'
 
 export const TotalPrice = () => {
     let {taxRate, gatePrice, panelPrice,} = useContext(PriceContext);

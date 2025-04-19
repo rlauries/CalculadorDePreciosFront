@@ -83,8 +83,8 @@
     height: 10px; 
     
 }
-/* 
-.gate-row, 
+
+/* .gate-row, 
 .tax-row, 
 .sqFeet-select-span{
     border-bottom: 2px solid black;
@@ -207,10 +207,7 @@ span{
     height: 200px;
     
 }
-/* .sqFeet-select-span{
-    display: flex;
-    flex-direction: row;
-} */
+
 
 
 .totalPrice{

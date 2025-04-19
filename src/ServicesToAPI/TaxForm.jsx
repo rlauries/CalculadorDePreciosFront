@@ -6,7 +6,7 @@ import { PriceContext } from '../context/PriceContext';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import NorthWestOutlinedIcon from '@mui/icons-material/NorthWestOutlined';
 
-import '../Style-components/ServicePriceCard.css';
+import '../styles/ServicePriceCard.css';
 
 
 const TaxForm = () => {

@@ -1,7 +1,6 @@
 import React from 'react'
-import { Header } from '../Layouts/Header';
-// import { Footer } from '../Layouts/Footer';
-import { FenceList } from '../../ServicesToAPI/FenceList';
+import { Header } from '../../componets/Header';
+import { FenceList } from '../../servicesToAPI/FenceList';
 
 export const Service = () => {
   return (

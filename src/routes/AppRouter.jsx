@@ -28,7 +28,6 @@ export const AppRouter = () => {
             <Route path="/signUp" element={<SignUp/>} />
             <Route path="/login" element={<Login/>} />
         {/* Private */}
-      
             <Route path="/chainlinkfence" element={
               <PrivateRoute>
                 <ChainLinkFence/>

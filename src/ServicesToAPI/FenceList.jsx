@@ -2,6 +2,7 @@
 
   import '../styles/FenceList.css';
   import '../styles/ServicePriceCard.css';
+import { useNavigate } from 'react-router-dom-v5-compat';
 
 export const FenceList = () => {
   
@@ -43,6 +44,7 @@ export const FenceList = () => {
     // let listItemDom = document.querySelector('.carousel .list')
     // let thumbnailDom = document.querySelector('.carousel .thumbnail')        
 
+    const navigate = useNavigate();
     const carouselRef = useRef(null);
     const listRef = useRef(null);
     //const thumbnailRef = useRef(null);
@@ -114,7 +116,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/chainlinkfence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={() => navigate('/chainlinkfence')}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
                         {'Next->'}
@@ -163,7 +165,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/durafence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={() => navigate('/durafence')}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
                         {'Next->'}
@@ -214,7 +216,7 @@ export const FenceList = () => {
                       </ul>
                     </div>
                     <div className="buttons">
-                      <button className='getQuoteButton' onClick={()=>window.location.href = "/aluminumcustomfence"}>Get Quote</button>
+                      <button className='getQuoteButton' onClick={() => navigate('/aluminumcustomfence')}>Get Quote</button>
                       <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
                       <button id='next' className='next' onClick={showSlider}>
                         {'Next->'}

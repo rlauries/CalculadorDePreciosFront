@@ -11,16 +11,24 @@ export const Header = () => {
     return (
       <header className='container'>
          <div>
-            <img src="images/logo.jpg" className='logo'  alt="" />
-         </div>
-         <div>
             <nav className='nav-bar'>
+               <img className='logo' src="images/logo.jpg" alt="" />
                <a className='nav-btn' href="home"> Home  </a>
-               <a className='nav-btn'href="gallery">Gallery</a>
-               <a className='nav-btn'href="fences">Fence/Gate</a>
-               <a className='nav-btn pergolas' href="pergolas">Pergolas/Trellis</a>
-               <a className='nav-btn contactus' href="contactus"> Contact Us </a>
+               <a className='nav-btn' href="gallery">Gallery</a>
+
+               {/* Services Dropdown */}
+               <div className="nav-btn dropdown">
+                  <span className="dropbtn">Services</span>
+                  <div className="dropdown-content">
+                     <a href="fences">Fence/Gate</a>
+                     <a href="pergolas">Pergolas/Trellis</a>
+                  </div>
+               </div>
+
+               <a className='nav-btn contactus' href="contactus">Contact Us</a>
+
                <div className='flex-grow'> </div>
+
                {user ? (
                   <div className="nav-btn logout">
                      <span className='welcome-user'>Welcome, {user.username}</span>
@@ -29,8 +37,8 @@ export const Header = () => {
                ) : (
                   <a href='login' className='nav-btn login'>Login</a>
                )}
-                     
             </nav>
+
          </div>
          
 

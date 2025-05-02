@@ -1,0 +1,75 @@
+.hero-image{
+  height: 400px;
+}
+.service-type{
+  display: flex;
+  width: 60%;
+  margin-left: 20%;
+  gap: 30px;
+  
+}
+.service-type .text{
+  margin-left: 30px;
+}
+.service-type .text label{
+  font-size: 20px;
+  font-weight: bold;
+  height: 20px;
+}
+.service-type .text p{
+  font-size: 12px;
+
+}
+.service-type strong{
+  color: #f1683a;
+}
+
+.service-type .fence {
+  width: 100%;
+  
+}
+.service-type .pergola {
+  width: 100%;
+}
+.service-type button{
+  border-bottom:2px solid #f1683a;
+  background: none;
+  cursor: pointer;
+  margin: 6% 10%;
+  font-weight: bold;
+}
+
+.gallery-section {
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 100px;
+    width: 80%;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .gallery-card {
+    text-align: center;
+  }
+  .gallery-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+  }
+  
+  .pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .pagination-controls button {
+    padding: 8px 16px;
+  }
+  

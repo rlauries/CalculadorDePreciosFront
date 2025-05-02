@@ -1,0 +1,57 @@
+
+.design-tailored-card {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #f5f5f5; /* Color de fondo opcional */
+  }
+  
+  .design-tailored-card .banner-image {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .second-banner-info {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenido a la izquierda del contenedor */
+    color: #000;
+  }
+  
+  .second-banner-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f1683a;
+    font-weight: bold;
+  }
+  
+  .second-banner-info p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .second-banner-button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    background-color: #f1683a;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  
+    letter-spacing: 3px;
+    text-shadow: 0 2px 3px rgb(12, 11, 11);
+  }
+  
+  .design-tailored-card .second-banner-button:hover {
+    background-color: #333;
+  }

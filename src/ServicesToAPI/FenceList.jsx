@@ -1,270 +1,85 @@
-  import React, { useRef} from 'react';
-
-  import '../styles/FenceList.css';
-  import '../styles/ServicePriceCard.css';
-import { useNavigate } from 'react-router-dom-v5-compat';
+import React, { useState, useEffect} from 'react';
+import '../styles/FenceList.css';
+import { DesignTailorCard } from '../componets/DesignTailorCard';
+  
 
 export const FenceList = () => {
-  
-    // const [fenceList, setFenceList] = useState([]);
-
-    // const fenceListDB = async () => {
-    //     const data = await fetch('https://localhost:7142/api/fence/fenceList');
-    //     const fences = await data.json();
-    //     setFenceList(fences);
-    // }
- 
-    // useEffect( () => {
-    //     fenceListDB()
-    // }, []);
-
-    //    fenceList.map(f =>(
-            //     <div className="item" >
-            //         <div id="ho_color" className="service_box">
-            //             <img src={`images/${f.nameId}.jpg`} alt="#"/>
-            //             <div className="content">
-            //                 <a className='fenceType' href={`/${f.nameId}`}><h3>{`${f.name}`} Fence</h3></a>
-            //                 <p>
-            //                     <b className='size'>Size: 
-            //                     </b> 
-            //                     {`${f.size}`}
-            //                     <br/>
-            //                     <b className='installation'>Installation:
-            //                     </b>  
-            //                     {`${f.installation}`}
-            //                 </p>
-            //             </div>
-                        
-                        
-            //         </div>
-            //     </div>        
-            //    ))
-    // let nextDom = document.getElementById('next');
-    // let carouselDom = document.getElementById('carousel');
-    // let listItemDom = document.querySelector('.carousel .list')
-    // let thumbnailDom = document.querySelector('.carousel .thumbnail')        
-
-    const navigate = useNavigate();
-    const carouselRef = useRef(null);
-    const listRef = useRef(null);
-    //const thumbnailRef = useRef(null);
+    const [fences, setFences] = useState([]);
+    const [selectedFence, setSelectedFence] = useState(null);
+    const [showModal, setShowModal] = useState(false);
     
-    // let timeRunning = 3000;
-    //let runTimeOut;
-
-    const showSlider = () =>{
-      let listItemDom = listRef.current;
-      
-
-      let itemSlider = listItemDom.querySelectorAll('.carousel .list .item');
-      // let itemThumbnail = thumbnailDom.querySelectorAll('.carousel .thumbnail .item');
-      
-      
-      listItemDom.appendChild(itemSlider[0]);
-      // thumbnailDom.appendChild(itemThumbnail[0]);
-      carouselRef.current.classList.add('next');
-      
-      //  (runTimeOut);
-      // runTimeOut = setTimeout(() => {
-      //   carouselRef.current.classList.remove('next');
-      // }, timeRunning)
-
-    
+    const OpenModal = (fences) => {
+      setSelectedFence(fences);
+      setShowModal(true);
+    };
+    const CloseModal = () => {
+      setSelectedFence(null);
+      setShowModal(false);
     }
-
-  return (
     
-    <div className='carousel' id='carousel' ref={carouselRef}>
-        <div className='list' ref={listRef}>
-            <div className="item">
-                <img src="images/chainlinkfence.jpg" alt="" />
-                <div className="content">
-                    <div className="fenceType">Type Of Fence</div>
-                    <div className='fenceName'>Chain Link </div>
-                    <div className='description'>
-                      <ul>
-                        <li>
-                            <h3>Overview:</h3>
-                            <div>
-                               • A chain link fence is a versatile and cost-effective fencing option that provides robust security and durability for a wide range of applications. Whether for residential, commercial, or industrial use, chain link fences offer a reliable solution to keep your property safe and secure.
-                            </div>
-                            </li>
-                        <li>
-                            <h3>Durability:</h3>
-                            <div>
-                            • Made from high-quality galvanized steel, chain link fences are designed to withstand harsh weather conditions and resist corrosion.
-                            </div>
-                        </li>
-                        <li>
-                          <h3>Versatility:</h3>
-                          <div>
-                            • Ideal for a variety of applications including residential yards, sports fields, playgrounds, schools, parks, industrial areas, and construction sites.
-                        </div>
-                          </li>
-                        <li>
-                          <h3>Low Maintenance:</h3>
-                          <div>
-                            • Requires minimal upkeep compared to other fencing materials.
-                          </div>
-                          </li>
-                        <li>
-                          <h3>Aesthetic Options:</h3>
-                          <div>
-                            • Available in different coatings and colors, including the classic silver galvanized finish and colored vinyl coatings such as black or green to blend with the environment or match your property’s aesthetic.
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="buttons">
-                      <button className='getQuoteButton' onClick={() => navigate('/chainlinkfence')}>Get Quote</button>
-                      <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                      <button id='next' className='next' onClick={showSlider}>
-                        {'Next->'}
-                      </button>
-                      
-                    </div>
-                </div>
-            </div>
-            <div className="item">
-                <img src="images/durafence.jpg" alt="" />
-                <div className="content">
-                    <div className="fenceType">Type Of Fence</div>
-                    <div className='fenceName'>DuraFence </div>
-                    <div className='description'>
-                      <ul>
-                        <li>
-                          <h3>Overview:</h3>
-                          <div>
-                            • Dura Fence is the ultimate fencing solution designed to offer unmatched strength, durability, and aesthetic appeal. Ideal for both residential and commercial applications, Dura Fence provides a secure and stylish boundary that stands the test of time.
-                          </div>
-                          </li>
-                        <li>
-                          <h3>Durability:</h3>
-                          <div>
-                            • Constructed from high-grade, heavy-duty galvanized steel panels and posts, Dura Fence is built to withstand extreme weather conditions, including strong winds, heavy rain, and intense sunlight.
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Security:</h3>
-                          <div>
-                            • The robust steel construction provides a formidable barrier that deters unauthorized access and enhances the security of your property.
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Low Maintenance:</h3>
-                          <div>
-                          • The galvanized and coated steel panels require minimal upkeep.
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Aesthetic Options:</h3>
-                          <div>
-                            • Combines functionality with aesthetics, featuring a sleek, modern design that complements any property.
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="buttons">
-                      <button className='getQuoteButton' onClick={() => navigate('/durafence')}>Get Quote</button>
-                      <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                      <button id='next' className='next' onClick={showSlider}>
-                        {'Next->'}
-                      </button>
-                      
-                    </div>
-                </div>
-            </div>
-            <div className="item">
-                <img src="images/aluminumcustomfence.jpg" alt="" />
-                <div className="content">
-                    <div className="fenceType">Type Of Fence</div>
-                    <div className='fenceName'>Aluminum Custom  </div>
-                    <div className='description'>
-                      <ul>
-                        <li>
-                          <h3>Overview:</h3>
-                          <div>
-                            • Elevate Your Property with Style and Functionality. Crafted with precision engineering and high-quality materials, our modern fencing solution offers a sleek aesthetic that enhances the beauty of any property while providing unmatched strength and longevity.
-                          </div>
-                        </li>
-                        
-                        <li>
-                          <h3>Sleek and Stylish Design:</h3>
-                          <div>
-                            • Boasts clean lines, minimalist profiles, and sleek finishes, adding a touch of elegance and sophistication to your outdoor space.
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Weather-Resistant:</h3>
-                          <div>
-                            • The corrosion-resistant properties of aluminum ensure that your fence maintains its pristine appearance for years to come with minimal maintenance required.
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Low Maintenance:</h3>
-                          <div>
-                            • Our aluminum modern fences are resistant to rust, rot, and corrosion
-                          </div>
-                        </li>
-                        <li>
-                          <h3>Versatile Customization:</h3>
-                          <div>
-                            • Tailor your Aluminum Modern Fence to suit your unique preferences with a variety of design options, including different heights, panel widths, and color choices.
-                          </div>
-                        </li>
-                        
-                      </ul>
-                    </div>
-                    <div className="buttons">
-                      <button className='getQuoteButton' onClick={() => navigate('/aluminumcustomfence')}>Get Quote</button>
-                      <button className='contactUsButton' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                      <button id='next' className='next' onClick={showSlider}>
-                        {'Next->'}
-                      </button>
-                      
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-
-
-        {/* ...thumbnail... */}
-        {/* <div className='thumbnail' ref={thumbnailRef}>
-            <div className="item">
-              <a href="/durafence">
-                <img src="images/durafence.jpg" alt="" />
-                <div className="content">
-                    <div className='fenceName'>DuraFence </div>
-                </div>
-              </a>  
-            </div>
-            <div className="item">
-              <a href="/aluminumcustomfence">
-                <img src="images/aluminumcustomfence.jpg" alt="" />
-                <div className="content">
-                    <div className='fenceName'>Aluminum Custom</div>
-                </div>
-              </a>  
-            </div>
-            <div className="item">
-              <a href="/chainlinkfence">
-                <img src="images/chainlinkfence.jpg" alt="" />
-                <div className="content">
-                    <div className='fenceName'>Chain Link </div>
-                </div>
-              </a>
-            </div>
-        </div>
-        {/* ...arrows... */}
+    useEffect(() => {
+      
+      const fetchFences = async () => {
+        try {
+          const response = await fetch("https://localhost:7142/api/FencePanel/list");
+          if (!response.ok) throw new Error("Failed to fetch fences");
+          const data = await response.json();
+          setFences(data);
         
-        {/* <div className="arrows">
-          <button id='next' className='next' onClick={showSlider}>
-            {'<-More'}
-          </button>
-        </div> */}
-         
-    </div>
+        } catch (error) {
+          console.error("Error loading fences:", error);
+        } 
+      };
+
+      fetchFences();
+      
+    }, []);
+  return (
+    <>
+      
+      <div>
+        <img className='hero-image' src="images/Protecte-the-moment-you-love.webp" alt="HeroBanner" />
+      </div>
+      <div className="section-title">
+        <h2>Explore Our Fence Designs</h2>
+        <p className="subtitle">
+        We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.
+        </p>
+      </div>
+      <div className="fence-list-grid">
+        {fences.map((item) => (
+          <div className="fence-card" key={item.id}>
+            <div className="fence-image" onClick={() => OpenModal(item)}>
+              {item.imageUrl ? (
+                <div className="image-wrapper">
+                  <img src={`https://localhost:7142${item.imageUrl}`} alt="" />
+                  <div className="image-label">{item.name}</div>
+                </div>
+              ) : (
+                <div className="no-image">No Image</div>
+              )}      
+            </div>
+            
+          </div>
+        ))}
+      </div>
+      {showModal && setSelectedFence && (
+        <div className="modal-overlay" onClick={CloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={CloseModal}>×</button>
+            <h2>{selectedFence.name}</h2>
+            <img src={`https://localhost:7142${selectedFence.imageUrl}`} alt="" />
+            <p><strong>Overview:</strong>{selectedFence.overview}</p>
+            <p><strong>Durability:</strong>{selectedFence.durability}</p>
+            <p><strong>Versatility:</strong>{selectedFence.versatility}</p>
+            <p><strong>Maintenance:</strong>{selectedFence.maintenance}</p>
+            <p><strong>Aesthetic Options:</strong>{selectedFence.aestheticOptions}</p>
+          </div>
+        </div>
+      )}
+      <div>
+        <DesignTailorCard/>
+      </div>
+    </>
   )
 };

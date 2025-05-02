@@ -1,0 +1,33 @@
+
+
+.pergolas-to-home {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .pergolas-to-home h2 {
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .slider-img {
+    padding: 10px;
+  }
+  
+  .slider-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .slider-img img:hover {
+    transform: scale(1.02);
+  }
+  

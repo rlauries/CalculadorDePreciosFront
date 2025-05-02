@@ -3,7 +3,9 @@ import { Header } from '../../componets/Header';
 import { FrequentlyAskQuestion } from '../../componets/FrequentlyAskQuestion';
 import '../../styles/Home.css';
 import { FenceList } from '../../servicesToAPI/FenceList';
-import { PergolasToHome } from '../public/PergolasToHome';
+import { PergolaSlider } from '../../componets/PergolaSlider';
+import { FenceSlider } from '../../componets/FenceSlider';
+
 export const Home = () => {
   return (
     <div className='viewport'>
@@ -27,11 +29,36 @@ export const Home = () => {
 
         </section>
         <section>
-            <PergolasToHome/>
+            <PergolaSlider/>
+        </section>
+        <section className='third-banner-container'>
+            <span className='third-banner'>
+                <div className="third-banner-text">
+                    <p>
+                        Engineered for performance. Built to last. Designed to impress.
+                    </p>
+                </div>
+                <div className="third-banner-button-wrapper">
+                    <button className='third-banner-button' onClick={() => window.location.href = "/contactus"}>
+                        Contact Us
+                    </button>
+                </div>
+            </span>
         </section>
         <section>
-            <FenceList/>
+            <FenceSlider/>
         </section>
+        <div className='forth-banner'>
+            <span className='info'>
+                <h2>Personalized Service <strong>|</strong></h2>
+                
+                <p>
+                    From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
+                </p>
+            </span>
+            
+            <img src="images/workers-banner.jpg" alt="" />
+        </div>
         <section>
             <FrequentlyAskQuestion/>
         </section>

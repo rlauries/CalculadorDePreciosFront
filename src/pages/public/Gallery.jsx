@@ -1,162 +1,104 @@
-import React from 'react'
-import { Header } from '../../componets/Header';
-import { Footer } from '../../componets/Footer';
+import React, { useEffect, useState } from 'react';
+import '../../styles/Gallery.css';
+import {Header} from '../../componets/Header.jsx';
 
 export const Gallery = () => {
+  const [gallery, setGallery] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [serviceTypeId, setServiceTypeId] = useState(0);
+
+  const fetchGallery = async (pageNumber) => {
+    try {
+      const response = await fetch(
+        `https://localhost:7142/api/gallery/list?serviceTypeId=${serviceTypeId}&page=${pageNumber}`
+      );
+      if (!response.ok) throw new Error('Failed to load gallery');
+
+      const data = await response.json();
+      setGallery(data.items);
+      setPage(data.currentPage);
+      setTotalPages(data.totalPages);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  const switchService = () => {
+        if(serviceTypeId === 2 || serviceTypeId === 0 )  
+        {
+            setServiceTypeId(1)
+            setPage(1)
+        }    
+        else if(serviceTypeId === 1 || serviceTypeId === 0 )  
+        {
+            setServiceTypeId(2)
+            setPage(1)
+        }    
+  };
+
+  useEffect(() => {
+    fetchGallery(page);
+  }, [page, serviceTypeId]);
+
+  const nextPage = () => {
+    if (page < totalPages) setPage(page + 1);
+  };
+
+  const prevPage = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
   return (
     <>
         <Header/>
-        <div className="portfolio">
-            <div className="">
-                <div className="row">
-                    <div className="col-md-12 ">
-                        <div className="titlepage">
-                            <h2><strong className="yellow">PORTFOLIO</strong><br/> Lauries Welding Group Gallery</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="myCarousel" className="carousel slide portfolio_Carousel " data-ride="carousel">
-                <ol className="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="container">
-                            <div className="carousel-caption ">
-                                <div className="row">
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/CableRailing.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/PicketRail.jpeg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/glassRail.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/horizontalRodRail.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="container">
-                            <div className="carousel-caption">
-                                <div className="row">
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/indoorAluminumStair.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/aluminumWood.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/floatingStair.jpeg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/dobleSideSteel.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="">
-                            <div className="carousel-caption">
-                                <div className="row">
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/SteelPergola.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/aluminumWoodPergola.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/crossBarPergola.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 col-sm-6">
-                                        <div className="portfolio_img">
-                                            <img src="images/insulatedRoof.jpg" alt="#" />
-                                            <div className="middle">
-                                            <div className="text2">View More</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                    <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                </a>
-                <a className="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                </a>
-            {/* ----------------- */}
-            </div>
+        <div>
+            <img className='hero-image' src="images/Gallery-Banner.webp" alt="HeroBanner" />
         </div>
-        <Footer/>
+        <div className='service-type'>
+            <div className="fence">
+                <div className='text'>
+                    <label >
+                        Fences<strong> | </strong>
+                    </label>
+                    <p>A Showcase of Style & Strength</p>
+                </div>
+                <img src="images/fence-wood-lights.jpg" alt="" />
+                <button onClick={() => {switchService()}}>Display More</button>
+            </div>
+            <div className="pergola">
+                <div className="text">
+                    <label>
+                        Pergolas<strong> | </strong>
+                    </label>
+                    <p>Elevate Your Outdoors</p>
+                </div>
+                <img src="images/big-britgt-pergola.webp" alt="" />
+                <button onClick={() => {switchService()}}>Display More</button>
+            </div>
+            
+        </div>
+        {serviceTypeId !== 0 && (
+            <div className="gallery-section">
+                <h2>Service Gallery</h2>
+                <div className="gallery-grid">
+                    {gallery.map((img, index) => (
+                    <div key={index} className="gallery-card">
+                        <img src={`https://localhost:7142${img .imageUrl}`} alt={img.name} />
+                        <p>{img.name}</p>
+                    </div>
+                    ))}
+                </div>
+
+                <div className="pagination-controls">
+                    <button onClick={prevPage} disabled={page === 1}>← Prev</button>
+                    <span>Page {page} of {totalPages}</span>
+                    <button onClick={nextPage} disabled={page === totalPages}>Next →</button>
+                </div>
+            </div>
+        )}
+        
     </>
-  )
-}
+    
+  );
+};

@@ -9,10 +9,12 @@
     align-items: center;
     align-content: space-evenly;
     z-index: 100;
-    background-color: rgba(4, 15, 61, 0.3);
-    backdrop-filter: blur(20px);
+    background-color: black;
+    /* background-color: rgba(4, 15, 61, 0.3);
+    backdrop-filter: blur(20px); */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    width: 100%;
 }
 
 .flex-grow {
@@ -48,6 +50,7 @@ nav {
     font-size: 14px;
     color: black;
     line-height: 10px;
+    width: 100%;
 }
 
 .login {
@@ -104,7 +107,7 @@ nav {
     color: white;
     font-weight: bold;
     padding: 20px;
-    width: 140px;
+    width: 150px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease;

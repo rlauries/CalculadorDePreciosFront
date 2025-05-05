@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import '../styles/FenceList.css';
-import { DesignTailorCard } from '../componets/DesignTailorCard';
+import { DesignTailorCard } from '../componets/DesignTailorCard/DesignTailorCard.jsx';
   
 
 export const FenceList = () => {
@@ -38,7 +38,7 @@ export const FenceList = () => {
     <>
       
       <div>
-        <img className='hero-image' src="images/Protecte-the-moment-you-love.webp" alt="HeroBanner" />
+        <img className='hero-image' src="images/Protecte-the-moment-you-love.png" alt="HeroBanner" />
       </div>
       <div className="section-title">
         <h2>Explore Our Fence Designs</h2>

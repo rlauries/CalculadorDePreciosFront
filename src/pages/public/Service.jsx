@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../componets/Header';
+import { Header } from '../../componets/Header/Header';
 import { FenceList } from '../../servicesToAPI/FenceList';
 
 export const Service = () => {

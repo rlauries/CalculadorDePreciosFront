@@ -1,7 +1,7 @@
 import React, {useContext } from 'react'
 
 import { PriceContext } from '../../../context/PriceContext'; 
-import { Header } from '../../../componets/Header';
+import { Header } from '../../../componets/Header/Header';
 import { Gates } from '../../../servicesToAPI/Gates';
 import { ShowPanelPrice } from '../../../servicesToAPI/ShowPanelPrice';
 import { TaxForm } from '../../../servicesToAPI/TaxForm';

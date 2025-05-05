@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/PergolaList.css'; // si quieres agregar estilos aparte
-import { Header } from '../componets/Header';
-import { DesignTailorCard } from '../componets/DesignTailorCard';
+import { Header } from '../componets/Header/Header';
+import { DesignTailorCard } from '../componets/DesignTailorCard/DesignTailorCard';
 
 export const PergolaList = () => {
   const [pergolas, setPergolas] = useState([]);

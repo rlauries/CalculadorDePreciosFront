@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Box} from '@mui/material';
-import { Header } from '../../../componets/Header';
+import { Header } from '../../../componets/Header/Header';
 import { PriceContext } from '../../../context/PriceContext';
 
 import { ShowPanelPrice } from '../../../servicesToAPI/ShowPanelPrice';

@@ -9,7 +9,7 @@ import { Service } from '../pages/public/Service';
 import {PergolaList} from '../servicesToAPI/PergolaList';
 import { Gallery } from '../pages/public/Gallery';
 import { SignUp } from '../pages/public/login-signup/SignUp';
-import { ContactUs } from '../pages/public/contactus/ContactUs';
+import { ContactUs } from '../pages/public/ContactUs';
 import { Login } from '../pages/public/login-signup/Login';
 // import { PrivateRoute } from './PrivateRoute';
 

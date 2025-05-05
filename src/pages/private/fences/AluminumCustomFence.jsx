@@ -1,6 +1,6 @@
 import React, {useContext } from 'react'
 
-import { Header } from '../../../componets/Header';
+import { Header } from '../../../componets/Header/Header.jsx';
 import { Footer } from '../../../componets/Footer';
 import { TaxForm } from '../../../servicesToAPI/TaxForm';
 import { Gates } from '../../../servicesToAPI/Gates';

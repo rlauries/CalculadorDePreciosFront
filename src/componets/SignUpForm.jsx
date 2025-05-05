@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import InputMask from 'react-input-mask';
-import { UploadFile } from './UploadFile';
-import  CustomerModelForAPI  from '../../../models/CustomerModelForAPI';
+import { UploadFile } from '../pages/public/contactus/UploadFile';
+import  CustomerModelForAPI  from '../models/CustomerModelForAPI';
 import '../../../styles/Contactus.css';
 import axios from 'axios';
 
-export const ContactForm = () => {
+export const SignUpForm = () => {
     let [setCustomerFromDb] = useState(''); 
     
     //Create object from ContactForm View

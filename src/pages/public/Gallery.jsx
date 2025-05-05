@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/Gallery.css';
-import {Header} from '../../componets/Header.jsx';
+import {Header} from '../../componets/Header/Header.jsx';
 
 export const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [serviceTypeId, setServiceTypeId] = useState(0);
+  //modal
+  const [selecteImage, setSelecteImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
 
   const fetchGallery = async (pageNumber) => {
     try {
@@ -48,12 +52,20 @@ export const Gallery = () => {
   const prevPage = () => {
     if (page > 1) setPage(page - 1);
   };
+  const OpenModal = (image) => {
+    setSelecteImage(image);
+    setShowModal(true);
+  }
+  const ClosedModal = () => {
+    setSelecteImage(null);
+    setShowModal(false);
+  };
 
   return (
     <>
         <Header/>
         <div>
-            <img className='hero-image' src="images/Gallery-Banner.webp" alt="HeroBanner" />
+            <img className='hero-image' src="images/Hero-Gallery-02.png" alt="HeroBanner" />
         </div>
         <div className='service-type'>
             <div className="fence">
@@ -83,7 +95,7 @@ export const Gallery = () => {
                 <h2>Service Gallery</h2>
                 <div className="gallery-grid">
                     {gallery.map((img, index) => (
-                    <div key={index} className="gallery-card">
+                    <div key={index} className="gallery-card" onClick={()=>{OpenModal(img)}}>
                         <img src={`https://localhost:7142${img .imageUrl}`} alt={img.name} />
                         <p>{img.name}</p>
                     </div>
@@ -96,6 +108,15 @@ export const Gallery = () => {
                     <button onClick={nextPage} disabled={page === totalPages}>Next →</button>
                 </div>
             </div>
+        )}
+        {showModal && setSelecteImage && (
+          <div className='modal-overlay' onClick={ClosedModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className='close-button' onClick={ClosedModal}>×</button>
+              <img src={`https://localhost:7142${selecteImage.imageUrl}`} alt="" />
+              <p><strong>{selecteImage.name}</strong></p>
+            </div>
+          </div>
         )}
         
     </>

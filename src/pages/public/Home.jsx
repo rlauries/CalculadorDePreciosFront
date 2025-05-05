@@ -1,10 +1,9 @@
 import React from 'react';
-import { Header } from '../../componets/Header';
-import { FrequentlyAskQuestion } from '../../componets/FrequentlyAskQuestion';
+import { Header } from '../../componets/Header/Header';
+import { FrequentlyAskQuestion } from '../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion';
 import '../../styles/Home.css';
-import { FenceList } from '../../servicesToAPI/FenceList';
-import { PergolaSlider } from '../../componets/PergolaSlider';
-import { FenceSlider } from '../../componets/FenceSlider';
+import { PergolaSlider } from '../../componets/PergolaSlider/PergolaSlider';
+import { FenceSlider } from '../../componets/FenceSlider/FenceSlider';
 
 export const Home = () => {
   return (

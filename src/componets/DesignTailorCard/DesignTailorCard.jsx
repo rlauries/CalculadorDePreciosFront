@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DesignTailorCard.css';
+import './DesignTailorCard.css';
 export const DesignTailorCard = () => {
   return (
     <span className='design-tailored-card'>

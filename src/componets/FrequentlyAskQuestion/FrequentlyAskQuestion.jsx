@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/FrequentlyAskQuestion.css";
+import "./FrequentlyAskQuestion.css";
 export const FrequentlyAskQuestion = () => {
 
     

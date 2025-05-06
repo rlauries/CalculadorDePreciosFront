@@ -203,7 +203,7 @@ export const ContactUsForm = () => {
             </button>
         </div>
         {thankYouName && (
-          <div className="modal-overlay" onClick={() => setThankYouName(null)}>
+          <div className="modal-overlay-contactus-form" onClick={() => setThankYouName(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <h2>Thank you, {thankYouName} <strong> ! </strong></h2>
               <p>We've received your information. Our team will be in touch shortly.</p>

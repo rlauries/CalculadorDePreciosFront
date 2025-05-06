@@ -1,4 +1,5 @@
 @import url('normalize.css');
+
 .legenda-lead-form{
   margin-top: 20px;
   display: flex;
@@ -15,7 +16,7 @@
 .lead-form{
   
     border: 1; 
-    margin:60px auto; 
+    margin:30px auto; 
     padding: 10px 30px; 
     display: 'flex';
     flex-direction: 'column';
@@ -188,7 +189,7 @@ textarea{
   font-size: 12px;
   margin-top: 4px;
 }
-.modal-overlay {
+.modal-overlay-contactus-form {
   position: fixed;
   top: 0;
   left: 0;
@@ -201,7 +202,7 @@ textarea{
   z-index: 1000;
 }
 
-.modal-content {
+.modal-overlay-contactus-form .modal-content {
   background-color: #fff;
   padding: 2rem;
   border-radius: 12px;
@@ -212,20 +213,20 @@ textarea{
   animation: fadeIn 0.3s ease-in-out;
 }
 
-.modal-content h2 {
+.modal-overlay-contactus-form .modal-content h2 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
-.modal-content p {
+.modal-overlay-contactus-form .modal-content p {
   color: #444;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
-.modal-content strong{
+.modal-overlay-contactus-form .modal-content strong{
   color: #f1683a;
   font-size: 30px;
 }
-.modal-content button {
+.modal-overlay-contactus-form .modal-content button {
   background-color:#f1683a;
   color: #fff;
   border: none;
@@ -236,7 +237,7 @@ textarea{
   transition: background-color 0.2s ease-in-out;
 }
 
-.modal-content button:hover {
+.modal-overlay-contactus-form .modal-content button:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 

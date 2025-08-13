@@ -3,8 +3,7 @@ import { Route, Routes } from "react-router-dom-v5-compat";
 
 // Lazy Load Components
 const Home = React.lazy(() => import('../pages/public/Home'));
-const Service = React.lazy(() => import('../pages/public/Service'));
-const PergolaList = React.lazy(() => import('../servicesToAPI/PergolaList'));
+const PergolaList = React.lazy(() => import('../pages/public/PergolaList'));
 const Gallery = React.lazy(() => import('../pages/public/Gallery'));
 const SignUp = React.lazy(() => import('../pages/public/login-signup/SignUp'));
 const ContactUs = React.lazy(() => import('../pages/public/ContactUs'));
@@ -39,7 +38,6 @@ export const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/fences" element={<Service />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/pergolas" element={<PergolaList />} />
           <Route path="/signUp" element={<SignUp />} />

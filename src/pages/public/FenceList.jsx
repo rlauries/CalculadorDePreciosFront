@@ -1,7 +1,8 @@
 import { useState} from 'react';
-import '../styles/FenceList.css';
-import { DesignTailorCard } from '../componets/DesignTailorCard/DesignTailorCard.jsx';
-import { HeroBanner } from '../componets/HeroBanner/HeroBanner.jsx';
+import '../../styles/FenceList.css';
+import { DesignTailorCard } from '../../componets/DesignTailorCard/DesignTailorCard.jsx';
+import { HeroBanner } from '../../componets/HeroBanner/HeroBanner.jsx';
+import { Header } from '../../componets/Header/Header.jsx';
  
 const FencePanels = [
   {
@@ -84,7 +85,7 @@ export const FenceList = () => {
   
     return (
     <>
-      
+      <Header/>
       <HeroBanner
         title="Fence Styles"
         subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"

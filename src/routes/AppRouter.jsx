@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from "react-router-dom-v5-compat";
+import { FenceList } from '../pages/public/FenceList';
 
 // Lazy Load Components
 const Home = React.lazy(() => import('../pages/public/Home'));
@@ -40,6 +41,7 @@ export const AppRouter = () => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/pergolas" element={<PergolaList />} />
+          <Route path="/fences" element={<FenceList />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

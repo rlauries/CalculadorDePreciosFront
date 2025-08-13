@@ -23,6 +23,8 @@ export const Header = () => {
                <div className="dropdown-content">
                   <a href="fences">Fence/Gate</a>
                   <a href="pergolas">Pergolas/Trellis</a>
+                  <a href="stairs">Stairs</a>
+                  <a href="rails">Rails</a>
                </div>
             </div>
 

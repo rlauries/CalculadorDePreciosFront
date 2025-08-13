@@ -31,6 +31,9 @@ strong{
 .service-type .pergola {
   width: 100%;
 }
+.service-type .stair{
+  width: 100%;
+}
 .service-type button{
   background: none;
   margin: 6% 10%;

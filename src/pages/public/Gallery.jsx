@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../styles/Gallery.css';
 import '../../styles/Home.css';
 import {Header} from '../../componets/Header/Header.jsx';
@@ -191,6 +191,48 @@ const GalleryList = [
       name: "Designer Shade Solutions",
       imageUrl: "images/originals/Pergolas/Designer-Shade-Solutions.jpg",
       serviceTypeId: 2
+    },
+    {
+      id : 31,
+      name: "Auckland Style Stairs",
+      imageUrl: "images/originals/Stairs/Auckland-by-Stylecraft-Stairs.jpg",
+      serviceTypeId: 3
+    },
+    {
+      id : 32,
+      name: "Black Scaled",
+      imageUrl: "images/originals/Stairs/black-scaled.webp",
+      serviceTypeId: 3
+    },
+    {
+      id : 33,
+      name: "Custom Floating Stair",
+      imageUrl: "images/originals/Stairs/custom-floating-stair-systems.webp",
+      serviceTypeId: 3
+    },
+    {
+      id : 34,
+      name: "Doble Side Steel",
+      imageUrl: "images/originals/Stairs/dobleSideSteel.jpg",
+      serviceTypeId: 3
+    },
+    {
+      id : 35,
+      name: "Floating Stair",
+      imageUrl: "images/originals/Stairs/floatingStair.jpg",
+      serviceTypeId: 3
+    },
+    {
+      id : 36,
+      name: "Indoor Aluminum Stair",
+      imageUrl: "images/originals/Stairs/indoorAluminumStair.jpg",
+      serviceTypeId: 3
+    },
+    {
+      id : 37,
+      name: "wooden-stair",
+      imageUrl: "images/originals/Stairs/wooden-stair.webp",
+      serviceTypeId: 3
     }
 ];
 
@@ -212,6 +254,14 @@ const Gallery = () => {
       setServiceTypeId(2);
       setFilteredGallery(gallery.filter(g => g.serviceTypeId === 2));
   };
+  const switchToStair = () => {
+    setServiceTypeId(3);
+    setFilteredGallery(gallery.filter(g => g.serviceTypeId === 3));
+  }
+  useEffect(() => {
+    setFilteredGallery(gallery.filter(g => g.serviceTypeId === serviceTypeId));
+  }, [serviceTypeId])
+  
 
   const OpenModal = (image) => {
     setSelecteImage(image);
@@ -247,7 +297,7 @@ const Gallery = () => {
                     <label >
                         Fences<strong> | </strong>
                     </label>
-                    <p>A Showcase of Style & Strength</p>
+                    <p>A Showcase of Style</p>
                 </div>
                 <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
                 <button onClick={switchToFence}>Display More</button>
@@ -262,6 +312,16 @@ const Gallery = () => {
                 <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
                 <button onClick={switchToPergola}>Display More</button>
             </div>
+            <div className="stair">
+                <div className="text">
+                    <label>
+                        Stairs<strong> | </strong>
+                    </label>
+                    <p>Path To The sky</p>
+                </div>
+                <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
+                <button onClick={switchToStair}>Display More</button>
+            </div>
             
         </div>
         {serviceTypeId !== 0  && (
@@ -269,15 +329,15 @@ const Gallery = () => {
                 <h1>Service Gallery<strong> | </strong></h1>
                 <div className="gallery-grid">
                     {filteredGallery.map((img, index) => (
-                    <div key={index} className="gallery-card" onClick={()=>{OpenModal(img)}}>
-                        <img src={img .imageUrl} alt={img.name} />
+                    <div key={img.id} className="gallery-card" onClick={()=>{OpenModal(img)}}>
+                        <img src={img.imageUrl} alt={img.name} />
                         <p>{img.name} <strong> | </strong></p>
                     </div>
                     ))}
                 </div>
             </div>
         )}
-        {showModal && setSelecteImage && (
+        {showModal && selecteImage && (
           <div className='modal-overlay' onClick={ClosedModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className='close-button' onClick={ClosedModal}>×</button>

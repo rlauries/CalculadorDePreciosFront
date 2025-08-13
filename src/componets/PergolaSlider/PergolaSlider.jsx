@@ -8,12 +8,12 @@ import "./PergolaSlider.css";
 export const PergolaSlider = () => {
     
     const images = [
-        { src: "images/IMG_7746.jpg", alt: "Steel Pergola" },
-        { src: "images/Targa-Large-main.webp", alt: "Aluminum Wood Pergola" },
-        { src: "images/Designer-Shade-Solutions.jpg", alt: "Cross Bar Pergola" },
-        { src: "images/aluminum-modern-pergola.jpeg", alt: "Insulated Pergola" },
-        { src: "images/Smart-Technology-Customization-for-Ultimate-Control.jpeg", alt: "Insulated Pergola" },
-        { src: "images/Why-StruXure-is-the-Go-To-Pergola-Brand-Over-All-Others.jpeg", alt: "Insulated Pergola" },
+        { src: "images/originals/Pergolas/IMG_7746.jpg", alt: "Steel Pergola" },
+        { src: "images/originals/Pergolas/Targa-Large-main.webp", alt: "Aluminum Wood Pergola" },
+        { src: "images/originals/Pergolas/Designer-Shade-Solutions.jpg", alt: "Cross Bar Pergola" },
+        { src: "images/originals/Pergolas/aluminum-modern-pergola.jpeg", alt: "Insulated Pergola" },
+        { src: "images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.jpeg", alt: "Insulated Pergola" },
+        { src: "images/originals/Pergolas/Why-StruXure-is-the-Go-To-Pergola-Brand-Over-All-Others.jpeg", alt: "Insulated Pergola" },
         
       ];
 

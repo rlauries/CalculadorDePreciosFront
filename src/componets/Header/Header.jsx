@@ -11,6 +11,7 @@ export const Header = () => {
     return (
       <header className='container'>
          <img className='logo' src="images/logo.jpg" alt="" />
+         <img className='company-name-logo' src="images\Logo\SmallLauriesLogo (para fondo blanco).png" alt="" />
          <nav className='nav-bar'>
             <div className='flex-grow'> </div>
             <a className='nav-btn' href="home"> Home  </a>

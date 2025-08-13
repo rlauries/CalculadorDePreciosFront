@@ -6,6 +6,7 @@ import { UploadFile } from '../UploadFile/UploadFile.jsx';
 import ReCAPTCHA from "react-google-recaptcha";
 import validationPatterns from '../../gobernance/validationPatterns.js';
 import { useNavigate } from 'react-router-dom-v5-compat';
+import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput.jsx';
 
 export const ContactUsForm = () => {
     const [captchaValue, setCaptchaValue] = useState(null);
@@ -119,35 +120,29 @@ export const ContactUsForm = () => {
           </legend>
         </div>
         <div className="lead-form">
-              {/* FullName */}
-            <div className="floating-label ">
-                    <input 
-                        className="contact_control" 
-                        placeholder="" 
-                        type="text" 
-                        name='fullName'
-                        id='name'
-                        onBlur={handleBlur}
-                    /> 
-                    <label for="name">Full Name<strong>(required)</strong></label>
-                    {errors.fullName && <p className="form-error">{errors.fullName}</p>}
-
-            </div>
-              {/* Email */}
-            <div className="floating-label">
-                <input 
-                    className="contact_control" 
-                    placeholder="" 
-                    type="email" 
-                    name='email'
-                    id='email'
-                    onBlur={handleBlur}
-                    required 
-                /> 
-                <label for="email">Email<strong>(required)</strong></label>
-                {errors.email && <p className="form-error">{errors.email}</p>}
-            </div>
-              {/* Phone Number */}
+            {/* FullName */}
+            <FloatingLabelInput
+              label="Full Name"
+              name="fullName"
+              type="text"
+              value={formData.fullName}
+              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+              onBlur={handleBlur}
+              error={errors.fullName}
+              required={true}
+            />
+            {/* Email */}
+            <FloatingLabelInput
+              label="Email"
+              name="email"
+              type="text"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onBlur={handleBlur}
+              error={errors.email}
+              required={true}
+            />
+            {/* Phone Number */}
             <div className="floating-label">
                 <InputMask 
                     className="contact_control"
@@ -163,7 +158,7 @@ export const ContactUsForm = () => {
                 <label for="phone-Number">Phone Number<strong>(required)</strong></label>
                 {errors.phoneNumber && <p className="form-error">{errors.phoneNumber}</p>}   
             </div>
-              {/* Text Area */}
+                {/* Text Area */}
             <div className="floating-label">
                 <div>
                     <textarea 

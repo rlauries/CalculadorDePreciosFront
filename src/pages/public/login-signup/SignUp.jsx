@@ -10,7 +10,7 @@ import '../../../styles/SignUp.css';
 
 
 
-export const SignUp = () => {
+const SignUp = () => {
 
     const regex = {
         username : /^[a-zA-Z0-9]+$/,
@@ -274,3 +274,4 @@ export const SignUp = () => {
     </div>
   )
 }
+export default SignUp;

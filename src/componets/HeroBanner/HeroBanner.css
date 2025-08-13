@@ -1,0 +1,75 @@
+.hero-banner {
+    position: relative;
+    width: 100vp;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    width: 40%;
+    height: auto;
+    max-width: 80%;
+    margin: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight:600;
+    margin-bottom: 1rem;
+    color:white;
+    text-shadow: 0 2px 3px rgb(12, 11, 11);
+    
+  }
+  .hero-strong{
+    color: #f1683a;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 2px 3px rgb(48, 45, 45);
+    font-size: 16px;
+    
+  }
+  
+  .hero-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    height: 30px;
+    width: auto;
+    background: transparent;
+    border: 1px solid #f1683a;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 3px rgb(12, 11, 11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  
+  .hero-button:hover {
+    background-color: #d95422;
+  }
+  

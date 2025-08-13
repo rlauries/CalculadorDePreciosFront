@@ -3,17 +3,25 @@ import React, {useState} from 'react';
 import { Header } from '../../componets/Header/Header.jsx';
 import '../../styles/Contactus.css';
 import {ContactUsForm} from '../../componets/ContactUsForm/ContactUsForm.jsx';
+import { HeroBanner } from '../../componets/HeroBanner/HeroBanner.jsx';
+import { BannerImageHalf } from '../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 
-export const ContactUs = () => {
+const ContactUs = () => {
     
   
 
   return (
     <div className='viewport'>
         <Header/>
-        <div>
+        <HeroBanner
+                  title="Why? "
+                  subtitle="Filling out the Contact Form allows us to understand your project in greater detail, ensuring that we can provide you with the best possible design solution about your needs, preferences, and vision"
+                  onButtonClick={()=>window.location.href="/contactus"}
+                  imageUrl="/images/4-people-in-table.png"
+                />
+        {/* <div>
           <img className='hero-image' src="images/Contact-Us-Banner.png" alt="HeroBanner" />
-        </div>
+        </div> */}
         <div className='contactu-info'>
           <h1><strong>&nbsp; | </strong>At Welding Group</h1>
           <p>
@@ -22,6 +30,8 @@ export const ContactUs = () => {
            
         </div>
         <ContactUsForm/>
+             
     </div>
   )
 }
+export default ContactUs;

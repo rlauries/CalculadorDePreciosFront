@@ -6,7 +6,7 @@
   width: 60%;
   margin-left: 20%;
   gap: 30px;
-  
+  margin-top: 40px;
 }
 .service-type .text{
   margin-left: 30px;
@@ -20,7 +20,7 @@
   font-size: 12px;
 
 }
-.service-type strong{
+strong{
   color: #f1683a;
 }
 
@@ -32,11 +32,13 @@
   width: 100%;
 }
 .service-type button{
-  border-bottom:2px solid #f1683a;
   background: none;
-  cursor: pointer;
   margin: 6% 10%;
   font-weight: bold;
+}
+.service-type button:hover{
+  border-bottom:2px solid #f1683a;
+  cursor: pointer;
 }
 
 .gallery-section {
@@ -45,12 +47,17 @@
     margin-top: 100px;
     width: 80%;
   }
+ .gallery-section h1{
+    font-weight: bold;
+    font-size: 2em;
+ } 
   
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
+    cursor: pointer;
   }
   .gallery-card {
     text-align: center;
@@ -72,4 +79,86 @@
   .pagination-controls button {
     padding: 8px 16px;
   }
+  .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* oscuro y semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.modal-content p {
+  margin-bottom: 5px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.modal-content strong{
   
+  margin-right: 5px;
+}
+/*----------modal buttons------- */
+.buttons-home{
+    display: flex;
+    margin-top: 30px;
+    
+   
+}
+.service-home{
+    width: 220px;
+    background: #f1683a;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 3px rgb(12, 11, 11);
+    border-radius: 10px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contactus-home{
+    width: 220px;
+    background: white;
+    border: 2px solid #f1683a;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    margin-left: 20px;
+    border-radius: 10px;
+}

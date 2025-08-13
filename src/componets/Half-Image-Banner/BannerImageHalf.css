@@ -1,0 +1,51 @@
+/* Banner Styles */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    background-color: #f1f1f1;
+}
+
+.banner-content {
+    display: flex;
+    gap: 0px;
+    width: 100%;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 30px 40px;
+    
+}
+.text-container h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.text-container p{
+    font-size: 1.3rem;
+}
+.banner-strong{
+    color: #f1683a;
+
+}
+
+.image-container {
+    width: 50%;
+    height: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+.reversed .text-container {
+    order: 2; /* Cambia el orden de los elementos cuando 'reversed' sea true */
+}
+

@@ -109,6 +109,9 @@
   border-radius: 8px;
   margin-bottom: 20px;
 }
+.modal-content h2{
+  font-weight: bold;
+}
 
 .close-button {
   position: absolute;
@@ -119,6 +122,10 @@
   border: none;
   background: transparent;
   cursor: pointer;
+}
+.hero-strong{
+  color: rgb(241, 104, 58);
+  
 }
 .modal-content p{
   margin-bottom: 5px;

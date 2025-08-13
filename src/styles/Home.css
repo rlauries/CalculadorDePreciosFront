@@ -132,11 +132,12 @@
   
   
   .forth-banner{
-    background-color: #f5f5f5;
+    background-color: #dcd6d6;
     height: auto;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    margin-bottom: 100px;
   }
   .forth-banner .info{
     height: 50%;

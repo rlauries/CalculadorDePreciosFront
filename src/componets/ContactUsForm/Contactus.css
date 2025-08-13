@@ -16,7 +16,7 @@
 .lead-form{
   
     border: 1; 
-    margin:30px auto; 
+    margin:30px auto 80px; 
     padding: 10px 30px; 
     display: 'flex';
     flex-direction: 'column';

@@ -12,7 +12,7 @@ import '../../../styles/Login.css';
 import {useNavigate } from 'react-router-dom-v5-compat';
 import { AuthContext } from '../../../context/AuthContext';
 
-export const Login = () => {
+const Login = () => {
     const navigate = useNavigate();
     const {login} = useContext(AuthContext);
         
@@ -196,3 +196,4 @@ export const Login = () => {
 
 
 }
+export default Login;

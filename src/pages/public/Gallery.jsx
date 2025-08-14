@@ -245,22 +245,27 @@ const Gallery = () => {
   const [selecteImage, setSelecteImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const scrollDown = () => window.scrollBy({ top: 400, behavior: 'smooth' });
+  
   const switchToFence = () => {
       setServiceTypeId(1);
       setFilteredGallery(gallery.filter(g => g.serviceTypeId === 1));
+      scrollDown();
   };
  
   const switchToPergola = () => {
       setServiceTypeId(2);
       setFilteredGallery(gallery.filter(g => g.serviceTypeId === 2));
+      scrollDown();
   };
   const switchToStair = () => {
     setServiceTypeId(3);
     setFilteredGallery(gallery.filter(g => g.serviceTypeId === 3));
+    scrollDown();
   }
   useEffect(() => {
     setFilteredGallery(gallery.filter(g => g.serviceTypeId === serviceTypeId));
-  }, [serviceTypeId])
+  }, [serviceTypeId, gallery])
   
 
   const OpenModal = (image) => {

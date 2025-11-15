@@ -1,0 +1,10 @@
+.logo-img{
+    width: 500px;
+    display: block;
+    margin: 40px 60px 80px;
+}
+.legend-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Header } from '../../componets/Header/Header';
-import { FrequentlyAskQuestion } from '../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion';
-import '../../styles/Home.css';
-import { PergolaSlider } from '../../componets/PergolaSlider/PergolaSlider';
-import { FenceSlider } from '../../componets/FenceSlider/FenceSlider';
-import { BannerImageHalf } from '../../componets/Half-Image-Banner/BannerImageHalf';
+import { Header } from '../../../componets/Header/Header';
+import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion';
+import './Home.css';
+import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider';
+import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider';
+import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf';
 
 const Home = () => {
   return (

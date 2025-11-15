@@ -1,8 +1,8 @@
 import { useState} from 'react';
-import '../../styles/FenceList.css';
-import { DesignTailorCard } from '../../componets/DesignTailorCard/DesignTailorCard.jsx';
-import { HeroBanner } from '../../componets/HeroBanner/HeroBanner.jsx';
-import { Header } from '../../componets/Header/Header.jsx';
+import './FenceList.css';
+import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
+import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
+import { Header } from '../../../../componets/Header/Header.jsx';
  
 const FencePanels = [
   {
@@ -67,7 +67,7 @@ const FencePanels = [
   }
 ];
 
-export const FenceList = () => {
+const FenceList = () => {
     const [fences] = useState(FencePanels);
     const [selectedFence, setSelectedFence] = useState(null);
     const [showModal, setShowModal] = useState(false);
@@ -135,3 +135,4 @@ export const FenceList = () => {
     </>
   )
 };
+export default FenceList;

@@ -114,6 +114,17 @@ strong{
   margin-bottom: 20px;
 }
 
+
+.modal-content p {
+  margin-bottom: 5px;
+  font-size: 15px;
+  
+}
+
+.modal-content strong{
+  
+  margin-right: 5px;
+}
 .close-button {
   position: absolute;
   top: 12px;
@@ -123,16 +134,6 @@ strong{
   border: none;
   background: transparent;
   cursor: pointer;
-}
-.modal-content p {
-  margin-bottom: 5px;
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.modal-content strong{
-  
-  margin-right: 5px;
 }
 /*----------modal buttons------- */
 .buttons-home{

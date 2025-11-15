@@ -1,14 +1,15 @@
+
 import React, { Suspense } from 'react';
 import { Route, Routes } from "react-router-dom-v5-compat";
-import { FenceList } from '../pages/public/FenceList';
-
+import Gallery from '../pages/public/Gallery/Gallery.jsx';
+import Home from '../pages/public/Home/Home.jsx';
+import ContactUs from '../pages/public/ContactUs/ContactUs.jsx';
+import PergolaList from '../pages/public/Services/PergolaList/PergolaList.jsx';
+import FenceList from '../pages/public/Services/FenceList/FenceList.jsx';
+import SignUp from '../pages/public/login-signup/SignUp/SignUp.jsx';
+import Login from '../pages/public/login-signup/Login/Login.jsx';
 // Lazy Load Components
-const Home = React.lazy(() => import('../pages/public/Home'));
-const PergolaList = React.lazy(() => import('../pages/public/PergolaList'));
-const Gallery = React.lazy(() => import('../pages/public/Gallery'));
-const SignUp = React.lazy(() => import('../pages/public/login-signup/SignUp'));
-const ContactUs = React.lazy(() => import('../pages/public/ContactUs'));
-const Login = React.lazy(() => import('../pages/public/login-signup/Login'));
+
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -36,12 +37,12 @@ export const AppRouter = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/gallery" element={<Gallery/>} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/pergolas" element={<PergolaList />} />
-          <Route path="/fences" element={<FenceList />} />
+          <Route path="/fences" element={<FenceList/>} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

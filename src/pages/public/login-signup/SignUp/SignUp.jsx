@@ -1,12 +1,12 @@
 import React from 'react'
-import { Footer} from '../../../componets/Footer'
-import { Header} from '../../../componets/Header/Header';
+import { Footer} from '../../../../componets/Footer'
+import { Header} from '../../../../componets/Header/Header';
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-import '../../../styles/SignUp.css';
+import './SignUp.css';
 
 
 

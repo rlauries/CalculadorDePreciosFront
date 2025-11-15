@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 
-import { Header } from '../../componets/Header/Header.jsx';
-import '../../styles/Contactus.css';
-import {ContactUsForm} from '../../componets/ContactUsForm/ContactUsForm.jsx';
-import { HeroBanner } from '../../componets/HeroBanner/HeroBanner.jsx';
-import { BannerImageHalf } from '../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+import { Header } from '../../../componets/Header/Header.jsx';
+import './Contactus.css';
+import {ContactUsForm} from '../../../componets/ContactUsForm/ContactUsForm.jsx';
+import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 
 const ContactUs = () => {
     
@@ -25,7 +24,7 @@ const ContactUs = () => {
         <div className='contactu-info'>
           <h1><strong>&nbsp; | </strong>At Welding Group</h1>
           <p>
-             Your project matters. We commit to contacting you within 24 hours of receiving your information. For immediate questions, call us at (800)-486-8465.
+             Your project matters. We commit to contacting you within 24 hours of receiving your information. For immediate questions, call us at (786)-486-8465.
           </p>
            
         </div>

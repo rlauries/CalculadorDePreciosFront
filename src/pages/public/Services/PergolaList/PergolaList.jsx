@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../../styles/PergolaList.css'; // si quieres agregar estilos aparte
-import { Header } from '../../componets/Header/Header';
-import { DesignTailorCard } from '../../componets/DesignTailorCard/DesignTailorCard';
+import './PergolaList.css'; // si quieres agregar estilos aparte
+import { Header } from '../../../../componets/Header/Header';
+import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 
 const PergolasDB = [
   {

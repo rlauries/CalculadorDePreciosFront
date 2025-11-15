@@ -175,11 +175,12 @@ export const ContactUsForm = () => {
                     
                 </div>
             </div>
+
               {/* Upload File */}
             <div className='upload'>
               <UploadFile onFileSelected={setSelectedFile} />
-
             </div>
+
               {/* ReCaptcha */}
             <div className='reCaptcha'>
               <ReCAPTCHA
@@ -187,6 +188,7 @@ export const ContactUsForm = () => {
                  onChange={handleCaptchaChange}
               />
             </div>
+
               {/* SubmitButton*/}
             <button 
                 className="send_btn"

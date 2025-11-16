@@ -1,44 +1,53 @@
-import React, { createContext, useEffect, useState } from 'react'
-import {jwtDecode} from "jwt-decode";
+import React, { createContext, useEffect, useState, useCallback } from 'react'
+import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom-v5-compat';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  // --- Logout estable con useCallback -------
+  const logout = useCallback((expired = false) => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setUser(null);
+
+    if (expired) {
+      navigate('/login');
+      setTimeout(() => {
+        alert("Your session has expired. Please log in again.");
+      }, 100);
+    }
+  }, [navigate]);
+  // ------------------------------------------
+
+  useEffect(() => {
     const token = localStorage.getItem('token');
-  
+
     if (token) {
       try {
         const decoded = jwtDecode(token);
-        const exp = decoded.exp * 1000; // Convertir a milisegundos
+        const exp = decoded.exp * 1000;
         const now = Date.now();
 
         if (now > exp) {
-          // Token expirado
-          logout();
+          logout(true);
         } else {
-          // Token válido
           setUser({
             username: decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]
           });
 
-          // Programar logout automático cuando el token expire
-          const timeout = setTimeout(() => {
-            logout(true);
-          }, exp - now);
-
-          return () => clearTimeout(timeout); // Cleanup
+          const timeout = setTimeout(() => logout(true), exp - now);
+          return () => clearTimeout(timeout);
         }
-      } catch (error) {
-        console.error("Error decoding token", error);
+      } catch (err) {
+        console.error("Error decoding token", err);
         logout(true);
       }
     }
-  }, []);
+  }, [logout]); // ahora logout es seguro como dependencia
 
   const login = (token) => {
     try {
@@ -50,34 +59,18 @@ export const AuthProvider = ({children}) => {
       const exp = decoded.exp * 1000;
       const now = Date.now();
 
-      // También programamos logout automático aquí después del login
-      const timeout = setTimeout(() => {
+      setTimeout(() => {
         logout(true);
       }, exp - now);
 
-      return () => clearTimeout(timeout);
     } catch (err) {
       console.error("Failed to decode token on login", err);
     }
   };
 
-  const logout = (expired = false) => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    setUser(null);
-    
-    if (expired) {
-      navigate('/login');
-      setTimeout(() => {
-        alert("Your session has expired. Please log in again.");
-      }, 100); // Espera para evitar conflictos de navegación
-    }
-  }
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-        {children}
+      {children}
     </AuthContext.Provider>
-);
-}
-
- 
+  );
+};

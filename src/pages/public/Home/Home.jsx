@@ -55,8 +55,9 @@ const Home = () => {
         </section>
         <div className='forth-banner'>
             <span className='info'>
-                <h2>Personalized Service <strong>|</strong></h2>
-                
+                <div className="info-subtitle">
+                    <h2>Personalized Service <strong>|</strong></h2>
+                </div>subtitle
                 <p>
                     From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
                 </p>
@@ -78,7 +79,7 @@ const Home = () => {
                 </div>
             </span>
         </section>
-        <div style={{marginTop:"100px"}}>
+        <div className='myths-info'>
             <BannerImageHalf 
                 image="images/originals/Pergolas/IMG_7746.jpg" 
                 title=" Wood Pergola Myth" 

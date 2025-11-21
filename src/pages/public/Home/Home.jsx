@@ -57,7 +57,7 @@ const Home = () => {
             <span className='info'>
                 <div className="info-subtitle">
                     <h2>Personalized Service <strong>|</strong></h2>
-                </div>subtitle
+                </div>
                 <p>
                     From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
                 </p>

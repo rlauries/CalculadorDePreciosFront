@@ -1,16 +1,17 @@
 
 
 .pergolas-to-home {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+    margin-bottom: 60px;
     text-align: center;
     padding: 20px;
+    
   }
   
   .pergolas-to-home h2 {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     cursor: pointer;
     font-size: 20px;
   }
@@ -31,3 +32,17 @@
     transform: scale(1.02);
   }
   
+
+
+  @media screen and (max-width: 640px){
+    .pergolas-to-home h2{
+      font-size: 15px;
+      margin-top: 0px;
+    }
+  }
+
+   @media screen and (max-width: 450px){
+    .pergolas-to-home h2{
+      font-size: 12px;
+    }
+  }

@@ -1,6 +1,6 @@
 .fence-to-home{
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
@@ -23,4 +23,22 @@ h2{
   }
   .slider-img img:hover {
     transform: scale(1.02);
+  }
+
+  @media screen and (max-width: 1093px){
+    .fence-to-home{
+      margin-top: 40px;
+    }
+  }
+  @media screen and (max-width: 640px){
+    .fence-to-home h2{
+      font-size: 15px;
+      margin-top: 0px;
+    }
+  }
+
+   @media screen and (max-width: 450px){
+    .fence-to-home h2{
+      font-size: 12px;
+    }
   }

@@ -8,6 +8,7 @@ import PergolaList from '../pages/public/Services/PergolaList/PergolaList.jsx';
 import FenceList from '../pages/public/Services/FenceList/FenceList.jsx';
 import SignUp from '../pages/public/login-signup/SignUp/SignUp.jsx';
 import Login from '../pages/public/login-signup/Login/Login.jsx';
+import { Header } from '../componets/Header/Header.jsx';
 // Lazy Load Components
 
 
@@ -33,20 +34,23 @@ class ErrorBoundary extends React.Component {
 
 export const AppRouter = () => {
   return (
-    <ErrorBoundary>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home/>} />
-          <Route path="/home" element={<Home/>} />
-          <Route path="/gallery" element={<Gallery/>} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/pergolas" element={<PergolaList />} />
-          <Route path="/fences" element={<FenceList/>} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Suspense>
-    </ErrorBoundary>
+    <>
+      <Header/>
+      <ErrorBoundary>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Home/>} />
+            <Route path="/home" element={<Home/>} />
+            <Route path="/gallery" element={<Gallery/>} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/pergolas" element={<PergolaList />} />
+            <Route path="/fences" element={<FenceList/>} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
+    </>
   );
 };

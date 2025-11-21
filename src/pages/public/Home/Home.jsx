@@ -1,5 +1,4 @@
-import React from 'react';
-import { Header } from '../../../componets/Header/Header';
+import React, {useEffect} from 'react';
 import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion';
 import './Home.css';
 import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider';
@@ -7,28 +6,33 @@ import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf';
 
 const Home = () => {
-  return (
-    <div className='viewport'>
-        
-        <Header/>
-        <section className='home-container'>
-            <img src="images/20250506_1920_Welder at Work_remix_01jtkyadxvfpea11z2kkf20re5.png" alt="" />
-            <div className='hero'>
-                <div className='voice'>Where Ideas Become Quoted</div>
-                <div className="mission">Creating solutions that shape tomorrow</div>
-                <div className='paragraph'>
-                    <div>• We believe in the power of collaboration and innovation.</div>
-                    <div>• Whether you're looking to transform your business, enhance your products, or pioneer new technologies, our dedicated team is here to support and guide you through the entire process. </div>
-                    <div>• Join us on this exciting journey.</div>
-                </div>
-                <div className='buttons-home'>
-                    <button className='service-home' onClick={()=>window.location.href = "/gallery"}>Check Our Gallery</button>
-                    <button className='contactus-home' onClick={()=>window.location.href="/contactus"}>Contact Us</button>
-                </div>
-            </div>
+    useEffect(() => {
+        const video = document.getElementById("slow-video");
+        if (video) {
+        video.playbackRate = 0.4; // velocidad más lenta
+        }
+    }, []);
 
+    const handleLoop = () => {
+        setTimeout(() => {
+        const video = document.getElementById("slow-video");
+        if (video) video.play();
+        }, 4000); // 4 segundos de pausa
+    };
+
+  return (
+    <div >
+        <section className="video-section">
+            <video className="hero-video" 
+                   id="slow-video"
+                   src="images/videos/product-promo.mp4" 
+                   autoPlay 
+                   muted  
+                   playsInline 
+                   onEnded={handleLoop}
+            />                     
         </section>
-       
+
         <section>
             <PergolaSlider/>
         </section>

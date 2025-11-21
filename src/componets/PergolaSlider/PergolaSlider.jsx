@@ -39,7 +39,7 @@ export const PergolaSlider = () => {
   return (
     <div className='pergolas-to-home'>
       <h2>
-        Discover the perfect blend of style, functionality, and comfort with our modern pergolas
+        Discover the perfect blend of style, functionality, and comfort.
       </h2>
       <Slider {...settings}>
         {images.map((img, index) => (

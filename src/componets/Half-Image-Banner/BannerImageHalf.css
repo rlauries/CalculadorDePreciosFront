@@ -49,3 +49,46 @@
     order: 2; /* Cambia el orden de los elementos cuando 'reversed' sea true */
 }
 
+ @media screen and (max-width: 905px){
+    .text-container{
+      padding: 10px 20px;
+    }
+    
+    .text-container h1 {
+      font-size: 20px;
+    }
+    .text-container p {
+      font-size: 12px;
+    }
+
+ }
+
+  @media screen and (max-width: 724px){
+    .text-container h1 {
+      font-size: 15px;
+    }
+    .text-container p {
+      font-size: 8px;
+    }
+
+ }
+
+  @media screen and (max-width: 591px){
+    .text-container h1 {
+      font-size: 12px;
+    }
+    .text-container p {
+      font-size: 6px;
+    }
+
+ }
+
+ @media screen and (max-width: 494px){
+    .text-container h1 {
+      font-size: 9px;
+    }
+    .text-container p {
+      font-size: 4px;
+    }
+
+ }

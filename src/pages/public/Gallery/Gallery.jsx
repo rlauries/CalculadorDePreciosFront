@@ -391,7 +391,7 @@ const Gallery = () => {
 
   return (
     <>
-        <Header/>
+        
         <HeroBanner
           title="Gallery"
           subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"

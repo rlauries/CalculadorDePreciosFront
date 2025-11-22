@@ -182,7 +182,9 @@ strong{
       gap: 30px;
       margin-top: 40px;
     }
-
+    .gallery-section{
+      margin-top: 40px;
+    }
     .gallery-grid {
       grid-template-columns: repeat(2, 1fr);
     }

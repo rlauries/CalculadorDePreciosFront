@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Gallery.css';
 import '../../../pages/public/Home/Home.css';
-import {Header} from '../../../componets/Header/Header.jsx';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
 
@@ -449,7 +448,7 @@ const Gallery = () => {
                 <div className="service-gallery-grid">
 
                     {/* --------- Filtered by Materials: ----------- */}
-                    
+
                     <div className="filtered-options">
                       
                       {(serviceTypeId === 1 || serviceTypeId === 2) && (

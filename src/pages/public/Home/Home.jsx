@@ -8,30 +8,47 @@ import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImag
 const Home = () => {
     useEffect(() => {
         const video = document.getElementById("slow-video");
-        if (video) {
-        video.playbackRate = 0.4; // velocidad más lenta
-        }
-    }, []);
+        if (!video) return;
 
-    const handleLoop = () => {
-        setTimeout(() => {
+        video.playbackRate = 0.4;
+
+        // Intentar autoplay (puede fallar)
+        const tryAutoplay = async () => {
+            try {
+            await video.play(); 
+            } catch (e) {
+            console.log("Autoplay bloqueado, esperando interacción del usuario.");
+            }
+        };
+
+        tryAutoplay();
+    }, []);
+    const handlePlayOnClick = () => {
         const video = document.getElementById("slow-video");
         if (video) video.play();
-        }, 4000); // 4 segundos de pausa
     };
+    const handleLoop = () => {
+        setTimeout(() => {
+            const video = document.getElementById("slow-video");
+            if (video) video.play();
+        }, 4000); // Pausa de 4s
+    };
+
 
   return (
     <div >
         <section className="video-section">
-            <video className="hero-video" 
-                   id="slow-video"
-                   src="images/videos/product-promo.mp4" 
-                   autoPlay 
-                   muted  
-                   playsInline 
-                   onEnded={handleLoop}
-            />                     
+            <video
+                className="hero-video"
+                id="slow-video"
+                src="images/videos/product-promo.mp4"
+                muted
+                playsInline
+                onEnded={handleLoop}
+                onClick={handlePlayOnClick}
+            />
         </section>
+
 
         <section>
             <PergolaSlider/>

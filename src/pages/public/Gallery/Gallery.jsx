@@ -23,7 +23,7 @@ const GalleryList = [
     },
     {
       id : 3,
-      name: "Fence chainlink",
+      name: "Fence Chainlink",
       imageUrl: "images/originals/Fences/Fence-chainlink.jpg",
       serviceTypeId: 1,
       matrialId: 1
@@ -399,6 +399,9 @@ const Gallery = () => {
           imageUrl="/images/Hero-Gallery-02.png"
         />
         <div className='service-type'>
+
+            {/* -------Fence ---------- */}
+
             <div className="fence">
                 <div className='text'>
                     <label >
@@ -409,6 +412,9 @@ const Gallery = () => {
                 <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
                 <button onClick={switchToFence}>Display More</button>
             </div>
+
+            {/* -------Pergola ---------- */}
+
             <div className="pergola">
                 <div className="text">
                     <label>
@@ -419,22 +425,31 @@ const Gallery = () => {
                 <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
                 <button onClick={switchToPergola}>Display More</button>
             </div>
+            
+            {/* -------Stair ---------- */}
+            
             <div className="stair">
                 <div className="text">
                     <label>
                         Stairs<strong> | </strong>
                     </label>
-                    <p>Path To The sky</p>
+                    <p>Path To The Sky</p>
                 </div>
                 <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
                 <button onClick={switchToStair}>Display More</button>
             </div>
             
         </div>
+
+        {/* -------Gallery Section -------  */}
+
         {serviceTypeId !== 0  && (
             <div className="gallery-section">
                 <h1>Service Gallery<strong> | </strong></h1>
                 <div className="service-gallery-grid">
+
+                    {/* --------- Filtered by Materials: ----------- */}
+                    
                     <div className="filtered-options">
                       
                       {(serviceTypeId === 1 || serviceTypeId === 2) && (
@@ -454,6 +469,7 @@ const Gallery = () => {
                       )}
                     </div>
                     
+                    {/* ------Gallery Grid Section ------ */}
 
                     <div className="gallery-grid">
                       {filteredGallery.map((img) => (
@@ -466,6 +482,9 @@ const Gallery = () => {
                 </div>
             </div>
         )}
+
+        {/* ------ Modal Section ------- */}
+
         {showModal && selecteImage && (
           <div className='modal-overlay' onClick={ClosedModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>

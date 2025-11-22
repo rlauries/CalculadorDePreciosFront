@@ -9,7 +9,7 @@
   margin-top: 40px;
 }
 .service-type .text{
-  margin-left: 30px;
+  margin-left: 5%;
 }
 .service-type .text label{
   font-size: 20px;
@@ -36,13 +36,15 @@ strong{
 }
 .service-type button{
   background: none;
-  margin: 6% 10%;
+  margin: 6% 5%;
   font-weight: bold;
 }
 .service-type button:hover{
   border-bottom:2px solid #f1683a;
   cursor: pointer;
 }
+
+/*-------Gallery Section ------- */
 
 .gallery-section {
     text-align: center;
@@ -64,11 +66,15 @@ strong{
   }
   .gallery-card {
     text-align: center;
+    margin-bottom: 20px;
+    
   }
+  .gallery-card p{
+    font-weight: 600;}
   .gallery-card img {
     width: 100%;
     border-radius: 10px;
-    height: 250px;
+    height: 100%;
   }
   
   .pagination-controls {
@@ -167,6 +173,49 @@ strong{
     border-radius: 10px;
 }
 
+/* ----- Media Queries ------- */
+
 @media (max-width: 905px){
-  
+    .service-type{
+      width: 80%;
+      margin-left: 10%;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px){
+    .service-type .text label{
+      font-size: 15px;
+      height: 20px;
+    }
+    .service-type .text p{
+       font-size: 10px;
+    }
+    .service-type button{
+      font-size: 12px;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    
+}
+@media (max-width: 482px){
+    .service-type .text p{
+       font-size: 8px;
+    }
+}
+@media (max-width: 412px){
+    .service-type .text p{
+       font-size: 6px;
+    }
+    .service-type .text label{
+      font-size: 12px;
+    }
+    .service-type button{
+      font-size: 10px;
+    }
 }

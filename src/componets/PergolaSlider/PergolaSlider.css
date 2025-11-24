@@ -3,17 +3,21 @@
 .pergolas-to-home {
     width: 90%;
     margin-left: 5%;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 60px;
     text-align: center;
     padding: 20px;
     
   }
   
-  .pergolas-to-home h2 {
-    margin-bottom: 0px;
-    cursor: pointer;
-    font-size: 20px;
+ h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  em{
+      font-style: italic;
+      font-size: 30px;
+      font-weight: 500;
   }
   
   .slider-img {
@@ -36,13 +40,12 @@
 
   @media screen and (max-width: 640px){
     .pergolas-to-home h2{
-      font-size: 15px;
+      font-size: 25px;
       margin-top: 0px;
+    }
+    .pergolas-to-home h2 em{
+      font-size: 18px;
     }
   }
 
-   @media screen and (max-width: 450px){
-    .pergolas-to-home h2{
-      font-size: 12px;
-    }
-  }
+   

@@ -39,7 +39,7 @@ export const FenceSlider = () => {
   return (
     <div className='fence-to-home'>
          <h2>
-            Protect what matters most — with strength, style, and lasting durability.
+            PROTECT <em> what matters most</em>
         </h2>
         <Slider {...settings}>
             {images.map((img, index) => (

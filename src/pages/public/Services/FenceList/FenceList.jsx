@@ -2,7 +2,6 @@ import { useState} from 'react';
 import './FenceList.css';
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
 import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
-import { Header } from '../../../../componets/Header/Header.jsx';
  
 const FencePanels = [
   {
@@ -85,7 +84,6 @@ const FenceList = () => {
   
     return (
     <>
-      <Header/>
       <HeroBanner
         title="Fence Styles"
         subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
@@ -93,7 +91,7 @@ const FenceList = () => {
         imageUrl="/images/Privacy-Fence-Banner.jpg"
       />
       <div className="section-title">
-        <h2>Explore Our Fence Designs</h2>
+        <h2>Explore Our Fence Designs <strong>|</strong></h2>
         <p className="subtitle">
         We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.
         </p>

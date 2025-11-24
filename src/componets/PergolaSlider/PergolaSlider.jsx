@@ -39,8 +39,9 @@ export const PergolaSlider = () => {
   return (
     <div className='pergolas-to-home'>
       <h2>
-        Discover the perfect blend of style, functionality, and comfort.
+          ELEVATE <em> your outdoor life</em>
       </h2>
+      
       <Slider {...settings}>
         {images.map((img, index) => (
           <div key={index} className="slider-img" onClick={() => window.location.href = "/pergolas"}>

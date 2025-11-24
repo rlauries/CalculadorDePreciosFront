@@ -1,17 +1,13 @@
-.hero-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
+
 .section-title{
     text-align: center;
     margin: 40px 0 20px;
-    
+    padding: 0px 20px 0px 20px;
 }
 
 .section-title h2{
-font-size: 2rem;
-margin-bottom: 110px;
+font-size: 60px;
+margin-top: 100px;
 color: #222;
 }
 
@@ -113,4 +109,44 @@ margin: 0 auto;
 .modal-content strong{
   font-size: large;
   margin-right: 5px;
+}
+
+@media (max-width: 965px){
+  .fence-list-grid{
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+  .section-title h2{
+    font-size: 40px;
+    margin-top: 80px;
+  }
+  .section-title .subtitle{
+    font-size: 15px;
+  }
+
+}
+@media (max-width: 576px){
+  
+  .fence-list-grid .fence-image{
+    height: 180px;
+  }
+    .section-title h2{
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  .section-title .subtitle{
+    font-size: 12px;
+  }
+}
+@media (max-width: 450px){
+  .section-title h2{
+    font-size: 22px;
+    margin-top: 30px;
+  }
+  .section-title .subtitle{
+    font-size: 10px;
+    
+  }
+  
+
 }

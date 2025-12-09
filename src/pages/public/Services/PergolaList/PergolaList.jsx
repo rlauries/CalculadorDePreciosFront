@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PergolaList.css'; // si quieres agregar estilos aparte
-import { Header } from '../../../../componets/Header/Header';
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
+import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner';
 
 const PergolasDB = [
   {
@@ -85,10 +85,15 @@ const PergolaList = () => {
   
 
   return (
-    <div className='pergola-container'>
-      <Header />
+    <div>
       <section>
-        <img className='hero-image' src="images/20250430_1703_Modern Poolside Pergola_simple_compose_01jt481tj6enyry3vt3fb4yz26.png" alt="HeroBanner" />
+        <HeroBanner
+          title="Pergola Styles"
+          subtitle='From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality'
+          onButtonClick={()=>window.location.href="/contactus"}
+          imageUrl="/images/originals/Pergolas/Pergola-moderna.png"
+        />
+
         <div className="section-title">
             <h2>Explore Our Pergola Styles</h2>
             <p className="subtitle">

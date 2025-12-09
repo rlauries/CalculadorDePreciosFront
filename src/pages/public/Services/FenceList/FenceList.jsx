@@ -90,6 +90,7 @@ const FenceList = () => {
         onButtonClick={()=>window.location.href="/contactus"}
         imageUrl="/images/Privacy-Fence-Banner.jpg"
       />
+      
       <div className="section-title">
         <h2>Explore Our Fence Designs <strong>|</strong></h2>
         <p className="subtitle">

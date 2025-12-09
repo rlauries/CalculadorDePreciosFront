@@ -74,7 +74,14 @@
   .hero-button:hover {
     background-color: #d95422;
   }
-  
+  @media (max-width: 1131px){
+    .hero-overlay {
+      width: 45%;
+      margin-left: 10%;
+      /* margin: 20px; */
+      padding: 20px;
+    }
+  }
   @media (max-width: 905px){
     .hero-title {
       font-size: 30px;

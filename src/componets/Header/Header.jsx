@@ -57,7 +57,7 @@ export const Header = () => {
                   <a href="/fences" onClick={closeMenu}>Fence/Gate</a>
                   <a href="/pergolas" onClick={closeMenu}>Pergolas/Trellis</a>
                   <a href="/stairs" onClick={closeMenu}>Stairs</a>
-                  <a href="/rails" onClick={closeMenu}>Rails</a>
+                  <a href="/claddings" onClick={closeMenu}>Exterior Claddings</a>
                </div>
             </div>
 
@@ -137,9 +137,9 @@ export const Header = () => {
                         </button>
                         <button
                            className="dropdown-link"
-                           onClick={() => { window.location.href = "/rails"; closeMenu(); }}
+                           onClick={() => { window.location.href = "/claddings"; closeMenu(); }}
                         >
-                           Rails
+                           Exterior Claddings
                         </button>
                         </div>
                      )}

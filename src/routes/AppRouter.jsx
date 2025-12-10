@@ -10,6 +10,7 @@ import SignUp from '../pages/public/login-signup/SignUp/SignUp.jsx';
 import Login from '../pages/public/login-signup/Login/Login.jsx';
 import { Header } from '../componets/Header/Header.jsx';
 import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
+import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
 // Lazy Load Components
 
 
@@ -48,6 +49,9 @@ export const AppRouter = () => {
             <Route path="/pergolas" element={<PergolaList />} />
             <Route path="/stairs" element={<StairList />} />
             <Route path="/fences" element={<FenceList/>} />
+            <Route path="/claddings" element={<CladdingList/>} />
+            
+            
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
           </Routes>

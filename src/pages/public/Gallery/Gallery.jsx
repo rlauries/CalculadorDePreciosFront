@@ -3,9 +3,11 @@ import './Gallery.css';
 import '../../../pages/public/Home/Home.css';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
+import { Stairs } from '@mui/icons-material';
 
 
 const GalleryList = [
+    // ----Fences----
     {
       id : 1,
       name: "Composite Side Panels",
@@ -216,6 +218,7 @@ const GalleryList = [
       serviceTypeId: 2,
       matrialId: 2
     },
+    // ----Stairs----
     {
       id : 31,
       name: "Auckland Style Stairs",
@@ -225,46 +228,47 @@ const GalleryList = [
     },
     {
       id : 32,
-      name: "Black Scaled",
-      imageUrl: "images/originals/Stairs/black-scaled.webp",
+      name: "LED Light Stair",
+      imageUrl: "images/originals/Stairs/9c89ee50ea5afe1c2e8672de75eee66a.jpg",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 33,
-      name: "Custom Floating Stair",
-      imageUrl: "images/originals/Stairs/custom-floating-stair-systems.webp",
+      name: "Aluminum Composite Stair",
+      imageUrl: "images/originals/Stairs/composite.jpg",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 34,
-      name: "Doble Side Steel",
-      imageUrl: "images/originals/Stairs/dobleSideSteel.jpg",
+      name: "Aluminum Wooden Stair",
+      imageUrl: "images/originals/Stairs/Stairs.png",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 35,
-      name: "Floating Stair",
-      imageUrl: "images/originals/Stairs/floatingStair.jpg",
+      name: "Tile and Wood Stair",
+      imageUrl: "images/originals/Stairs/Stair-and-tile.jpg",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 36,
-      name: "Indoor Aluminum Stair",
-      imageUrl: "images/originals/Stairs/indoorAluminumStair.jpg",
+      name: "Floating Stair",
+      imageUrl: "images/originals/Stairs/floating01.jpg",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 37,
       name: "wooden-stair",
-      imageUrl: "images/originals/Stairs/wooden-stair.webp",
+      imageUrl: "images/originals/Stairs/floating-cantilevered-stair-wood-treads-glass-railing-keuka-studios.jpg",
       serviceTypeId: 3,
       matrialId: 6
     },
+    // --- Pergolas  ---
     {
       id : 38,
       name: "Pergola Insulated",
@@ -312,6 +316,13 @@ const GalleryList = [
       name: "Pergola LED",
       imageUrl: "images/originals/Pergolas/67881decca9f7719266db8b9_Pic 3.jpg",
       serviceTypeId: 2,
+      matrialId: 6
+    },
+    {
+      id : 45,
+      name: "Wooden -Stair",
+      imageUrl: "images/originals/Stairs/wooden-stair.png",
+      serviceTypeId: 3,
       matrialId: 6
     },
 

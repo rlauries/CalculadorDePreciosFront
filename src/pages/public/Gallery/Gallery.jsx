@@ -408,6 +408,11 @@ const Gallery = () => {
           onButtonClick={()=>window.location.href="/contactus"}
           imageUrl="/images/Hero-Gallery-02.png"
         />
+        <div className="hero-down-text">
+          <h4>
+            Our collection showcases innovation, design, and craftsmanship — from sleek aluminum systems to warm wooden structures. Each model is built for durability, comfort, and year-round performance, transforming any outdoor space into a personalized retreat
+          </h4>
+        </div>
         <div className='service-type'>
 
             {/* -------Fence ---------- */}
@@ -503,7 +508,7 @@ const Gallery = () => {
               <h2>{selecteImage.name} <strong> | </strong></h2>
               <div className='buttons-home'>
                     <button className='service-home' onClick={handleRoute}>
-                      Check This Service  
+                      Check Here  
                     </button>
                     <button className='contactus-home' 
                             onClick={()=>window.location.href="/contactus"}

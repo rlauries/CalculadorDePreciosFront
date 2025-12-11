@@ -44,7 +44,11 @@ nav {
     line-height: 10px;
     width: 100%;
 }
-
+.nav-btn.contactus{
+    background-color: rgb(241, 104, 58);
+    color: white;
+    border-radius: 4px;
+}
 .login {
     background: transparent;
     color: white;

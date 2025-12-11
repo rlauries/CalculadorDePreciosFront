@@ -23,6 +23,20 @@
 strong{
   color: #f1683a;
 }
+.hero-down-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin:8% 0% 8% 20%;
+  text-align: center;
+ 
+}
+.hero-down-text h4{
+  line-height: 1.8;
+  font-size: 20px;
+  color: rgb(112, 106, 100);
+}
 
 .service-type .fence {
   width: 100%;
@@ -205,6 +219,7 @@ strong{
     }
     
 }
+
 @media (max-width: 482px){
     .service-type .text p{
        font-size: 8px;

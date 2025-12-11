@@ -52,7 +52,7 @@ export const Header = () => {
             </a>
 
             <div className="nav-btn dropdown">
-               <span className="dropbtn">Services</span>
+               <span className="dropbtn">Services▾</span>
                <div className="dropdown-content">
                   <a href="/fences" onClick={closeMenu}>Fence/Gate</a>
                   <a href="/pergolas" onClick={closeMenu}>Pergolas/Trellis</a>

@@ -3,7 +3,6 @@ import './Gallery.css';
 import '../../../pages/public/Home/Home.css';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
-import { Stairs } from '@mui/icons-material';
 
 
 const GalleryList = [

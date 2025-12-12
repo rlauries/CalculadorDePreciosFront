@@ -1,7 +1,6 @@
 
 import './Contactus.css';
 import {ContactUsForm} from '../../../componets/ContactUsForm/ContactUsForm.jsx';
-import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 
 const ContactUs = () => {
     

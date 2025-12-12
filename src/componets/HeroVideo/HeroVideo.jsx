@@ -23,13 +23,14 @@ export const HeroVideo  = ({
 
     return (
         <video
-        id={videoId}
-        className={className}
-        src={src}
-        muted
-        playsInline
-        onEnded={handleLoop}
-        onClick={handlePlayOnClick}
+            id={videoId}
+            className={className}
+            src={src}
+            muted
+            playsInline
+            autoPlay
+            onEnded={handleLoop}
+            onClick={handlePlayOnClick}
         />
     );
 };

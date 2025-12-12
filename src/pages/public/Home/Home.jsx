@@ -13,10 +13,10 @@ const Home = () => {
     <div >
         <section className="video-section">
             <HeroVideo
-            src="images/videos/product-promo.mp4"
-            videoId="slow-video"
-            className="hero-video"
-            pauseTime={4000}
+                src="images/videos/product-promo.mp4"
+                videoId="slow-video"
+                className="hero-video"
+                pauseTime={4000}
             />
         </section>
 

@@ -5,19 +5,30 @@ import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 
 const ContactUs = () => {
     
-  
+  const handlePlayOnClick = () => {
+        const video = document.getElementById("slow-video");
+        if (video) video.play();
+    };
+    const handleLoop = () => {
+        setTimeout(() => {
+            const video = document.getElementById("slow-video");
+            if (video) video.play();
+        }, 4000); // Pausa de 4s
+    };
 
   return (
     <div className='viewport'>
-        <HeroBanner
-                  title="Why? "
-                  subtitle="Filling out the Contact Form allows us to understand your project in greater detail, ensuring that we can provide you with the best possible design solution about your needs, preferences, and vision"
-                  onButtonClick={()=>window.location.href="/contactus"}
-                  imageUrl="/images/4-people-in-table.png"
-                />
-        {/* <div>
-          <img className='hero-image' src="images/Contact-Us-Banner.png" alt="HeroBanner" />
-        </div> */}
+         <section className="video-section">
+            <video
+                className="hero-video"
+                id="slow-video"
+                src="images/videos/contactus-video.mp4"
+                muted
+                playsInline
+                onEnded={handleLoop}
+                onClick={handlePlayOnClick}
+            />
+        </section>
         <div className='contactu-info'>
           <h1>At Lauries Welding Group<strong>&nbsp; | </strong></h1>
           <p>

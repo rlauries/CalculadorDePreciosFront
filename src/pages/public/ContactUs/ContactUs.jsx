@@ -19,10 +19,11 @@ const ContactUs = () => {
           <img className='hero-image' src="images/Contact-Us-Banner.png" alt="HeroBanner" />
         </div> */}
         <div className='contactu-info'>
-          <h1><strong>&nbsp; | </strong>At Welding Group</h1>
+          <h1>At Lauries Welding Group<strong>&nbsp; | </strong></h1>
           <p>
              Your project matters. We commit to contacting you within 24 hours of receiving your information. For immediate questions, call us at (786)-486-8465.
           </p>
+          
            
         </div>
         <ContactUsForm/>

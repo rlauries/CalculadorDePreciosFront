@@ -1,0 +1,11 @@
+/* Portrait: ocupa toda la altura */
+
+
+/* Landscape: se reduce a 80% de la pantalla */
+@media (orientation: landscape) {
+  .hero-video {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -5,16 +5,7 @@ import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.jsx';
 
 const ContactUs = () => {
     
-  const handlePlayOnClick = () => {
-        const video = document.getElementById("slow-video");
-        if (video) video.play();
-    };
-    const handleLoop = () => {
-        setTimeout(() => {
-            const video = document.getElementById("slow-video");
-            if (video) video.play();
-        }, 4000); // Pausa de 4s
-    };
+ 
 
   return (
     <div className='viewport'>

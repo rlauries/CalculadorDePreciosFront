@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import InputMask from 'react-input-mask';
-import './Contactus.css';
+import './ContactUsForm.css';
 import { UploadFile } from '../UploadFile/UploadFile.jsx';
 import ReCAPTCHA from "react-google-recaptcha";
 import validationPatterns from '../../gobernance/validationPatterns.js';
@@ -176,18 +176,20 @@ export const ContactUsForm = () => {
                 </div>
             </div>
 
-              {/* Upload File */}
-            <div className='upload'>
-              <UploadFile onFileSelected={setSelectedFile} />
-            </div>
+             {/* Upload File */}
+              <div className="upload-row">
+                <UploadFile onFileSelected={setSelectedFile} />
+              </div>
 
               {/* ReCaptcha */}
-            <div className='reCaptcha'>
-              <ReCAPTCHA
-                 sitekey="6LeGCy0rAAAAAGhvUg1wD3izevLwkwW56goISaFY"
-                 onChange={handleCaptchaChange}
-              />
-            </div>
+              <div className="reCaptcha-wrapper">
+                <ReCAPTCHA
+                  sitekey="6LeGCy0rAAAAAGhvUg1wD3izevLwkwW56goISaFY"
+                  onChange={handleCaptchaChange}
+                  size="compact"          // hace el captcha más estrecho
+                />
+              </div>
+
 
               {/* SubmitButton*/}
             <button 

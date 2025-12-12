@@ -1,5 +1,4 @@
 
-import { Header } from '../../../componets/Header/Header.jsx';
 import './Contactus.css';
 import {ContactUsForm} from '../../../componets/ContactUsForm/ContactUsForm.jsx';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
@@ -10,7 +9,6 @@ const ContactUs = () => {
 
   return (
     <div className='viewport'>
-        <Header/>
         <HeroBanner
                   title="Why? "
                   subtitle="Filling out the Contact Form allows us to understand your project in greater detail, ensuring that we can provide you with the best possible design solution about your needs, preferences, and vision"

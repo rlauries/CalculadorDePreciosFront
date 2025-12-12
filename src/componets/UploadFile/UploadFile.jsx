@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../ContactUsForm/Contactus.css';
+import '../ContactUsForm/ContactUsForm.css';
 
 export const UploadFile = ({onFileSelected}) => {
   
@@ -26,7 +26,7 @@ export const UploadFile = ({onFileSelected}) => {
                     id="fileInput" 
                     accept="image/*,.pdf,.doc,.docx"
                     onChange={onFileChange} />
-            <label htmlFor="fileInput" className="custom-file-label">Upload your Architeture Plans or Sketch</label>
+            <label htmlFor="fileInput" className="custom-file-label">Upload Sketch</label>
             <div className="chosen-file">
               {file && <p><b>Selected file:</b> {file.name}</p>}
             </div>

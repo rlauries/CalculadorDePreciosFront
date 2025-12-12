@@ -121,10 +121,34 @@ textarea{
     width: 90%;
     height: 40px;
   }
-  .upload,
+  .upload-row,
   .reCaptcha {
     margin: 3% 3%;
+    width: 94%;
   }
+  /* -------- Upload -------- */
+/* .upload-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+} */
+
+/* Por si dentro hay botón + texto + input */
+
+
+/* Móvil */
+
+
+/* -------- reCAPTCHA -------- */
+.reCaptcha-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+
  
   
   .send_btn:active {
@@ -251,3 +275,39 @@ textarea{
     transform: translateY(0);
   }
 }
+
+@media (max-width: 950px) {
+    .lead-form{
+        width: 80%;
+    }
+}
+
+@media (max-width: 950px) {
+  .reCaptcha {
+    width: 50%;
+  }
+}
+@media (max-width: 400px) {
+  .upload-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .upload-row input[type="file"],
+  .upload-row button,
+  .upload-row label {
+    width: 100%;
+  }
+}
+/* extra por si aun se sale un poco en móviles muy estrechos */
+@media (max-width: 400px) {
+  .reCaptcha-wrapper {
+    transform: scale(0.9);
+    transform-origin: left top;
+  }
+}
+
+/* Arreglo de desborde del upload */
+
+

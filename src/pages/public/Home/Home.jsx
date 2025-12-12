@@ -1,51 +1,22 @@
-import React, {useEffect} from 'react';
 import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion';
 import './Home.css';
 import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider';
 import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf';
+import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo';
 
 const Home = () => {
-    useEffect(() => {
-        const video = document.getElementById("slow-video");
-        if (!video) return;
-
-        video.playbackRate = 0.4;
-
-        // Intentar autoplay (puede fallar)
-        const tryAutoplay = async () => {
-            try {
-            await video.play(); 
-            } catch (e) {
-            console.log("Autoplay bloqueado, esperando interacción del usuario.");
-            }
-        };
-
-        tryAutoplay();
-    }, []);
-    const handlePlayOnClick = () => {
-        const video = document.getElementById("slow-video");
-        if (video) video.play();
-    };
-    const handleLoop = () => {
-        setTimeout(() => {
-            const video = document.getElementById("slow-video");
-            if (video) video.play();
-        }, 4000); // Pausa de 4s
-    };
+    
 
 
   return (
     <div >
         <section className="video-section">
-            <video
-                className="hero-video"
-                id="slow-video"
-                src="images/videos/product-promo.mp4"
-                muted
-                playsInline
-                onEnded={handleLoop}
-                onClick={handlePlayOnClick}
+            <HeroVideo
+            src="images/videos/product-promo.mp4"
+            videoId="slow-video"
+            className="hero-video"
+            pauseTime={4000}
             />
         </section>
 

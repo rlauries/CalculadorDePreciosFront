@@ -1,6 +1,7 @@
 
 import './Contactus.css';
 import {ContactUsForm} from '../../../componets/ContactUsForm/ContactUsForm.jsx';
+import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.jsx';
 
 const ContactUs = () => {
     
@@ -17,17 +18,15 @@ const ContactUs = () => {
 
   return (
     <div className='viewport'>
-         <section className="video-section">
-            <video
-                className="hero-video"
-                id="slow-video"
-                src="images/videos/contactus-video.mp4"
-                muted
-                playsInline
-                onEnded={handleLoop}
-                onClick={handlePlayOnClick}
-            />
+        <section className="video-section">
+          <HeroVideo
+            src="images/videos/contactus-video.mp4"
+            videoId="slow-video"
+            className="hero-video"
+            pauseTime={4000}
+          />
         </section>
+
         <div className='contactu-info'>
           <h1>At Lauries Welding Group<strong>&nbsp; | </strong></h1>
           <p>

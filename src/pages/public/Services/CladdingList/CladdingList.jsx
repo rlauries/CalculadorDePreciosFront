@@ -1,17 +1,150 @@
-import React from 'react'
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner'
+import React, { useState } from "react";
+import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner";
+// Usa el MISMO import de DesignTailorCard que en FenceList
+import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignTailorCard";
+
+const CladdingServicesDB = [
+  {
+    id: 101,
+    name: "Composite Cladding",
+    overview:
+      "Composite cladding is a modern exterior and interior solution made from a blend of recycled wood fibers and plastic polymers. It provides a sleek, contemporary appearance while offering superior durability and environmental resistance. Perfect for ceilings, walls, facades, and pergola coverings, composite cladding enhances both aesthetics and performance.",
+    durability:
+      "Highly durable and engineered to resist moisture, fading, warping, and insects. Composite panels maintain structural integrity even under intense sunlight and humidity.",
+    versatility:
+      "Ideal for residential and commercial applications including exterior facades, interior feature walls, pergolas, patio ceilings, entrance columns, and accent architectural elements.",
+    maintenance:
+      "Very low maintenance; requires only occasional cleaning. No sanding, sealing, or repainting needed over time.",
+    aestheticOptions:
+      "Available in a wide range of modern colors and wood-grain textures. Offers a uniform, high-end appearance suitable for luxury outdoor living spaces.",
+    imageUrl: "images/originals/Claddings/composite-nili.jpeg",
+  },
+  {
+    id: 102,
+    name: "Wood Cladding",
+    overview:
+      "Wood cladding delivers a natural, warm, and timeless look ideal for both modern and traditional architectural designs. It is commonly used for exterior facades, ceilings, and pergola structures to create an inviting organic atmosphere.",
+    durability:
+      "Durable when properly sealed and maintained. Resistant to reasonable wear, but requires protection against moisture, UV exposure, and insects depending on the wood species.",
+    versatility:
+      "Perfect for accent walls, ceilings, pergolas, exterior facades, porch coverings, and decorative columns. Suitable for both interior and exterior applications.",
+    maintenance:
+      "Medium maintenance; wood requires periodic sealing, staining, or oiling to preserve color and prevent weather-related deterioration.",
+    aestheticOptions:
+      "Offers rich natural textures and customizable finishes. Available in various species such as cedar, pine, redwood, and exotic hardwoods for premium elegance.",
+    imageUrl: "images/originals/Claddings/wood-planks.jpg",
+  },
+  {
+    id: 103,
+    name: "PVC Cladding",
+    overview:
+      "PVC cladding is a lightweight, waterproof, and cost-effective solution ideal for ceilings, walls, and exterior structures. It provides a clean, elegant finish that resists moisture and requires minimal upkeep, making it excellent for high-humidity areas and outdoor installations.",
+    durability:
+      "Extremely resistant to moisture, mold, insects, and rot. PVC panels do not warp or crack, even in extreme temperature fluctuations.",
+    versatility:
+      "Commonly used for soffits, porch ceilings, outdoor kitchens, pergola coverings, wall accents, and interior wet areas such as bathrooms or laundry rooms.",
+    maintenance:
+      "Very low maintenance; simple washing is enough. No sanding, painting, or sealing required.",
+    aestheticOptions:
+      "Available in smooth, matte, glossy, or wood-grain finishes. Offers a clean modern look with optional hidden-fastener systems for seamless installation.",
+    imageUrl: "images/originals/Claddings/pvc-cladding.jpg",
+  },
+];
 
 export const CladdingList = () => {
+  const [claddings] = useState(CladdingServicesDB);
+  const [selectedCladding, setSelectedCladding] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = (item) => {
+    setSelectedCladding(item);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setSelectedCladding(null);
+    setShowModal(false);
+  };
+
   return (
     <div>
+      <section>
         <HeroBanner
-            title="Claddings"
-            subtitle='Enhance your home’s beauty and protection with our premium exterior claddings. Explore a variety of styles and materials designed to withstand the elements while elevating your curb appeal.'
-            onButtonClick={()=>window.location.href="/contactus"}
-            imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
+          title="Cladding Services"
+          subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
+          onButtonClick={() => (window.location.href = "/contactus")}
+          imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
         />
+      </section>
 
+      <div className="section-title">
+        <h2>
+          Explore Our Cladding Options <strong>|</strong>
+        </h2>
+        <p className="subtitle">
+          From warm wood textures to low-maintenance composite and PVC, discover
+          cladding solutions that elevate your ceilings, walls, pergolas, and
+          outdoor structures with lasting style and protection.
+        </p>
+      </div>
 
+      {/* uso las mismas clases de Fence para reutilizar estilos */}
+      <div className="fence-list-grid">
+        {claddings.map((item) => (
+          <div className="fence-card" key={item.id}>
+            <div className="fence-image" onClick={() => openModal(item)}>
+              {item.imageUrl ? (
+                <div className="image-wrapper">
+                  <img src={item.imageUrl} alt={item.name} />
+                  <div className="image-label">{item.name}</div>
+                </div>
+              ) : (
+                <div className="no-image">No Image</div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {showModal && selectedCladding && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="close-button" onClick={closeModal}>
+              ×
+            </button>
+            <h2>
+              {selectedCladding.name}
+              <strong className="hero-strong"> | </strong>
+            </h2>
+            <img
+              src={selectedCladding.imageUrl}
+              alt={selectedCladding.name}
+            />
+            <p>
+              <strong>Overview:</strong> {selectedCladding.overview}
+            </p>
+            <p>
+              <strong>Durability:</strong> {selectedCladding.durability}
+            </p>
+            <p>
+              <strong>Versatility:</strong> {selectedCladding.versatility}
+            </p>
+            <p>
+              <strong>Maintenance:</strong> {selectedCladding.maintenance}
+            </p>
+            <p>
+              <strong>Aesthetic Options:</strong>{" "}
+              {selectedCladding.aestheticOptions}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Igual que en FenceList */}
+      <DesignTailorCard />
     </div>
-  )
-}
+  );
+};

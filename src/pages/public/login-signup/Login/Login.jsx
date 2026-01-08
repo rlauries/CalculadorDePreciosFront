@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Header} from '../../../../componets/Header/Header';
+
 import FloatingLabelInput from '../../../../componets/FloatingLabelInput/FloatingLabelInput';
 import './Login.css';
 import validationPatterns from '../../../../gobernance/validationPatterns.js';
@@ -62,7 +62,7 @@ const Login = () => {
 
     return (
         <div>
-            <Header/>
+            
             <div className='login-form'>
                  <div className='legend-div'>
                     <img className='logo-img' src="images\Logo\lauries logo (para fondo blanco).png" alt="" />

@@ -70,7 +70,7 @@ export const CladdingList = () => {
     <div>
       <section>
         <HeroBanner
-          title="Cladding Services"
+          title="Cladding Service"
           subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
           onButtonClick={() => (window.location.href = "/contactus")}
           imageUrl="/images/originals/Claddings/hero-cladding.jpeg"

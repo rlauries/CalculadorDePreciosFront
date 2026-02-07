@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   width: 97%;
-  height: 40px;       /* se sobreescribe en mobile */
+  /* height: 10px;       se sobreescribe en mobile */
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -26,12 +26,7 @@
 
 /* -----Nav-------- */
 
-.nav-btn:hover {
-    background-color: rgba(4, 15, 61, 0.3);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    color: white;
-}
+
 
 nav {
     display: flex;
@@ -43,15 +38,41 @@ nav {
     color: black;
     line-height: 10px;
     width: 100%;
+    gap:5px;
+}
+.nav-btn {
+    width: auto;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+    /* border: none; */
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: border-color 3s ease;
+    
+}
+.nav-btn:hover {
+  border-color: black;
+  
+  color: black;
 }
 .nav-btn.contactus{
     background-color: rgb(241, 104, 58);
     color: white;
     border-radius: 4px;
+    height: 10px;
 }
 .login {
     background: transparent;
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 20px;
 }
@@ -67,22 +88,7 @@ nav {
     font-size: large;
     color: white;
 }
-.nav-btn {
-    width: 140px;
-    color: black;
-    font-weight: bold;
-    transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-    padding: 20px;
-    justify-content: center;
-    text-align: center;
-    background: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .logout .logout-btn {
     background: transparent;
     padding-left: 10px;
@@ -114,7 +120,7 @@ nav {
     color: black;
     font-weight: bold;
     padding: 20px;
-    width: 150px;
+    width: auto;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease;
@@ -139,6 +145,7 @@ nav {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     color: black;
     border-radius: 2px;
+    gap: 5px;
 }
 
 .dropdown-content a {

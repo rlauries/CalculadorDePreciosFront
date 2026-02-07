@@ -11,6 +11,7 @@ import Login from '../pages/public/login-signup/Login/Login.jsx';
 import { Header } from '../componets/Header/Header.jsx';
 import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
 import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
+import { Invoice } from '../componets/Invoice/Invoice.tsx';
 // Lazy Load Components
 
 
@@ -54,6 +55,9 @@ export const AppRouter = () => {
             
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            {/* ----- Private Routes ---------- */}
+            <Route path="/invoice" element={<Invoice />} />
+            
           </Routes>
         </Suspense>
       </ErrorBoundary>

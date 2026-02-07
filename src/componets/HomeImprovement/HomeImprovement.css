@@ -1,0 +1,71 @@
+.home-improvment-container {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row; /* ya lo tienes bien */
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 5%;
+    gap: 40px;
+    width: 97%;
+    margin-left: 1.5%;
+    margin-top: 100px;
+
+    overflow: hidden;          /* 🔑 CLAVE */
+    box-sizing: border-box;
+    
+}
+
+/* Parte de texto a la derecha */
+.home-improvment-text p{
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    font-size: 40px;
+    line-height: 52px;
+
+}
+
+.home-improvment-text h2 {
+    font-size: 32px;
+    color: white;
+}
+
+/* Slider a la izquierda */
+.home-improvment-image {
+    flex: 2;
+    max-width: 800px;
+}
+
+.slider-img img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+/* ----Media Queries para Responsividad ---- */
+@media (max-width: 1024px) {
+    .home-improvment-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .home-improvment-text p {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    .home-improvment-text h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .home-improvment-image {
+        max-width: 100%;
+    }
+}

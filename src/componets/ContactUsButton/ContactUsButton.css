@@ -1,0 +1,28 @@
+.nav-btn {
+  width: auto;
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.3s ease, font-size 0.3s ease, color 0.3s ease, border-color 3s ease;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-btn:hover {
+  border-color: black;
+  color: black;
+}
+
+.nav-btn.contactus {
+  background-color: rgb(241, 104, 58);
+  color: white;
+  border-radius: 10px;
+  height: 10px;
+}

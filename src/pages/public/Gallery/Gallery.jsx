@@ -3,6 +3,9 @@ import './Gallery.css';
 import '../../../pages/public/Home/Home.css';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
+import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
+import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
+import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 
 
 const GalleryList = [
@@ -407,95 +410,122 @@ const Gallery = () => {
           onButtonClick={()=>window.location.href="/contactus"}
           imageUrl="/images/Hero-Gallery-02.png"
         />
-        <div className="hero-down-text">
-          <h4>
-            Our collection showcases innovation, design, and craftsmanship — from sleek aluminum systems to warm wooden structures. Each model is built for durability, comfort, and year-round performance, transforming any outdoor space into a personalized retreat
-          </h4>
-        </div>
-        <div className='service-type'>
 
-            {/* -------Fence ---------- */}
+     
+        
+        {/* ------- Service Type Section -------  */}
+            <div className='service-type'>
 
-            <div className="fence">
-                <div className='text'>
-                    <label >
-                        Fences<strong> | </strong>
-                    </label>
-                    <p>A Showcase of Style</p>
-                </div>
-                <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
-                <button onClick={switchToFence}>Display More</button>
-            </div>
+              {/* -------Fence ---------- */}
 
-            {/* -------Pergola ---------- */}
+              <div className="fence">
+                  <div className='text'>
+                      <label >
+                          Fences<strong> | </strong>
+                      </label>
+                      <p>A Showcase of Style</p>
+                  </div>
+                  <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
+                  <button onClick={switchToFence}>Display More</button>
+              </div>
 
-            <div className="pergola">
-                <div className="text">
-                    <label>
-                        Pergolas<strong> | </strong>
-                    </label>
-                    <p>Elevate Your Outdoors</p>
-                </div>
-                <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
-                <button onClick={switchToPergola}>Display More</button>
-            </div>
-            
-            {/* -------Stair ---------- */}
-            
-            <div className="stair">
-                <div className="text">
-                    <label>
-                        Stairs<strong> | </strong>
-                    </label>
-                    <p>Path To The Sky</p>
-                </div>
-                <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
-                <button onClick={switchToStair}>Display More</button>
-            </div>
-            
-        </div>
+              {/* -------Pergola ---------- */}
 
-        {/* -------Gallery Section -------  */}
-
-        {serviceTypeId !== 0  && (
-            <div className="gallery-section">
-                <h1>Service Gallery<strong> | </strong></h1>
-                <div className="service-gallery-grid">
-
-                    {/* --------- Filtered by Materials: ----------- */}
-
-                    <div className="filtered-options">
-                      
-                      {(serviceTypeId === 1 || serviceTypeId === 2) && (
-                        <div className="filteredOptions">
-                          Filtered by:&nbsp;
-                          <select
-                            value={selectedMateriaSelect}
-                            onChange={e => setSelectedMateriaSelect(Number(e.target.value))}
-                          >
-                            {materialOptions.map(m => (
-                              <option key={m.id} value={m.id}>
-                                {m.name}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      )}
+              <div className="pergola">
+                  <div className="text">
+                      <label>
+                          Pergolas<strong> | </strong>
+                      </label>
+                      <p>Elevate Your Outdoors</p>
+                  </div>
+                  <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
+                  <button onClick={switchToPergola}>Display More</button>
+              </div>
+              
+              {/* -------Stair ---------- */}
+              
+              <div className="stair">
+                    <div className="text">
+                        <label>
+                            Stairs<strong> | </strong>
+                        </label>
+                        <p>Path To The Sky</p>
                     </div>
-                    
-                    {/* ------Gallery Grid Section ------ */}
+                    <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
+                    <button onClick={switchToStair}>Display More</button>
+                </div>
+              </div>
+            {/* -------Gallery Section -------  */}
 
-                    <div className="gallery-grid">
-                      {filteredGallery.map((img) => (
-                        <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
-                          <img src={img.imageUrl} alt={img.name} />
-                          <p>{img.name} <strong> | </strong></p>
+            {serviceTypeId !== 0  && (
+                <div className="gallery-section">
+                    <h1>Service Gallery<strong> | </strong></h1>
+                    <div className="service-gallery-grid">
+
+                        {/* --------- Filtered by Materials: ----------- */}
+
+                        <div className="filtered-options">
+                          
+                          {(serviceTypeId === 1 || serviceTypeId === 2) && (
+                            <div className="filteredOptions">
+                              Filtered by:&nbsp;
+                              <select
+                                value={selectedMateriaSelect}
+                                onChange={e => setSelectedMateriaSelect(Number(e.target.value))}
+                              >
+                                {materialOptions.map(m => (
+                                  <option key={m.id} value={m.id}>
+                                    {m.name}
+                                  </option>
+                                ))}
+                              </select>
+                            </div>
+                          )}
                         </div>
-                      ))}
+                        
+                        {/* ------Gallery Grid Section ------ */}
+
+                        <div className="gallery-grid">
+                          {filteredGallery.map((img) => (
+                            <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
+                              <img src={img.imageUrl} alt={img.name} />
+                              <p>{img.name} <strong> | </strong></p>
+                            </div>
+                          ))}
+                        </div>
                     </div>
                 </div>
+            )}
+          <div>
+            <AnimatedSection>
+              <HomeImprovement />
+            </AnimatedSection>  
+          </div>
+
+             {/* ----Hero Down Banner ---- */}
+          <AnimatedSection>   
+            <div className="hero-down-banner">
+                <a href="/claddings" className="hero-down-container-link">
+                  <div className="hero-down-container">
+                    <div className="hero-down-card-content">
+                      <img src="images/originals/Claddings/Capture-1.png" alt="" />
+                    </div>
+                  </div>
+                </a>
+                <div className="hero-down-text">
+                  <h2>
+                    Transform Your Outdoors<strong> | </strong>
+                  </h2>
+                <h4>
+                  <em>Discover structures built to endure and impress.</em>
+                </h4>
+                <p>
+                  Our collection blends innovation, thoughtful design, and expert craftsmanship—ranging from modern aluminum systems to the natural beauty of wood. Each model is engineered for durability, comfort, and year-round usability, turning any outdoor space into a personalized sanctuary.
+                </p>
+                <ContactUsButton />
+              </div>
             </div>
-        )}
+          </AnimatedSection>  
 
         {/* ------ Modal Section ------- */}
 

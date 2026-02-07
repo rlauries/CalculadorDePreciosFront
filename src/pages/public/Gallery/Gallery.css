@@ -1,6 +1,6 @@
-.hero-image{
-  height: auto;
-}
+
+
+
 .service-type{
   display: flex;
   width: 60%;
@@ -23,20 +23,114 @@
 strong{
   color: #f1683a;
 }
-.hero-down-text{
+
+/* ---herodown banner---- */
+.hero-down-banner {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 60%;
-  margin:8% 0% 8% 20%;
-  text-align: center;
- 
+  justify-content: space-between;
+  width: 90%;
+  gap: 40px;
+  margin: 60px auto;
+  margin-left: 5%;
 }
-.hero-down-text h4{
-  line-height: 1.8;
-  font-size: 20px;
+
+.hero-down-container {
+  
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  
+}
+
+/* Fondo gris redondeado */
+.hero-down-card-background {
+  background-color: #eee;
+  border-radius: 16px;
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  width: 140%;
+  height: 40%;
+  z-index: 0;
+}
+
+/* Imagen encima del fondo */
+.hero-down-card-content {
+  flex: 0 0 40%;
+  border-radius: 16px;
+  overflow: hidden;
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.15); */
+}
+
+/* Imagen recortada redondeada */
+.hero-down-card-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+.hero-down-text h4 {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 52px;
   color: rgb(112, 106, 100);
 }
+
+/* Título */
+.card-hero-down-card-title a
+{
+  font-weight: 600;
+  padding: 16px;
+  font-size: 18px;
+  color: #111;
+}
+
+/* Icono flotante */
+.card-icon {
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  background-color: #ff7a00;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 12px;
+  font-weight: bold;
+}
+
+
+.hero-down-text {
+  flex: 0 0 60%;
+  padding: 20px;
+}
+.hero-down-text h2{
+  font-size: 60px;
+  font-weight: 400;
+  color: black;
+}
+.hero-down-text h4 {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: rgb(112, 106, 100);
+  margin-bottom: 20px;
+}
+
+.hero-down-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+.hero-down-container-link {
+  text-decoration: none;
+  display: block;
+}
+
+/*---end herodown banner--- */
 
 .service-type .fence {
   width: 100%;

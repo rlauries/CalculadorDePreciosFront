@@ -1,7 +1,7 @@
 import { useContext, useState} from 'react'
 import './Header.css'
 import { AuthContext } from '../../context/AuthContext';
-
+import { ContactUsButton } from '../ContactUsButton/ContactUsButton.tsx';
 
 
 export const Header = () => {
@@ -60,10 +60,8 @@ export const Header = () => {
                   <a href="/claddings" onClick={closeMenu}>Exterior Claddings</a>
                </div>
             </div>
-
-            <a className="nav-btn contactus" href="/contactus" onClick={closeMenu}>
-               Contact Us
-            </a>
+            <ContactUsButton />
+            
 
             {user ? (
                <div className="nav-btn logout">

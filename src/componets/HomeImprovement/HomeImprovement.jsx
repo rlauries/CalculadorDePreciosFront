@@ -34,7 +34,8 @@ export const HomeImprovement = () => {
   return (
     <div className='home-improvment-container'>
         <div className='home-improvment-text'>
-            <p>Home Improvement </p>
+            <h2>SUCCESSFUL IMPROVEMENT</h2>
+            <p>...we bring your vision to life</p>
         </div>
         <div className='home-improvment-image'>
             <Slider {...settings}>

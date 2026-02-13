@@ -410,51 +410,61 @@ const Gallery = () => {
           onButtonClick={()=>window.location.href="/contactus"}
           imageUrl="/images/Hero-Gallery-02.png"
         />
-
+        <AnimatedSection>
+          <div className="section-title">
+            <h2>OUR COMPLETED PROJECTS <strong>|</strong></h2>
+            <p className="subtitle">
+              Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire.
+            </p>
+          </div>
+        </AnimatedSection>
+        
      
         
         {/* ------- Service Type Section -------  */}
-            <div className='service-type'>
+            <AnimatedSection>
+              <div className='service-type'>
 
-              {/* -------Fence ---------- */}
+                {/* -------Fence ---------- */}
 
-              <div className="fence">
-                  <div className='text'>
-                      <label >
-                          Fences<strong> | </strong>
-                      </label>
-                      <p>A Showcase of Style</p>
-                  </div>
-                  <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
-                  <button onClick={switchToFence}>Display More</button>
-              </div>
+                <div className="fence">
+                    <div className='text'>
+                        <label >
+                            Fences<strong> | </strong>
+                        </label>
+                        <p>A Showcase of Style</p>
+                    </div>
+                    <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
+                    <button onClick={switchToFence}>Display More</button>
+                </div>
 
-              {/* -------Pergola ---------- */}
+                {/* -------Pergola ---------- */}
 
-              <div className="pergola">
-                  <div className="text">
-                      <label>
-                          Pergolas<strong> | </strong>
-                      </label>
-                      <p>Elevate Your Outdoors</p>
-                  </div>
-                  <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
-                  <button onClick={switchToPergola}>Display More</button>
-              </div>
-              
-              {/* -------Stair ---------- */}
-              
-              <div className="stair">
+                <div className="pergola">
                     <div className="text">
                         <label>
-                            Stairs<strong> | </strong>
+                            Pergolas<strong> | </strong>
                         </label>
-                        <p>Path To The Sky</p>
+                        <p>Elevate Your Outdoors</p>
                     </div>
-                    <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
-                    <button onClick={switchToStair}>Display More</button>
+                    <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
+                    <button onClick={switchToPergola}>Display More</button>
                 </div>
+                
+                {/* -------Stair ---------- */}
+                
+                <div className="stair">
+                      <div className="text">
+                          <label>
+                              Stairs<strong> | </strong>
+                          </label>
+                          <p>Path To The Sky</p>
+                      </div>
+                      <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
+                      <button onClick={switchToStair}>Display More</button>
+                  </div>
               </div>
+            </AnimatedSection>
             {/* -------Gallery Section -------  */}
 
             {serviceTypeId !== 0  && (
@@ -514,7 +524,7 @@ const Gallery = () => {
                 </a>
                 <div className="hero-down-text">
                   <h2>
-                    Transform Your Outdoors<strong> | </strong>
+                    TRANSFORM YOUR OUTDOOR<strong> | </strong>
                   </h2>
                 <h4>
                   <em>Discover structures built to endure and impress.</em>

@@ -4,6 +4,7 @@
   padding: 40px;
   color: #0b1a4a;
   background: white;
+  
 }
 .invoice-header-top {
   display: flex;
@@ -64,6 +65,7 @@ hr {
   
   
 }
+
 /* -----Select----- */
 
 .invoice-type-select {

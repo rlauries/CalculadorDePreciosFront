@@ -71,12 +71,7 @@ strong{
   display: block;
   border-radius: 16px;
 }
-.hero-down-text h4 {
-  font-style: italic;
-  font-size: 18px;
-  margin-bottom: 52px;
-  color: rgb(112, 106, 100);
-}
+
 
 /* Título */
 .card-hero-down-card-title a
@@ -107,10 +102,11 @@ strong{
   padding: 20px;
 }
 .hero-down-text h2{
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 400;
   color: black;
 }
+
 .hero-down-text h4 {
   font-style: italic;
   font-size: 18px;

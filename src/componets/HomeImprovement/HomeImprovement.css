@@ -1,6 +1,6 @@
 .home-improvment-container {
-    background-color: black;
-    color: white;
+    background-color: #EBEAE9;
+    color: rgb(112, 106, 100);
     display: flex;
     flex-direction: row; /* ya lo tienes bien */
     justify-content: space-between;
@@ -20,21 +20,22 @@
 .home-improvment-text p{
     flex: 1;
     text-align: left;
-    padding: 20px;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 52px;
-
+    font-style: italic;
 }
 
 .home-improvment-text h2 {
-    font-size: 32px;
-    color: white;
+    font-size: 40px;
+    color: black;
+    font-weight: 350;
 }
 
 /* Slider a la izquierda */
 .home-improvment-image {
     flex: 2;
     max-width: 800px;
+    padding-right: 55px;
 }
 
 .slider-img img {

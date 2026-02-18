@@ -2,7 +2,7 @@ import { useContext, useState,useEffect, useRef} from 'react'
 import './Header.css'
 import { AuthContext } from '../../context/AuthContext.jsx';
 import { ContactUsButton } from '../ContactUsButton/ContactUsButton.tsx';
-import { HeroBanner } from '../HeroBanner/HeroBanner.jsx';
+
 import { Link } from 'react-router-dom-v5-compat';
 
 

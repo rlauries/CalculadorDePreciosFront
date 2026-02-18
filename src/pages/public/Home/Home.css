@@ -1,5 +1,9 @@
 @import url('normalize.css');
 
+.home-container {
+  background: linear-gradient(to bottom, white, #edecec);
+  min-height: 100vh;
+}
 .video-section {
   position: relative;
   width: 97%;
@@ -26,7 +30,86 @@
   display: block;
   object-fit: cover;
 }
+/* ---herodown banner---- */
+.hero-down-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  gap: 40px;
+  margin: 60px auto;
+  margin-left: 5%;
+  background: transparent;
+}
 
+.hero-down-container {
+  
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  
+}
+
+/* Imagen encima del fondo */
+.hero-down-card-content {
+  flex: 0 0 40%;
+  border-radius: 16px;
+  overflow: hidden;
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.15); */
+}
+
+/* Imagen recortada redondeada */
+.hero-down-card-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+
+/* Título */
+.card-hero-down-card-title a
+{
+  font-weight: 600;
+  padding: 16px;
+  font-size: 18px;
+  color: #111;
+}
+
+
+
+
+.hero-down-text {
+  flex: 0 0 60%;
+  padding: 20px;
+}
+.hero-down-text h2{
+  font-size: 45px;
+  font-weight: 400;
+  color: black;
+}
+
+.hero-down-text h4 {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: rgb(112, 106, 100);
+  margin-bottom: 20px;
+}
+
+.hero-down-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+.hero-down-container-link {
+  text-decoration: none;
+  display: block;
+}
+
+/*---e
 
 
 /* Third Banner */
@@ -94,6 +177,8 @@
     flex-direction: column;
     padding: 20px;
     margin-bottom: 100px;
+    width: 97%;
+    margin-left: 1.5%;
   }
   .forth-banner .info{
     padding: 40px;
@@ -151,6 +236,15 @@
     .forth-banner p{
       font-size: 12px;
     }
+    .hero-down-text h2{
+      font-size: 30px;
+    }
+    .hero-down-text em{
+      font-size: 18px;
+    }
+    .hero-down-text p{
+      font-size: 12px;
+    }
 }
 
 
@@ -163,6 +257,18 @@
     .third-banner-button {
       font-size: 15px;
     }  
+   
+
+    .hero-down-banner{
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      margin-top: 20px;
+      
+    }
+    .hero-down-card-content{
+      padding: 0px 20% 
+    }
     
 
 }    
@@ -194,6 +300,7 @@
     .myths-info{
       margin-top: 40px;
     }
+    
 }
 @media screen and (max-width: 625px){
   .third-banner-text p {
@@ -204,7 +311,18 @@
   .third-banner-button {
     font-size: 10px;
   }
-  
+  .hero-down-banner{
+    gap: 0px;
+  }
+  .hero-down-text h2{
+    font-size: 20px;
+  }
+  .hero-down-text em{
+    font-size: 14px;
+  }
+  .hero-down-text p{
+    font-size: 08px;
+  }
 
 }
 
@@ -219,11 +337,19 @@
     font-size: 8px;
     width: 80%;
   }
-   
+  .hero-down-text h2{
+    font-size: 16px;
+  }
+  .hero-down-text em{
+    font-size: 12px;
+  }
+  .hero-down-text p{
+    font-size: 08px;
+  } 
 
 }
 
-@media screen and (max-width: 345px){
+@media screen and (max-width: 355px){
   .third-banner-text p {
     font-size: 8px;
   }
@@ -232,5 +358,7 @@
     font-size: 8px;
     width: 80%;
   }
-
+  .hero-down-text h2{
+    font-size: 14px;
+  }
 }

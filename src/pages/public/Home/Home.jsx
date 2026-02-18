@@ -5,13 +5,15 @@ import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf';
 import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
+import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
+import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 
 const Home = () => {
     
 
 
   return (
-    <div >
+    <div className='home-container'>
         <section className="video-section">
             <HeroVideo
                 src="images/videos/product-promo.mp4"
@@ -20,30 +22,42 @@ const Home = () => {
                 pauseTime={4000}
             />
         </section>
-
-
+        <SectionIntro
+            title="DESIGNED TO LAST"
+            description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."
+        />
+        {/* ----Hero Down Banner ---- */}
         <section>
+          <AnimatedSection>   
+            <div className="hero-down-banner">
+                <a href="/claddings" className="hero-down-container-link">
+                  <div className="hero-down-container">
+                    <div className="hero-down-card-content">
+                      <img src="images/originals/Claddings/Capture-1.png" alt="" />
+                    </div>
+                  </div>
+                </a>
+                <div className="hero-down-text">
+                    <h2>
+                        TRANSFORM YOUR OUTDOOR<strong> | </strong>
+                    </h2>
+                    <h4>
+                        <em>Discover structures built to endure and impress.</em>
+                    </h4>
+                    <p>
+                    Our collection blends innovation, thoughtful design, and expert craftsmanship—ranging from modern aluminum systems to the natural beauty of wood. Each model is engineered for durability, comfort, and year-round usability, turning any outdoor space into a personalized sanctuary.
+                    </p>
+                <ContactUsButton/>
+              </div>
+            </div>
+          </AnimatedSection>  
+        </section>
+
+        <section className='home-services-sliders'>
             <AnimatedSection>
                 <PergolaSlider/>
             </AnimatedSection>
-        </section>
-        <section className='third-banner-container'>
-            <AnimatedSection>
-                <span className='third-banner'>
-                    <div className="third-banner-text">
-                        <p>
-                            Engineered for performance. Built to last. Designed to impress.
-                        </p>
-                    </div>
-                    <div className="third-banner-button-wrapper">
-                        <button className='third-banner-button' onClick={() => window.location.href = "/contactus"}>
-                            Contact Us
-                        </button>
-                    </div>
-                </span>
-            </AnimatedSection>
-        </section>
-        <section>
+        
             <AnimatedSection>
                 <FenceSlider/>
             </AnimatedSection>
@@ -64,7 +78,7 @@ const Home = () => {
                 </div>
             </AnimatedSection>
         </section>
-        <section className='third-banner-container'>
+        {/* <section className='third-banner-container'>
             <AnimatedSection>
                 <span className='third-banner'>
                     <div className="third-banner-text">
@@ -79,25 +93,36 @@ const Home = () => {
                     </div>
                 </span>
             </AnimatedSection>
-        </section>
+        </section> */}
         <section>
-            <AnimatedSection>
+            
                 <div className='myths-info'>
-                    <BannerImageHalf 
-                        image="images/originals/Pergolas/IMG_7746.jpg" 
-                        title=" Wood Pergola Myth" 
-                        subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
-                        reversed={false}
-                        
-                    />
-                    <BannerImageHalf
-                        image="images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg" 
-                        title=" Outdoor LED Lights Myth" 
-                        subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
-                        reversed={true} // Esto invierte el orden de imagen y texto
-                    /> 
+                    <AnimatedSection>
+                        <BannerImageHalf 
+                            image="images/originals/Pergolas/IMG_7746.jpg" 
+                            title=" WOOD PERGOLA MYTH" 
+                            subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
+                            reversed={false}
+                        />
+                    </AnimatedSection>
+                    <AnimatedSection>
+                        <BannerImageHalf
+                            image="images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg" 
+                            title=" OUTDOOR LIGHTING MYTH" 
+                            subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
+                            reversed={true} // Esto invierte el orden de imagen y texto
+                        /> 
+                    </AnimatedSection>
+                    <AnimatedSection>    
+                        <BannerImageHalf
+                            image="images/originals/Pergolas/IMG_7746.jpg" 
+                            title="PVC Cladding Myth" 
+                            subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
+                            reversed={false}
+                        />
+                    </AnimatedSection>    
                 </div>
-            </AnimatedSection>
+            
         </section>
         <section>
             <AnimatedSection>

@@ -8,7 +8,7 @@ import PergolaList from '../pages/public/Services/PergolaList/PergolaList.jsx';
 import FenceList from '../pages/public/Services/FenceList/FenceList.jsx';
 import SignUp from '../pages/public/login-signup/SignUp/SignUp.jsx';
 import Login from '../pages/public/login-signup/Login/Login.jsx';
-import { Header } from '../componets/Header/Header.jsx';
+import { Header } from '../componets/Header/Header.tsx';
 import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
 import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
 import { Invoice } from '../componets/Invoice/Invoice.tsx';

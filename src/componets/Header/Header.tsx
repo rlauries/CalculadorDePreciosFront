@@ -1,19 +1,43 @@
-import { useContext, useState} from 'react'
+import { useContext, useState,useEffect, useRef} from 'react'
 import './Header.css'
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext.jsx';
 import { ContactUsButton } from '../ContactUsButton/ContactUsButton.tsx';
+import { HeroBanner } from '../HeroBanner/HeroBanner.jsx';
+import { Link } from 'react-router-dom-v5-compat';
 
 
 export const Header = () => {
 
    const {user, logout} = useContext(AuthContext);
-   
+   const megaMenuRef = useRef<HTMLDivElement | null>(null);
+
    const [menuOpen, setMenuOpen] = useState(false);
    const toggleMenu = () => setMenuOpen((prev) => !prev);
    
    const [servicesOpen, setServicesOpen] = useState(false);
    const toggleServices = () => setServicesOpen(prev => !prev);
-   
+
+   //---- Cierra el mega menú al hacer clic fuera de él ------
+   useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+         if (
+            megaMenuRef.current &&
+            !megaMenuRef.current.contains(event.target as Node)
+         ) {
+            setServicesOpen(false);
+         }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+
+      return () => {
+         document.removeEventListener("mousedown", handleClickOutside);
+      };
+   }, []);
+
+
+
+
    
    const closeMenu = () => setMenuOpen(false);
 
@@ -52,17 +76,55 @@ export const Header = () => {
             </a>
 
             <div className="nav-btn dropdown">
-               <span className="dropbtn">Services▾</span>
-               <div className="dropdown-content">
-                  <a href="/fences" onClick={closeMenu}>Fence/Gate</a>
-                  <a href="/pergolas" onClick={closeMenu}>Pergolas/Trellis</a>
-                  <a href="/stairs" onClick={closeMenu}>Stairs</a>
-                  <a href="/claddings" onClick={closeMenu}>Exterior Claddings</a>
+               <button
+                  className="dropbtn"
+                  onClick={() => setServicesOpen(prev => !prev)}
+               >
+                  Services ▾
+               </button>
                </div>
-            </div>
+
+               
+               <div ref={megaMenuRef}
+                    className={`mega-menu ${servicesOpen ? "open" : ""}`}
+                    
+               >
+                  <div className="mega-menu-container"
+                       
+                  >
+
+                     {/* LEFT SIDE IMAGE */}
+                     <div className="mega-menu-image"
+                          style={{
+                             backgroundImage: `url(/images/originals/Pergolas/IMG_7746.jpg)`
+                          }}                     >
+                        {/* <img src="//imagesoriginals/Pergolas/IMG_7746.jpg" alt="Services" /> */}
+                        <div className="mega-menu-image-overlay">
+                           <h3>OUR SERVICES</h3>
+                           <p>Inspired by your needs</p>
+                           <Link to="/gallery">View All Services</Link>
+                        </div>
+                     </div>
+
+                     {/* RIGHT SIDE LINKS */}
+                     <div className="mega-menu-links">
+                        <h3>RESIDENTIAL & COMMERCIAL</h3>
+                        <a href="/fences">Fence / Gate</a>
+                        <a href="/pergolas">Pergolas / Trellis</a>
+                        <a href="/stairs">Stairs</a>
+                        <a href="/claddings">Exterior Claddings</a>
+                        <button className="mega-menu-links-button" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
+                           CONTACT US
+                        </button>
+                     </div>
+
+                  </div>
+               </div>
+               
+
+
             <ContactUsButton />
             
-
             {user ? (
                <div className="nav-btn logout">
                   <span className="welcome-user">Welcome, {user.username}</span>

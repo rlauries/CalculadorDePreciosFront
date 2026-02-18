@@ -1,0 +1,47 @@
+.section-intro {
+  width: 100%;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  
+}
+
+
+
+.section-intro h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.section-intro h2 strong {
+  color: #f1683a;
+}
+
+.section-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  
+}
+@media screen and (max-width: 1100px){
+  .section-intro h2{
+    font-size: 30px;
+  }
+  .section-intro p{
+    font-size: 18px;
+  }
+
+}
+@media screen and (max-width: 905px){
+  .section-intro{
+    margin-bottom: 0px;
+  }
+}

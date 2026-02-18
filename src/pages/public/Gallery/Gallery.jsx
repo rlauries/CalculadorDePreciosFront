@@ -4,9 +4,8 @@ import '../../../pages/public/Home/Home.css';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
 import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
-import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
-
+import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 
 const GalleryList = [
     // ----Fences----
@@ -402,23 +401,19 @@ const Gallery = () => {
   };
 
   return (
-    <>
+    <div className="gallery-page">
         
         <HeroBanner
-          title="Gallery"
+          title="GALLERY"
           subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"
           onButtonClick={()=>window.location.href="/contactus"}
           imageUrl="/images/Hero-Gallery-02.png"
         />
-        <AnimatedSection>
-          <div className="section-title">
-            <h2>OUR COMPLETED PROJECTS <strong>|</strong></h2>
-            <p className="subtitle">
-              Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire.
-            </p>
-          </div>
-        </AnimatedSection>
         
+        <SectionIntro
+          title="OUR COMPLETED PROJECTS"
+          description="Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire."
+        />
      
         
         {/* ------- Service Type Section -------  */}
@@ -512,30 +507,7 @@ const Gallery = () => {
             </AnimatedSection>  
           </div>
 
-             {/* ----Hero Down Banner ---- */}
-          <AnimatedSection>   
-            <div className="hero-down-banner">
-                <a href="/claddings" className="hero-down-container-link">
-                  <div className="hero-down-container">
-                    <div className="hero-down-card-content">
-                      <img src="images/originals/Claddings/Capture-1.png" alt="" />
-                    </div>
-                  </div>
-                </a>
-                <div className="hero-down-text">
-                  <h2>
-                    TRANSFORM YOUR OUTDOOR<strong> | </strong>
-                  </h2>
-                <h4>
-                  <em>Discover structures built to endure and impress.</em>
-                </h4>
-                <p>
-                  Our collection blends innovation, thoughtful design, and expert craftsmanship—ranging from modern aluminum systems to the natural beauty of wood. Each model is engineered for durability, comfort, and year-round usability, turning any outdoor space into a personalized sanctuary.
-                </p>
-                <ContactUsButton />
-              </div>
-            </div>
-          </AnimatedSection>  
+           
 
         {/* ------ Modal Section ------- */}
 
@@ -559,7 +531,7 @@ const Gallery = () => {
           </div>
         )}
         
-    </>
+    </div>
     
   );
 };

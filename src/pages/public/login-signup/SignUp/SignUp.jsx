@@ -1,6 +1,6 @@
 import React from 'react'
 import { Footer} from '../../../../componets/Footer'
-import { Header} from '../../../../componets/Header/Header';
+import { Header} from '../../../../componets/Header/Header.tsx';
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import WarningIcon from '@mui/icons-material/Warning';

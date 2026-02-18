@@ -4,8 +4,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px;
-    background-color: #f1f1f1;
     
+    width: 92%;
+    margin-left: 4%;
+    margin-bottom: 40px;
 }
 
 .banner-content {
@@ -23,11 +25,12 @@
     
 }
 .text-container h1{
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
 }
 .text-container p{
     font-size: 1.3rem;
+    line-height: 1.5;
 }
 .banner-strong{
     color: #f1683a;
@@ -37,6 +40,7 @@
 .image-container {
     width: 50%;
     height: 100%;
+    padding: 5%;
 }
 
 .banner img {

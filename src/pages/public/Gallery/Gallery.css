@@ -1,10 +1,23 @@
 
+.gallery-page {
+  min-height: 100vh;
+}
 
 
+
+strong{
+  color: #f1683a;
+}
+
+
+
+
+
+/*-------service type section------- */
 .service-type{
   display: flex;
-  width: 60%;
-  margin-left: 20%;
+  width: 70%;
+  margin-left: 12.5%;
   gap: 30px;
   margin-top: 40px;
 }
@@ -12,131 +25,23 @@
   margin-left: 5%;
 }
 .service-type .text label{
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   height: 20px;
 }
 .service-type .text p{
-  font-size: 12px;
-
-}
-strong{
-  color: #f1683a;
-}
-
-/* ---herodown banner---- */
-.hero-down-banner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  gap: 40px;
-  margin: 60px auto;
-  margin-left: 5%;
-}
-
-.hero-down-container {
-  
-  width: 100%;
-  height: auto;
-  padding: 40px;
-  
-}
-
-/* Fondo gris redondeado */
-.hero-down-card-background {
-  background-color: #eee;
-  border-radius: 16px;
-  position: absolute;
-  top: 40%;
-  left: 20px;
-  width: 140%;
-  height: 40%;
-  z-index: 0;
-}
-
-/* Imagen encima del fondo */
-.hero-down-card-content {
-  flex: 0 0 40%;
-  border-radius: 16px;
-  overflow: hidden;
-  /* box-shadow: 0 8px 24px rgba(0,0,0,0.15); */
-}
-
-/* Imagen recortada redondeada */
-.hero-down-card-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-
-/* Título */
-.card-hero-down-card-title a
-{
-  font-weight: 600;
-  padding: 16px;
-  font-size: 18px;
-  color: #111;
-}
-
-/* Icono flotante */
-.card-icon {
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  transform: translateY(-50%);
-  background-color: #ff7a00;
-  color: white;
-  border-radius: 50%;
-  font-size: 20px;
-  padding: 12px;
-  font-weight: bold;
-}
-
-
-.hero-down-text {
-  flex: 0 0 60%;
-  padding: 20px;
-}
-.hero-down-text h2{
-  font-size: 55px;
-  font-weight: 400;
-  color: black;
-}
-
-.hero-down-text h4 {
+  font-size: 14px;
   font-style: italic;
-  font-size: 18px;
-  margin-bottom: 12px;
-  color: rgb(112, 106, 100);
-  margin-bottom: 20px;
-}
+  font-weight: 500;
 
-.hero-down-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 20px;
 }
-.hero-down-container-link {
-  text-decoration: none;
-  display: block;
-}
-
-/*---end herodown banner--- */
-
-.service-type .fence {
+.pergola,
+.fence,
+.stair{
+  background-color: #dadad9;
   width: 100%;
-  
-}
-.service-type .pergola {
-  width: 100%;
-}
-.service-type .stair{
-  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
 }
 .service-type button{
   background: none;
@@ -147,6 +52,7 @@ strong{
   border-bottom:2px solid #f1683a;
   cursor: pointer;
 }
+/*-------end service type section------- */
 
 /*-------Gallery Section ------- */
 

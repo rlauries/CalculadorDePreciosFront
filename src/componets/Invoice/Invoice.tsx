@@ -13,19 +13,19 @@ type Client = {
 
 type Item = {
   description: string;
-  quantity: number;
-  feet: number;
-  totalCost: number;
+  quantity?: number;
+  feet?: number;
+  totalCost?: number;
 };
 
 export const Invoice: React.FC = () => {
 
   const invoiceRef = useRef<HTMLDivElement>(null);
   const today = new Date().toISOString().split("T")[0];
-  const [deposit, setDeposit] = useState(0);
-  
+
   /* ---------------- STATE ---------------- */
 
+  const [deposit, setDeposit] = useState(0);
   const [invoiceNumber, setInvoiceNumber] = useState<number | null>(null);
   const [docType, setDocType] = useState<"invoice" | "estimate">("estimate");
 
@@ -38,8 +38,11 @@ export const Invoice: React.FC = () => {
   });
 
   const [items, setItems] = useState<Item[]>([
-    { description: "", quantity: 0, feet: 0, totalCost: 0 }
+    { description: "", quantity: undefined, feet: undefined, totalCost: undefined }
   ]);
+  const [showNotes, setShowNotes] = useState(false);
+  const [notes, setNotes] = useState("");
+
 
   // -------Invoice Number Generator -----------
 
@@ -65,7 +68,7 @@ export const Invoice: React.FC = () => {
   const updateItem = (
     index: number,
     field: keyof Item,
-    value: string | number
+    value: string | number | undefined
   ) => {
     setItems(prev =>
       prev.map((item, i) =>
@@ -77,7 +80,7 @@ export const Invoice: React.FC = () => {
   const addItem = () => {
     setItems(prev => [
       ...prev,
-      { description: "", quantity: 0, feet: 0, totalCost: 0 }
+      { description: "", quantity: undefined, feet: undefined, totalCost: undefined }
     ]);
   };
   // ------------Calculos para estimados y expiracion -------
@@ -236,7 +239,25 @@ export const Invoice: React.FC = () => {
         </div>
 
         {/* TABLE */}
-        <button className="add-row-button" onClick={addItem}>+ Add Item </button>
+
+        {/* add buttons and notes section */}
+          <div className="add-buttons"> 
+              <button 
+                    className="add-row-button" 
+                    onClick={addItem}
+                >
+                  + Add Item 
+                </button>
+                
+                <button
+                    className="add-notes-button"
+                    onClick={() => setShowNotes(prev => !prev)}
+                >
+                  + Add Notes
+              </button>
+          </div>
+        {/* end of buttons and notes section */}
+        
         <table className="invoice-table">
           <thead>
             <tr>
@@ -260,16 +281,24 @@ export const Invoice: React.FC = () => {
                 <td className="col-num">
                   <input
                     type="number"
-                    value={item.quantity}
-                    onChange={e => updateItem(i, "quantity", Number(e.target.value))}
+                    value={item.quantity ?? ""}
+                    onChange={e =>
+                      updateItem(i, "quantity",
+                        e.target.value === "" ? undefined : Number(e.target.value)
+                      )
+                    }
                   />
                 </td>
 
                 <td className="col-num">
                   <input
                     type="number"
-                    value={item.feet}
-                    onChange={e => updateItem(i, "feet", Number(e.target.value))}
+                    value={item.feet ?? ""}
+                    onChange={e =>
+                      updateItem(i, "feet",
+                        e.target.value === "" ? undefined : Number(e.target.value)
+                      )
+                    }
                   />
                 </td>
 
@@ -277,13 +306,32 @@ export const Invoice: React.FC = () => {
                   <span>$</span>
                   <input
                     type="number"
-                    value={item.totalCost.toFixed(2)}
-                    onChange={e => updateItem(i, "totalCost", Number(e.target.value))}
+                    value={item.totalCost ?? ""}
+                      onChange={e =>
+                        updateItem(i, "totalCost",
+                          e.target.value === "" ? undefined : Number(e.target.value)
+                        )
+                    }
                   />
                 </td>
               </tr>
               
             ))}
+            {showNotes && (
+              <div className="invoice-notes-container">
+                <div className="invoice-notes-header">
+                  NOTES
+                </div>
+
+                <textarea
+                  className="invoice-notes-textarea"
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Enter additional project notes, clarifications, or terms..."
+                />
+              </div>
+            )}
+
           </tbody>
           <div className="invoice-summary">
             <p><strong>Subtotal:</strong> ${subtotal.toFixed(2)}</p>

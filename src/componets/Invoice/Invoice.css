@@ -167,11 +167,7 @@ hr {
     border-radius: 4px;
     padding-left: 10px;
 }
-.invoice-number {
-  
-  
-  
-}
+
 .invoice-number h2{
   font-size: 20px;
   margin: 0;
@@ -243,16 +239,67 @@ hr {
   
 }
 
-.add-row-button{
-  background-color: #0b3c8d;;
+/*---- Botónes para agregar fila y texto ---- */
+/* NOTES SECTION */
+.add-buttons{
+  display: flex;
+  gap:1px;
+}
+
+
+.invoice-notes-container {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  
+}
+
+.invoice-notes-header {
+  background-color: #1f3c88; /* mismo azul que tu header */
   color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: none;     /* <- asegúrate */
+  box-shadow: none;  
+}
+
+.invoice-notes-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 15px;
   border: none;
-  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 30px;
+  margin: 0;          /* <- elimina espacio */
+  display: block;        /* <- asegura que ocupe todo el ancho */
+  border-radius: 0px 0 10px 10px; /* solo bordes inferiores */
+}
+
+.add-buttons button {
+  /* background-color: #1f3c88; /* mismo azul que tu header */
+  /* color: white; */
+  border: none;
+  border-radius: 20px 0 0 0px;
   padding: 8px 16px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 20px;}
+  margin-bottom: 5px;
+}
+
+.add-row-button{
+  background: #acddb4;
+color: #333;
+border: 1px solid #dcdcdc;
+}
+.add-notes-button{
+  background: #cbd5e1;
+  color: #1e293b;
+}
+
+/*---- End Botónes para agregar fila y texto ---- */  
+
 
 .invoice-summary .final td {
   font-weight: bold;

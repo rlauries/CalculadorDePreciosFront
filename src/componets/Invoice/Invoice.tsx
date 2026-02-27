@@ -2,6 +2,7 @@ import React, { useRef, useState, useMemo, useEffect } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "./Invoice.css";
+import {formatPhone} from "../../utils/formatters.ts";
 
 type Client = {
   companyName: string;
@@ -215,13 +216,13 @@ export const Invoice: React.FC = () => {
                     />
                 </div>
                 <div>
-                  <label htmlFor="phone">
-                    Phone:
-                  </label>
+                  <label htmlFor="phone">Phone:</label>
                   <input
                     id="phone"
-                    value={client.phone}
-                    onChange={e => updateClient("phone", e.target.value)}
+                    value={formatPhone(client.phone)}
+                    onChange={(e) =>
+                      updateClient("phone", e.target.value.replace(/\D/g, ""))
+                    }
                   />
                 </div>
                 <div>

@@ -78,22 +78,7 @@ const Home = () => {
                 </div>
             </AnimatedSection>
         </section>
-        {/* <section className='third-banner-container'>
-            <AnimatedSection>
-                <span className='third-banner'>
-                    <div className="third-banner-text">
-                        <p>
-                            Crafted for strength. Built for life. Styled for impact.
-                        </p>
-                    </div>
-                    <div className="third-banner-button-wrapper">
-                        <button className='third-banner-button' onClick={() => window.location.href = "/contactus"}>
-                            Contact Us
-                        </button>
-                    </div>
-                </span>
-            </AnimatedSection>
-        </section> */}
+   
         <section>
             
                 <div className='myths-info'>

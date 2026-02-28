@@ -12,8 +12,9 @@ h2{
 }
 em{
     font-style: italic;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 500;
+    font-family: 'Alex Brush', cursive;
 }
 
 .slider-img {

@@ -13,7 +13,14 @@ const Home = () => {
 
 
   return (
-    <div className='home-container'>
+    <div className='home-container'
+          style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}
+    >
         <section className="video-section">
             <HeroVideo
                 src="images/videos/product-promo.mp4"
@@ -80,34 +87,34 @@ const Home = () => {
         </section>
    
         <section>
-            
-                <div className='myths-info'>
-                    <AnimatedSection>
-                        <BannerImageHalf 
-                            image="images/originals/Pergolas/IMG_7746.jpg" 
-                            title=" WOOD PERGOLA MYTH" 
-                            subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
-                            reversed={false}
-                        />
-                    </AnimatedSection>
-                    <AnimatedSection>
-                        <BannerImageHalf
-                            image="images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg" 
-                            title=" OUTDOOR LIGHTING MYTH" 
-                            subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
-                            reversed={true} // Esto invierte el orden de imagen y texto
-                        /> 
-                    </AnimatedSection>
-                    <AnimatedSection>    
-                        <BannerImageHalf
-                            image="images/originals/Pergolas/IMG_7746.jpg" 
-                            title="PVC Cladding Myth" 
-                            subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
-                            reversed={false}
-                        />
-                    </AnimatedSection>    
-                </div>
-            
+            <div className='myths-info' 
+               
+            >
+                <AnimatedSection>
+                    <BannerImageHalf 
+                        image="images/originals/Pergolas/IMG_7746.jpg" 
+                        title=" WOOD PERGOLA MYTH" 
+                        subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
+                        reversed={false}
+                    />
+                </AnimatedSection>
+                <AnimatedSection>
+                    <BannerImageHalf
+                        image="images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg" 
+                        title=" OUTDOOR LIGHTING MYTH" 
+                        subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
+                        reversed={true} // Esto invierte el orden de imagen y texto
+                    /> 
+                </AnimatedSection>
+                <AnimatedSection>    
+                    <BannerImageHalf
+                        image="images/originals/Pergolas/IMG_7746.jpg" 
+                        title="PVC Cladding Myth" 
+                        subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
+                        reversed={false}
+                    />
+                </AnimatedSection>    
+            </div>
         </section>
         <section>
             <AnimatedSection>

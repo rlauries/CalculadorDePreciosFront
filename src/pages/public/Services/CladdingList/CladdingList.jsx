@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner";
 // Usa el MISMO import de DesignTailorCard que en FenceList
 import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignTailorCard";
+import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
+import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
+import { AnimatedShowCaseCarousel } from "../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx";
 
 const CladdingServicesDB = [
   {
@@ -50,6 +53,16 @@ const CladdingServicesDB = [
     imageUrl: "images/originals/Claddings/pvc-cladding.jpg",
   },
 ];
+const slides = [
+  { id: 1, image: "/images/originals/Claddings/joseph-front.jpeg" },
+  { id: 2, image: "/images/originals/Claddings/mine.jpeg" },
+  { id: 3, image: "/images/originals/Claddings/front-building.png" },
+  { id: 4, image: "/images/originals/Claddings/other-front.png" },
+  { id: 5, image: "/images/originals/Claddings/wall-composite.png" },
+  { id: 6, image: "/images/originals/Claddings/cladding-post.jpg" },
+  { id: 7, image: "/images/originals/Claddings/pvc-cladding.jpg" }
+];
+
 
 export const CladdingList = () => {
   const [claddings] = useState(CladdingServicesDB);
@@ -76,36 +89,31 @@ export const CladdingList = () => {
           imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
         />
       </section>
-
-      <div className="section-title">
-        <h2>
-          Explore Our Cladding Options <strong>|</strong>
-        </h2>
-        <p className="subtitle">
-          From warm wood textures to low-maintenance composite and PVC, discover
-          cladding solutions that elevate your ceilings, walls, pergolas, and
-          outdoor structures with lasting style and protection.
-        </p>
-      </div>
-
-      {/* uso las mismas clases de Fence para reutilizar estilos */}
-      <div className="fence-list-grid">
-        {claddings.map((item) => (
-          <div className="fence-card" key={item.id}>
-            <div className="fence-image" onClick={() => openModal(item)}>
-              {item.imageUrl ? (
-                <div className="image-wrapper">
-                  <img src={item.imageUrl} alt={item.name} />
-                  <div className="image-label">{item.name}</div>
-                </div>
-              ) : (
-                <div className="no-image">No Image</div>
-              )}
+      <AnimatedSection>
+        <SectionIntro 
+            title="Explore Our Cladding Options" 
+            description="From warm wood textures to low-maintenance composite and PVC, discover cladding solutions that elevate your ceilings, walls, pergolas, and outdoor structures with lasting style and protection."
+        />
+      </AnimatedSection> 
+      <AnimatedSection>
+        {/* uso las mismas clases de Fence para reutilizar estilos */}
+        <div className="fence-list-grid">
+          {claddings.map((item) => (
+            <div className="fence-card" key={item.id}>
+              <div className="fence-image" onClick={() => openModal(item)}>
+                {item.imageUrl ? (
+                  <div className="image-wrapper">
+                    <img src={item.imageUrl} alt={item.name} />
+                    <div className="image-label">{item.name}</div>
+                  </div>
+                ) : (
+                  <div className="no-image">No Image</div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
+          ))}
+        </div>
+      </AnimatedSection>    
       {showModal && selectedCladding && (
         <div className="modal-overlay" onClick={closeModal}>
           <div
@@ -143,8 +151,19 @@ export const CladdingList = () => {
         </div>
       )}
 
-      {/* Igual que en FenceList */}
-      <DesignTailorCard />
+      <AnimatedSection>
+          <DesignTailorCard/>
+      </AnimatedSection>
+      <AnimatedSection>
+          <AnimatedShowCaseCarousel 
+            slides={slides}
+            eyebrow="Next-Generation Materials"
+            headline="CREATE LUXURY OUTDOOR SPACES"
+            subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
+            buttonLabel="Explore Fans"
+            onButtonClick={() => (window.location.href = "/fans")}
+          />
+      </AnimatedSection>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner'
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
+import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
+import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 
 
 const StairDB = [
@@ -64,28 +66,28 @@ export const StairList = () => {
             imageUrl="/images/originals/Stairs/Nilis-house.png"
           />
         </section>
-
-         <div className="section-title">
-            <h2>Explore Our Stair Design</h2>
-            <p className="subtitle">
-              Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance.</p>
-        </div>
-        <div className="pergola-list-grid">
-          {stairs.map((item) => (
-            <div className="pergola-card" key={item.id}>
-              <div className="pergola-image" onClick={() => openModal(item)}>
-                {item.imageUrl ? (
-                  <div className="image-wrapper">
-                    <img src={item.imageUrl} alt={item.name} /> 
-                    <div className="image-label">{item.name}</div>
-                  </div>
-                ) : (
-                  <div className="no-image">No Image</div>
-                )}
+        <SectionIntro 
+            title="Explore Our Stair Design" 
+            description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
+        />
+        <AnimatedSection>
+          <div className="pergola-list-grid">
+            {stairs.map((item) => (
+              <div className="pergola-card" key={item.id}>
+                <div className="pergola-image" onClick={() => openModal(item)}>
+                  {item.imageUrl ? (
+                    <div className="image-wrapper">
+                      <img src={item.imageUrl} alt={item.name} /> 
+                      <div className="image-label">{item.name}</div>
+                    </div>
+                  ) : (
+                    <div className="no-image">No Image</div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimatedSection>
         {showModal && selectedStair && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -100,8 +102,9 @@ export const StairList = () => {
             </div>
           </div>
         )}
-        <DesignTailorCard/>
-
+        <AnimatedSection>
+          <DesignTailorCard/>
+        </AnimatedSection>
     </div>
   )
 }

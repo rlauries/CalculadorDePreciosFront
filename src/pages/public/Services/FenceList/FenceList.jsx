@@ -2,7 +2,10 @@ import { useState} from 'react';
 import './FenceList.css';
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
 import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
- 
+import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
+import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
+import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
+
 const FencePanels = [
   {
     id: 1,
@@ -65,7 +68,15 @@ const FencePanels = [
     imageUrl: "images/originals/Fences/Composite-Fence.png"
   }
 ];
-
+const slides = [
+  { id: 1, image: "/images/originals/Fences/05329352.webp" },
+  { id: 2, image: "/images/originals/Fences/PVC-gm4.jpg" },
+  { id: 3, image: "/images/originals/Fences/jose-luis-gates.png" },
+  { id: 4, image: "/images/originals/Fences/yan-gate.png" },
+  { id: 5, image: "/images/originals/Fences/big-modern.jpeg" },
+  { id: 6, image: "/images/originals/Fences/tennis-court.png" },
+  { id: 7, image: "/images/originals/Fences/Aluminum-row-3-c.webp" }
+];
 const FenceList = () => {
     const [fences] = useState(FencePanels);
     const [selectedFence, setSelectedFence] = useState(null);
@@ -83,7 +94,12 @@ const FenceList = () => {
    
   
     return (
-    <>
+    <div style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}>
       <HeroBanner
         title="Fence Styles"
         subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
@@ -91,29 +107,31 @@ const FenceList = () => {
         imageUrl="/images/Privacy-Fence-Banner.jpg"
       />
       
-      <div className="section-title">
-        <h2>Explore Our Fence Designs <strong>|</strong></h2>
-        <p className="subtitle">
-        We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.
-        </p>
-      </div>
-      <div className="fence-list-grid">
-        {fences.map((item) => (
-          <div className="fence-card" key={item.id}>
-            <div className="fence-image" onClick={() => OpenModal(item)}>
-              {item.imageUrl ? (
-                <div className="image-wrapper">
-                  <img src={item.imageUrl} alt="" />
-                  <div className="image-label">{item.name}</div>
+      <AnimatedSection>
+        <SectionIntro 
+            title="Explore Our Fence Designs" 
+            description='We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.'
+        />
+      </AnimatedSection> 
+      <AnimatedSection>
+          <div className="fence-list-grid">
+            {fences.map((item) => (
+              <div className="fence-card" key={item.id}>
+                <div className="fence-image" onClick={() => OpenModal(item)}>
+                  {item.imageUrl ? (
+                    <div className="image-wrapper">
+                      <img src={item.imageUrl} alt="" />
+                      <div className="image-label">{item.name}</div>
+                    </div>
+                  ) : (
+                    <div className="no-image">No Image</div>
+                  )}      
                 </div>
-              ) : (
-                <div className="no-image">No Image</div>
-              )}      
-            </div>
-            
+                
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+      </AnimatedSection>
       {showModal && setSelectedFence && (
         <div className="modal-overlay" onClick={CloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -128,10 +146,20 @@ const FenceList = () => {
           </div>
         </div>
       )}
-      <div>
-        <DesignTailorCard/>
-      </div>
-    </>
+      <AnimatedSection>
+          <DesignTailorCard/>
+      </AnimatedSection>
+      <AnimatedSection>
+          <AnimatedShowCaseCarousel 
+            slides={slides}
+            eyebrow="Next-Generation Materials"
+            headline="CREATE LUXURY OUTDOOR SPACES"
+            subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
+            buttonLabel="Explore Fans"
+            onButtonClick={() => (window.location.href = "/fans")}
+          />
+      </AnimatedSection>
+    </div>
   )
 };
 export default FenceList;

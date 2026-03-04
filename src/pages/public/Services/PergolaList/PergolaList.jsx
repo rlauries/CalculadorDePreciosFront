@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './PergolaList.css'; // si quieres agregar estilos aparte
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner';
+import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
+import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
+import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 
 const PergolasDB = [
   {
@@ -65,6 +68,14 @@ const PergolasDB = [
     imageUrl: "images/originals/Pergolas/string-light-pergola.jpg"
   }
 ];
+const slides = [
+  { id: 1, image: "/images/originals/Pergolas/Targa-Large-main.webp" },
+  { id: 2, image: "/images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.jpeg" },
+  { id: 3, image: "/images/originals/Pergolas/beauty.jpg" },
+  { id: 4, image: "/images/originals/Pergolas/big-britgt-pergola.webp" },
+  { id: 5, image: "/images/originals/Pergolas/Pergola-moderna.png" },
+  
+];
 
 const PergolaList = () => {
   const [pergolas] = useState(PergolasDB);
@@ -85,7 +96,14 @@ const PergolaList = () => {
   
 
   return (
-    <div>
+    <div
+       style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}
+    >
       <section>
         <HeroBanner
           title="Pergola Styles"
@@ -93,30 +111,30 @@ const PergolaList = () => {
           onButtonClick={()=>window.location.href="/contactus"}
           imageUrl="/images/originals/Pergolas/Pergola-moderna.png"
         />
-
-        <div className="section-title">
-            <h2>Explore Our Pergola Styles</h2>
-            <p className="subtitle">
-              Discover the perfect pergola that suits your lifestyle — from modern steel designs to classic wooden structures. Compare features and find your ideal match.
-            </p>
-        </div>
-
-        <div className="pergola-list-grid">
-          {pergolas.map((item) => (
-            <div className="pergola-card" key={item.id}>
-              <div className="pergola-image" onClick={() => openModal(item)}>
-                {item.imageUrl ? (
-                  <div className="image-wrapper">
-                    <img src={item.imageUrl} alt={item.name} />
-                    <div className="image-label">{item.name}</div>
-                  </div>
-                ) : (
-                  <div className="no-image">No Image</div>
-                )}
+        <AnimatedSection>
+          <SectionIntro 
+              title="Explore Our Pergola Styles" 
+              description='Discover the perfect pergola that suits your lifestyle — from modern steel designs to classic wooden structures. Compare features and find your ideal match.'
+          />
+        </AnimatedSection>  
+        <AnimatedSection>
+          <div className="pergola-list-grid">
+            {pergolas.map((item) => (
+              <div className="pergola-card" key={item.id}>
+                <div className="pergola-image" onClick={() => openModal(item)}>
+                  {item.imageUrl ? (
+                    <div className="image-wrapper">
+                      <img src={item.imageUrl} alt={item.name} />
+                      <div className="image-label">{item.name}</div>
+                    </div>
+                  ) : (
+                    <div className="no-image">No Image</div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimatedSection>  
         {showModal && selectedPergola && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -131,8 +149,20 @@ const PergolaList = () => {
             </div>
           </div>
         )}
-     
-        <DesignTailorCard/>
+        <AnimatedSection>
+          <DesignTailorCard/>
+        </AnimatedSection>
+        <AnimatedSection>
+            <AnimatedShowCaseCarousel 
+              slides={slides}
+              eyebrow="Next-Generation Materials"
+              headline="CREATE LUXURY OUTDOOR SPACES"
+              subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
+              buttonLabel="Explore Fans"
+              onButtonClick={() => (window.location.href = "/fans")}
+            />
+        </AnimatedSection>
+        
       </section>
       
     </div>

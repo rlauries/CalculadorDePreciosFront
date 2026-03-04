@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 100 },
+  hidden: { opacity: 0, y: 70 },
   visible: {
     opacity: 1,
     y: 0,

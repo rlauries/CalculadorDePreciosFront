@@ -6,6 +6,8 @@ import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../
 import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
+import { AnimatedShowcaseCarousel } from '../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
+
 
 const GalleryList = [
     // ----Fences----
@@ -401,7 +403,14 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-page">
+    <div className="gallery-page"
+        style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}
+    >
         
         <HeroBanner
           title="GALLERY"
@@ -501,11 +510,13 @@ const Gallery = () => {
                     </div>
                 </div>
             )}
-          <div>
-            <AnimatedSection>
-              <HomeImprovement />
-            </AnimatedSection>  
-          </div>
+        <div>
+          <AnimatedSection>
+            <HomeImprovement />
+          </AnimatedSection>  
+        </div>
+
+        
 
            
 

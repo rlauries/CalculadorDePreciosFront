@@ -1,8 +1,11 @@
 import React from 'react';
 import './DesignTailorCard.css';
+import { AnimatedSection } from '../AnimatedSection/AnimatedSection.tsx';
+
 export const DesignTailorCard = () => {
   return (
-    <span className='design-tailored-card'>
+    <AnimatedSection>      
+      <span className='design-tailored-card'>
           <img className='banner-image' src="images/20250430_1812_Arquitectura Moderna con Piscina_simple_compose_01jt4c18frez2v7ww98k0x6j55.png" alt="HeroBanner" />
           
           <div className='second-banner-info'>
@@ -15,6 +18,8 @@ export const DesignTailorCard = () => {
                 Contact Us
               </button>
           </div>
-        </span>
+      </span>
+    </AnimatedSection>
+  
   )
 }

@@ -40,7 +40,7 @@ export const HomeImprovement = () => {
         <div className='home-improvment-image'>
             <Slider {...settings}>
                 {images.map((img, index) => (
-                    <div key={index} className='slider-img' onClick={() => window.location.href = "/home-improvement"}>
+                    <div key={index} className='slider-img' onClick={() => window.location.href = "/claddings"}>
                         <img src={img.src} alt={img.alt} />
                     </div>
                 ))}

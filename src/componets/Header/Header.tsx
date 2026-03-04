@@ -102,7 +102,7 @@ export const Header = () => {
                         <div className="mega-menu-image-overlay">
                            <h3>OUR SERVICES</h3>
                            <p>Inspired by your needs</p>
-                           <Link to="/gallery">View All Services</Link>
+                           <a href="/gallery">View All Services</a>
                         </div>
                      </div>
 

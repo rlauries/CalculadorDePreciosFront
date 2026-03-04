@@ -1,6 +1,7 @@
 
 .gallery-page {
   min-height: 100vh;
+  background: linear-gradient(to bottom, white, #edecec);
 }
 
 

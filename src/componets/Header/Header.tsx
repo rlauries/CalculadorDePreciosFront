@@ -3,7 +3,6 @@ import './Header.css'
 import { AuthContext } from '../../context/AuthContext.jsx';
 import { ContactUsButton } from '../ContactUsButton/ContactUsButton.tsx';
 
-import { Link } from 'react-router-dom-v5-compat';
 
 
 export const Header = () => {

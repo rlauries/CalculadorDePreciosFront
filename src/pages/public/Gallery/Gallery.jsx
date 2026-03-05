@@ -6,7 +6,6 @@ import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../
 import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
-import { AnimatedShowcaseCarousel } from '../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 
 
 const GalleryList = [

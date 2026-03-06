@@ -13,11 +13,10 @@ export const Header = () => {
    const [menuOpen, setMenuOpen] = useState(false);
    const toggleMenu = () => setMenuOpen((prev) => !prev);
    
-   const [servicesOpen, setServicesOpen] = useState(false);
    const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
-   const toggleServices = () => setServicesOpen(prev => !prev);
+   
 
    //---- Cierra el mega menú al hacer clic fuera de él ------
    useEffect(() => {
@@ -26,7 +25,8 @@ export const Header = () => {
             megaMenuRef.current &&
             !megaMenuRef.current.contains(event.target as Node)
          ) {
-            setServicesOpen(false);
+            setDesktopServicesOpen(false);
+            setMobileServicesOpen(false);
          }
       };
 

@@ -14,6 +14,9 @@ export const Header = () => {
    const toggleMenu = () => setMenuOpen((prev) => !prev);
    
    const [servicesOpen, setServicesOpen] = useState(false);
+   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
    const toggleServices = () => setServicesOpen(prev => !prev);
 
    //---- Cierra el mega menú al hacer clic fuera de él ------
@@ -77,7 +80,7 @@ export const Header = () => {
             <div className="nav-btn dropdown">
                <button
                   className="dropbtn"
-                  onClick={() => setServicesOpen(prev => !prev)}
+                  onClick={() => setDesktopServicesOpen(prev => !prev)}
                >
                   Services ▾
                </button>
@@ -85,7 +88,7 @@ export const Header = () => {
 
                
                <div ref={megaMenuRef}
-                    className={`mega-menu ${servicesOpen ? "open" : ""}`}
+                    className={`mega-menu ${desktopServicesOpen ? "open" : ""}`}
                     
                >
                   <div className="mega-menu-container"
@@ -168,38 +171,26 @@ export const Header = () => {
                      <button
                         type="button"
                         className="dropdown-mobile-header"
-                        onClick={toggleServices}   // 👉 abre/cierra
+                        onClick={() => setMobileServicesOpen(v => !v)}   // 👉 abre/cierra
                      >
                         <span>Services</span>
-                        <span className={`chevron ${servicesOpen ? "rotate" : ""}`}>▾</span>
+                        <span className={`chevron ${mobileServicesOpen ? "rotate" : ""}`}>▾</span>
                      </button>
 
-                     {servicesOpen && (
+                     {mobileServicesOpen && (
                         <div className="dropdown-mobile-content">
-                        <button
-                           className="dropdown-link"
-                           onClick={() => { window.location.href = "/fences"; closeMenu(); }}
-                        >
+                           <a className="dropdown-link" href="/fences" onClick={closeMenu}>
                            Fence/Gate
-                        </button>
-                        <button
-                           className="dropdown-link"
-                           onClick={() => { window.location.href = "/pergolas"; closeMenu(); }}
-                        >
+                           </a>
+                           <a className="dropdown-link" href="/pergolas" onClick={closeMenu}>
                            Pergolas/Trellis
-                        </button>
-                        <button
-                           className="dropdown-link"
-                           onClick={() => { window.location.href = "/stairs"; closeMenu(); }}
-                        >
+                           </a>
+                           <a className="dropdown-link" href="/stairs" onClick={closeMenu}>
                            Stairs
-                        </button>
-                        <button
-                           className="dropdown-link"
-                           onClick={() => { window.location.href = "/claddings"; closeMenu(); }}
-                        >
+                           </a>
+                           <a className="dropdown-link" href="/claddings" onClick={closeMenu}>
                            Exterior Claddings
-                        </button>
+                           </a>
                         </div>
                      )}
                   </div>

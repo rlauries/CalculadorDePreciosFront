@@ -481,6 +481,13 @@ nav {
         display: flex;
         flex-direction: column;
         padding: 10px 0;
+
+            /* position: static;    */
+            width: 100%;
+            background: transparent;
+            box-shadow: none;
+            border-left: none;
+            padding: 10px 0;
     }
 
     .dropdown-mobile-content a {
@@ -517,6 +524,13 @@ nav {
         padding: 10px 16px;
         cursor: pointer;
         width: 100%;
+
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid #eee;
     }
     .dropdown-link:hover {
         background: #f5f5f5;

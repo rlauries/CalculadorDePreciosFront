@@ -5,6 +5,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 
 const FencePanels = [
   {
@@ -100,12 +101,16 @@ const FenceList = () => {
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat"
                 }}>
-      <HeroBanner
-        title="Fence Styles"
-        subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
-        onButtonClick={()=>window.location.href="/contactus"}
-        imageUrl="/images/Privacy-Fence-Banner.jpg"
-      />
+    <section className="video-section">
+        <HeroVideo
+            src="images/videos/fence-hero.mp4"
+            videoId="slow-video"
+            className="hero-video"
+            pauseTime={4000}
+        />
+    </section>            
+
+      
       
       <AnimatedSection>
         <SectionIntro 
@@ -146,6 +151,16 @@ const FenceList = () => {
           </div>
         </div>
       )}
+      <AnimatedSection> 
+        <HeroBanner
+          title="Fence Styles"
+          subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
+          onButtonClick={()=>window.location.href="/contactus"}
+          imageUrl="/images/Privacy-Fence-Banner.jpg"
+        />
+      </AnimatedSection>
+
+
       <AnimatedSection>
           <DesignTailorCard/>
       </AnimatedSection>

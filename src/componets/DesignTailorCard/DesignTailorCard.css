@@ -2,7 +2,8 @@
 .design-tailored-card {
     margin-top: 50px;
     display: flex;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     height: auto;
     overflow: hidden;
     background-color: #f5f5f5; /* Color de fondo opcional */

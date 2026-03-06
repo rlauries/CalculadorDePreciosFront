@@ -5,6 +5,8 @@ import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignT
 import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
 import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
 import { AnimatedShowCaseCarousel } from "../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx";
+import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.jsx";
+
 
 const CladdingServicesDB = [
   {
@@ -80,15 +82,21 @@ export const CladdingList = () => {
   };
 
   return (
-    <div>
-      <section>
-        <HeroBanner
-          title="Cladding Service"
-          subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
-          onButtonClick={() => (window.location.href = "/contactus")}
-          imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
-        />
-      </section>
+    <div style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}>
+      <section className="video-section">
+          <HeroVideo
+              src="images/videos/fence-hero.mp4"
+              videoId="slow-video"
+              className="hero-video"
+              pauseTime={4000}
+          />
+      </section>      
+      
       <AnimatedSection>
         <SectionIntro 
             title="Explore Our Cladding Options" 
@@ -150,7 +158,16 @@ export const CladdingList = () => {
           </div>
         </div>
       )}
-
+      <AnimatedSection>
+        <section>
+          <HeroBanner
+            title="Cladding Service"
+            subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
+            onButtonClick={() => (window.location.href = "/contactus")}
+            imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
+          />
+        </section>
+      </AnimatedSection>
       <AnimatedSection>
           <DesignTailorCard/>
       </AnimatedSection>

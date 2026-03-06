@@ -5,6 +5,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 
 const PergolasDB = [
   {
@@ -105,18 +106,23 @@ const PergolaList = () => {
                 }}
     >
       <section>
-        <HeroBanner
-          title="Pergola Styles"
-          subtitle='From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality'
-          onButtonClick={()=>window.location.href="/contactus"}
-          imageUrl="/images/originals/Pergolas/Pergola-moderna.png"
-        />
+        <section className="video-section">
+            <HeroVideo
+                src="images/videos/pergola-hero.mp4"
+                videoId="slow-video"
+                className="hero-video"
+                pauseTime={4000}
+            />
+        </section> 
+        
         <AnimatedSection>
           <SectionIntro 
               title="Explore Our Pergola Styles" 
               description='Discover the perfect pergola that suits your lifestyle — from modern steel designs to classic wooden structures. Compare features and find your ideal match.'
           />
         </AnimatedSection>  
+        
+          
         <AnimatedSection>
           <div className="pergola-list-grid">
             {pergolas.map((item) => (
@@ -149,6 +155,15 @@ const PergolaList = () => {
             </div>
           </div>
         )}
+        <AnimatedSection>
+          <HeroBanner
+            title="Pergola Styles"
+            subtitle='From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality'
+            onButtonClick={()=>window.location.href="/contactus"}
+            imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.jpeg"
+          />     
+        </AnimatedSection>
+
         <AnimatedSection>
           <DesignTailorCard/>
         </AnimatedSection>

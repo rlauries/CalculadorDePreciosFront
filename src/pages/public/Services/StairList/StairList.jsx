@@ -3,7 +3,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner'
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 
 const StairDB = [
   {
@@ -57,15 +57,21 @@ export const StairList = () => {
   };
 
   return (
-    <div>
-        <section>
-          <HeroBanner
-            title="Stair Services"
-            subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
-            onButtonClick={()=>window.location.href="/contactus"}
-            imageUrl="/images/originals/Stairs/Nilis-house.png"
-          />
-        </section>
+    <div style={{
+                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}>
+        <section className="video-section">
+            <HeroVideo
+                src="images/videos/stair-hero.mp4"
+                videoId="slow-video"
+                className="hero-video"
+                pauseTime={4000}
+            />
+        </section>  
+        
         <SectionIntro 
             title="Explore Our Stair Design" 
             description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
@@ -102,6 +108,16 @@ export const StairList = () => {
             </div>
           </div>
         )}
+        <AnimatedSection>
+          <section>
+            <HeroBanner
+              title="Stair Services"
+              subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
+              onButtonClick={()=>window.location.href="/contactus"}
+              imageUrl="/images/originals/Stairs/Nilis-house.png"
+            />
+          </section>
+        </AnimatedSection>
         <AnimatedSection>
           <DesignTailorCard/>
         </AnimatedSection>

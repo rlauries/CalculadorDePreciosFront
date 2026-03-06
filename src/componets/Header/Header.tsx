@@ -9,6 +9,7 @@ export const Header = () => {
 
    const {user, logout} = useContext(AuthContext);
    const megaMenuRef = useRef<HTMLDivElement | null>(null);
+   const mobileServicesRef = useRef<HTMLDivElement | null>(null);
 
    const [menuOpen, setMenuOpen] = useState(false);
    const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -21,10 +22,15 @@ export const Header = () => {
    //---- Cierra el mega menú al hacer clic fuera de él ------
    useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
-         if (
-            megaMenuRef.current &&
-            !megaMenuRef.current.contains(event.target as Node)
-         ) {
+         const target = event.target as Node;
+
+         const clickedInsideDesktop =
+            megaMenuRef.current && megaMenuRef.current.contains(target);
+
+         const clickedInsideMobile =
+            mobileServicesRef.current && mobileServicesRef.current.contains(target);
+
+         if (!clickedInsideDesktop && !clickedInsideMobile) {
             setDesktopServicesOpen(false);
             setMobileServicesOpen(false);
          }
@@ -37,11 +43,11 @@ export const Header = () => {
       };
    }, []);
 
-
-
-
-   
-   const closeMenu = () => setMenuOpen(false);
+   const closeMenu = () => {
+      setMenuOpen(false);
+      setMobileServicesOpen(false);
+      setDesktopServicesOpen(false);
+   };
 
     return (
       <header className='main-header'>
@@ -167,7 +173,8 @@ export const Header = () => {
                   </button>
                   
                   {/* SERVICES DROPDOWN EN FLUJO NORMAL */}
-                  <div className="dropdown-mobile">
+                  <div className="dropdown-mobile" 
+                       ref={mobileServicesRef}>
                      <button
                         type="button"
                         className="dropdown-mobile-header"
@@ -180,16 +187,16 @@ export const Header = () => {
                      {mobileServicesOpen && (
                         <div className="dropdown-mobile-content">
                            <a className="dropdown-link" href="/fences" onClick={closeMenu}>
-                           Fence/Gate
+                              Fence/Gate
                            </a>
                            <a className="dropdown-link" href="/pergolas" onClick={closeMenu}>
-                           Pergolas/Trellis
+                              Pergolas/Trellis
                            </a>
                            <a className="dropdown-link" href="/stairs" onClick={closeMenu}>
-                           Stairs
+                              Stairs
                            </a>
                            <a className="dropdown-link" href="/claddings" onClick={closeMenu}>
-                           Exterior Claddings
+                              Exterior Claddings
                            </a>
                         </div>
                      )}

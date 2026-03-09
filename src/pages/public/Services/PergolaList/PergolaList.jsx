@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './PergolaList.css'; // si quieres agregar estilos aparte
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner';

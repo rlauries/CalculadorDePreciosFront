@@ -1,7 +1,6 @@
 import React, { useState,useRef } from "react";
 import Slider from "react-slick";
 import "./AnimatedShowCaseCarousel.css";
-import {defaultSliderSettings} from "../../utils/defaultSliderSettings.ts"; // Reutilizamos configuraciones comunes
 
 export interface HeroSlide {
   id: string | number;

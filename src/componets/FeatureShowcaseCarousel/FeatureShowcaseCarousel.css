@@ -33,6 +33,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  gap: 20px;
 }
 
 .feature-showcase-text h2{
@@ -111,10 +112,18 @@
   font-weight: 600;
   font-size: 16px;
 }
-.feature-showcase-card-overlay span{
+.feature-showcase-card-overlay a{
   color: white;
   font-weight: 600;
+  font-size: 14px;
   
+}
+.feature-showcase-card-overlay a strong{
+  font-size: 20px;
+  font-weight: 700;
+}
+.feature-showcase-card-overlay a strong:hover{
+  text-decoration: underline;
 }
 
 /* CARD ACTIVA */

@@ -11,32 +11,38 @@ const featureFences = [
   {
     id: 1,
     name: "Chain Link",
-    imageUrl: "images/originals/Fences/Fence-chainlink.jpg"
+    imageUrl: "images/originals/Fences/Fence-chainlink.jpg",
+    linkTo: "/fences/chainlink"
   },
   {
     id: 2,
     name: "DuraFence",
-    imageUrl: "images/originals/Fences/Fence-durafence.jpg"
+    imageUrl: "images/originals/Fences/Fence-durafence.jpg",
+    linkTo: "/fences/durafence"
   },
   {
     id: 3,
-    name: "Aluminum Custom",
-    imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg"
+    name: "Aluminum",
+    imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg",
+    linkTo: "/fences/aluminum"
   },
   {
     id: 4,
     name: "Wood",
-    imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg"
+    imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg",
+    linkTo: "/fences/wood"
   },
   {
     id: 5,
     name: "PVC",
-    imageUrl: "images/originals/Fences/PVC-Fence-1.jpg"
+    imageUrl: "images/originals/Fences/PVC-Fence-1.jpg",
+    linkTo: "/fences/pvc"
   },
   {
     id: 6,
     name: "Composite",
-    imageUrl: "images/originals/Fences/Composite-Fence.png"
+    imageUrl: "images/originals/Fences/Composite-Fence.png",
+    linkTo: "/fences/composite"
   }
 ];
 // const FencePanels = [
@@ -48,7 +54,8 @@ const featureFences = [
 //     versatility: "Ideal for a variety of applications including residential yards, sports fields, playgrounds, schools, parks, industrial areas, and construction sites.",
 //     maintenance: "Requires minimal upkeep compared to other fencing materials.",
 //     aestheticOptions: "Available in different coatings and colors, including the classic silver galvanized finish and colored vinyl coatings such as black or green to blend with the environment or match your property’s aesthetic.",
-//     imageUrl: "images/originals/Fences/Fence-chainlink.jpg"
+//     imageUrl: "images/originals/Fences/Fence-chainlink.jpg",
+//     linkTo: "/fences/chainlink"
 //   },
 //   {
 //     id: 2,
@@ -58,7 +65,8 @@ const featureFences = [
 //     versatility: "The robust steel construction provides a formidable barrier that deters unauthorized access and enhances the security of your property.",
 //     maintenance: "The galvanized and coated steel panels require minimal upkeep.",
 //     aestheticOptions: "Combines functionality with aesthetics, featuring a sleek, modern design that complements any property.",
-//     imageUrl: "images/originals/Fences/Fence-durafence.jpg"
+//     imageUrl: "images/originals/Fences/Fence-durafence.jpg",
+//     linkTo: "/fences/durafence"
 //   },
 //   {
 //     id: 3,
@@ -68,7 +76,8 @@ const featureFences = [
 //     versatility: "Tailor your Aluminum Modern Fence to suit your unique preferences with a variety of design options, including different heights, panel widths, and color choices.",
 //     maintenance: "Our aluminum modern fences are resistant to rust, rot, and corrosion.",
 //     aestheticOptions: "Boasts clean lines, minimalist profiles, and sleek finishes, adding a touch of elegance and sophistication to your outdoor space.",
-//     imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg"
+//     imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg",
+//     linkTo: "/fences/aluminumcustom"
 //   },
 //   {
 //     id: 4,
@@ -78,7 +87,8 @@ const featureFences = [
 //     versatility: "Can be tailored in height, width, stain, and style — from traditional picket fences to solid privacy panels. Suitable for residential and decorative applications.",
 //     maintenance: "Requires consistent upkeep including sealing, staining, and occasional repairs to prevent weathering and decay.",
 //     aestheticOptions: "Delivers a warm, organic appearance with a wide range of stain and design options to suit rustic, classic, or modern aesthetics.",
-//     imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg"
+//     imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg",
+//     linkTo: "/fences/wood"
 //   },
 //   {
 //     "id": 5,
@@ -88,7 +98,8 @@ const featureFences = [
 //     "versatility": "Available in various heights, panel styles, and finishes, making it suitable for residential privacy, decorative boundaries, and pool enclosures.",
 //     "maintenance": "Extremely low maintenance — no staining, painting, or sealing required. Occasional cleaning is sufficient to maintain appearance.",
 //     "aestheticOptions": "Offers a clean, polished look with options for white, tan, and other finishes. Mimics the appearance of wood or lattice for added visual appeal.",
-//     "imageUrl": "images/originals/Fences/PVC-Fence-1.jpg"
+//     "imageUrl": "images/originals/Fences/PVC-Fence-1.jpg",
+//     "linkTo": "/fences/pvc"
 //   },
 //   {
 //     id: 6,
@@ -98,7 +109,8 @@ const featureFences = [
 //     versatility: "Can be customized with different colors, textures, and panel configurations. Great for privacy, security, and sound dampening.",
 //     maintenance: "Requires very little maintenance compared to wood — no sealing, staining, or repainting. Retains its look with basic cleaning.",
 //     aestheticOptions: "Sleek, modern look that resembles real wood with rich textures and contemporary color choices, perfect for high-end outdoor designs.",
-//     imageUrl: "images/originals/Fences/Composite-Fence.png"
+//     imageUrl: "images/originals/Fences/Composite-Fence.png",
+//     linkTo: "/fences/composite"
 //   }
 // ];
 const slides = [
@@ -169,12 +181,14 @@ const FenceList = () => {
           </div>
         </div>
       )}  */}
-      <FeatureShowcaseCarousel
-        title="FENCE SYSTEMS"
-        subtitle="Project Showcase"
-        mainImage="/images/originals/Fences/rail-view.png"
-        items={featureFences}
-      />
+      <AnimatedSection>
+        <FeatureShowcaseCarousel
+          title="FENCE SYSTEMS"
+          subtitle="Project Showcase"
+          mainImage="/images/originals/Fences/rail-view.png"
+          items={featureFences}
+        />
+      </AnimatedSection>
       <AnimatedSection> 
         <HeroBanner
           title="Fence Styles"
@@ -194,8 +208,8 @@ const FenceList = () => {
             eyebrow="Next-Generation Materials"
             headline="CREATE LUXURY OUTDOOR SPACES"
             subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
-            buttonLabel="Explore Fans"
-            onButtonClick={() => (window.location.href = "/fans")}
+            buttonLabel="Contact Us"
+            onButtonClick={() => (window.location.href = "/contactus")}
           />
       </AnimatedSection>
     </div>

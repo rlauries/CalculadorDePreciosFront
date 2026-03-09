@@ -7,6 +7,7 @@ interface FeatureItem {
   id: number;
   name: string;
   imageUrl: string;
+  linkTo?: string; // Opcional, para redirigir a una página específica
 }
 
 interface FeatureShowcaseCarouselProps {
@@ -58,7 +59,9 @@ export const FeatureShowcaseCarousel: React.FC<FeatureShowcaseCarouselProps> = (
               >
                 <img src={item.imageUrl} alt={item.name} />
                 <div className="feature-showcase-card-overlay">
-                  <span>{item.name}</span>
+                  <a href={item.linkTo} target="_blank" rel="noopener noreferrer">
+                    Click to view <strong>{item.name}</strong>
+                  </a>
                 </div>
               </div>
             </div>

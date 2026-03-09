@@ -1,6 +1,7 @@
 import React, { useState,useRef } from "react";
 import Slider from "react-slick";
 import "./AnimatedShowCaseCarousel.css";
+import {defaultSliderSettings} from "../../utils/defaultSliderSettings.ts"; // Reutilizamos configuraciones comunes
 
 export interface HeroSlide {
   id: string | number;
@@ -32,11 +33,11 @@ export const AnimatedShowCaseCarousel: React.FC<AnimatedShowCCaseCarouselProps> 
   const thumbSettings = {
     dots: false,
     infinite: true,
-    speed: 400,
+    speed: 1200,
     slidesToShow: Math.min(4, slides.length),
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     arrows: true,
     pauseOnHover: true,
     // 🔁 cada vez que el slider cambia, actualizamos el índice

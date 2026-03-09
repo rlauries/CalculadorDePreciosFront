@@ -1,0 +1,234 @@
+/* CONTENEDOR GENERAL */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+.feature-showcase{
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 80px 0;
+  background: #EBEAE9;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* TOP SECTION */
+
+.feature-showcase-top{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+/* TEXTO */
+
+.feature-showcase-text{
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.feature-showcase-text h2{
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.feature-showcase-text p{
+  font-size: 42px;
+  color: #777;
+  font-style: italic;
+}
+
+/* IMAGEN PRINCIPAL */
+
+.feature-showcase-main-image{
+  flex: 1;
+}
+
+.feature-showcase-main-image img{
+  width: 90%;
+  margin-left: 5%;
+  height: 480px;
+  
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+/* CAROUSEL */
+
+.feature-showcase-carousel{
+  overflow: visible;
+}
+
+.feature-showcase-carousel .slick-list{
+  overflow: visible;
+}
+
+.feature-showcase-slide-wrapper{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* TARJETAS */
+
+.feature-showcase-card{
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature-showcase-card img{
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  
+}
+
+/* OVERLAY */
+
+.feature-showcase-card-overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100%;
+  padding: 18px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+.feature-showcase-card-overlay span{
+  color: white;
+  font-weight: 600;
+  
+}
+
+/* CARD ACTIVA */
+
+.feature-showcase-card.active{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.feature-showcase-card.active img{
+  border: 2px solid #f1683a;
+}
+/* Flechas visibles */
+.feature-showcase-carousel .slick-prev,
+.feature-showcase-carousel .slick-next {
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+}
+
+.feature-showcase-carousel .slick-prev {
+  left: -15px;
+}
+
+.feature-showcase-carousel .slick-next {
+  right: -15px;
+}
+
+.feature-showcase-carousel .slick-prev:before,
+.feature-showcase-carousel .slick-next:before {
+  color: #111;
+  font-size: 32px;
+  opacity: 1;
+}
+
+/* HOVER */
+
+.feature-showcase-card:hover{
+  transform: translateY(-4px);
+}
+/* MODAL */
+.feature-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 30px;
+  
+}
+
+.feature-modal-content {
+  position: relative;
+  background: white;
+  width: min(900px, 95vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.feature-modal-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.feature-modal-content h2 strong {
+  color: #f1683a;
+}
+
+.feature-modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.feature-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 34px;
+  cursor: pointer;
+  line-height: 1;
+}
+/* RESPONSIVE */
+
+@media (max-width: 900px){
+
+  .feature-showcase-top{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .feature-showcase-text{
+    width: 100%;
+  }
+
+  .feature-showcase-main-image{
+    width: 100%;
+  }
+
+  .feature-showcase-main-image img{
+    height: 380px;
+  }
+
+  .feature-showcase-text h2{
+    font-size: 36px;
+  }
+
+}

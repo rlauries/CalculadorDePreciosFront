@@ -6,7 +6,40 @@ import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedS
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
+import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 
+const featureFences = [
+  {
+    id: 1,
+    name: "Chain Link",
+    imageUrl: "images/originals/Fences/Fence-chainlink.jpg"
+  },
+  {
+    id: 2,
+    name: "DuraFence",
+    imageUrl: "images/originals/Fences/Fence-durafence.jpg"
+  },
+  {
+    id: 3,
+    name: "Aluminum Custom",
+    imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg"
+  },
+  {
+    id: 4,
+    name: "Wood",
+    imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg"
+  },
+  {
+    id: 5,
+    name: "PVC",
+    imageUrl: "images/originals/Fences/PVC-Fence-1.jpg"
+  },
+  {
+    id: 6,
+    name: "Composite",
+    imageUrl: "images/originals/Fences/Composite-Fence.png"
+  }
+];
 const FencePanels = [
   {
     id: 1,
@@ -118,7 +151,7 @@ const FenceList = () => {
             description='We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.'
         />
       </AnimatedSection> 
-      <AnimatedSection>
+      {/* <AnimatedSection>
           <div className="fence-list-grid">
             {fences.map((item) => (
               <div className="fence-card" key={item.id}>
@@ -150,7 +183,13 @@ const FenceList = () => {
             <p><strong>Aesthetic Options:</strong>{selectedFence.aestheticOptions}</p>
           </div>
         </div>
-      )}
+      )}  */}
+      <FeatureShowcaseCarousel
+        title="FENCE SYSTEMS"
+        subtitle="Project Showcase"
+        mainImage="/images/originals/Fences/rail-view.png"
+        items={featureFences}
+      />
       <AnimatedSection> 
         <HeroBanner
           title="Fence Styles"

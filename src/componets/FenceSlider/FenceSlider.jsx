@@ -1,9 +1,9 @@
-import React from 'react'
+
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import "./FenceSlider.css";
-
+import { defaultSliderSettings } from '../../utils/defaultSliderSettings.ts';
 
 
 export const FenceSlider = () => {
@@ -17,31 +17,13 @@ export const FenceSlider = () => {
         
       ];
 
-    const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    arrows: true,
-    responsive: [
-        {
-        breakpoint: 768,
-        settings: {
-            slidesToShow: 1
-        }
-        }
-    ]
-    };
+    
   return (
     <div className='fence-to-home'>
          <h2>
             PROTECT <em> what matters most</em>
         </h2>
-        <Slider {...settings}>
+        <Slider {...defaultSliderSettings}>
             {images.map((img, index) => (
                 <div key={index} className='slider-img' onClick={() => window.location.href = "/fences"}>
                     <img src={img.src} alt={img.alt} />

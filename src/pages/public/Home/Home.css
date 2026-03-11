@@ -46,30 +46,122 @@
   margin-left: 5%;
   background: transparent;
 }
+/* feature-card */
 
-.hero-down-container {
-  
-  width: 100%;
-  height: auto;
-  padding: 40px;
+.feature-card {
+  position: relative;
+  width: 360px;
+  height: 230px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
   
 }
+/* fondo gris */
+.feature-card-bg {
+  position: absolute;
+  inset: 0;
+  top: 90px;              /* baja el gris para que no tape la imagen */
+  background: #e9e9e9;
+  border-radius: 14px;
+  z-index: 1;
+}
 
+/* imagen */
+.feature-card-image-wrapper {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  width: 265px;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.feature-card-image {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* texto */
+.feature-card-content {
+  position: absolute;
+  left: 28px;
+  bottom: 5px;
+  z-index: 2;
+}
+
+.feature-card-content h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #5c5c5c;
+  font-family: Arial, sans-serif;
+}
+
+/* botón naranja */
+.feature-card-arrow {
+  position: absolute;
+  top: 28px;
+  right: 18px;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background: #f47b3a;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*end feature-card */
+
+.hero-down-card{
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  background: #e9e9e9;
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform .3s ease, box-shadow .3s ease
+}
+.hero-down-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
 /* Imagen encima del fondo */
 .hero-down-card-content {
   flex: 0 0 40%;
   border-radius: 16px;
   overflow: hidden;
-  /* box-shadow: 0 8px 24px rgba(0,0,0,0.15); */
+  
+}
+.hero-down-card-image img{
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.hero-down-card-content{
+  margin-top: 18px;
+}
+/* Imagen recortada redondeada */
+.hero-down-card-content h3{
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #555;
 }
 
-/* Imagen recortada redondeada */
-.hero-down-card-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
+
+
+
 
 
 /* Título */
@@ -82,7 +174,7 @@
 }
 
 
-
+/* Textos */
 
 .hero-down-text {
   flex: 0 0 60%;

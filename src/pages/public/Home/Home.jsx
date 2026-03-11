@@ -38,11 +38,21 @@ const Home = () => {
           <AnimatedSection>   
             <div className="hero-down-banner">
                 <a href="/claddings" className="hero-down-container-link">
-                  <div className="hero-down-container">
-                    <div className="hero-down-card-content">
-                      <img src="images/originals/Claddings/Capture-1.png" alt="" />
+                    <div class="feature-card">
+                        <div class="feature-card-bg"></div>
+
+                        <div class="feature-card-image-wrapper">
+                            <img
+                            src="images/originals/Claddings/Capture-1.png"
+                            alt="Pivot 6 XL"
+                            class="feature-card-image"
+                            />
+                        </div>
+
+                        <div class="feature-card-content">
+                            <h3>CLADDING SERVICES</h3>
+                        </div>
                     </div>
-                  </div>
                 </a>
                 <div className="hero-down-text">
                     <h2>

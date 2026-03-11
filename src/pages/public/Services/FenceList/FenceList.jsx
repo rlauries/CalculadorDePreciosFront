@@ -201,13 +201,10 @@ const FenceList = () => {
       </AnimatedSection>
       <section>
           <div className='myths-info' 
-              style={{
-                  backgroundImage: "url(/images/originals/grey-vertical-paper-surface-texture-background.png)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat"
-              }}
+              
           >
+              <div className="myth-info-bg"></div>
+
               <AnimatedSection>
                   <BannerImageHalf 
                       image="images/originals/Fences/aluminum-myth.png" 

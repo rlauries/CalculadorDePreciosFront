@@ -1,6 +1,25 @@
 
 .myths-info{
-    padding: 40px 20px;
+    padding: 60px 20px;
+    position: relative;
+    margin-bottom: 80px;
+}
+.myths-info > *:not(.myth-info-bg){
+  position: relative;
+  z-index: 2;
+}
+.myth-info-bg{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 420px;      /* ancho de la franja */
+  height: 100%;
 
+  background: #e2e1e1;
+  border-radius: 14px;
+
+  z-index: 1;
 }
 

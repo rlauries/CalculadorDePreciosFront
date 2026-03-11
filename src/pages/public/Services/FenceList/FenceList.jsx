@@ -6,6 +6,8 @@ import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCase
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
+import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+
 
 const featureFences = [
   {
@@ -197,11 +199,43 @@ const FenceList = () => {
           imageUrl="/images/Privacy-Fence-Banner.jpg"
         />
       </AnimatedSection>
+      <section>
+          <div className='myths-info' 
+              style={{
+                  backgroundImage: "url(/images/originals/grey-vertical-paper-surface-texture-background.png)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat"
+              }}
+          >
+              <AnimatedSection>
+                  <BannerImageHalf 
+                      image="images/originals/Fences/aluminum-myth.png" 
+                      title="ALUMINUM FENCE MYTH" 
+                      subtitle="Many people assume aluminum fences are lightweight and less durable than steel. In reality, modern powder-coated aluminum fencing is engineered to resist rust, corrosion, and harsh weather conditions while maintaining its strength and elegant appearance. It offers long-term durability with virtually no maintenance."
+                      reversed={false}
+                  />
+              </AnimatedSection>
+              <AnimatedSection>
+                  <BannerImageHalf
+                      image="images/originals/Fences/composite-myth.png" 
+                      title="COMPOSITE FENCE MYTH" 
+                      subtitle="A common misconception is that composite fencing looks artificial or lacks the warmth of natural materials. Today’s composite systems are designed with realistic textures and colors that replicate wood while offering superior resistance to moisture, fading, and insects. The result is a fence that keeps its appearance for years with minimal upkeep."
+                      reversed={true} // Esto invierte el orden de imagen y texto
+                  /> 
+              </AnimatedSection>
+              <AnimatedSection>    
+                  <BannerImageHalf
+                      image="images/originals/Fences/dura-fence-myth.png" 
+                      title="DURAFENCE MYTH" 
+                      subtitle="Some believe modern modular fence systems sacrifice strength for convenience. In reality, systems like DuraFence are engineered for both structural stability and long-term performance. Their reinforced panels and durable materials create a secure boundary that withstands weather, impact, and daily wear while maintaining a clean architectural look."
+                      reversed={false}
+                  />
+              </AnimatedSection>    
+          </div>
+      </section>
 
-
-      <AnimatedSection>
-          <DesignTailorCard/>
-      </AnimatedSection>
+      
       <AnimatedSection>
           <AnimatedShowCaseCarousel 
             slides={slides}
@@ -211,6 +245,9 @@ const FenceList = () => {
             buttonLabel="Contact Us"
             onButtonClick={() => (window.location.href = "/contactus")}
           />
+      </AnimatedSection>
+      <AnimatedSection>
+          <DesignTailorCard/>
       </AnimatedSection>
     </div>
   )

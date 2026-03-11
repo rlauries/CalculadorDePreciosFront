@@ -33,7 +33,7 @@
 }
 @media screen and (max-width: 1100px){
   .section-intro h2{
-    font-size: 30px;
+    font-size: 40px;
   }
   .section-intro p{
     font-size: 18px;
@@ -43,5 +43,14 @@
 @media screen and (max-width: 905px){
   .section-intro{
     margin-bottom: 0px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 620px){
+  .section-intro h2{
+    font-size: 30px;
+  }
+  .section-intro p{
+    font-size: 16px;
   }
 }

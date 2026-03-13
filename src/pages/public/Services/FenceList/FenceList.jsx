@@ -150,25 +150,8 @@ const FenceList = () => {
             description='We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.'
         />
       </AnimatedSection> 
-      {/* <AnimatedSection>
-          <div className="fence-list-grid">
-            {fences.map((item) => (
-              <div className="fence-card" key={item.id}>
-                <div className="fence-image" onClick={() => OpenModal(item)}>
-                  {item.imageUrl ? (
-                    <div className="image-wrapper">
-                      <img src={item.imageUrl} alt="" />
-                      <div className="image-label">{item.name}</div>
-                    </div>
-                  ) : (
-                    <div className="no-image">No Image</div>
-                  )}      
-                </div>
-                
-              </div>
-            ))}
-          </div>
-      </AnimatedSection>
+      {/* 
+      
       {showModal && setSelectedFence && (
         <div className="modal-overlay" onClick={CloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

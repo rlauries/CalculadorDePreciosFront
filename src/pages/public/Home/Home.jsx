@@ -100,6 +100,7 @@ const Home = () => {
             <div className='myths-info' 
                
             >
+                <div className="myth-info-bg"></div>
                 <AnimatedSection>
                     <BannerImageHalf 
                         image="images/originals/Pergolas/IMG_7746.jpg" 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner";
 // Usa el MISMO import de DesignTailorCard que en FenceList
 import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignTailorCard";

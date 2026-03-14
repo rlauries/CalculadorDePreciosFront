@@ -175,7 +175,7 @@ export const CladdingList = () => {
 
         <AnimatedSection>
           <BannerImageHalf 
-            image="images/originals/Claddings/front-building.png" 
+            image="images/originals/Claddings/wood-cladding-myth.png" 
             title="WOOD MYTH" 
             subtitle="Many people believe wood cladding quickly deteriorates outdoors and requires constant maintenance. In reality, properly treated and sealed exterior wood cladding can withstand weather, moisture, and sun exposure for many years while delivering a warm, natural architectural look that synthetic materials often try to imitate."
             reversed={false}
@@ -184,7 +184,7 @@ export const CladdingList = () => {
 
         <AnimatedSection>
           <BannerImageHalf
-            image="images/originals/Claddings/concrete-composite-post.png" 
+            image="images/originals/Claddings/MyLogHouse.jpg" 
             title="PVC MYTH" 
             subtitle="A common misconception is that PVC cladding looks artificial and lacks durability. Modern exterior-grade PVC systems are engineered to resist moisture, UV exposure, warping, and rot while maintaining a clean architectural finish. They provide a long-lasting solution with very little maintenance."
             reversed={true}

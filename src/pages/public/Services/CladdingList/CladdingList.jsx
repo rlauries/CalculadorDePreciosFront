@@ -155,7 +155,7 @@ export const CladdingList = () => {
           <FeatureShowcaseCarousel
             title="CLADDING SYSTEMS"
             subtitle="Project Showcase"
-            mainImage="/images/originals/Claddings/cladding-post.jpg"
+            mainImage="/images/originals/Claddings/cladding-pergolas-render.png"
             items={featuredCladdings}
           />
 
@@ -184,7 +184,7 @@ export const CladdingList = () => {
 
         <AnimatedSection>
           <BannerImageHalf
-            image="images/originals/Claddings/pvc-cladding-myth.png" 
+            image="images/originals/Claddings/concrete-composite-post.png" 
             title="PVC MYTH" 
             subtitle="A common misconception is that PVC cladding looks artificial and lacks durability. Modern exterior-grade PVC systems are engineered to resist moisture, UV exposure, warping, and rot while maintaining a clean architectural finish. They provide a long-lasting solution with very little maintenance."
             reversed={true}
@@ -193,7 +193,7 @@ export const CladdingList = () => {
 
         <AnimatedSection>    
           <BannerImageHalf
-            image="images/originals/Claddings/front-building.png" 
+            image="images/originals/Claddings/garage-composite.png" 
             title="COMPOSITE MYTH" 
             subtitle="Some assume composite cladding fades quickly or cannot replicate the beauty of natural materials. In reality, modern composite systems are designed with advanced textures and color stability that resist fading, moisture, and insects while maintaining a consistent, elegant appearance for years."
             reversed={false}

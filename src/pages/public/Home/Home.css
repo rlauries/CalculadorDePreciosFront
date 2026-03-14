@@ -181,7 +181,7 @@
   padding: 20px;
 }
 .hero-down-text h2{
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 400;
   color: black;
 }
@@ -195,7 +195,7 @@
   font-family: 'Alex Brush', cursive;
 }
 .hero-down-text h4 em{
-  font-size: 46px;
+  font-size: 36px;
 }
 
 .hero-down-text p {
@@ -339,8 +339,8 @@
     .hero-down-text h2{
       font-size: 30px;
     }
-    .hero-down-text em{
-      font-size: 18px;
+    .hero-down-text h4 em{
+      font-size: 28px;
     }
     .hero-down-text p{
       font-size: 12px;
@@ -417,8 +417,8 @@
   .hero-down-text h2{
     font-size: 20px;
   }
-  .hero-down-text em{
-    font-size: 14px;
+  .hero-down-text h4 em{
+    font-size: 24px;
   }
   .hero-down-text p{
     font-size: 08px;
@@ -437,9 +437,9 @@
     font-size: 8px;
     width: 80%;
   }
-  .hero-down-text h2{
+  /* .hero-down-text h2{
     font-size: 16px;
-  }
+  } */
   .hero-down-text em{
     font-size: 12px;
   }

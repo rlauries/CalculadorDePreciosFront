@@ -6,6 +6,8 @@ import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCase
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
+import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+
 
 const featurePeergola = [
   {
@@ -191,9 +193,41 @@ const PergolaList = () => {
           />     
         </AnimatedSection>
 
-        <AnimatedSection>
-          <DesignTailorCard/>
-        </AnimatedSection>
+        <section>
+                  <div className='myths-info' 
+                      
+            >
+                <div className="myth-info-bg"></div>
+
+                  <AnimatedSection>
+                    <BannerImageHalf 
+                      image="images/originals/Pergolas/led-myth.png" 
+                      title="LED PERGOLA LIGHTING MYTH" 
+                      subtitle="Many people believe LED lighting for pergolas is too harsh or unreliable outdoors. In reality, modern exterior-grade LED systems are designed to withstand weather, humidity, and temperature changes while providing soft, energy-efficient illumination that enhances the ambiance of your outdoor space."
+                      reversed={false}
+                    />
+                  </AnimatedSection>
+
+                  <AnimatedSection>
+                    <BannerImageHalf
+                      image="images/originals/Pergolas/wood-myth.png" 
+                      title="WOOD PERGOLA MYTH" 
+                      subtitle="A common misconception is that wood pergolas quickly rot or require constant maintenance. When properly sealed and built with quality materials, wood pergolas can last for decades while offering a timeless natural look that blends beautifully with outdoor environments."
+                      reversed={true}
+                    /> 
+                  </AnimatedSection>
+
+                  <AnimatedSection>    
+                    <BannerImageHalf
+                      image="images/originals/Pergolas/pergola-insulated-panels-myth.png" 
+                      title="INSULATED PANEL PERGOLA MYTH" 
+                      subtitle="Some believe insulated roof panels make pergolas look bulky or overly industrial. In reality, modern insulated panels provide excellent thermal protection, reduce heat under the structure, and create a clean architectural finish that enhances comfort and usability year-round."
+                      reversed={false}
+                    />
+                  </AnimatedSection>  
+                </div>
+        </section>
+        
         <AnimatedSection>
             <AnimatedShowCaseCarousel 
               slides={slides}
@@ -204,7 +238,9 @@ const PergolaList = () => {
               onButtonClick={() => (window.location.href = "/fans")}
             />
         </AnimatedSection>
-        
+        <AnimatedSection>
+          <DesignTailorCard/>
+        </AnimatedSection>
       </section>
       
     </div>

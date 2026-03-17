@@ -139,7 +139,7 @@ const PergolaList = () => {
         <AnimatedSection>
           <SectionIntro 
               title="Explore Our Pergola Styles" 
-              description='Discover the perfect pergola that suits your lifestyle — from modern steel designs to classic wooden structures. Compare features and find your ideal match.'
+              description='Discover the perfect pergola that suits your lifestyle — from modern aluminum designs to classic wooden structures. Compare features and find your ideal match.'
           />
         </AnimatedSection>  
         

@@ -7,7 +7,7 @@ import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
-
+import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
 const Home = () => {
     
 
@@ -29,6 +29,7 @@ const Home = () => {
                 pauseTime={4000}
             />
         </section>
+        <PromoTicker/>
         <SectionIntro
             title="DESIGNED TO LAST"
             description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."
@@ -119,7 +120,7 @@ const Home = () => {
                 </AnimatedSection>
                 <AnimatedSection>    
                     <BannerImageHalf
-                        image="images/originals/Pergolas/IMG_7746.jpg" 
+                        image="images/originals/Claddings/wood-cladding-myth.png" 
                         title="PVC Cladding Myth" 
                         subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
                         reversed={false}

@@ -5,7 +5,7 @@ import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.ts
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
-
+import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
 
 const featuredStairs = [
   {
@@ -108,6 +108,9 @@ export const StairList = () => {
             items={featuredStairs}
           />  
         </AnimatedSection>
+         <AnimatedSection>
+          <StairTreadsSection />
+        </AnimatedSection>
         <AnimatedSection>
           <section>
             <HeroBanner
@@ -118,6 +121,7 @@ export const StairList = () => {
             />
           </section>
         </AnimatedSection>
+        
         <section className='myths-info'>
           <div className="myth-info-bg"></div>
           <AnimatedSection>

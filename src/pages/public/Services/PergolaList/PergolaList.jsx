@@ -9,6 +9,7 @@ import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCa
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 
 
+
 const featurePeergola = [
   {
     id: 1,
@@ -192,7 +193,7 @@ const PergolaList = () => {
             imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.jpeg"
           />     
         </AnimatedSection>
-
+       
         <section>
                   <div className='myths-info' 
                       

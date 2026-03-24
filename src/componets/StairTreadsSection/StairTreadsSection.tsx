@@ -105,7 +105,7 @@ export const StairTreadsSection: React.FC = () => {
         </div>
 
         <div className="stair-treads-cta-wrap">
-          <a className="stair-treads-cta" type="button">
+          <a  href="/contactus" className="stair-treads-cta" type="button">
             ☰ Get free estimate
           </a>
         </div>

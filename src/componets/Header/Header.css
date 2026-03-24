@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   width: 97%;
-  height: 40px;       
+  height: 41px;       
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -22,11 +22,14 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    width: 100%;
+    flex-shrink: 0;
 }
+
 .company-name-logo{
-    margin-left: 0px;
-}
+    display: block;
+    object-fit: contain;
+    width: 100%;
+}    
 
 
 /* -----Nav-------- */
@@ -44,6 +47,14 @@ nav {
     line-height: 10px;
     width: 100%;
     gap:5px;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  width: auto;
+  gap: 5px;
 }
 .nav-btn {
     width: auto;

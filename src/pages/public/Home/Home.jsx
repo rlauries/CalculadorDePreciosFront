@@ -8,6 +8,8 @@ import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSect
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
+import About  from '../../../componets/About/About.tsx';
+
 const Home = () => {
     
 
@@ -70,7 +72,11 @@ const Home = () => {
             </div>
           </AnimatedSection>  
         </section>
-
+        {/* About                 */}
+        <section>
+            <About/>
+        </section>
+        
         <section className='home-services-sliders'>
             <AnimatedSection>
                 <PergolaSlider/>
@@ -80,22 +86,7 @@ const Home = () => {
                 <FenceSlider/>
             </AnimatedSection>
         </section>
-        <section>
-            <AnimatedSection>
-                <div className='forth-banner'>
-                    <span className='info'>
-                        <div className="info-subtitle">
-                            <h2>Personalized Service <strong>|</strong></h2>
-                        </div>
-                        <p>
-                            From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
-                        </p>
-                    </span>
-                    
-                    <img src="images/workers-banner.jpg" alt="" />
-                </div>
-            </AnimatedSection>
-        </section>
+       
    
         <section>
             <div className='myths-info' 
@@ -129,6 +120,23 @@ const Home = () => {
             </div>
         </section>
         <section>
+            <AnimatedSection>
+                <div className='forth-banner'>
+                    <span className='info'>
+                        <div className="info-subtitle">
+                            <h2>Personalized Service <strong>|</strong></h2>
+                        </div>
+                        <p>
+                            From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
+                        </p>
+                    </span>
+                    
+                    <img src="images/workers-banner.jpg" alt="" />
+                </div>
+            </AnimatedSection>
+        </section>
+        <section>
+          
             <AnimatedSection>
                 <FrequentlyAskQuestion/>
             </AnimatedSection>

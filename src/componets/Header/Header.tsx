@@ -53,8 +53,10 @@ export const Header = () => {
       <header className='main-header'>
          <div className="image-container">
             <img className='company-name-logo' 
-                 src="images\Logo\SmallLauriesLogo (para fondo blanco).png" 
-                 alt="Lauries Welding Group" />
+                 src="/images/Logo/SmallLauriesLogo.png" 
+                 alt="Lauries Welding Group" 
+                 style={{ width: "140px", height: "auto", display: "block" }}
+            />
          </div>
 
           {/* Botón hamburguesa (solo se ve en mobile) */}

@@ -74,7 +74,9 @@ const Home = () => {
         </section>
         {/* About                 */}
         <section>
+          <AnimatedSection>      
             <About/>
+          </AnimatedSection>
         </section>
         
         <section className='home-services-sliders'>

@@ -152,6 +152,10 @@ export const ContactUsForm = () => {
                     type="text" // Cambia el tipo a "text" para evitar que los navegadores muestren los controles de incremento/decremento
                     name="phoneNumber"
                     id="phone-Number"
+                    value={formData.phoneNumber}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, phoneNumber: e.target.value }))
+                    }
                     onBlur={handleBlur}
                     required
                 />               

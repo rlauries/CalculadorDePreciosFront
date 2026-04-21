@@ -36,6 +36,7 @@ const Home = () => {
             title="DESIGNED TO LAST"
             description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."
         />
+
         {/* ----Hero Down Banner ---- */}
         <section>
           <AnimatedSection>   
@@ -69,10 +70,12 @@ const Home = () => {
                     </p>
                 <ContactUsButton/>
               </div>
+              <div className="gray-gradient-bottom" />
             </div>
           </AnimatedSection>  
         </section>
-        {/* About                 */}
+        
+        {/* -------- About ---------*/}
         <section>
           <AnimatedSection>      
             <About/>
@@ -121,7 +124,11 @@ const Home = () => {
                 </AnimatedSection>    
             </div>
         </section>
+        <section className="gray-gradient-section">
+            <div className="gray-gradient-bottom" />
+        </section>
         <section>
+            
             <AnimatedSection>
                 <div className='forth-banner'>
                     <span className='info'>

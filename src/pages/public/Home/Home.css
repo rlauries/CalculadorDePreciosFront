@@ -34,17 +34,45 @@
   display: block;
   object-fit: cover;
 }
+
 /* ---herodown banner---- */
+.hero-down-container-link {
+  text-decoration: none;
+  display: block;
+  
+}
 .hero-down-banner {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-evenly;
+  
   gap: 40px;
-  margin: 60px auto;
-  margin-left: 5%;
-  background: transparent;
+  margin: 0px auto;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.gray-gradient-bottom {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none; /* importante */
+  
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    #e2e1e1 100%
+  );
+}
+
+.gray-gradient-section {
+  position: relative;
+  width: 100%;
+  height: 80px;
 }
 /* feature-card */
 
@@ -53,6 +81,7 @@
   width: 360px;
   height: 230px;
   transition: transform .3s ease, box-shadow .3s ease;
+  margin-left: 10%;
 }
 .feature-card:hover {
   transform: translateY(-6px);
@@ -178,7 +207,8 @@
 
 .hero-down-text {
   flex: 0 0 60%;
-  padding: 20px;
+  padding: 20px 60px 0px 0px;
+  
 }
 .hero-down-text h2{
   font-size: 40px;
@@ -204,12 +234,9 @@
   color: #444;
   margin-bottom: 20px;
 }
-.hero-down-container-link {
-  text-decoration: none;
-  display: block;
-}
 
-/*---e
+
+/*---End herodown banner---*/
 
 
 /* Third Banner */
@@ -271,14 +298,14 @@
   /* Forth Banner */
 
   .forth-banner{
-    background-color: #dcd6d6;
+    background-color: #e2e1e1;
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 40px;
+    padding-bottom: 80px;
     margin-bottom: 100px;
-    width: 97%;
-    margin-left: 1.5%;
+    width: 100%;
   }
   .forth-banner .info{
     padding: 40px;
@@ -320,7 +347,7 @@
     margin-top: 100px;
   }
 
-/* -------media queries------- */
+/* -------MEDIA QUERIES------- */
 
 
 @media screen and (max-width: 1100px){
@@ -364,10 +391,15 @@
       gap: 20px;
       padding: 20px;
       margin-top: 20px;
-      
+      padding-bottom: 50px;
     }
     .hero-down-card-content{
       padding: 0px 20% 
+    }
+    .hero-down-text{
+      padding: 0px 20px;
+      text-align: center;
+      
     }
     
 
@@ -437,16 +469,18 @@
     font-size: 8px;
     width: 80%;
   }
-  /* .hero-down-text h2{
-    font-size: 16px;
-  } */
+ 
   .hero-down-text em{
     font-size: 12px;
   }
   .hero-down-text p{
     font-size: 08px;
   } 
-
+  .feature-card {
+    width: 250px;
+    height: 220px;
+    margin-left: 0%;
+  }
 }
 
 @media screen and (max-width: 355px){
@@ -460,5 +494,8 @@
   }
   .hero-down-text h2{
     font-size: 14px;
+  }
+  .feature-card-image-wrapper{
+    width: 240px;
   }
 }

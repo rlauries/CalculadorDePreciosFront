@@ -108,9 +108,6 @@ export const StairList = () => {
             items={featuredStairs}
           />  
         </AnimatedSection>
-         <AnimatedSection>
-          <StairTreadsSection />
-        </AnimatedSection>
         <AnimatedSection>
           <section>
             <HeroBanner
@@ -120,6 +117,9 @@ export const StairList = () => {
               imageUrl="/images/originals/Stairs/Nilis-house.png"
             />
           </section>
+        </AnimatedSection>
+        <AnimatedSection>
+          <StairTreadsSection />
         </AnimatedSection>
         
         <section className='myths-info'>

@@ -104,6 +104,8 @@ const Home = () => {
                         title=" WOOD PERGOLA MYTH" 
                         subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
                         reversed={false}
+                        link="/pergolas"
+
                     />
                 </AnimatedSection>
                 <AnimatedSection>
@@ -112,6 +114,7 @@ const Home = () => {
                         title=" OUTDOOR LIGHTING MYTH" 
                         subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
                         reversed={true} // Esto invierte el orden de imagen y texto
+                        link="/fences"
                     /> 
                 </AnimatedSection>
                 <AnimatedSection>    
@@ -120,6 +123,8 @@ const Home = () => {
                         title="PVC Cladding Myth" 
                         subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
                         reversed={false}
+                        link="/claddings"
+
                     />
                 </AnimatedSection>    
             </div>

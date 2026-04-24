@@ -128,9 +128,8 @@ const Home = () => {
             <div className="gray-gradient-bottom" />
         </section>
         <section>
-            
-            <AnimatedSection>
-                <div className='forth-banner'>
+            <div className='forth-banner'>
+                <AnimatedSection>
                     <span className='info'>
                         <div className="info-subtitle">
                             <h2>Personalized Service <strong>|</strong></h2>
@@ -141,8 +140,9 @@ const Home = () => {
                     </span>
                     
                     <img src="images/workers-banner.jpg" alt="" />
-                </div>
-            </AnimatedSection>
+                 </AnimatedSection>   
+            </div>
+            
         </section>
         <section>
           

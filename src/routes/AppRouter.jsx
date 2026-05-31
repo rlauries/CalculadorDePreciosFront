@@ -12,6 +12,7 @@ import { Header } from '../componets/Header/Header.tsx';
 import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
 import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
 import { Invoice } from '../componets/Invoice/Invoice.tsx';
+import { SMPConstructionStair } from '../pages/public/ProyectPages/SMPConstructionStair/SMPConstructionStair.tsx';
 // Lazy Load Components
 
 
@@ -58,6 +59,8 @@ export const AppRouter = () => {
             {/* ----- Private Routes ---------- */}
             <Route path="/invoice" element={<Invoice />} />
             
+            {/* Individual product pages can be added here, e.g.: */}
+            <Route path="/stairs/construction" element={<SMPConstructionStair />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

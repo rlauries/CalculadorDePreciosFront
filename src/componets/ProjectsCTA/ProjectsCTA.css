@@ -1,0 +1,93 @@
+.projects-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.78)
+    ),
+    url("../../../public/images/Projects-done/05-26-Stair-Downtown/estructura-hierro.png");
+    
+
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+}
+
+.projects-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 106, 0, 0.08),
+    transparent 70%
+  );
+}
+
+.projects-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.projects-cta h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.projects-cta-services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projects-cta-services span {
+  position: relative;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+.projects-cta-services span:not(:last-child)::after {
+  content: "•";
+  color: #ff6a00;
+  margin-left: 1rem;
+}
+
+.projects-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.8rem;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+
+.projects-cta-button:hover {
+  background: #ff6a00;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .projects-cta {
+    padding: 4rem 1.2rem;
+  }
+
+  .projects-cta-services {
+    gap: 0.7rem;
+  }
+
+  .projects-cta h2 {
+    line-height: 1.2;
+  }
+}

@@ -89,8 +89,8 @@ const GalleryList = [
     },
     {
       id : 12,
-      name: "Vecteezy Private House",
-      imageUrl: "images/originals/Fences/vecteezy_a-private-house-of-two-floors-with-triangular-roof-and-an_36155207.jpeg",
+      name: "Aluminum Gate Swing",
+      imageUrl: "images/originals/Fences/yan-gate.png",
       serviceTypeId: 1,
       matrialId: 3
     },
@@ -315,8 +315,8 @@ const GalleryList = [
     },
     {
       id : 44,
-      name: "Pergola LED",
-      imageUrl: "images/originals/Pergolas/67881decca9f7719266db8b9_Pic 3.jpg",
+      name: "Pergola Cladding Ceiling",
+      imageUrl: "images/originals/Pergolas/cladding-pergola-ceiling.png",
       serviceTypeId: 2,
       matrialId: 6
     },

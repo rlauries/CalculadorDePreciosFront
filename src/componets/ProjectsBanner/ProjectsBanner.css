@@ -1,0 +1,115 @@
+.projects-banner {
+  position: relative;
+  min-height: 430px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.projects-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.68) 28%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.projects-banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+  padding: 60px 44px;
+}
+
+.projects-banner-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #ff6b21;
+}
+
+.projects-banner-eyebrow::first-letter {
+  color: #ff6b21;
+}
+
+.projects-banner-content h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 22px;
+  font-weight: 800;
+}
+
+.projects-banner-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+.projects-banner-features span {
+  position: relative;
+  color: #f1f1f1;
+  font-weight: 300;
+}
+.projects-banner-features span:not(:last-child)::after {
+  content: "•";
+  color: #ff6b21;
+  margin-left: 12px;
+}
+
+.projects-banner-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #ff6b21;
+  border-radius: 4px;
+  color: #ff6b21;
+  text-decoration: none;
+  padding: 14px 24px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+}
+
+.projects-banner-button:hover {
+  background: #ff6b21;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .projects-banner {
+    min-height: 520px;
+    background-position: center right;
+  }
+
+  .projects-banner-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.86) 0%,
+      rgba(0, 0, 0, 0.55) 55%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+
+  .projects-banner-content {
+    padding: 40px 22px;
+    align-self: flex-end;
+  }
+
+  .projects-banner-features {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,75 @@
+.project-overview {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  background: #070b0d;
+  color: #f5f5f5;
+}
+
+.overview-content h3,
+.project-data-card h3 {
+  color: #ff6a00;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.overview-content p {
+  max-width: 680px;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  color: #e0e0e0;
+}
+
+.project-data-card {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-data-card h3 {
+  color: #ffffff;
+}
+
+.project-data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-data-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.project-data-icon {
+  color: #ff6a00;
+  width: 24px;
+  height: 24px;
+}
+
+.project-data-item span {
+  display: block;
+  color: #ff6a00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.project-data-item p {
+  margin: 0;
+  color: #f1f1f1;
+  line-height: 1.4;
+}
+
+@media (max-width: 850px) {
+  .project-overview {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1.25rem;
+  }
+}

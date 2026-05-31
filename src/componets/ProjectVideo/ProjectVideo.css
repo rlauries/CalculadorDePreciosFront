@@ -1,0 +1,89 @@
+.project-video {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  background: #070b0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.project-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.project-video-content h3 {
+  color: #ff6a00;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-video-content p {
+  color: #e5e5e5;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.project-video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+  padding: 0.8rem 1.4rem;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  background: black;
+  border-radius: 4px;
+}
+
+.project-video-preview {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #111;
+  display: block;
+}
+
+.project-video-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.project-play-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.project-play-icon svg {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 12px;
+  width: 72px;
+  height: 72px;
+}
+
+@media (max-width: 850px) {
+  .project-video {
+    grid-template-columns: 1fr;
+  }
+
+  .project-video-preview {
+    height: 260px;
+  }
+}

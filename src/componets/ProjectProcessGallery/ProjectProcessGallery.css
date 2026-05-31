@@ -1,0 +1,56 @@
+.process-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #050505;
+  padding: 12px;
+}
+
+.process-card {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #111;
+}
+
+.process-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.process-card:hover img {
+  transform: scale(1.04);
+}
+
+.process-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.process-label {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 850px) {
+  .process-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    height: 260px;
+  }
+}

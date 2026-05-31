@@ -1,6 +1,5 @@
 import React from 'react';
 import './BannerImageHalf.css';
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export const BannerImageHalf = ({ image, title, subtitle, reversed, link }) => {

@@ -30,30 +30,30 @@ const treadItems: TreadItem[] = [
   },
   {
     name: "Mahogany",
-    image: "/images/originals/stairs/Wood-Types/Mahogany.png",
+    image: "/images/originals/Stairs/Wood-Types/Mahogany.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]  },
   {
     name: "Red Cedar",
-    image: "/images/originals/stairs/Wood-Types/Red-Cedar.png",
+    image: "/images/originals/Stairs/Wood-Types/Red-Cedar.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   {
     name: "Thick Ash",
-    image: "/images/originals/stairs/Wood-Types/Thick-Ash.png",
+    image: "/images/originals/Stairs/Wood-Types/Thick-Ash.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]  },
   {
     name: "Walnut",
-    image: "/images/originals/stairs/Wood-Types/Walnut.png",
+    image: "/images/originals/Stairs/Wood-Types/Walnut.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   {
     name: "White Cedar",
-    image: "/images/originals/stairs/Wood-Types/White-Cedar.png",
+    image: "/images/originals/Stairs/Wood-Types/White-Cedar.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   {
     name: "White-Oak.png",
-    image: "/images/originals/stairs/Wood-Types/White-Oak.png",
+    image: "/images/originals/Stairs/Wood-Types/White-Oak.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   

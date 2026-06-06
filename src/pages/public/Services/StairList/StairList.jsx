@@ -6,26 +6,44 @@ import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
+import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 
 const featuredStairs = [
   {
     id: 1,
     name: 'Wood ',
-    imageUrl: '/images/originals/Stairs/wooden-stair.png',
-    linkTo: '/services/stairs/aluminum-wood'
+    imageUrl: '/images/originals/Stairs/Stairs.png',
+    linkTo: '/stairs/downtown-miami'
   },
   {
     id: 2,
     name: 'Floating',
     imageUrl: '/images/originals/Stairs/floating01.jpg',
-    linkTo: '/services/stairs/floating-staircase'
+    linkTo: '/stairs/floating-staircase'
   },
   {
     id: 3,
     name: 'Composite',
-    imageUrl: '/images/originals/Stairs/composite.jpg',
-    linkTo: '/services/stairs/aluminum-composite'
+    imageUrl: '/images/originals/Stairs/PHOTO-2022-06-30-18-13-59.jpg',
+    linkTo: '/stairs/aluminum-composite'
   },
+];
+const slides = [
+  {
+    id: 1,
+    image: "/images/originals/Stairs/UpperFloor.png",
+    projectUrl: "/projects/downtown-miami-floating-staircase"
+  },
+  {
+    id: 2,
+    image: "/images/originals/Stairs/after.jpg",
+    projectUrl: "/stairs/downtown-miami"
+  },
+  {
+    id: 3,
+    image: "/images/originals/Stairs/nick-stair.jpeg",
+    projectUrl: "/stairs/nick-custom-staircase"
+  }
 ];
 
 // const StairDB = [
@@ -151,6 +169,16 @@ export const StairList = () => {
             />
           </AnimatedSection>
         </section>  
+        <AnimatedSection>
+            <AnimatedShowCaseCarousel 
+              slides={slides}
+              eyebrow="Completed Projects"
+              headline="DESIGNED TO IMPRESS. "
+              subheadline="Explore our completed staircase projects across South Florida. See materials, fabrication details, and finished installations."
+              buttonLabel="VIEW PROJECT"
+              onButtonClick={() => (window.location.href = "/contactus")}
+            />
+        </AnimatedSection>  
         <AnimatedSection>
           <DesignTailorCard/>
         </AnimatedSection>

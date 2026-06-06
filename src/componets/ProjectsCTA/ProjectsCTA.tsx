@@ -18,7 +18,7 @@ export function ProjectsCTA() {
           <span>Gates</span>
         </div>
 
-        <a href="/contact" className="projects-cta-button">
+        <a href="/contactus" className="projects-cta-button">
           REQUEST A CONSULTATION
           <ArrowRight size={18} />
         </a>

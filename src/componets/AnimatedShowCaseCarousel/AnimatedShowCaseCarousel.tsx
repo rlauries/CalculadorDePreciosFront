@@ -7,6 +7,7 @@ export interface HeroSlide {
   image: string;
   title?: string;
   caption?: string;
+  projectUrl?: string;
 }
 interface AnimatedShowCCaseCarouselProps {
   slides: HeroSlide[];
@@ -51,7 +52,15 @@ export const AnimatedShowCaseCarousel: React.FC<AnimatedShowCCaseCarouselProps> 
         {/* Imagen grande */}
         <div
           className="hero-showcase-bg"
-          style={{ backgroundImage: `url(${currentSlide.image})` }}
+          style={{
+            backgroundImage: `url(${currentSlide.image})`,
+            cursor: currentSlide.projectUrl ? "pointer" : "default"
+          }}
+          onClick={() => {
+            if (currentSlide.projectUrl) {
+              window.location.href = currentSlide.projectUrl;
+            }
+          }}
         />
 
         {/* Capa oscura */}
@@ -89,7 +98,11 @@ export const AnimatedShowCaseCarousel: React.FC<AnimatedShowCCaseCarouselProps> 
                 className={`hero-thumb-card ${
                   index === currentIndex ? "active" : ""
                 }`}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => {
+                  if (slide.projectUrl) {
+                    window.location.href = slide.projectUrl;
+                  }
+                }}
               >
                 <div
                   className="hero-thumb-image"

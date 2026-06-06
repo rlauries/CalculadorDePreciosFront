@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { ProjectOverview } from "./../../../../componets/ProjectOverview/ProjectOverview.tsx";
 import { ProjectProcessGallery } from '../../../../componets/ProjectProcessGallery/ProjectProcessGallery.tsx'; 
 import { ProjectDetailsGallery } from '../../../../componets/ProjectDetailsGallery/ProjectDetailsGallery.tsx';
@@ -26,7 +26,7 @@ const projectData = [
   },
   {
     label: "System Type",
-    value: "Custom Aluminum Floating Staircase",
+    value: "Custom Aluminum Lineal Staircase",
   },
   {
     label: "Materials",
@@ -38,7 +38,7 @@ const projectData = [
   },
   {
     label: "Status",
-    value: "Completed 2026",
+    value: "Completed 2024",
   },
 ];
 const processImages = [
@@ -82,7 +82,7 @@ export const SMPConstructionStair = () => {
     <div>
       <ProjectsBanner
         eyebrow="01 / COMPLETED PROJECT"
-        title="Custom Floating Staircase Downtown Miami"
+        title="Custom Floating Staircase Downtown, Miami"
         features={[
           "Aluminum Mono Stringer",
           "Red Cedar Slabs",

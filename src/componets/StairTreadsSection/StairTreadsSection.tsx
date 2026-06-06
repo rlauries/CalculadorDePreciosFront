@@ -25,7 +25,7 @@ const thicknessOptions: ThicknessOption[] = [
 const treadItems: TreadItem[] = [
   {
     name: "American Cherry",
-    image: "/images/originals/stairs/Wood-Types/American-Cherry.png",
+    image: "/images/originals/Stairs/Wood-Types/American-Cherry.png",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   {

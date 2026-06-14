@@ -2,12 +2,13 @@ import React from 'react';
 import './DesignTailorCard.css';
 import { AnimatedSection } from '../AnimatedSection/AnimatedSection.tsx';
 
+
 export const DesignTailorCard = () => {
   return (
     <AnimatedSection>      
       <span className='design-tailored-card'>
           <div class="design-tailored-card-bg"></div>
-          <img className='banner-image' src="images/design-tailor-img.png" alt="HeroBanner" />
+          <img onClick={()=>window.location.href="/tools/truss"}className='banner-image' src="images/design-tailor-img.png" alt="HeroBanner" />
           
           <div className='second-banner-info'>
               <h1>Designs Tailored to You <strong> |</strong></h1>

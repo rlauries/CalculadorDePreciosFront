@@ -1,0 +1,99 @@
+.truss-calculator {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 28px;
+  background: #f8f6f1;
+  border: 1px solid #ddd6c8;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+}
+
+.truss-calculator h2 {
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.truss-calculator h3 {
+  margin-top: 28px;
+  font-size: 20px;
+  border-bottom: 2px solid #c9a227;
+  padding-bottom: 8px;
+}
+
+.truss-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.truss-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.truss-field input,
+.truss-field select {
+  padding: 12px 14px;
+  border: 1px solid #c8c2b8;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+}
+
+.truss-field input:focus,
+.truss-field select:focus {
+  outline: none;
+  border-color: #c9a227;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.18);
+}
+
+.truss-divider {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid #ddd6c8;
+}
+
+.truss-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.truss-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee7dc;
+}
+
+.truss-table td:first-child {
+  font-weight: 700;
+  background: #f1ede4;
+  width: 40%;
+}
+
+.truss-table tr:last-child td {
+  border-bottom: none;
+}
+
+.truss-note {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .truss-calculator {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .truss-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

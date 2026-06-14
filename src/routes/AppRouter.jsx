@@ -11,10 +11,10 @@ import Login from '../pages/public/login-signup/Login/Login.jsx';
 import { Header } from '../componets/Header/Header.tsx';
 import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
 import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
-import { Invoice } from '../componets/Invoice/Invoice.tsx';
+import { Invoice } from '../tools/Invoice/Invoice.tsx';
 import { SMPConstructionStair } from '../pages/public/ProyectPages/SMPConstructionStair/SMPConstructionStair.tsx';
 import { NickSonyIsle } from '../pages/public/ProyectPages/NickSonyIsle/NickSonyIsle.tsx';
-
+import { TrussCalculatorPage } from '../pages/public/TrussCalculatorPage/TrussCalculatorPage.tsx';
 
 // Lazy Load Components
 
@@ -60,7 +60,8 @@ export const AppRouter = () => {
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             {/* ----- Private Routes ---------- */}
-            <Route path="/invoice" element={<Invoice />} />
+            <Route path="tools/invoice" element={<Invoice />} />
+            <Route path="tools/truss" element={<TrussCalculatorPage />} />
             
             {/* Individual product pages can be added here, e.g.: */}
             <Route path="/stairs/downtown-miami" element={<SMPConstructionStair />} />

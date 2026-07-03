@@ -133,7 +133,10 @@ export const Invoice: React.FC = () => {
         {/* HEADER */}
         <div className="invoice-header">
           <div className="invoice-header-top">
-            <img src="images/Logo/lauries-logo-para-fondo-blanco.png" alt="" />
+            <img
+              src="/images/Logo/lauries-logo-para-fondo-blanco.png"
+              alt="Lauries Welding Group"
+            />
             <div className="invoice-actions">
               <button className="invoice-actions-print-button" onClick={handlePrint}>Print</button>
               <button className="invoice-actions-download-pdf-button" onClick={handleDownloadPDF}>Download PDF</button>
@@ -201,6 +204,7 @@ export const Invoice: React.FC = () => {
                   </label>
                   <input
                     id="companyName"
+                    className="invoice-company-name-input"
                     value={client.companyName}
                     onChange={e => updateClient("companyName", e.target.value)}
                   />
@@ -211,6 +215,7 @@ export const Invoice: React.FC = () => {
                     </label>
                     <input
                       id="address"
+                      className="invoice-company-address-input"
                       value={client.address}
                       onChange={e => updateClient("address", e.target.value)}
                     />
@@ -219,6 +224,7 @@ export const Invoice: React.FC = () => {
                   <label htmlFor="phone">Phone:</label>
                   <input
                     id="phone"
+                    className="invoice-company-phone-input"
                     value={formatPhone(client.phone)}
                     onChange={(e) =>
                       updateClient("phone", e.target.value.replace(/\D/g, ""))
@@ -231,6 +237,7 @@ export const Invoice: React.FC = () => {
                   </label>
                   <input
                     id="email"
+                    className="invoice-company-email-input"
                     value={client.email}
                     onChange={e => updateClient("email", e.target.value)}
                   />

@@ -118,6 +118,18 @@ hr {
   border-color: #ff6a00;
 }
 
+.invoice-company-name-input,
+.invoice-company-email-input{
+  margin-left: 19px;
+}
+.invoice-company-address-input{
+  margin-left: 0px;
+}
+.invoice-company-phone-input{
+  margin-left: 18px;
+}
+
+
 @media print {
   .invoice-type-select select {
     border: none;

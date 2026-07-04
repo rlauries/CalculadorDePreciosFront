@@ -15,19 +15,19 @@ const featuredCladdings = [
     id: 1,
     name: "Composite",
     imageUrl: "images/originals/Claddings/composite-nili.jpeg",
-    linkTo: "/cladding/composite",
+    linkTo: "/claddings/justin-hollywood-cladding",
   },
   {
     id: 2,
     name: "Wood",
     imageUrl: "images/originals/Claddings/wood-planks.jpg",
-    linkTo: "/cladding/wood",
+    linkTo: "/claddings/justin-hollywood-cladding",
   },
   {
     id: 3,
     name: "PVC",
     imageUrl: "images/originals/Claddings/pvc-cladding.jpg",
-    linkTo: "/cladding/pvc",
+    linkTo: "/claddings/justin-hollywood-cladding",
   },
 ];
 

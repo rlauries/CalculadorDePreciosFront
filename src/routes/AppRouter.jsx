@@ -15,6 +15,8 @@ import { Invoice } from '../tools/Invoice/Invoice.tsx';
 import { SMPConstructionStair } from '../pages/public/ProyectPages/SMPConstructionStair/SMPConstructionStair.tsx';
 import { NickSonyIsle } from '../pages/public/ProyectPages/NickSonyIsle/NickSonyIsle.tsx';
 import { TrussCalculatorPage } from '../pages/public/TrussCalculatorPage/TrussCalculatorPage.tsx';
+import { JustinHollywoodCladding } from '../pages/public/ProyectPages/JustinHollywoodCladding/JustinHollywoodCladding.tsx';
+
 
 // Lazy Load Components
 
@@ -63,9 +65,10 @@ export const AppRouter = () => {
             <Route path="tools/invoice" element={<Invoice />} />
             <Route path="tools/truss" element={<TrussCalculatorPage />} />
             
-            {/* Individual product pages can be added here, e.g.: */}
+            {/* Individual Product Pages Completed can be added here, e.g.: */}
             <Route path="/stairs/downtown-miami" element={<SMPConstructionStair />} />
             <Route path="/stairs/nick-custom-staircase" element={<NickSonyIsle />} />
+            <Route path="/claddings/justin-hollywood-cladding" element={<JustinHollywoodCladding />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

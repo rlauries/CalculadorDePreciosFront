@@ -1,6 +1,6 @@
 
 import React, { Suspense } from 'react';
-import { Route, Routes } from "react-router-dom-v5-compat";
+import { Route, Routes, Navigate } from "react-router-dom-v5-compat";
 import Gallery from '../pages/public/Gallery/Gallery.jsx';
 import Home from '../pages/public/Home/Home.jsx';
 import ContactUs from '../pages/public/ContactUs/ContactUs.jsx';
@@ -50,7 +50,10 @@ export const AppRouter = () => {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home/>} />
-            <Route path="/home" element={<Home/>} />
+            <Route
+              path="/home"
+              element={<Navigate to="/" replace />}
+            />
             <Route path="/gallery" element={<Gallery/>} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/pergolas" element={<PergolaList />} />
@@ -58,17 +61,24 @@ export const AppRouter = () => {
             <Route path="/fences" element={<FenceList/>} />
             <Route path="/claddings" element={<CladdingList/>} />
             
-            
+            {/* Authentication */}
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            {/* ----- Private Routes ---------- */}
-            <Route path="tools/invoice" element={<Invoice />} />
-            <Route path="tools/truss" element={<TrussCalculatorPage />} />
             
-            {/* Individual Product Pages Completed can be added here, e.g.: */}
-            <Route path="/stairs/downtown-miami" element={<SMPConstructionStair />} />
-            <Route path="/stairs/nick-custom-staircase" element={<NickSonyIsle />} />
-            <Route path="/claddings/justin-hollywood-cladding" element={<JustinHollywoodCladding />} />
+            {/* ----- Tools ---------- */}
+            <Route path="/tools/invoice" element={<Invoice />} />
+            <Route path="/tools/truss" element={<TrussCalculatorPage />} />
+            
+            {/* Completed projects */}
+            <Route path="/stairs/downtown-miami" 
+                   element={<SMPConstructionStair />} 
+            />
+            <Route path="/stairs/nick-custom-staircase" 
+                   element={<NickSonyIsle />} 
+            />
+            <Route path="/claddings/justin-hollywood-cladding" 
+                   element={<JustinHollywoodCladding />} 
+            />
           </Routes>
         </Suspense>
       </ErrorBoundary>

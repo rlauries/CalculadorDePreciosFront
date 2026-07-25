@@ -6,6 +6,7 @@ import { Crosshair, FileText, Hammer, Layers, Paintbrush, Pencil, Ruler, Wrench 
 import { ProjectDetailsGallery } from '../../../../componets/ProjectDetailsGallery/ProjectDetailsGallery.tsx';
 import { ProjectsCTA } from '../../../../componets/ProjectsCTA/ProjectsCTA.tsx';
 import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.tsx';
+import { Helmet } from "react-helmet-async";
 
 const overviewParagraphs = [
   "Justin partnered with Lauries Welding Group to transform the outdoor living area of his Hollywood, Florida residence into a modern entertainment space through custom architectural cladding and premium exterior finishes.",
@@ -50,69 +51,136 @@ const processImages = [
   {
     label: "Before",
     imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/before.jpeg",
+    alt: "Covered patio before custom cladding installation in Hollywood Florida",
   },
   {
     label: "Fabrication",
     imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/instalation.png",
+    alt: "Custom cladding fabrication process in Hollywood Florida",
   },
   {
     label: "After",
     imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
+    alt: "Completed custom cladding installation in Hollywood Florida",
   },
 ];
 
 const services = [
-  { label: "Custom aluminum fabrication", icon: Wrench },
-  { label: "Structural mono-stringer design", icon: Layers },
-  { label: "2” red cedar slab installation", icon: Ruler },
-  { label: "Powder-coated Black Matte finish", icon: Paintbrush },
-  { label: "Precision leveling & alignment", icon: Crosshair },
-  { label: "Field measurements", icon: Pencil },
-  { label: "Shop drawings", icon: FileText },
-  { label: "Final installation", icon: Hammer },
+  { label: "Field measurements", icon: Ruler },
+  { label: "Custom cladding fabrication", icon: Wrench },
+  { label: "Patio ceiling cladding", icon: Layers },
+  { label: "Structural column cladding", icon: Crosshair },
+  { label: "Outdoor bar cladding", icon: Hammer },
+  { label: "Black aluminum trim installation", icon: Paintbrush },
+  { label: "Detail drawings and layout", icon: FileText },
+  { label: "Final installation and alignment", icon: Pencil },
 ];
     
 const galleryImages = [
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/first-day.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/bar.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/side-panel.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-back.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/outlet-detail.jpeg" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-out.jpeg" },
-  { imageUrl: "/images/Logo/logo-creativo.png" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/first-day.jpeg", alt: "First day of custom cladding installation in Hollywood Florida"},
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/bar.jpeg", alt: "Outdoor bar cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/side-panel.jpeg", alt: "Side panel cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-back.jpeg", alt: "Inside back view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside.jpeg", alt: "Inside view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/outlet-detail.jpeg", alt: "Outlet detail of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-out.jpeg", alt: "Inside out view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Logo/logo-creativo.png", alt: "Lauries Welding Group Logo" },
 ];
 
 export const JustinHollywoodCladding = () => {
+    const projectSchema = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: "Custom Outdoor Cladding Installation in Hollywood, Florida",
+      description:
+        "Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar.",
+      url: "https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding",
+      image: [
+        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
+        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/before.jpeg",
+        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/bar.jpeg"
+      ],
+      dateCreated: "2026",
+      creator: {
+        "@type": "LocalBusiness",
+        name: "Lauries Welding Group",
+        url: "https://lauriesweldinggroup.com"
+      },
+      locationCreated: {
+        "@type": "Place",
+        name: "Hollywood, Florida",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Hollywood",
+          addressRegion: "FL",
+          addressCountry: "US"
+        }
+      },
+      about: {
+        "@type": "Service",
+        name: "Custom Outdoor Cladding Installation",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Lauries Welding Group",
+          url: "https://lauriesweldinggroup.com"
+        },
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: "South Florida"
+        }
+      }
+    };
   return (
-    <div>
-        <ProjectsBanner
-           eyebrow="03 / COMPLETED PROJECT"
-           title="Luxury Outdoor Living Space, Hollywood Florida"
-           features={[
-             "Patio Ceiling Cladding",
-             "Columns",
-             "Outdoor Bar Cladding",
-           ]}
-           buttonText="VIEW PROJECT"
-           buttonUrl="/claddings/justin-hollywood-cladding"
-           backgroundImage="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
-        />
-        <ProjectOverview
-            paragraphs={overviewParagraphs}
-            projectData={projectData}
-        />
-        <ProjectProcessGallery items={processImages} />
-        <ProjectDetailsGallery
-            services={services}
-            images={galleryImages}
-        />
-        <ProjectVideo
-            description="This project showcases the transformation of a standard covered patio into a modern outdoor living space."
-            thumbnailUrl="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
-            localVideoUrl="/images/Projects-done/07-26-Justing-Hollywood/Footage/Justin-Hollywood-Cladding.mp4"
-        />
-        <ProjectsCTA/>
-    </div>
+    <>
+        <Helmet>
+          <title>
+            Custom Outdoor Cladding Installation in Hollywood, FL | Lauries Welding Group
+          </title>
+
+          <meta
+            name="description"
+            content="Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar."
+          />
+
+          <link
+            rel="canonical"
+            href="https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding"
+          />
+          <script type="application/ld+json">
+            {JSON.stringify(projectSchema)}
+          </script>
+        </Helmet>
+        <main>
+          <ProjectsBanner
+            eyebrow="03 / COMPLETED PROJECT"
+            title="Luxury Outdoor Living Space, Hollywood Florida"
+            features={[
+              "Patio Ceiling Cladding",
+              "Columns",
+              "Outdoor Bar Cladding",
+            ]}
+            buttonText="VIEW PROJECT"
+            buttonUrl="#project-overview"
+            backgroundImage="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
+          />
+          <section id="project-overview">
+            <ProjectOverview
+                paragraphs={overviewParagraphs}
+                projectData={projectData}
+            />
+          </section>
+          <ProjectProcessGallery items={processImages} />
+          <ProjectDetailsGallery
+              services={services}
+              images={galleryImages}
+          />
+          <ProjectVideo
+              description="This project showcases the transformation of a standard covered patio into a modern outdoor living space."
+              thumbnailUrl="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
+              localVideoUrl="/images/Projects-done/07-26-Justing-Hollywood/Footage/Justin-Hollywood-Cladding.mp4"
+          />
+          <ProjectsCTA/>
+        </main>
+    </>
   )
 }

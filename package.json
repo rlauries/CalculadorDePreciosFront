@@ -39,7 +39,7 @@
     "start": "react-scripts start",
     "build:react": "react-scripts build",
     "prerender": "node scripts/prerender.mjs",
-    "prebuild": "npx playwright install chromium",
+    "prebuild": "npx playwright install --with-deps chromium",
     "build": "react-scripts build && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

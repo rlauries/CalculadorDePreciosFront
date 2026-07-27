@@ -6,7 +6,10 @@ import { Crosshair, FileText, Hammer, Layers, Paintbrush, Pencil, Ruler, Wrench 
 import { ProjectDetailsGallery } from '../../../../componets/ProjectDetailsGallery/ProjectDetailsGallery.tsx';
 import { ProjectsCTA } from '../../../../componets/ProjectsCTA/ProjectsCTA.tsx';
 import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.tsx';
-import { Helmet } from "react-helmet-async";
+import SEO from "../../../../componets/SEO/SEO.tsx";
+import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
+
 
 const overviewParagraphs = [
   "Justin partnered with Lauries Welding Group to transform the outdoor living area of his Hollywood, Florida residence into a modern entertainment space through custom architectural cladding and premium exterior finishes.",
@@ -88,68 +91,36 @@ const galleryImages = [
 ];
 
 export const JustinHollywoodCladding = () => {
-    const projectSchema = {
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      name: "Custom Outdoor Cladding Installation in Hollywood, Florida",
-      description:
-        "Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar.",
-      url: "https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding",
-      image: [
-        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
-        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/before.jpeg",
-        "https://lauriesweldinggroup.com/images/Projects-done/07-26-Justing-Hollywood/Image/bar.jpeg"
-      ],
-      dateCreated: "2026",
-      creator: {
-        "@type": "LocalBusiness",
-        name: "Lauries Welding Group",
-        url: "https://lauriesweldinggroup.com"
-      },
-      locationCreated: {
-        "@type": "Place",
-        name: "Hollywood, Florida",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Hollywood",
-          addressRegion: "FL",
-          addressCountry: "US"
-        }
-      },
-      about: {
-        "@type": "Service",
-        name: "Custom Outdoor Cladding Installation",
-        provider: {
-          "@type": "LocalBusiness",
-          name: "Lauries Welding Group",
-          url: "https://lauriesweldinggroup.com"
-        },
-        areaServed: {
-          "@type": "AdministrativeArea",
-          name: "South Florida"
-        }
-      }
-    };
+    const projectSchema = ProjectSchema({
+        title: "Custom Outdoor Cladding Installation in Hollywood, Florida",
+
+        description:
+            "Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar.",
+
+        url: "/claddings/justin-hollywood-cladding",
+
+        image: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
+
+        location: "Hollywood, Florida",
+
+        service: "Custom Outdoor Cladding Installation"
+  });
   return (
     <>
-        <Helmet>
-          <title>
-            Custom Outdoor Cladding Installation in Hollywood, FL | Lauries Welding Group
-          </title>
+        <SEO
+            title="Custom Outdoor Cladding Installation in Hollywood, FL"
 
-          <meta
-            name="description"
-            content="Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar."
-          />
+            description="Outdoor aluminum and composite cladding installation featuring a patio ceiling, structural columns, feature wall, and custom outdoor bar."
 
-          <link
-            rel="canonical"
-            href="https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding"
-          />
-          <script type="application/ld+json">
-            {JSON.stringify(projectSchema)}
-          </script>
-        </Helmet>
+            canonical="/claddings/justin-hollywood-cladding"
+
+            image="/images/Projects-done/07-26-Justing-Hollywood/Image/thumbnail.png"
+
+            schemas={[
+                LocalBusinessSchema(),
+                projectSchema
+            ]}
+        />
         <main>
           <ProjectsBanner
             eyebrow="03 / COMPLETED PROJECT"

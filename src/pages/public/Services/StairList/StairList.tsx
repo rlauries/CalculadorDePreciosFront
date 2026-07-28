@@ -97,108 +97,131 @@ const slides : Slide[] = [
 //   },
 
 // ];
+const seo: SeoData = {
+  title:
+    "Custom Staircases | Floating, Aluminum & Wood Stairs in South Florida",
 
+  description:
+    "Explore custom floating staircases, aluminum stairs, wood treads, and modern architectural stair systems designed and fabricated by Lauries Welding Group throughout South Florida.",
+
+  canonical: "/stairs",
+
+  image:
+    "/images/originals/Stairs/Nilis-house.png"
+};
 export const StairList = () => {
 
   return (
-    <div style={{
-                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat"
-                }}>
-        <section className="video-section">
-            <HeroVideo
-                src="images/videos/stair-hero.mp4"
-                videoId="slow-video"
-                className="hero-video"
-                pauseTime={4000}
-            />
-        </section>  
-        <AnimatedSection>
-          <SectionIntro 
-              title="Explore Our Stair Design" 
-              description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
-          />
-        </AnimatedSection>
-        {/* {showModal && selectedStair && (
-          <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="close-button" onClick={closeModal}>×</button>
-              <h2>{selectedStair.name}<strong class="hero-strong"> | </strong></h2>
-              <img src={selectedStair.imageUrl} alt={selectedStair.name} />
-              <p><strong>Overview:</strong> {selectedStair.overview}</p>
-              <p><strong>Durability:</strong> {selectedStair.durability}</p>
-              <p><strong>Maintenance:</strong> {selectedStair.maintenance}</p>
-              <p><strong>Appearance:</strong> {selectedStair.appearance}</p>
-              <p><strong>Cost:</strong> {selectedStair.cost}</p>
-            </div>
-          </div>
-        )} */}
-        <AnimatedSection>
-          <FeatureShowcaseCarousel
-            title='STAIR SYSTEM'
-            subtitle='Project Showcase'
-            mainImage="/images/originals/Claddings/cladding-pergolas-render.png"
-            items={featuredStairs}
-          />  
-        </AnimatedSection>
-        <AnimatedSection>
-          <section>
-            <HeroBanner
-              title="Stair Services"
-              subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
-              onButtonClick={()=>window.location.href="/contactus"}
-              imageUrl="/images/originals/Stairs/Nilis-house.png"
-            />
-          </section>
-        </AnimatedSection>
-        <AnimatedSection>
-          <StairTreadsSection />
-        </AnimatedSection>
-        
-        <section className='myths-info'>
-          <div className="myth-info-bg"></div>
-          <AnimatedSection>
-            <BannerImageHalf 
-              image="images/originals/Stairs/wood-stair-indoor.png" 
-              title="ALUMINUM & WOOD STAIRS MYTH" 
-              subtitle="Some people believe aluminum and wood stair systems are not strong enough for outdoor use. In reality, when engineered correctly, aluminum structures combined with hardwood treads provide excellent structural strength, weather resistance, and a refined architectural appearance that lasts for years with minimal maintenance."
-              reversed={false}
-            />
-          </AnimatedSection>
+    <>
+        <SEO
+            title={seo.title}
+            description={seo.description}
+            canonical={seo.canonical}
+            image={seo.image}
+            type="website"
+            schemas={[
+                LocalBusinessSchema()
+            ]}
+        />
+        <main style={{
+                        backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat"
+                    }}>
+            <section className="video-section">
+                <HeroVideo
+                    src="images/videos/stair-hero.mp4"
+                    videoId="slow-video"
+                    className="hero-video"
+                    pauseTime={4000}
+                />
+            </section>  
+            <AnimatedSection>
+              <SectionIntro 
+                  title="Explore Our Stair Design" 
+                  description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
+              />
+            </AnimatedSection>
+            {/* {showModal && selectedStair && (
+              <div className="modal-overlay" onClick={closeModal}>
+                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                  <button className="close-button" onClick={closeModal}>×</button>
+                  <h2>{selectedStair.name}<strong class="hero-strong"> | </strong></h2>
+                  <img src={selectedStair.imageUrl} alt={selectedStair.name} />
+                  <p><strong>Overview:</strong> {selectedStair.overview}</p>
+                  <p><strong>Durability:</strong> {selectedStair.durability}</p>
+                  <p><strong>Maintenance:</strong> {selectedStair.maintenance}</p>
+                  <p><strong>Appearance:</strong> {selectedStair.appearance}</p>
+                  <p><strong>Cost:</strong> {selectedStair.cost}</p>
+                </div>
+              </div>
+            )} */}
+            <AnimatedSection>
+              <FeatureShowcaseCarousel
+                title='STAIR SYSTEM'
+                subtitle='Project Showcase'
+                mainImage="/images/originals/Claddings/cladding-pergolas-render.png"
+                items={featuredStairs}
+              />  
+            </AnimatedSection>
+            <AnimatedSection>
+              <section>
+                <HeroBanner
+                  title="Stair Services"
+                  subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
+                  onButtonClick={()=>window.location.href="/contactus"}
+                  imageUrl="/images/originals/Stairs/Nilis-house.png"
+                />
+              </section>
+            </AnimatedSection>
+            <AnimatedSection>
+              <StairTreadsSection />
+            </AnimatedSection>
+            
+            <section className='myths-info'>
+              <div className="myth-info-bg"></div>
+              <AnimatedSection>
+                <BannerImageHalf 
+                  image="images/originals/Stairs/wood-stair-indoor.png" 
+                  title="ALUMINUM & WOOD STAIRS MYTH" 
+                  subtitle="Some people believe aluminum and wood stair systems are not strong enough for outdoor use. In reality, when engineered correctly, aluminum structures combined with hardwood treads provide excellent structural strength, weather resistance, and a refined architectural appearance that lasts for years with minimal maintenance."
+                  reversed={false}
+                />
+              </AnimatedSection>
 
-          <AnimatedSection>
-            <BannerImageHalf
-              image="images/originals/Stairs/floating-indoors.png" 
-              title="FLOATING STAIRCASE MYTH" 
-              subtitle="Many assume floating staircases are unsafe or unstable because they appear to 'float' without visible support. Modern floating stair systems are designed with hidden steel or aluminum structures that provide exceptional strength while delivering a clean, contemporary design that enhances open spaces and architectural aesthetics."
-              reversed={true}
-            /> 
-          </AnimatedSection>
+              <AnimatedSection>
+                <BannerImageHalf
+                  image="images/originals/Stairs/floating-indoors.png" 
+                  title="FLOATING STAIRCASE MYTH" 
+                  subtitle="Many assume floating staircases are unsafe or unstable because they appear to 'float' without visible support. Modern floating stair systems are designed with hidden steel or aluminum structures that provide exceptional strength while delivering a clean, contemporary design that enhances open spaces and architectural aesthetics."
+                  reversed={true}
+                /> 
+              </AnimatedSection>
 
-          <AnimatedSection>    
-            <BannerImageHalf
-              image="images/originals/Stairs/composite-stair-outdoor.png" 
-              title="ALUMINUM COMPOSITE STAIRS MYTH" 
-              subtitle="A common misconception is that composite stair systems look artificial and lack durability. In reality, modern composite stair materials are engineered to resist moisture, UV exposure, insects, and warping while maintaining a consistent color and texture, providing a long-lasting and low-maintenance solution for exterior staircases."
-              reversed={false}
-            />
-          </AnimatedSection>
-        </section>  
-        <AnimatedSection>
-            <AnimatedShowCaseCarousel 
-              slides={slides}
-              eyebrow="Completed Projects"
-              headline="DESIGNED TO IMPRESS. "
-              subheadline="Explore our completed staircase projects across South Florida. See materials, fabrication details, and finished installations."
-              buttonLabel="VIEW PROJECT"
-              onButtonClick={() => (window.location.href = "/contactus")}
-            />
-        </AnimatedSection>  
-        <AnimatedSection>
-          <DesignTailorCard/>
-        </AnimatedSection>
-    </div>
+              <AnimatedSection>    
+                <BannerImageHalf
+                  image="images/originals/Stairs/composite-stair-outdoor.png" 
+                  title="ALUMINUM COMPOSITE STAIRS MYTH" 
+                  subtitle="A common misconception is that composite stair systems look artificial and lack durability. In reality, modern composite stair materials are engineered to resist moisture, UV exposure, insects, and warping while maintaining a consistent color and texture, providing a long-lasting and low-maintenance solution for exterior staircases."
+                  reversed={false}
+                />
+              </AnimatedSection>
+            </section>  
+            <AnimatedSection>
+                <AnimatedShowCaseCarousel 
+                  slides={slides}
+                  eyebrow="Completed Projects"
+                  headline="DESIGNED TO IMPRESS. "
+                  subheadline="Explore our completed staircase projects across South Florida. See materials, fabrication details, and finished installations."
+                  buttonLabel="VIEW PROJECT"
+                  onButtonClick={() => (window.location.href = "/contactus")}
+                />
+            </AnimatedSection>  
+            <AnimatedSection>
+              <DesignTailorCard/>
+            </AnimatedSection>
+        </main>
+    </>          
   )
 }

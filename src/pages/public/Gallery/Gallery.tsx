@@ -23,12 +23,6 @@ interface MaterialOption {
   name: string;
 }
 
-interface GallerySeo {
-  title: string;
-  description: string;
-  canonical: string;
-  image: string;
-}
 
 const GalleryList: GalleryItem[] = [
     // ----Fences----

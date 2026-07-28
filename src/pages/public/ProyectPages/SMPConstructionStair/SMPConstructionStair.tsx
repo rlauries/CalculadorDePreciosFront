@@ -6,6 +6,9 @@ import { Wrench, Layers, Ruler, Paintbrush, Crosshair, Pencil, FileText, Hammer 
 import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.tsx';
 import { ProjectsCTA } from '../../../../componets/ProjectsCTA/ProjectsCTA.tsx';
 import { ProjectsBanner } from '../../../../componets/ProjectsBanner/ProjectsBanner.tsx';
+import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
+import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import SEO from "../../../../componets/SEO/SEO.tsx";
 
 
 const overviewParagraphs = [
@@ -76,37 +79,75 @@ const galleryImages = [
   { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.png" },
   { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/estructura-hierro.png" },
 ];
+const seo = {
+    title: "Custom Floating Staircase in Downtown Miami, FL",
 
+    description:
+        "Custom aluminum floating staircase with mono-stringer design and 3-inch red cedar treads installed for a residential renovation in Downtown Miami.",
+
+    canonical:
+        "/stairs/custom-floating-staircase-downtown-miami",
+
+    image:
+        "/images/Projects-done/05-26-Stair-Downtown/hero-banner.png",
+
+    location:
+        "Downtown Miami, Florida",
+
+    service:
+        "Custom Floating Staircase"
+};
 export const SMPConstructionStair = () => {
+    const projectSchema = ProjectSchema({
+      title: seo.title,
+      description: seo.description,
+      url: seo.canonical,
+      image: seo.image,
+      location: seo.location,
+      service: seo.service
+    });
+
   return (
-    <div>
-      <ProjectsBanner
-        eyebrow="01 / COMPLETED PROJECT"
-        title="Custom Floating Staircase Downtown, Miami"
-        features={[
-          "Aluminum Mono Stringer",
-          "Red Cedar Slabs",
-          "Custom Fabrication",
-        ]}
-        buttonText="VIEW PROJECT"
-        buttonUrl="/projects/custom-floating-staircase-downtown-miami"
-        backgroundImage="/images/Projects-done/05-26-Stair-Downtown/hero-banner.png"
+    <>
+      <SEO
+          title={seo.title}
+          description={seo.description}
+          canonical={seo.canonical}
+          image={seo.image}
+          schemas={[
+              LocalBusinessSchema(),
+              projectSchema
+          ]}
       />
-      <ProjectOverview
-        paragraphs={overviewParagraphs}
-        projectData={projectData}
-      />
-      <ProjectProcessGallery items={processImages} />
-      <ProjectDetailsGallery
-        services={services}
-        images={galleryImages}
-      />
-      <ProjectVideo
-        description="Watch walkthrough of this custom floating staircase in Downtown Miami."
-        thumbnailUrl="/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.png"
-        localVideoUrl="/images/Projects-done/05-26-Stair-Downtown/showcase.mp4"
-      />
-      <ProjectsCTA />
-    </div>
+      <main>
+        <ProjectsBanner
+          eyebrow="01 / COMPLETED PROJECT"
+          title="Custom Floating Staircase Downtown, Miami"
+          features={[
+            "Aluminum Mono Stringer",
+            "Red Cedar Slabs",
+            "Custom Fabrication",
+          ]}
+          buttonText="VIEW PROJECT"
+          buttonUrl="/stairs/custom-floating-staircase-downtown-miami"
+          backgroundImage="/images/Projects-done/05-26-Stair-Downtown/hero-banner.png"
+        />
+        <ProjectOverview
+          paragraphs={overviewParagraphs}
+          projectData={projectData}
+        />
+        <ProjectProcessGallery items={processImages} />
+        <ProjectDetailsGallery
+          services={services}
+          images={galleryImages}
+        />
+        <ProjectVideo
+          description="Watch walkthrough of this custom floating staircase in Downtown Miami."
+          thumbnailUrl="/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.png"
+          localVideoUrl="/images/Projects-done/05-26-Stair-Downtown/showcase.mp4"
+        />
+        <ProjectsCTA />
+      </main>    
+    </>
   )
 }

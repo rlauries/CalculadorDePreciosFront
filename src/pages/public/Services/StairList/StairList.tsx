@@ -8,7 +8,24 @@ import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerI
 import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 
-const featuredStairs = [
+import SEO from "../../../../componets/SEO/SEO";
+import type { SeoData } from "../../../../componets/SEO/types";
+import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema";
+
+interface FeaturedStair  {
+  id: number;
+  name: string;
+  imageUrl: string;
+  linkTo: string;
+}
+
+interface Slide {
+  id: number;
+  image: string;
+  projectUrl?: string;
+}
+
+const featuredStairs: FeaturedStair[] = [
   {
     id: 1,
     name: 'Wood ',
@@ -28,7 +45,7 @@ const featuredStairs = [
     linkTo: '/stairs/aluminum-composite'
   },
 ];
-const slides = [
+const slides : Slide[] = [
   {
     id: 1,
     image: "/images/originals/Stairs/UpperFloor.png",

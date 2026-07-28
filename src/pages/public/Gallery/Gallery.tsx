@@ -6,9 +6,31 @@ import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../
 import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
+import SEO from '../../../componets/SEO/SEO.tsx';
+import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
+import type { SeoData } from '../../../componets/SEO/types.ts';
 
+interface GalleryItem {
+  id: number;
+  name: string;
+  imageUrl: string;
+  serviceTypeId: number;
+  matrialId: number;
+}
 
-const GalleryList = [
+interface MaterialOption {
+  id: number;
+  name: string;
+}
+
+interface GallerySeo {
+  title: string;
+  description: string;
+  canonical: string;
+  image: string;
+}
+
+const GalleryList: GalleryItem[] = [
     // ----Fences----
     {
       id : 1,
@@ -329,16 +351,35 @@ const GalleryList = [
     },
 
 ];
+const seo: SeoData = {
+    title: "Project Gallery | Pergolas, Fences, Stairs & Cladding",
 
+    description:
+        "Browse our portfolio of custom pergolas, fences, floating staircases, gates, and architectural cladding projects completed throughout South Florida.",
+
+    canonical: "/gallery",
+
+    image:
+        "/images/Hero-Gallery-02.png"
+};
 
 const Gallery = () => {
-  const [gallery] = useState(GalleryList);
-  const [filteredGallery, setFilteredGallery] = useState([]);
-  const [serviceTypeId, setServiceTypeId] = useState(0);
-  const [selectedMateriaSelect, setSelectedMateriaSelect] = useState(7);
-  //modal
-  const [selecteImage, setSelecteImage] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [gallery] = useState<GalleryItem[]>(GalleryList);
+
+  const [filteredGallery, setFilteredGallery] =
+    useState<GalleryItem[]>(GalleryList);
+
+  const [serviceTypeId, setServiceTypeId] =
+    useState<number>(0);
+
+  const [selectedMateriaSelect, setSelectedMateriaSelect] =
+    useState<number>(7);
+
+  const [selecteImage, setSelecteImage] =
+    useState<GalleryItem | null>(null);
+
+  const [showModal, setShowModal] =
+    useState<boolean>(false);
 
   const scrollDown = () => window.scrollBy({ top: 400, behavior: 'smooth' });
   
@@ -377,16 +418,18 @@ const Gallery = () => {
     setFilteredGallery(result);
   }, [gallery, selectedMateriaSelect, serviceTypeId]);
   
-  const materialOptions =
-    serviceTypeId === 1 ? TypeOfFenceMaterialOptions :
-    serviceTypeId === 2 ? TypeOfPergolaMaterialOptions :
-    [];
-
-  const OpenModal = (image) => {
+  const materialOptions: MaterialOption[] =
+    serviceTypeId === 1
+      ? TypeOfFenceMaterialOptions
+      : serviceTypeId === 2
+        ? TypeOfPergolaMaterialOptions
+        : [];
+  const OpenModal = (image: GalleryItem): void => {
     setSelecteImage(image);
     setShowModal(true);
-  }
-  const ClosedModal = () => {
+  };
+
+  const ClosedModal = (): void => {
     setSelecteImage(null);
     setShowModal(false);
   };
@@ -401,148 +444,160 @@ const Gallery = () => {
     }
   };
 
+
   return (
-    <div className="gallery-page"
-        style={{
-                    backgroundImage: "url(/images/originals/backgroundMyth.avif)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat"
-                }}
-    >
-        
-        <HeroBanner
-          title="GALLERY"
-          subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"
-          onButtonClick={()=>window.location.href="/contactus"}
-          imageUrl="/images/Hero-Gallery-02.png"
-        />
-        
-        <SectionIntro
-          title="OUR COMPLETED PROJECTS"
-          description="Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire."
-        />
-     
-        
-        {/* ------- Service Type Section -------  */}
-            <AnimatedSection>
-              <div className='service-type'>
+    <>
+       <SEO
+          title={seo.title}
+          description={seo.description}
+          canonical={seo.canonical}
+          image={seo.image}
+          type="website"
+          schemas={[
+              LocalBusinessSchema()
+          ]}
+      />
+      <main className="gallery-page"
+          style={{
+                      backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat"
+                  }}
+      >
+          
+          <HeroBanner
+            title="GALLERY"
+            subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"
+            onButtonClick={()=>window.location.href="/contactus"}
+            imageUrl="/images/Hero-Gallery-02.png"
+          />
+          
+          <SectionIntro
+            title="OUR COMPLETED PROJECTS"
+            description="Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire."
+          />
+      
+          
+          {/* ------- Service Type Section -------  */}
+              <AnimatedSection>
+                <div className='service-type'>
 
-                {/* -------Fence ---------- */}
+                  {/* -------Fence ---------- */}
 
-                <div className="fence">
-                    <div className='text'>
-                        <label >
-                            Fences<strong> | </strong>
-                        </label>
-                        <p>A Showcase of Style</p>
-                    </div>
-                    <img src="images/originals/Fences/fence-wood-lights.jpg" alt="" />
-                    <button onClick={switchToFence}>Display More</button>
-                </div>
+                  <div className="fence">
+                      <div className='text'>
+                          <label >
+                              Fences<strong> | </strong>
+                          </label>
+                          <p>A Showcase of Style</p>
+                      </div>
+                      <img src="/images/originals/Fences/fence-wood-lights.jpg" alt="Fence wood lights" />
+                      <button onClick={switchToFence}>Display More</button>
+                  </div>
 
-                {/* -------Pergola ---------- */}
+                  {/* -------Pergola ---------- */}
 
-                <div className="pergola">
-                    <div className="text">
-                        <label>
-                            Pergolas<strong> | </strong>
-                        </label>
-                        <p>Elevate Your Outdoors</p>
-                    </div>
-                    <img src="images/originals/Pergolas/big-britgt-pergola.webp" alt="" />
-                    <button onClick={switchToPergola}>Display More</button>
-                </div>
-                
-                {/* -------Stair ---------- */}
-                
-                <div className="stair">
+                  <div className="pergola">
                       <div className="text">
                           <label>
-                              Stairs<strong> | </strong>
+                              Pergolas<strong> | </strong>
                           </label>
-                          <p>Path To The Sky</p>
+                          <p>Elevate Your Outdoors</p>
                       </div>
-                      <img src="images/originals/Stairs/custom-floating-stair-systems-small.png" alt="" />
-                      <button onClick={switchToStair}>Display More</button>
+                      <img src="/images/originals/Pergolas/big-britgt-pergola.webp" alt="Big bright pergola" />
+                      <button onClick={switchToPergola}>Display More</button>
                   </div>
-              </div>
-            </AnimatedSection>
-            {/* -------Gallery Section -------  */}
-
-            {serviceTypeId !== 0  && (
-                <div className="gallery-section">
-                    <h1>Service Gallery<strong> | </strong></h1>
-                    <div className="service-gallery-grid">
-
-                        {/* --------- Filtered by Materials: ----------- */}
-
-                        <div className="filtered-options">
-                          
-                          {(serviceTypeId === 1 || serviceTypeId === 2) && (
-                            <div className="filteredOptions">
-                              Filtered by:&nbsp;
-                              <select
-                                value={selectedMateriaSelect}
-                                onChange={e => setSelectedMateriaSelect(Number(e.target.value))}
-                              >
-                                {materialOptions.map(m => (
-                                  <option key={m.id} value={m.id}>
-                                    {m.name}
-                                  </option>
-                                ))}
-                              </select>
-                            </div>
-                          )}
+                  
+                  {/* -------Stair ---------- */}
+                  
+                  <div className="stair">
+                        <div className="text">
+                            <label>
+                                Stairs<strong> | </strong>
+                            </label>
+                            <p>Path To The Sky</p>
                         </div>
-                        
-                        {/* ------Gallery Grid Section ------ */}
-
-                        <div className="gallery-grid">
-                          {filteredGallery.map((img) => (
-                            <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
-                              <img src={img.imageUrl} alt={img.name} />
-                              <p>{img.name} <strong> | </strong></p>
-                            </div>
-                          ))}
-                        </div>
+                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.png" alt="Custom floating stair systems" />
+                        <button onClick={switchToStair}>Display More</button>
                     </div>
                 </div>
-            )}
-        <div>
-          <AnimatedSection>
-            <HomeImprovement />
-          </AnimatedSection>  
-        </div>
+              </AnimatedSection>
+              {/* -------Gallery Section -------  */}
 
-        
+              {serviceTypeId !== 0  && (
+                  <div className="gallery-section">
+                      <h1>Service Gallery<strong> | </strong></h1>
+                      <div className="service-gallery-grid">
 
-           
+                          {/* --------- Filtered by Materials: ----------- */}
 
-        {/* ------ Modal Section ------- */}
+                          <div className="filtered-options">
+                            
+                            {(serviceTypeId === 1 || serviceTypeId === 2) && (
+                              <div className="filteredOptions">
+                                Filtered by:&nbsp;
+                                <select
+                                  value={selectedMateriaSelect}
+                                  onChange={e => setSelectedMateriaSelect(Number(e.target.value))}
+                                >
+                                  {materialOptions.map(m => (
+                                    <option key={m.id} value={m.id}>
+                                      {m.name}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* ------Gallery Grid Section ------ */}
 
-        {showModal && selecteImage && (
-          <div className='modal-overlay' onClick={ClosedModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className='close-button' onClick={ClosedModal}>×</button>
-              <img src={selecteImage.imageUrl} alt="" />
-              <h2>{selecteImage.name} <strong> | </strong></h2>
-              <div className='buttons-home'>
-                    <button className='service-home' onClick={handleRoute}>
-                      Check Here  
-                    </button>
-                    <button className='contactus-home' 
-                            onClick={()=>window.location.href="/contactus"}
-                    >
-                      Contact Us
-                    </button>
-                </div>
-            </div>
+                          <div className="gallery-grid">
+                            {filteredGallery.map((img) => (
+                              <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
+                                <img src={img.imageUrl} alt={img.name} />
+                                <p>{img.name} <strong> | </strong></p>
+                              </div>
+                            ))}
+                          </div>
+                      </div>
+                  </div>
+              )}
+          <div>
+            <AnimatedSection>
+              <HomeImprovement />
+            </AnimatedSection>  
           </div>
-        )}
-        
-    </div>
-    
+
+          
+
+            
+
+          {/* ------ Modal Section ------- */}
+
+          {showModal && selecteImage && (
+            <div className='modal-overlay' onClick={ClosedModal}>
+              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className='close-button' onClick={ClosedModal}>×</button>
+                <img src={selecteImage.imageUrl} alt="" />
+                <h2>{selecteImage.name} <strong> | </strong></h2>
+                <div className='buttons-home'>
+                      <button className='service-home' onClick={handleRoute}>
+                        Check Here  
+                      </button>
+                      <button className='contactus-home' 
+                              onClick={()=>window.location.href="/contactus"}
+                      >
+                        Contact Us
+                      </button>
+                  </div>
+              </div>
+            </div>
+          )}
+          
+      </main>
+    </>
   );
 };
 export default Gallery;

@@ -5,6 +5,9 @@ import { Wrench, Layers, Ruler, Paintbrush, Crosshair, Pencil, FileText, Hammer 
 import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.tsx';
 import { ProjectsCTA } from '../../../../componets/ProjectsCTA/ProjectsCTA.tsx';
 import { ProjectsBanner } from '../../../../componets/ProjectsBanner/ProjectsBanner.tsx';
+import SEO from "../../../../componets/SEO/SEO.tsx";
+import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
 
 const overviewParagraphs = [
   "Nick LLC partnered with Lauries Welding Group to design, fabricate, and install a custom floating staircase system for a modern residential project in Sunny Isles Beach, Florida.",
@@ -78,37 +81,83 @@ const galleryImages = [
   { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/top-view.jpeg" },
   { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/connection.jpeg" },
 ];
+const seo = {
+    title: "Modern Floating Staircase in Sunny Isles Beach, FL",
 
+    description:
+        "Custom floating staircase fabricated and installed in Sunny Isles Beach, Florida, featuring steel structure, premium wood treads, and modern railing.",
+
+    canonical: "/stairs/nick-sunny-isles",
+
+    image:
+        "/images/Projects-done/.../thumbnail.png",
+
+    location: "Sunny Isles Beach, Florida",
+
+    service: "Custom Floating Staircase"
+};
 export const NickSonyIsle = () => {
+  const projectSchema = ProjectSchema({
+    title: seo.title,
+    description: seo.description,
+    url: seo.canonical,
+    image: seo.image,
+    location: seo.location,
+    service: seo.service
+});
+
+<SEO
+    title={seo.title}
+    description={seo.description}
+    canonical={seo.canonical}
+    image={seo.image}
+    schemas={[
+        LocalBusinessSchema(),
+        projectSchema
+    ]}
+/>
+
   return (
-    <div>
-        <ProjectsBanner
-          eyebrow="02 / COMPLETED PROJECT"
-          title='Custom Floating Staircase Sonny Isles, Miami'
-          features={[
-            "Aluminum Mono Stringer",
-            "White Cedar Slabs",
-            "Custom Fabrication",
-          ]}
-          buttonText="View Project"
-          buttonUrl="/stairs/custom-floating-staircase-sonny-isles-miami"
-          backgroundImage="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.jpeg"
+      <>  
+        <SEO
+            title={seo.title}
+            description={seo.description}
+            canonical={seo.canonical}
+            image={seo.image}
+            schemas={[
+                LocalBusinessSchema(),
+                projectSchema
+            ]}
         />
-        <ProjectOverview
-          paragraphs={overviewParagraphs}
-          projectData={projectData}
-        />
-        <ProjectProcessGallery items={processImages} />
-        <ProjectDetailsGallery
-          services={services}
-          images={galleryImages}
-        />
-        <ProjectVideo
-          description="Watch walkthrough of this custom floating staircase in Sunny Isles Beach, FL."
-          thumbnailUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.jpeg"
-          localVideoUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Footage/showcase.MOV"
-        />
-        <ProjectsCTA />
-      </div>
+        <main>  
+          <ProjectsBanner
+            eyebrow="02 / COMPLETED PROJECT"
+            title='Custom Floating Staircase Sonny Isles, Miami'
+            features={[
+              "Aluminum Mono Stringer",
+              "White Cedar Slabs",
+              "Custom Fabrication",
+            ]}
+            buttonText="View Project"
+            buttonUrl="/stairs/custom-floating-staircase-sonny-isles-miami"
+            backgroundImage="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.jpeg"
+          />
+          <ProjectOverview
+            paragraphs={overviewParagraphs}
+            projectData={projectData}
+          />
+          <ProjectProcessGallery items={processImages} />
+          <ProjectDetailsGallery
+            services={services}
+            images={galleryImages}
+          />
+          <ProjectVideo
+            description="Watch walkthrough of this custom floating staircase in Sunny Isles Beach, FL."
+            thumbnailUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.jpeg"
+            localVideoUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Footage/showcase.MOV"
+          />
+          <ProjectsCTA />
+        </main>  
+      </>
     )
   }

@@ -1,16 +1,16 @@
 
 import React, { Suspense } from 'react';
 import { Route, Routes, Navigate } from "react-router-dom-v5-compat";
-import Gallery from '../pages/public/Gallery/Gallery.jsx';
-import Home from '../pages/public/Home/Home.jsx';
+import Gallery from '../pages/public/Gallery/Gallery.tsx';
+import Home from '../pages/public/Home/Home.tsx';
 import ContactUs from '../pages/public/ContactUs/ContactUs.jsx';
-import PergolaList from '../pages/public/Services/PergolaList/PergolaList.jsx';
-import FenceList from '../pages/public/Services/FenceList/FenceList.jsx';
+import PergolaList from '../pages/public/Services/PergolaList/PergolaList.tsx';
+import FenceList from '../pages/public/Services/FenceList/FenceList.tsx';
 import SignUp from '../pages/public/login-signup/SignUp/SignUp.jsx';
 import Login from '../pages/public/login-signup/Login/Login.jsx';
 import { Header } from '../componets/Header/Header.tsx';
-import { StairList } from '../pages/public/Services/StairList/StairList.jsx';
-import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.jsx';
+import { StairList } from '../pages/public/Services/StairList/StairList.tsx';
+import { CladdingList } from '../pages/public/Services/CladdingList/CladdingList.tsx';
 import { Invoice } from '../tools/Invoice/Invoice.tsx';
 import { SMPConstructionStair } from '../pages/public/ProyectPages/SMPConstructionStair/SMPConstructionStair.tsx';
 import { NickSonyIsle } from '../pages/public/ProyectPages/NickSonyIsle/NickSonyIsle.tsx';

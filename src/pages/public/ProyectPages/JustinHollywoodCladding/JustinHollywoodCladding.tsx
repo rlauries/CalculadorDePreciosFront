@@ -89,33 +89,37 @@ const galleryImages = [
   { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-out.jpeg", alt: "Inside out view of custom cladding in Hollywood Florida" },
   { imageUrl: "/images/Logo/logo-creativo.png", alt: "Lauries Welding Group Logo" },
 ];
+  const seo = {
+    title: "Custom Outdoor Cladding Installation in Hollywood, FL",
 
+    description:
+        "Outdoor aluminum and composite cladding installation featuring a patio ceiling, structural columns, feature wall, and custom outdoor bar.",
+
+    canonical: "/claddings/justin-hollywood-cladding",
+
+    image:
+        "/images/Projects-done/07-26-Justing-Hollywood/Image/thumbnail.png",
+
+    location: "Hollywood, Florida",
+
+    service: "Custom Outdoor Cladding Installation"
+};
 export const JustinHollywoodCladding = () => {
     const projectSchema = ProjectSchema({
-        title: "Custom Outdoor Cladding Installation in Hollywood, Florida",
-
-        description:
-            "Custom outdoor aluminum and composite cladding installation in Hollywood, Florida, including patio ceiling, structural columns, feature wall, and outdoor bar.",
-
-        url: "/claddings/justin-hollywood-cladding",
-
-        image: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
-
-        location: "Hollywood, Florida",
-
-        service: "Custom Outdoor Cladding Installation"
-  });
+        title: seo.title,
+        description: seo.description,
+        url: seo.canonical,
+        image: seo.image,
+        location: seo.location,
+        service: seo.service
+    });
   return (
     <>
         <SEO
-            title="Custom Outdoor Cladding Installation in Hollywood, FL"
-
-            description="Outdoor aluminum and composite cladding installation featuring a patio ceiling, structural columns, feature wall, and custom outdoor bar."
-
-            canonical="/claddings/justin-hollywood-cladding"
-
-            image="/images/Projects-done/07-26-Justing-Hollywood/Image/thumbnail.png"
-
+            title={seo.title}
+            description={seo.description}
+            canonical={seo.canonical}
+            image={seo.image}
             schemas={[
                 LocalBusinessSchema(),
                 projectSchema

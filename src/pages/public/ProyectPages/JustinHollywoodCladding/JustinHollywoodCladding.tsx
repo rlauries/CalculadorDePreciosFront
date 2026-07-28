@@ -9,6 +9,7 @@ import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.ts
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
+import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
 
 
 const overviewParagraphs = [
@@ -122,7 +123,21 @@ export const JustinHollywoodCladding = () => {
             image={seo.image}
             schemas={[
                 LocalBusinessSchema(),
-                projectSchema
+                projectSchema,
+                BreadcrumbSchema([
+                    {
+                        name: "Home",
+                        url: "https://lauriesweldinggroup.com/"
+                    },
+                    {
+                        name: "Cladding",
+                        url: "https://lauriesweldinggroup.com/claddings"
+                    },
+                    {
+                        name: "Hollywood Cladding Project",
+                        url: "https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding"
+                    }
+                ])
             ]}
         />
         <main>

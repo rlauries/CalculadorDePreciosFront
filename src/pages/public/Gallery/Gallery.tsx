@@ -9,6 +9,7 @@ import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
+import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 
 interface GalleryItem {
   id: number;
@@ -448,8 +449,18 @@ const Gallery = () => {
           image={seo.image}
           type="website"
           schemas={[
-              LocalBusinessSchema()
-          ]}
+            LocalBusinessSchema(),
+            BreadcrumbSchema([
+                {
+                    name: "Home",
+                    url: "https://lauriesweldinggroup.com/"
+                },
+                {
+                    name: "Gallery",
+                    url: "https://lauriesweldinggroup.com/gallery"
+                }
+            ])
+        ]}
       />
       <main className="gallery-page"
           style={{

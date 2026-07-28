@@ -11,6 +11,7 @@ import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCase
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
 
 interface FeaturedStair  {
   id: number;
@@ -120,7 +121,17 @@ export const StairList = () => {
             image={seo.image}
             type="website"
             schemas={[
-                LocalBusinessSchema()
+                LocalBusinessSchema(),
+                BreadcrumbSchema([
+                    {
+                        name: "Home",
+                        url: "https://lauriesweldinggroup.com/"
+                    },
+                    {
+                        name: "Stairs",
+                        url: "https://lauriesweldinggroup.com/stairs"
+                    }
+                ])
             ]}
         />
         <main style={{

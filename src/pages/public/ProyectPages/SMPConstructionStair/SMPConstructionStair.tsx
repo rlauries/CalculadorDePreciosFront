@@ -9,7 +9,7 @@ import { ProjectsBanner } from '../../../../componets/ProjectsBanner/ProjectsBan
 import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import SEO from "../../../../componets/SEO/SEO.tsx";
-
+import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
 
 const overviewParagraphs = [
   "SMP Construction partnered with Lauries Welding Group to deliver a custom floating staircase system as part of a residential interior renovation in Downtown Miami.",
@@ -116,7 +116,22 @@ export const SMPConstructionStair = () => {
           image={seo.image}
           schemas={[
               LocalBusinessSchema(),
-              projectSchema
+              projectSchema,
+              BreadcrumbSchema([
+                  {
+                      name: "Home",
+                      url: "https://lauriesweldinggroup.com/"
+                  },
+                  {
+                      name: "Stairs",
+                      url: "https://lauriesweldinggroup.com/stairs"
+                  },
+                  {
+                      name: "Downtown Miami Staircase",
+                      url: "https://lauriesweldinggroup.com/stairs/downtown-miami"
+                  }
+              ])
+
           ]}
       />
       <main>

@@ -5,9 +5,12 @@ import { Wrench, Layers, Ruler, Paintbrush, Crosshair, Pencil, FileText, Hammer 
 import { ProjectVideo } from '../../../../componets/ProjectVideo/ProjectVideo.tsx';
 import { ProjectsCTA } from '../../../../componets/ProjectsCTA/ProjectsCTA.tsx';
 import { ProjectsBanner } from '../../../../componets/ProjectsBanner/ProjectsBanner.tsx';
+
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
+import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+
 
 const overviewParagraphs = [
   "Nick LLC partnered with Lauries Welding Group to design, fabricate, and install a custom floating staircase system for a modern residential project in Sunny Isles Beach, Florida.",
@@ -113,7 +116,21 @@ export const NickSonyIsle = () => {
     image={seo.image}
     schemas={[
         LocalBusinessSchema(),
-        projectSchema
+        projectSchema,
+        BreadcrumbSchema([
+            {
+                name: "Home",
+                url: "https://lauriesweldinggroup.com/"
+            },
+            {
+                name: "Stairs",
+                url: "https://lauriesweldinggroup.com/stairs"
+            },
+            {
+                name: "Sunny Isles Staircase",
+                url: "https://lauriesweldinggroup.com/stairs/nick-custom-staircase"
+            }
+        ])
     ]}
 />
 
@@ -126,7 +143,21 @@ export const NickSonyIsle = () => {
             image={seo.image}
             schemas={[
                 LocalBusinessSchema(),
-                projectSchema
+                projectSchema,
+                BreadcrumbSchema([
+                    {
+                        name: "Home",
+                        url: "https://lauriesweldinggroup.com/"
+                    },
+                    {
+                        name: "Stairs",
+                        url: "https://lauriesweldinggroup.com/stairs"
+                    },
+                    {
+                        name: "Sunny Isles Staircase",
+                        url: "https://lauriesweldinggroup.com/stairs/nick-sunny-isles"
+                    }
+                ])
             ]}
         />
         <main>  

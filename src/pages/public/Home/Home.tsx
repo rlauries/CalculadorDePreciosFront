@@ -12,6 +12,7 @@ import About  from '../../../componets/About/About.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
+import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 
 
 const seo : SeoData = {
@@ -37,7 +38,13 @@ const Home = () => {
             image={seo.image}
             type="website"
             schemas={[
-                LocalBusinessSchema()
+                LocalBusinessSchema(),
+                BreadcrumbSchema([
+                    {
+                        name: "Home",
+                        url: "https://lauriesweldinggroup.com/"
+                    }
+                ])
             ]}
          />
 

@@ -11,6 +11,7 @@ import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerI
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
 
 interface FeaturedFence {
   id: number;
@@ -162,8 +163,18 @@ const FenceList = () => {
             image={seo.image}
             type="website"
             schemas={[
-                LocalBusinessSchema()
-            ]}
+    LocalBusinessSchema(),
+    BreadcrumbSchema([
+        {
+            name: "Home",
+            url: "https://lauriesweldinggroup.com/"
+        },
+        {
+            name: "Fences",
+            url: "https://lauriesweldinggroup.com/fences"
+        }
+    ])
+]}
         /> 
         <main>
           <div style={{

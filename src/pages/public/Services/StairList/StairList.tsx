@@ -8,9 +8,9 @@ import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerI
 import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 
-import SEO from "../../../../componets/SEO/SEO";
-import type { SeoData } from "../../../../componets/SEO/types";
-import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema";
+import SEO from "../../../../componets/SEO/SEO.tsx";
+import type { SeoData } from "../../../../componets/SEO/types.ts";
+import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 
 interface FeaturedStair  {
   id: number;

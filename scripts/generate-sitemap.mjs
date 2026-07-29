@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const buildDirectory = path.resolve(__dirname, "../build");
 const sitemapPath = path.join(buildDirectory, "sitemap.xml");
 
-const siteUrl = "https://lauriesweldinggroup.com";
+const siteUrl = "https://www.lauriesweldinggroup.com";
 
 const routes = [
   "/",

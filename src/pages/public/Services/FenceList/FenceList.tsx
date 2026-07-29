@@ -12,6 +12,7 @@ import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
 
 interface FeaturedFence {
   id: number;
@@ -163,18 +164,18 @@ const FenceList = () => {
             image={seo.image}
             type="website"
             schemas={[
-    LocalBusinessSchema(),
-    BreadcrumbSchema([
-        {
-            name: "Home",
-            url: "https://lauriesweldinggroup.com/"
-        },
-        {
-            name: "Fences",
-            url: "https://lauriesweldinggroup.com/fences"
-        }
-    ])
-]}
+                LocalBusinessSchema(),
+                BreadcrumbSchema([
+                    {
+                        name: "Home",
+                        url: `${SITE_CONFIG.siteUrl}/`
+                    },
+                    {
+                        name: "Fences",
+                        url: `${SITE_CONFIG.siteUrl}/fences`
+                    }
+                ])
+            ]}
         /> 
         <main>
           <div style={{

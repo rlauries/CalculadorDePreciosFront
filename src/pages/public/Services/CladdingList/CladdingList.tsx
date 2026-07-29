@@ -11,6 +11,8 @@ import { BannerImageHalf } from "../../../../componets/Half-Image-Banner/BannerI
 import SEO  from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
+import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 
 interface FeaturedCladding {
   id: number;
@@ -125,7 +127,17 @@ export const CladdingList = () => {
         image={seo.image}
         type="website"
         schemas={[
-            LocalBusinessSchema()
+            LocalBusinessSchema(),
+            BreadcrumbSchema([
+                {
+                    name: "Home",
+                    url: `${SITE_CONFIG.siteUrl}/`
+                },
+                {
+                    name: "Cladding",
+                    url: `${SITE_CONFIG.siteUrl}/claddings`
+                }
+            ])
         ]}
       />   
       <main style={{

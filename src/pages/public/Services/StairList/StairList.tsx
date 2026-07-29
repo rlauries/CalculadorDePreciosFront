@@ -12,6 +12,7 @@ import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
 
 interface FeaturedStair  {
   id: number;
@@ -125,11 +126,11 @@ export const StairList = () => {
                 BreadcrumbSchema([
                     {
                         name: "Home",
-                        url: "https://lauriesweldinggroup.com/"
+                        url: `${SITE_CONFIG.siteUrl}/`
                     },
                     {
                         name: "Stairs",
-                        url: "https://lauriesweldinggroup.com/stairs"
+                        url: `${SITE_CONFIG.siteUrl}/stairs`
                     }
                 ])
             ]}

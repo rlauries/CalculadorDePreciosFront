@@ -10,6 +10,7 @@ import SEO from "../../../../componets/SEO/SEO.tsx";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
 import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
 
 
 const overviewParagraphs = [
@@ -120,15 +121,15 @@ export const NickSonyIsle = () => {
         BreadcrumbSchema([
             {
                 name: "Home",
-                url: "https://lauriesweldinggroup.com/"
+                url: `${SITE_CONFIG.siteUrl}/`
             },
             {
                 name: "Stairs",
-                url: "https://lauriesweldinggroup.com/stairs"
+                url: `${SITE_CONFIG.siteUrl}/stairs`
             },
             {
                 name: "Sunny Isles Staircase",
-                url: "https://lauriesweldinggroup.com/stairs/nick-custom-staircase"
+                url: `${SITE_CONFIG.siteUrl}/stairs/nick-sunny-isles`
             }
         ])
     ]}

@@ -10,6 +10,7 @@ import SEO from "../../../../componets/SEO/SEO.tsx";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import ProjectSchema from "../../../../componets/SEO/ProjectSchema.ts";
 import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
 
 
 const overviewParagraphs = [
@@ -127,15 +128,15 @@ export const JustinHollywoodCladding = () => {
                 BreadcrumbSchema([
                     {
                         name: "Home",
-                        url: "https://lauriesweldinggroup.com/"
+                        url: `${SITE_CONFIG.siteUrl}/`
                     },
                     {
                         name: "Cladding",
-                        url: "https://lauriesweldinggroup.com/claddings"
+                        url: `${SITE_CONFIG.siteUrl}/claddings`
                     },
                     {
                         name: "Hollywood Cladding Project",
-                        url: "https://lauriesweldinggroup.com/claddings/justin-hollywood-cladding"
+                        url: `${SITE_CONFIG.siteUrl}/claddings/justin-hollywood-cladding`
                     }
                 ])
             ]}

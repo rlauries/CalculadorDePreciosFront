@@ -12,6 +12,7 @@ import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
+import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
 
 interface FeaturedPergola {
   id: number;
@@ -158,11 +159,11 @@ const PergolaList = () => {
               BreadcrumbSchema([
                   {
                       name: "Home",
-                      url: "https://lauriesweldinggroup.com/"
+                      url: `${SITE_CONFIG.siteUrl}/`
                   },
                   {
                       name: "Pergolas",
-                      url: "https://lauriesweldinggroup.com/pergolas"
+                      url: `${SITE_CONFIG.siteUrl}/pergolas`
                   }
               ])
           ]}

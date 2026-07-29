@@ -3,7 +3,7 @@
 const SITE_CONFIG = {
   siteName: "Lauries Welding Group",
 
-  siteUrl: "https://lauriesweldinggroup.com",
+  siteUrl: "https://www.lauriesweldinggroup.com",
 
   logo: "/images/Logo/logo-creativo.png",
 

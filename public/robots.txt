@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lauriesweldinggroup.com/sitemap.xml
+Sitemap: https://www.lauriesweldinggroup.com/sitemap.xml

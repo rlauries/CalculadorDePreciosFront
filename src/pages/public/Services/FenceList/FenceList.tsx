@@ -4,7 +4,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 
@@ -30,37 +30,37 @@ const featureFences : FeaturedFence[] = [
   {
     id: 1,
     name: "Chain Link",
-    imageUrl: "/images/originals/Fences/Fence-chainlink.jpg",
+    imageUrl: "/images/originals/Fences/Fence-chainlink.webp",
     linkTo: "/fences/chainlink"
   },
   {
     id: 2,
     name: "DuraFence",
-    imageUrl: "/images/originals/Fences/Fence-durafence.jpg",
+    imageUrl: "/images/originals/Fences/Fence-durafence.webp",
     linkTo: "/fences/durafence"
   },
   {
     id: 3,
     name: "Aluminum",
-    imageUrl: "/images/originals/Fences/Fence-aluminumcustom.jpg",
+    imageUrl: "/images/originals/Fences/Fence-aluminumcustom.webp",
     linkTo: "/fences/aluminum"
   },
   {
     id: 4,
     name: "Wood",
-    imageUrl: "/images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg",
+    imageUrl: "/images/originals/Fences/Wood-Fencing-Ideas-Blog.webp",
     linkTo: "/fences/wood"
   },
   {
     id: 5,
     name: "PVC",
-    imageUrl: "/images/originals/Fences/PVC-Fence-1.jpg",
+    imageUrl: "/images/originals/Fences/PVC-Fence-1.webp",
     linkTo: "/fences/pvc"
   },
   {
     id: 6,
     name: "Composite",
-    imageUrl: "/images/originals/Fences/Composite-Fence.png",
+    imageUrl: "/images/originals/Fences/Composite-Fence.webp",
     linkTo: "/fences/composite"
   }
 ];
@@ -73,7 +73,7 @@ const featureFences : FeaturedFence[] = [
 //     versatility: "Ideal for a variety of applications including residential yards, sports fields, playgrounds, schools, parks, industrial areas, and construction sites.",
 //     maintenance: "Requires minimal upkeep compared to other fencing materials.",
 //     aestheticOptions: "Available in different coatings and colors, including the classic silver galvanized finish and colored vinyl coatings such as black or green to blend with the environment or match your property’s aesthetic.",
-//     imageUrl: "images/originals/Fences/Fence-chainlink.jpg",
+//     imageUrl: "images/originals/Fences/Fence-chainlink.webp",
 //     linkTo: "/fences/chainlink"
 //   },
 //   {
@@ -84,7 +84,7 @@ const featureFences : FeaturedFence[] = [
 //     versatility: "The robust steel construction provides a formidable barrier that deters unauthorized access and enhances the security of your property.",
 //     maintenance: "The galvanized and coated steel panels require minimal upkeep.",
 //     aestheticOptions: "Combines functionality with aesthetics, featuring a sleek, modern design that complements any property.",
-//     imageUrl: "images/originals/Fences/Fence-durafence.jpg",
+//     imageUrl: "images/originals/Fences/Fence-durafence.webp",
 //     linkTo: "/fences/durafence"
 //   },
 //   {
@@ -95,7 +95,7 @@ const featureFences : FeaturedFence[] = [
 //     versatility: "Tailor your Aluminum Modern Fence to suit your unique preferences with a variety of design options, including different heights, panel widths, and color choices.",
 //     maintenance: "Our aluminum modern fences are resistant to rust, rot, and corrosion.",
 //     aestheticOptions: "Boasts clean lines, minimalist profiles, and sleek finishes, adding a touch of elegance and sophistication to your outdoor space.",
-//     imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg",
+//     imageUrl: "images/originals/Fences/Fence-aluminumcustom.webp",
 //     linkTo: "/fences/aluminumcustom"
 //   },
 //   {
@@ -106,7 +106,7 @@ const featureFences : FeaturedFence[] = [
 //     versatility: "Can be tailored in height, width, stain, and style — from traditional picket fences to solid privacy panels. Suitable for residential and decorative applications.",
 //     maintenance: "Requires consistent upkeep including sealing, staining, and occasional repairs to prevent weathering and decay.",
 //     aestheticOptions: "Delivers a warm, organic appearance with a wide range of stain and design options to suit rustic, classic, or modern aesthetics.",
-//     imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg",
+//     imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.webp",
 //     linkTo: "/fences/wood"
 //   },
 //   {
@@ -117,7 +117,7 @@ const featureFences : FeaturedFence[] = [
 //     "versatility": "Available in various heights, panel styles, and finishes, making it suitable for residential privacy, decorative boundaries, and pool enclosures.",
 //     "maintenance": "Extremely low maintenance — no staining, painting, or sealing required. Occasional cleaning is sufficient to maintain appearance.",
 //     "aestheticOptions": "Offers a clean, polished look with options for white, tan, and other finishes. Mimics the appearance of wood or lattice for added visual appeal.",
-//     "imageUrl": "images/originals/Fences/PVC-Fence-1.jpg",
+//     "imageUrl": "images/originals/Fences/PVC-Fence-1.webp",
 //     "linkTo": "/fences/pvc"
 //   },
 //   {
@@ -128,17 +128,17 @@ const featureFences : FeaturedFence[] = [
 //     versatility: "Can be customized with different colors, textures, and panel configurations. Great for privacy, security, and sound dampening.",
 //     maintenance: "Requires very little maintenance compared to wood — no sealing, staining, or repainting. Retains its look with basic cleaning.",
 //     aestheticOptions: "Sleek, modern look that resembles real wood with rich textures and contemporary color choices, perfect for high-end outdoor designs.",
-//     imageUrl: "images/originals/Fences/Composite-Fence.png",
+//     imageUrl: "images/originals/Fences/Composite-Fence.webp",
 //     linkTo: "/fences/composite"
 //   }
 // ];
 const slides : Slide[] = [
   { id: 1, image: "/images/originals/Fences/05329352.webp" },
-  { id: 2, image: "/images/originals/Fences/PVC-gm4.jpg" },
-  { id: 3, image: "/images/originals/Fences/jose-luis-gates.png" },
-  { id: 4, image: "/images/originals/Fences/yan-gate.png" },
-  { id: 5, image: "/images/originals/Fences/big-modern.jpeg" },
-  { id: 6, image: "/images/originals/Fences/tennis-court.png" },
+  { id: 2, image: "/images/originals/Fences/PVC-gm4.webp" },
+  { id: 3, image: "/images/originals/Fences/jose-luis-gates.webp" },
+  { id: 4, image: "/images/originals/Fences/yan-gate.webp" },
+  { id: 5, image: "/images/originals/Fences/big-modern.webp" },
+  { id: 6, image: "/images/originals/Fences/tennis-court.webp" },
   { id: 7, image: "/images/originals/Fences/Aluminum-row-3-c.webp" }
 ];
 
@@ -150,7 +150,7 @@ const seo: SeoData = {
 
   canonical: "/fences",
 
-  image: "/images/Privacy-Fence-Banner.jpg"
+  image: "/images/Privacy-Fence-Banner.webp"
 };
 
 const FenceList = () => {
@@ -190,6 +190,8 @@ const FenceList = () => {
                   videoId="slow-video"
                   className="hero-video"
                   pauseTime={4000}
+                  poster="/images/videos/product-promo-poster.webp"
+                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
               />
           </section>            
 
@@ -221,7 +223,7 @@ const FenceList = () => {
               <FeatureShowcaseCarousel
                 title="FENCE SYSTEMS"
                 subtitle="Project Showcase"
-                mainImage="/images/originals/Fences/rail-view.png"
+                mainImage="/images/originals/Fences/rail-view.webp"
                 items={featureFences}
               />
             </AnimatedSection>
@@ -230,7 +232,7 @@ const FenceList = () => {
                 title="Fence Styles"
                 subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
                 onButtonClick={()=>window.location.href="/contactus"}
-                imageUrl="/images/Privacy-Fence-Banner.jpg"
+                imageUrl="/images/Privacy-Fence-Banner.webp"
               />
             </AnimatedSection>
             <section>
@@ -241,7 +243,7 @@ const FenceList = () => {
 
                     <AnimatedSection>
                         <BannerImageHalf 
-                            image="images/originals/Fences/aluminum-myth.png" 
+                            image="images/originals/Fences/aluminum-myth.webp" 
                             title="ALUMINUM FENCE MYTH" 
                             subtitle="Many people assume aluminum fences are lightweight and less durable than steel. In reality, modern powder-coated aluminum fencing is engineered to resist rust, corrosion, and harsh weather conditions while maintaining its strength and elegant appearance. It offers long-term durability with virtually no maintenance."
                             reversed={false}
@@ -249,7 +251,7 @@ const FenceList = () => {
                     </AnimatedSection>
                     <AnimatedSection>
                         <BannerImageHalf
-                            image="images/originals/Fences/composite-myth.png" 
+                            image="images/originals/Fences/composite-myth.webp" 
                             title="COMPOSITE FENCE MYTH" 
                             subtitle="A common misconception is that composite fencing looks artificial or lacks the warmth of natural materials. Today’s composite systems are designed with realistic textures and colors that replicate wood while offering superior resistance to moisture, fading, and insects. The result is a fence that keeps its appearance for years with minimal upkeep."
                             reversed={true} // Esto invierte el orden de imagen y texto
@@ -257,7 +259,7 @@ const FenceList = () => {
                     </AnimatedSection>
                     <AnimatedSection>    
                         <BannerImageHalf
-                            image="images/originals/Fences/dura-fence-myth.png" 
+                            image="images/originals/Fences/dura-fence-myth.webp" 
                             title="DURAFENCE MYTH" 
                             subtitle="Some believe modern modular fence systems sacrifice strength for convenience. In reality, systems like DuraFence are engineered for both structural stability and long-term performance. Their reinforced panels and durable materials create a secure boundary that withstands weather, impact, and daily wear while maintaining a clean architectural look."
                             reversed={false}

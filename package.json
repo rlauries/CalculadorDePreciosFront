@@ -39,6 +39,9 @@
     "start": "react-scripts start",
     "build:react": "react-scripts build",
     "prerender": "node scripts/prerender.mjs",
+    "convert-images": "node scripts/convert-images.mjs",
+    "check-image-references": "node scripts/update-image-references.mjs",
+    "update-image-references": "node scripts/update-image-references.mjs --write",
     "prebuild": "npx playwright install --with-deps chromium",
     "build": "react-scripts build && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
     "test": "react-scripts test",
@@ -64,6 +67,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "@types/react-slick": "^0.23.13",
-    "playwright": "^1.61.1"
+    "playwright": "^1.61.1",
+    "sharp": "^0.35.3"
   }
 }

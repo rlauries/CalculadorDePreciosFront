@@ -31,91 +31,91 @@ const GalleryList: GalleryItem[] = [
     {
       id : 1,
       name: "Composite Side Panels",
-      imageUrl: "images/originals/Fences/Composite-Fence.png",
+      imageUrl: "images/originals/Fences/Composite-Fence.webp",
       serviceTypeId: 1,
       matrialId: 6
     },
     {
       id : 2,
       name: "Dura Fence",
-      imageUrl: "images/originals/Fences/Fence-durafence.jpg",
+      imageUrl: "images/originals/Fences/Fence-durafence.webp",
       serviceTypeId: 1,
       matrialId: 2
     },
     {
       id : 3,
       name: "Fence Chainlink",
-      imageUrl: "images/originals/Fences/Fence-chainlink.jpg",
+      imageUrl: "images/originals/Fences/Fence-chainlink.webp",
       serviceTypeId: 1,
       matrialId: 1
     },
     {
       id : 4,
       name: "Wood Panels",
-      imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.jpg",
+      imageUrl: "images/originals/Fences/Wood-Fencing-Ideas-Blog.webp",
       serviceTypeId: 1,
       matrialId: 4
     },
     {
       id : 5,
       name: "PVC Panels",
-      imageUrl: "images/originals/Fences/PVC-Fence-1.jpg",
+      imageUrl: "images/originals/Fences/PVC-Fence-1.webp",
       serviceTypeId: 1,
       matrialId: 5
     },
     {
       id : 6,
       name: "Aluminum Panels",
-      imageUrl: "images/originals/Fences/Fence-aluminumcustom.jpg",
+      imageUrl: "images/originals/Fences/Fence-aluminumcustom.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 7,
       name: "Aluminum Brise Vue Dune Maison",
-      imageUrl: "images/originals/Fences/Aluminum_Brise-vue-dune-maison.jpeg",
+      imageUrl: "images/originals/Fences/Aluminum_Brise-vue-dune-maison.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 8,
       name: "Composite NorthVan Charcoal.jpg",
-      imageUrl: "images/originals/Fences/Composite_NorthVan_charcoal.jpg",
+      imageUrl: "images/originals/Fences/Composite_NorthVan_charcoal.webp",
       serviceTypeId: 1,
       matrialId: 6
     },
     {
       id : 9,
       name: "Aluminum Fence Design Alumission",
-      imageUrl: "images/originals/Fences/Aluminum-Fence-Design-Alumission.jpg",
+      imageUrl: "images/originals/Fences/Aluminum-Fence-Design-Alumission.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 10,
       name: "Aluminum Fence",
-      imageUrl: "images/originals/Fences/ALUMINUM-FENCE-installer.jpg",
+      imageUrl: "images/originals/Fences/ALUMINUM-FENCE-installer.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 11,
       name: "Aluminum Fence Swing",
-      imageUrl: "images/originals/Fences/aluminum-fence-swing.jpg",
+      imageUrl: "images/originals/Fences/aluminum-fence-swing.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 12,
       name: "Aluminum Gate Swing",
-      imageUrl: "images/originals/Fences/yan-gate.png",
+      imageUrl: "images/originals/Fences/yan-gate.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 13,
       name: "Aluminum Portal",
-      imageUrl: "images/originals/Fences/Aluminum-portal-03.jpg",
+      imageUrl: "images/originals/Fences/Aluminum-portal-03.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
@@ -129,7 +129,7 @@ const GalleryList: GalleryItem[] = [
     {
       id : 15,
       name: "Composite Fence",
-      imageUrl: "images/originals/Fences/Composite-Fence.png",
+      imageUrl: "images/originals/Fences/Composite-Fence.webp",
       serviceTypeId: 1,
       matrialId: 6
     },
@@ -150,28 +150,28 @@ const GalleryList: GalleryItem[] = [
     {
       id : 18,
       name: "low+wood+fence",
-      imageUrl: "images/originals/Fences/low+wood+fence.jpeg",
+      imageUrl: "images/originals/Fences/low+wood+fence.webp",
       serviceTypeId: 1,
       matrialId: 4
     },
     {
       id : 19,
       name: "modern+minimalist+garden+wall",
-      imageUrl: "images/originals/Fences/modern+minimalist+garden+wall.jpeg",
+      imageUrl: "images/originals/Fences/modern+minimalist+garden+wall.webp",
       serviceTypeId: 1,
       matrialId: 4
     },
     {
       id : 20,
       name: "modern-fence--wood",
-      imageUrl: "images/originals/Fences/modern-fence--wood.jpeg",
+      imageUrl: "images/originals/Fences/modern-fence--wood.webp",
       serviceTypeId: 1,
       matrialId: 4
     },
     {
       id : 21,
       name: "PVC-gm4",
-      imageUrl: "images/originals/Fences/PVC-gm4.jpg",
+      imageUrl: "images/originals/Fences/PVC-gm4.webp",
       serviceTypeId: 1,
       matrialId: 5
     },
@@ -185,56 +185,56 @@ const GalleryList: GalleryItem[] = [
     {
       id : 23,
       name: "PVC-miami-slider",
-      imageUrl: "images/originals/Fences/PVC-miami-slider-2.jpg",
+      imageUrl: "images/originals/Fences/PVC-miami-slider-2.webp",
       serviceTypeId: 1,
       matrialId: 5
     },
     {
       id : 24,
       name: "String Light Fence",
-      imageUrl: "images/originals/Fences/String-Light-Fence.png",
+      imageUrl: "images/originals/Fences/String-Light-Fence.webp",
       serviceTypeId: 1,
       matrialId: 3
     },
     {
       id : 25,
       name: "Pergola Aluminum",
-      imageUrl: "images/originals/Pergolas/Pergola-Aluminum.jpeg",
+      imageUrl: "images/originals/Pergolas/Pergola-Aluminum.webp",
       serviceTypeId: 2,
       matrialId: 2
     },
     {
       id : 26,
       name: "Pergola Steel",
-      imageUrl: "images/originals/Pergolas/Pergola-Steel.jpeg",
+      imageUrl: "images/originals/Pergolas/Pergola-Steel.webp",
       serviceTypeId: 2,
       matrialId: 1
     },
     {
       id : 27,
       name: "Smart Retractable Roof Pergola",
-      imageUrl: "images/originals/Pergolas/smart-retractable-roof-pergola.jpg",
+      imageUrl: "images/originals/Pergolas/smart-retractable-roof-pergola.webp",
       serviceTypeId: 2,
       matrialId: 2
     },
     {
       id : 28,
       name: "String Light Pergola",
-      imageUrl: "images/originals/Pergolas/string-light-pergola.jpg",
+      imageUrl: "images/originals/Pergolas/string-light-pergola.webp",
       serviceTypeId: 2,
       matrialId: 6
     },
     {
       id : 29,
       name: "Smart Technology for Ultimate Control",
-      imageUrl: "images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.jpeg",
+      imageUrl: "images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.webp",
       serviceTypeId: 2,
       matrialId: 2
     },
     {
       id : 30,
       name: "Designer Shade Solutions",
-      imageUrl: "images/originals/Pergolas/Designer-Shade-Solutions.jpg",
+      imageUrl: "images/originals/Pergolas/Designer-Shade-Solutions.webp",
       serviceTypeId: 2,
       matrialId: 2
     },
@@ -242,49 +242,49 @@ const GalleryList: GalleryItem[] = [
     {
       id : 31,
       name: "Auckland Style Stairs",
-      imageUrl: "images/originals/Stairs/Auckland-by-Stylecraft-Stairs.jpg",
+      imageUrl: "images/originals/Stairs/Auckland-by-Stylecraft-Stairs.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 32,
       name: "LED Light Stair",
-      imageUrl: "images/originals/Stairs/9c89ee50ea5afe1c2e8672de75eee66a.jpg",
+      imageUrl: "images/originals/Stairs/9c89ee50ea5afe1c2e8672de75eee66a.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 33,
       name: "Aluminum Composite Stair",
-      imageUrl: "images/originals/Stairs/composite.jpg",
+      imageUrl: "images/originals/Stairs/composite.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 34,
       name: "Aluminum Wooden Stair",
-      imageUrl: "images/originals/Stairs/Stairs.png",
+      imageUrl: "images/originals/Stairs/Stairs.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 35,
       name: "Tile and Wood Stair",
-      imageUrl: "images/originals/Stairs/Stair-and-tile.jpg",
+      imageUrl: "images/originals/Stairs/Stair-and-tile.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 36,
       name: "Floating Stair",
-      imageUrl: "images/originals/Stairs/floating01.jpg",
+      imageUrl: "images/originals/Stairs/floating01.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
     {
       id : 37,
       name: "wooden-stair",
-      imageUrl: "images/originals/Stairs/floating-cantilevered-stair-wood-treads-glass-railing-keuka-studios.jpg",
+      imageUrl: "images/originals/Stairs/floating-cantilevered-stair-wood-treads-glass-railing-keuka-studios.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
@@ -292,28 +292,28 @@ const GalleryList: GalleryItem[] = [
     {
       id : 38,
       name: "Pergola Insulated",
-      imageUrl: "images/originals/Pergolas/pergola-insulated.jpeg",
+      imageUrl: "images/originals/Pergolas/pergola-insulated.webp",
       serviceTypeId: 2,
       matrialId: 4
     },
     {
       id : 39,
       name: "Pergola Wood",
-      imageUrl: "images/originals/Pergolas/Pergola-Wood.jpeg",
+      imageUrl: "images/originals/Pergolas/Pergola-Wood.webp",
       serviceTypeId: 2,
       matrialId: 3
     },
     {
       id : 40,
       name: "Pergola Cedar Wood",
-      imageUrl: "images/originals/Pergolas/IMG_7746.jpg",
+      imageUrl: "images/originals/Pergolas/IMG_7746.webp",
       serviceTypeId: 2,
       matrialId: 3
     },
     {
       id : 41,
       name: "Pergola Cross Bar Wood",
-      imageUrl: "images/originals/Pergolas/Custom-Wood-Grain-Aluminum-Shade-Structure.jpeg",
+      imageUrl: "images/originals/Pergolas/Custom-Wood-Grain-Aluminum-Shade-Structure.webp",
       serviceTypeId: 2,
       matrialId: 3
     },
@@ -327,21 +327,21 @@ const GalleryList: GalleryItem[] = [
     {
       id : 43,
       name: "Pergola Insulated",
-      imageUrl: "images/originals/Pergolas/insulated-white-patio-covers-.jpg",
+      imageUrl: "images/originals/Pergolas/insulated-white-patio-covers-.webp",
       serviceTypeId: 2,
       matrialId: 4
     },
     {
       id : 44,
       name: "Pergola Cladding Ceiling",
-      imageUrl: "images/originals/Pergolas/cladding-pergola-ceiling.png",
+      imageUrl: "images/originals/Pergolas/cladding-pergola-ceiling.webp",
       serviceTypeId: 2,
       matrialId: 6
     },
     {
       id : 45,
       name: "Wooden -Stair",
-      imageUrl: "images/originals/Stairs/wooden-stair.png",
+      imageUrl: "images/originals/Stairs/wooden-stair.webp",
       serviceTypeId: 3,
       matrialId: 6
     },
@@ -356,7 +356,7 @@ const seo: SeoData = {
     canonical: "/gallery",
 
     image:
-        "/images/Hero-Gallery-02.png"
+        "/images/Hero-Gallery-02.webp"
 };
 
 const Gallery = () => {
@@ -476,7 +476,7 @@ const Gallery = () => {
             title="GALLERY"
             subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"
             onButtonClick={()=>window.location.href="/contactus"}
-            imageUrl="/images/Hero-Gallery-02.png"
+            imageUrl="/images/Hero-Gallery-02.webp"
           />
           
           <SectionIntro
@@ -498,7 +498,7 @@ const Gallery = () => {
                           </label>
                           <p>A Showcase of Style</p>
                       </div>
-                      <img src="/images/originals/Fences/fence-wood-lights.jpg" alt="Fence wood lights" />
+                      <img src="/images/originals/Fences/fence-wood-lights.webp" alt="Fence wood lights" />
                       <button onClick={switchToFence}>Display More</button>
                   </div>
 
@@ -524,7 +524,7 @@ const Gallery = () => {
                             </label>
                             <p>Path To The Sky</p>
                         </div>
-                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.png" alt="Custom floating stair systems" />
+                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.webp" alt="Custom floating stair systems" />
                         <button onClick={switchToStair}>Display More</button>
                     </div>
                 </div>

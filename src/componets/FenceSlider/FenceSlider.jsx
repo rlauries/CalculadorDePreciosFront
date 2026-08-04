@@ -8,12 +8,12 @@ import { defaultSliderSettings } from '../../utils/defaultSliderSettings.ts';
 
 export const FenceSlider = () => {
     const images = [
-        { src: "images/originals/Fences/fence-and-gate.jpg", alt: "Steel Pergola" },
-        { src: "images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg", alt: "Insulated Pergola" },
-        { src: "images/originals/Fences/Fence-chainlink.jpg", alt: "Aluminum Wood Pergola" },
-        { src: "images/originals/Fences/Fence-durafence.jpg", alt: "Cross Bar Pergola" },
-        { src: "images/originals/Fences/String-Light-Fence.png", alt: "Insulated Pergola" },
-        { src: "images/originals/Fences/1685460542_en-idei-club-p-fence-gate-dizain-instagram-2.jpg", alt: "Insulated Pergola" },
+        { src: "images/originals/Fences/fence-and-gate.webp", alt: "Steel Pergola" },
+        { src: "images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.webp", alt: "Insulated Pergola" },
+        { src: "images/originals/Fences/Fence-chainlink.webp", alt: "Aluminum Wood Pergola" },
+        { src: "images/originals/Fences/Fence-durafence.webp", alt: "Cross Bar Pergola" },
+        { src: "images/originals/Fences/String-Light-Fence.webp", alt: "Insulated Pergola" },
+        { src: "images/originals/Fences/1685460542_en-idei-club-p-fence-gate-dizain-instagram-2.webp", alt: "Insulated Pergola" },
         
       ];
 

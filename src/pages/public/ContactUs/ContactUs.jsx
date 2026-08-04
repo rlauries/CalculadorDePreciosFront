@@ -1,7 +1,7 @@
 
 import './Contactus.css';
 import {ContactUsForm} from '../../../componets/ContactUsForm/ContactUsForm.tsx';
-import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.jsx';
+import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 
 const ContactUs = () => {
     

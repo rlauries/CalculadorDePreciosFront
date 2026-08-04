@@ -151,7 +151,7 @@ const SignUp = () => {
     
         <Header/>
         <section className='signUpContainer'>
-            <img src="images/Signup.jpg" alt="" />
+            <img src="images/Signup.webp" alt="" />
             <form action="" className='signUpForm' id='signUpForm'>
                 <div>
                     <label type='text' className='legenda' >Sign up</label>

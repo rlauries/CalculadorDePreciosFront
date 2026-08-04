@@ -5,7 +5,7 @@ import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignT
 import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
 import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
 import { AnimatedShowCaseCarousel } from "../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx";
-import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.jsx";
+import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.tsx";
 import { FeatureShowcaseCarousel } from "../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx";
 import { BannerImageHalf } from "../../../../componets/Half-Image-Banner/BannerImageHalf.jsx";
 import SEO  from "../../../../componets/SEO/SEO.tsx";
@@ -29,19 +29,19 @@ const featuredCladdings : FeaturedCladding[] = [
   {
     id: 1,
     name: "Composite",
-    imageUrl: "/images/originals/Claddings/composite-nili.jpeg",
+    imageUrl: "/images/originals/Claddings/composite-nili.webp",
     linkTo: "/claddings/justin-hollywood-cladding",
   },
   {
     id: 2,
     name: "Wood",
-    imageUrl: "/images/originals/Claddings/wood-planks.jpg",
+    imageUrl: "/images/originals/Claddings/wood-planks.webp",
     linkTo: "/claddings/justin-hollywood-cladding",
   },
   {
     id: 3,
     name: "PVC",
-    imageUrl: "/images/originals/Claddings/pvc-cladding.jpg",
+    imageUrl: "/images/originals/Claddings/pvc-cladding.webp",
     linkTo: "/claddings/justin-hollywood-cladding",
   },
 ];
@@ -60,7 +60,7 @@ const featuredCladdings : FeaturedCladding[] = [
 //       "Very low maintenance; requires only occasional cleaning. No sanding, sealing, or repainting needed over time.",
 //     aestheticOptions:
 //       "Available in a wide range of modern colors and wood-grain textures. Offers a uniform, high-end appearance suitable for luxury outdoor living spaces.",
-//     imageUrl: "images/originals/Claddings/composite-nili.jpeg",
+//     imageUrl: "images/originals/Claddings/composite-nili.webp",
 //   },
 //   {
 //     id: 102,
@@ -75,7 +75,7 @@ const featuredCladdings : FeaturedCladding[] = [
 //       "Medium maintenance; wood requires periodic sealing, staining, or oiling to preserve color and prevent weather-related deterioration.",
 //     aestheticOptions:
 //       "Offers rich natural textures and customizable finishes. Available in various species such as cedar, pine, redwood, and exotic hardwoods for premium elegance.",
-//     imageUrl: "images/originals/Claddings/wood-planks.jpg",
+//     imageUrl: "images/originals/Claddings/wood-planks.webp",
 //   },
 //   {
 //     id: 103,
@@ -90,17 +90,17 @@ const featuredCladdings : FeaturedCladding[] = [
 //       "Very low maintenance; simple washing is enough. No sanding, painting, or sealing required.",
 //     aestheticOptions:
 //       "Available in smooth, matte, glossy, or wood-grain finishes. Offers a clean modern look with optional hidden-fastener systems for seamless installation.",
-//     imageUrl: "images/originals/Claddings/pvc-cladding.jpg",
+//     imageUrl: "images/originals/Claddings/pvc-cladding.webp",
 //   },
 // ];
 const slides : Slide[] = [
-  { id: 1, image: "/images/originals/Claddings/joseph-front.jpeg" },
-  { id: 2, image: "/images/originals/Claddings/mine.jpeg" },
-  { id: 3, image: "/images/originals/Claddings/front-building.png" },
-  { id: 4, image: "/images/originals/Claddings/other-front.png" },
-  { id: 5, image: "/images/originals/Claddings/wall-composite.png" },
-  { id: 6, image: "/images/originals/Claddings/cladding-post.jpg" },
-  { id: 7, image: "/images/originals/Claddings/pvc-cladding.jpg" }
+  { id: 1, image: "/images/originals/Claddings/joseph-front.webp" },
+  { id: 2, image: "/images/originals/Claddings/mine.webp" },
+  { id: 3, image: "/images/originals/Claddings/front-building.webp" },
+  { id: 4, image: "/images/originals/Claddings/other-front.webp" },
+  { id: 5, image: "/images/originals/Claddings/wall-composite.webp" },
+  { id: 6, image: "/images/originals/Claddings/cladding-post.webp" },
+  { id: 7, image: "/images/originals/Claddings/pvc-cladding.webp" }
 ];
 const seo : SeoData = {
     title: "Custom Exterior Cladding Systems | Composite, Wood & PVC",
@@ -111,7 +111,7 @@ const seo : SeoData = {
     canonical: "/claddings",
 
     image:
-        "/images/originals/Claddings/hero-cladding.jpeg"
+        "/images/originals/Claddings/hero-cladding.webp"
 };
 
 
@@ -152,6 +152,8 @@ export const CladdingList = () => {
                   videoId="slow-video"
                   className="hero-video"
                   pauseTime={4000}
+                  poster="/images/videos/product-promo-poster.webp"
+                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
               />
           </section>      
           
@@ -202,7 +204,7 @@ export const CladdingList = () => {
               <FeatureShowcaseCarousel
                 title="CLADDING SYSTEMS"
                 subtitle="Project Showcase"
-                mainImage="/images/originals/Claddings/cladding-pergolas-render.png"
+                mainImage="/images/originals/Claddings/cladding-pergolas-render.webp"
                 items={featuredCladdings}
               />
 
@@ -213,7 +215,7 @@ export const CladdingList = () => {
                 title="Cladding Service"
                 subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
                 onButtonClick={() => (window.location.href = "/contactus")}
-                imageUrl="/images/originals/Claddings/hero-cladding.jpeg"
+                imageUrl="/images/originals/Claddings/hero-cladding.webp"
               />
             </section>
           </AnimatedSection>
@@ -222,7 +224,7 @@ export const CladdingList = () => {
 
             <AnimatedSection>
               <BannerImageHalf 
-                image="/images/originals/Claddings/wood-cladding-myth.png" 
+                image="/images/originals/Claddings/wood-cladding-myth.webp" 
                 title="CLADDING WOOD MYTH" 
                 subtitle="Many people believe wood cladding quickly deteriorates outdoors and requires constant maintenance. In reality, properly treated and sealed exterior wood cladding can withstand weather, moisture, and sun exposure for many years while delivering a warm, natural architectural look that synthetic materials often try to imitate."
                 reversed={false}
@@ -231,7 +233,7 @@ export const CladdingList = () => {
 
             <AnimatedSection>
               <BannerImageHalf
-                image="/images/originals/Claddings/MyLogHouse.jpg" 
+                image="/images/originals/Claddings/MyLogHouse.webp" 
                 title="CLADDING PVC MYTH" 
                 subtitle="A common misconception is that PVC cladding looks artificial and lacks durability. Modern exterior-grade PVC systems are engineered to resist moisture, UV exposure, warping, and rot while maintaining a clean architectural finish. They provide a long-lasting solution with very little maintenance."
                 reversed={true}
@@ -240,7 +242,7 @@ export const CladdingList = () => {
 
             <AnimatedSection>    
               <BannerImageHalf
-                image="/images/originals/Claddings/garage-composite.png" 
+                image="/images/originals/Claddings/garage-composite.webp" 
                 title="CLADDING COMPOSITE MYTH" 
                 subtitle="Some assume composite cladding fades quickly or cannot replicate the beauty of natural materials. In reality, modern composite systems are designed with advanced textures and color stability that resist fading, moisture, and insects while maintaining a consistent, elegant appearance for years."
                 reversed={false}

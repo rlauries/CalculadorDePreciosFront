@@ -2,7 +2,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner'
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
@@ -31,36 +31,36 @@ const featuredStairs: FeaturedStair[] = [
   {
     id: 1,
     name: 'Wood ',
-    imageUrl: '/images/originals/Stairs/Stairs.png',
+    imageUrl: '/images/originals/Stairs/Stairs.webp',
     linkTo: '/stairs/downtown-miami'
   },
   {
     id: 2,
     name: 'Floating',
-    imageUrl: '/images/originals/Stairs/floating01.jpg',
+    imageUrl: '/images/originals/Stairs/floating01.webp',
     linkTo: '/stairs/floating-staircase'
   },
   {
     id: 3,
     name: 'Composite',
-    imageUrl: '/images/originals/Stairs/PHOTO-2022-06-30-18-13-59.jpg',
+    imageUrl: '/images/originals/Stairs/PHOTO-2022-06-30-18-13-59.webp',
     linkTo: '/stairs/aluminum-composite'
   },
 ];
 const slides : Slide[] = [
   {
     id: 1,
-    image: "/images/originals/Stairs/UpperFloor.png",
+    image: "/images/originals/Stairs/UpperFloor.webp",
     projectUrl: "/projects/downtown-miami-floating-staircase"
   },
   {
     id: 2,
-    image: "/images/originals/Stairs/after.jpg",
+    image: "/images/originals/Stairs/after.webp",
     projectUrl: "/stairs/downtown-miami"
   },
   {
     id: 3,
-    image: "/images/originals/Stairs/nick-stair.jpeg",
+    image: "/images/originals/Stairs/nick-stair.webp",
     projectUrl: "/stairs/nick-custom-staircase"
   }
 ];
@@ -74,7 +74,7 @@ const slides : Slide[] = [
 //     maintenance: "Low to medium maintenance; aluminum requires minimal care, while wood may need occasional cleaning or refinishing to preserve its appearance and texture.",
 //     appearance: "Modern, elegant, and visually balanced. The contrast between metal and wood enhances the staircase’s sculptural presence, creating a centerpiece that feels both warm and contemporary.",
 //     cost: "Medium to High; the combination of premium hardwood and custom aluminum fabrication increases material and installation costs but delivers long-lasting style and structural performance.",
-//     imageUrl: '/images/originals/Stairs/wooden-stair.png'
+//     imageUrl: '/images/originals/Stairs/wooden-stair.webp'
 
 //   },
 //   {
@@ -85,7 +85,7 @@ const slides : Slide[] = [
 //     maintenance: "Medium maintenance; wood requires periodic cleaning and occasional refinishing to preserve its color and protect against wear. The hidden support structure typically requires minimal upkeep.",
 //     appearance: "Minimalist, elegant, and visually dramatic. The floating effect, paired with the natural beauty of wood, creates a centerpiece that feels light, modern, and architecturally refined.",
 //     cost: "Medium to High; floating staircases require precise engineering, high-quality hardwood, and specialized installation, which can increase overall project cost but deliver a premium aesthetic.",
-//     imageUrl: '/images/originals/Stairs/floating01.jpg'
+//     imageUrl: '/images/originals/Stairs/floating01.webp'
 //   },
 //   {
 //     id: 3,
@@ -95,7 +95,7 @@ const slides : Slide[] = [
 //     maintenance: "Low maintenance. Composite steps require only occasional cleaning to remove dirt or debris, and aluminum structures typically need minimal upkeep beyond periodic rinsing. No sealing, staining, or repainting is required.",
 //     appearance: "Sleek, modern, and highly consistent in color and texture. Composite materials offer the aesthetic of wood but maintain a uniform finish that does not degrade over time. Perfect for contemporary homes, patios, terraces, and commercial outdoor spaces.",
 //     cost: "Medium to High; while composite materials and aluminum fabrication may have a higher initial cost than traditional wood, the long-term savings in maintenance and longevity make it a cost-effective investment.",
-//     imageUrl: '/images/originals/Stairs/composite.jpg'
+//     imageUrl: '/images/originals/Stairs/composite.webp'
 //   },
 
 // ];
@@ -109,7 +109,7 @@ const seo: SeoData = {
   canonical: "/stairs",
 
   image:
-    "/images/originals/Stairs/Nilis-house.png"
+    "/images/originals/Stairs/Nilis-house.webp"
 };
 export const StairList = () => {
 
@@ -147,6 +147,8 @@ export const StairList = () => {
                     videoId="slow-video"
                     className="hero-video"
                     pauseTime={4000}
+                    poster="/images/videos/product-promo-poster.webp"
+                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
                 />
             </section>  
             <AnimatedSection>
@@ -173,7 +175,7 @@ export const StairList = () => {
               <FeatureShowcaseCarousel
                 title='STAIR SYSTEM'
                 subtitle='Project Showcase'
-                mainImage="/images/originals/Claddings/cladding-pergolas-render.png"
+                mainImage="/images/originals/Claddings/cladding-pergolas-render.webp"
                 items={featuredStairs}
               />  
             </AnimatedSection>
@@ -183,7 +185,7 @@ export const StairList = () => {
                   title="Stair Services"
                   subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
                   onButtonClick={()=>window.location.href="/contactus"}
-                  imageUrl="/images/originals/Stairs/Nilis-house.png"
+                  imageUrl="/images/originals/Stairs/Nilis-house.webp"
                 />
               </section>
             </AnimatedSection>
@@ -195,7 +197,7 @@ export const StairList = () => {
               <div className="myth-info-bg"></div>
               <AnimatedSection>
                 <BannerImageHalf 
-                  image="images/originals/Stairs/wood-stair-indoor.png" 
+                  image="images/originals/Stairs/wood-stair-indoor.webp" 
                   title="ALUMINUM & WOOD STAIRS MYTH" 
                   subtitle="Some people believe aluminum and wood stair systems are not strong enough for outdoor use. In reality, when engineered correctly, aluminum structures combined with hardwood treads provide excellent structural strength, weather resistance, and a refined architectural appearance that lasts for years with minimal maintenance."
                   reversed={false}
@@ -204,7 +206,7 @@ export const StairList = () => {
 
               <AnimatedSection>
                 <BannerImageHalf
-                  image="images/originals/Stairs/floating-indoors.png" 
+                  image="images/originals/Stairs/floating-indoors.webp" 
                   title="FLOATING STAIRCASE MYTH" 
                   subtitle="Many assume floating staircases are unsafe or unstable because they appear to 'float' without visible support. Modern floating stair systems are designed with hidden steel or aluminum structures that provide exceptional strength while delivering a clean, contemporary design that enhances open spaces and architectural aesthetics."
                   reversed={true}
@@ -213,7 +215,7 @@ export const StairList = () => {
 
               <AnimatedSection>    
                 <BannerImageHalf
-                  image="images/originals/Stairs/composite-stair-outdoor.png" 
+                  image="images/originals/Stairs/composite-stair-outdoor.webp" 
                   title="ALUMINUM COMPOSITE STAIRS MYTH" 
                   subtitle="A common misconception is that composite stair systems look artificial and lack durability. In reality, modern composite stair materials are engineered to resist moisture, UV exposure, insects, and warping while maintaining a consistent color and texture, providing a long-lasting and low-maintenance solution for exterior staircases."
                   reversed={false}

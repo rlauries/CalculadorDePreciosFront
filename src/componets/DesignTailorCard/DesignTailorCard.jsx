@@ -8,7 +8,7 @@ export const DesignTailorCard = () => {
     <AnimatedSection>      
       <span className='design-tailored-card'>
           <div class="design-tailored-card-bg"></div>
-          <img onClick={()=>window.location.href="/tools/truss"}className='banner-image' src="images/design-tailor-img.png" alt="HeroBanner" />
+          <img onClick={()=>window.location.href="/tools/truss"}className='banner-image' src="images/design-tailor-img.webp" alt="HeroBanner" />
           
           <div className='second-banner-info'>
               <h1>Designs Tailored to You <strong> |</strong></h1>

@@ -106,7 +106,7 @@ export const Header = () => {
                      {/* LEFT SIDE IMAGE */}
                      <div className="mega-menu-image"
                           style={{
-                             backgroundImage: `url(/images/originals/Pergolas/IMG_7746.jpg)`
+                             backgroundImage: `url(/images/originals/Pergolas/IMG_7746.webp)`
                           }}                     >
                         {/* <img src="//imagesoriginals/Pergolas/IMG_7746.jpg" alt="Services" /> */}
                         <div className="mega-menu-image-overlay">

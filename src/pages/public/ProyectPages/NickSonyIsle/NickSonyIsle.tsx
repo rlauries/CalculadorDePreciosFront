@@ -52,15 +52,15 @@ const projectData = [
 const processImages = [
   {
     label: "Before",
-    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/before.png",
+    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/before.webp",
   },
   {
     label: "Fabrication",
-    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/fabrication.png",
+    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/fabrication.webp",
   },
   {
     label: "After",
-    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/after.jpeg",
+    imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/after.webp",
   },
 ];
 
@@ -76,14 +76,14 @@ const services = [
 ];
 
 const galleryImages = [
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.jpeg" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.jpeg" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/slabs.jpeg" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/cladding-wall.png" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/landing.jpeg" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/welder.png" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/top-view.jpeg" },
-  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/connection.jpeg" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/slabs.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/cladding-wall.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/landing.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/welder.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/top-view.webp" },
+  { imageUrl: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/connection.webp" },
 ];
 const seo = {
     title: "Modern Floating Staircase in Sunny Isles Beach, FL",
@@ -172,7 +172,7 @@ export const NickSonyIsle = () => {
             ]}
             buttonText="View Project"
             buttonUrl="/stairs/custom-floating-staircase-sonny-isles-miami"
-            backgroundImage="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.jpeg"
+            backgroundImage="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/hero-banner.webp"
           />
           <ProjectOverview
             paragraphs={overviewParagraphs}
@@ -185,7 +185,7 @@ export const NickSonyIsle = () => {
           />
           <ProjectVideo
             description="Watch walkthrough of this custom floating staircase in Sunny Isles Beach, FL."
-            thumbnailUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.jpeg"
+            thumbnailUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Image/back-view.webp"
             localVideoUrl="/images/Projects-done/04-14-Nick-Sonny-Isle/Footage/showcase.MOV"
           />
           <ProjectsCTA />

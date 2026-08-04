@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 
 export const HomeImprovement = () => {
     const images = [
-        { src: "images/originals/HomeImprovement/front-porch.jpeg", alt: "Home Improvement 1" },
-        { src: "images/originals/HomeImprovement/sofie-cladding.jpeg", alt: "Home Improvement 2" },
-        { src: "images/originals/HomeImprovement/big-cladding.png", alt: "Home Improvement 3" },
+        { src: "images/originals/HomeImprovement/front-porch.webp", alt: "Home Improvement 1" },
+        { src: "images/originals/HomeImprovement/sofie-cladding.webp", alt: "Home Improvement 2" },
+        { src: "images/originals/HomeImprovement/big-cladding.webp", alt: "Home Improvement 3" },
     ];
 
     const settings = {

@@ -3,7 +3,7 @@ import './Home.css';
 import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider.jsx';
 import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider.jsx';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
-import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.jsx';
+import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
@@ -26,7 +26,7 @@ const seo : SeoData = {
     canonical: "/",
 
     image:
-        "/images/originals/Claddings/Capture-1.png"
+        "/images/originals/Claddings/Capture-1.webp"
 };
 const Home = () => {
    
@@ -63,6 +63,8 @@ const Home = () => {
                     videoId="slow-video"
                     className="hero-video"
                     pauseTime={4000}
+                    poster="/images/videos/product-promo-poster.webp"
+                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
                 />
             </section>
             <PromoTicker/>
@@ -81,7 +83,7 @@ const Home = () => {
 
                             <div className="feature-card-image-wrapper">
                                 <img
-                                src="/images/originals/Claddings/Capture-1.png"
+                                src="/images/originals/Claddings/Capture-1.webp"
                                 alt="Pivot 6 XL"
                                 className="feature-card-image"
                                 />
@@ -134,7 +136,7 @@ const Home = () => {
                     <div className="myth-info-bg"></div>
                     <AnimatedSection>
                         <BannerImageHalf 
-                            image="/images/originals/Pergolas/IMG_7746.jpg" 
+                            image="/images/originals/Pergolas/IMG_7746.webp" 
                             title=" WOOD PERGOLA MYTH" 
                             subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
                             reversed={false}
@@ -144,7 +146,7 @@ const Home = () => {
                     </AnimatedSection>
                     <AnimatedSection>
                         <BannerImageHalf
-                            image="/images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.jpg" 
+                            image="/images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.webp" 
                             title=" OUTDOOR LIGHTING MYTH" 
                             subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
                             reversed={true} // Esto invierte el orden de imagen y texto
@@ -153,7 +155,7 @@ const Home = () => {
                     </AnimatedSection>
                     <AnimatedSection>    
                         <BannerImageHalf
-                            image="/images/originals/Claddings/wood-cladding-myth.png" 
+                            image="/images/originals/Claddings/wood-cladding-myth.webp" 
                             title="PVC Cladding Myth" 
                             subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
                             reversed={false}
@@ -178,7 +180,7 @@ const Home = () => {
                             </p>
                         </span>
                         
-                        <img src="/images/workers-banner.jpg" alt="" />
+                        <img src="/images/workers-banner.webp" alt="" />
                     </AnimatedSection>   
                 </div>
                 

@@ -4,7 +4,7 @@ import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.jsx';
+import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
 import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
 
@@ -30,31 +30,31 @@ const featuredPergolas: FeaturedPergola[] = [
   {
     id: 1,
     name: "Steel",
-    imageUrl: "/images/originals/Pergolas/Pergola-Steel.jpeg",
+    imageUrl: "/images/originals/Pergolas/Pergola-Steel.webp",
     linkTo: "/pergolas/steel"
   },
   {
     id: 2,
     name: "Aluminum",
-    imageUrl: "/images/originals/Pergolas/Pergola-Aluminum.jpeg",
+    imageUrl: "/images/originals/Pergolas/Pergola-Aluminum.webp",
     linkTo: "/pergolas/aluminum"
   },
   {
     id: 3,
     name: "Wood",
-    imageUrl: "/images/originals/Pergolas/Pergola-Wood.jpeg",
+    imageUrl: "/images/originals/Pergolas/Pergola-Wood.webp",
     linkTo: "/pergolas/wood"
   },
   {
     id: 4,
     name: "Insulated",
-    imageUrl: "/images/originals/Pergolas/pergola-insulated.jpeg",
+    imageUrl: "/images/originals/Pergolas/pergola-insulated.webp",
     linkTo: "/pergolas/insulated"
   },
   {
     id: 5,
     name: "LED Light",
-    imageUrl: "/images/originals/Pergolas/string-light-pergola.jpg",
+    imageUrl: "/images/originals/Pergolas/string-light-pergola.webp",
     linkTo: "/pergolas/ledlight"
   },
   
@@ -69,7 +69,7 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "Low to medium maintenance; occasional repainting or anti-rust treatment required depending on climate.",
 //     appearance: "Industrial, strong, and modern aesthetic; can look very sleek or very heavy depending on design.",
 //     cost: "Medium to High; steel material + installation can be expensive but long-lasting.",
-//     imageUrl: "images/originals/Pergolas/Pergola-Steel.jpeg"
+//     imageUrl: "images/originals/Pergolas/Pergola-Steel.webp"
 //   },
 //   {
 //     id: 2,
@@ -79,7 +79,7 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "Very low maintenance; occasional cleaning is enough. Does not rust.",
 //     appearance: "Sleek, clean, and modern; available in many colors and finishes.",
 //     cost: "Medium; cheaper than steel, but higher than wood if premium coatings are used.",
-//     imageUrl: "images/originals/Pergolas/Pergola-Aluminum.jpeg"
+//     imageUrl: "images/originals/Pergolas/Pergola-Aluminum.webp"
 //   },
 //   {
 //     id: 3,
@@ -89,7 +89,7 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "High maintenance; needs frequent treatment to avoid rotting, cracking, or pest damage.",
 //     appearance: "Natural, warm, classic look; easily customizable but varies based on wood type.",
 //     cost: "Low to Medium; materials can be affordable, but high labor costs for custom work and high long-term maintenance costs.",
-//     imageUrl: "images/originals/Pergolas/Pergola-Wood.jpeg"
+//     imageUrl: "images/originals/Pergolas/Pergola-Wood.webp"
 //   },
 //   {
 //     id: 4,
@@ -99,7 +99,7 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "Very low maintenance; insulated roof panels are designed to last decades with minimal upkeep.",
 //     appearance: "Modern and luxurious appearance; solid roof gives a finished, \"indoor-outdoor room\" feel.",
 //     cost: "High; insulated panels and extra engineering make it one of the most expensive options upfront.",
-//     imageUrl: "images/originals/Pergolas/pergola-insulated.jpeg"
+//     imageUrl: "images/originals/Pergolas/pergola-insulated.webp"
 //   },
 //   {
 //     id: 5,
@@ -109,7 +109,7 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "Low to medium maintenance; motorized systems may require occasional servicing, but the frame itself is highly resistant.",
 //     appearance: "Modern and elegant, offering clean lines and a high-tech appearance that blends function with architectural beauty.",
 //     cost: "High cost; includes mechanical or motorized systems and premium materials, but offers exceptional comfort and flexibility.",
-//     imageUrl: "images/originals/Pergolas/smart-retractable-roof-pergola.jpg"
+//     imageUrl: "images/originals/Pergolas/smart-retractable-roof-pergola.webp"
 //   },
 //   {
 //     id: 6,
@@ -119,15 +119,15 @@ const featuredPergolas: FeaturedPergola[] = [
 //     maintenance: "Very low maintenance; LED systems are energy-efficient and require minimal attention. Occasional cleaning of light fixtures recommended.",
 //     appearance: "Stylish and modern, creating a sophisticated nighttime atmosphere. Lighting can be warm, cool, or color-adjustable depending on the system.",
 //     cost: "Medium to high cost depending on lighting system complexity and material, but adds significant ambiance and value.",
-//     imageUrl: "images/originals/Pergolas/string-light-pergola.jpg"
+//     imageUrl: "images/originals/Pergolas/string-light-pergola.webp"
 //   }
 // ];
 const slides: Slide[] = [
   { id: 1, image: "/images/originals/Pergolas/Targa-Large-main.webp" },
-  { id: 2, image: "/images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.jpeg" },
-  { id: 3, image: "/images/originals/Pergolas/beauty.jpg" },
+  { id: 2, image: "/images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.webp" },
+  { id: 3, image: "/images/originals/Pergolas/beauty.webp" },
   { id: 4, image: "/images/originals/Pergolas/big-britgt-pergola.webp" },
-  { id: 5, image: "/images/originals/Pergolas/Pergola-moderna.png" },
+  { id: 5, image: "/images/originals/Pergolas/Pergola-moderna.webp" },
   
 ];
 
@@ -140,7 +140,7 @@ const seo: SeoData = {
     canonical: "/pergolas",
 
     image:
-        "/images/originals/Pergolas/aluminum-modern-pergola.jpeg"
+        "/images/originals/Pergolas/aluminum-modern-pergola.webp"
 };
 
 const PergolaList = () => {
@@ -184,6 +184,8 @@ const PergolaList = () => {
                   videoId="slow-video"
                   className="hero-video"
                   pauseTime={4000}
+                  poster="/images/videos/product-promo-poster.webp"
+                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
               />
           </section> 
           
@@ -231,7 +233,7 @@ const PergolaList = () => {
             <FeatureShowcaseCarousel
               title='OUR SYSTEMS'
               subtitle='Project Showcase'
-              mainImage="/images/originals/Fences/rail-view.png"
+              mainImage="/images/originals/Fences/rail-view.webp"
               items={featuredPergolas}
             />
           </AnimatedSection>
@@ -240,7 +242,7 @@ const PergolaList = () => {
               title="Pergola Styles"
               subtitle='From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality'
               onButtonClick={()=>window.location.href="/contactus"}
-              imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.jpeg"
+              imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.webp"
             />     
           </AnimatedSection>
         
@@ -252,7 +254,7 @@ const PergolaList = () => {
 
                     <AnimatedSection>
                       <BannerImageHalf 
-                        image="/images/originals/Pergolas/led-myth.png" 
+                        image="/images/originals/Pergolas/led-myth.webp" 
                         title="LED PERGOLA LIGHTING MYTH" 
                         subtitle="Many people believe LED lighting for pergolas is too harsh or unreliable outdoors. In reality, modern exterior-grade LED systems are designed to withstand weather, humidity, and temperature changes while providing soft, energy-efficient illumination that enhances the ambiance of your outdoor space."
                         reversed={false}
@@ -261,7 +263,7 @@ const PergolaList = () => {
 
                     <AnimatedSection>
                       <BannerImageHalf
-                        image="/images/originals/Pergolas/wood-myth.png" 
+                        image="/images/originals/Pergolas/wood-myth.webp" 
                         title="WOOD PERGOLA MYTH" 
                         subtitle="A common misconception is that wood pergolas quickly rot or require constant maintenance. When properly sealed and built with quality materials, wood pergolas can last for decades while offering a timeless natural look that blends beautifully with outdoor environments."
                         reversed={true}
@@ -270,7 +272,7 @@ const PergolaList = () => {
 
                     <AnimatedSection>    
                       <BannerImageHalf
-                        image="/images/originals/Pergolas/pergola-insulated-panels-myth.png" 
+                        image="/images/originals/Pergolas/pergola-insulated-panels-myth.webp" 
                         title="INSULATED PANEL PERGOLA MYTH" 
                         subtitle="Some believe insulated roof panels make pergolas look bulky or overly industrial. In reality, modern insulated panels provide excellent thermal protection, reduce heat under the structure, and create a clean architectural finish that enhances comfort and usability year-round."
                         reversed={false}

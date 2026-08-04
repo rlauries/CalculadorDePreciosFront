@@ -55,17 +55,17 @@ const projectData = [
 const processImages = [
   {
     label: "Before",
-    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/before.jpeg",
+    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/before.webp",
     alt: "Covered patio before custom cladding installation in Hollywood Florida",
   },
   {
     label: "Fabrication",
-    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/instalation.png",
+    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/instalation.webp",
     alt: "Custom cladding fabrication process in Hollywood Florida",
   },
   {
     label: "After",
-    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.png",
+    imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp",
     alt: "Completed custom cladding installation in Hollywood Florida",
   },
 ];
@@ -82,13 +82,13 @@ const services = [
 ];
     
 const galleryImages = [
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/first-day.jpeg", alt: "First day of custom cladding installation in Hollywood Florida"},
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/bar.jpeg", alt: "Outdoor bar cladding in Hollywood Florida" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/side-panel.jpeg", alt: "Side panel cladding in Hollywood Florida" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-back.jpeg", alt: "Inside back view of custom cladding in Hollywood Florida" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside.jpeg", alt: "Inside view of custom cladding in Hollywood Florida" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/outlet-detail.jpeg", alt: "Outlet detail of custom cladding in Hollywood Florida" },
-  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-out.jpeg", alt: "Inside out view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/first-day.webp", alt: "First day of custom cladding installation in Hollywood Florida"},
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/bar.webp", alt: "Outdoor bar cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/side-panel.webp", alt: "Side panel cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-back.webp", alt: "Inside back view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside.webp", alt: "Inside view of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/outlet-detail.webp", alt: "Outlet detail of custom cladding in Hollywood Florida" },
+  { imageUrl: "/images/Projects-done/07-26-Justing-Hollywood/Image/inside-out.webp", alt: "Inside out view of custom cladding in Hollywood Florida" },
   { imageUrl: "/images/Logo/logo-creativo.png", alt: "Lauries Welding Group Logo" },
 ];
   const seo = {
@@ -100,7 +100,7 @@ const galleryImages = [
     canonical: "/claddings/justin-hollywood-cladding",
 
     image:
-        "/images/Projects-done/07-26-Justing-Hollywood/Image/thumbnail.png",
+        "/images/Projects-done/07-26-Justing-Hollywood/Image/thumbnail.webp",
 
     location: "Hollywood, Florida",
 
@@ -152,7 +152,7 @@ export const JustinHollywoodCladding = () => {
             ]}
             buttonText="VIEW PROJECT"
             buttonUrl="#project-overview"
-            backgroundImage="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
+            backgroundImage="/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp"
           />
           <section id="project-overview">
             <ProjectOverview
@@ -167,7 +167,7 @@ export const JustinHollywoodCladding = () => {
           />
           <ProjectVideo
               description="This project showcases the transformation of a standard covered patio into a modern outdoor living space."
-              thumbnailUrl="/images/Projects-done/07-26-Justing-Hollywood/Image/after.png"
+              thumbnailUrl="/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp"
               localVideoUrl="/images/Projects-done/07-26-Justing-Hollywood/Footage/Justin-Hollywood-Cladding.mp4"
           />
           <ProjectsCTA/>

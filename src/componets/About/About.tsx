@@ -9,7 +9,7 @@ const About: React.FC = () => {
           
             <div
               className="about-card-home card-1"
-              style={{ backgroundImage: "url('/images/originals/Fences/modern-yan-gate.png')" }}
+              style={{ backgroundImage: "url('/images/originals/Fences/modern-yan-gate.webp')" }}
               
             >
               <a href="/fences">

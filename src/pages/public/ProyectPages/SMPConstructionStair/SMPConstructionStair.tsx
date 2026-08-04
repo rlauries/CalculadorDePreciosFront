@@ -48,15 +48,15 @@ const projectData = [
 const processImages = [
   {
     label: "Before",
-    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/before.jpg",
+    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/before.webp",
   },
   {
     label: "Fabrication",
-    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/fabrication.png",
+    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/fabrication.webp",
   },
   {
     label: "After",
-    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.jpg",
+    imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.webp",
   },
 ];
 const services = [
@@ -71,14 +71,14 @@ const services = [
 ];
 
 const galleryImages = [
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.jpg" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/stair-esquina-mejorada.png" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/cedar-slab.png" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.png" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/PHOTO-2023-08-18-12-47-10.jpg" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/soldador-stair.png" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.png" },
-  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/estructura-hierro.png" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/stair-esquina-mejorada.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/cedar-slab.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/PHOTO-2023-08-18-12-47-10.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/soldador-stair.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/after.webp" },
+  { imageUrl: "/images/Projects-done/05-26-Stair-Downtown/estructura-hierro.webp" },
 ];
 const seo = {
     title: "Custom Floating Staircase in Downtown Miami, FL",
@@ -90,7 +90,7 @@ const seo = {
         "/stairs/custom-floating-staircase-downtown-miami",
 
     image:
-        "/images/Projects-done/05-26-Stair-Downtown/hero-banner.png",
+        "/images/Projects-done/05-26-Stair-Downtown/hero-banner.webp",
 
     location:
         "Downtown Miami, Florida",
@@ -146,7 +146,7 @@ export const SMPConstructionStair = () => {
           ]}
           buttonText="VIEW PROJECT"
           buttonUrl="/stairs/custom-floating-staircase-downtown-miami"
-          backgroundImage="/images/Projects-done/05-26-Stair-Downtown/hero-banner.png"
+          backgroundImage="/images/Projects-done/05-26-Stair-Downtown/hero-banner.webp"
         />
         <ProjectOverview
           paragraphs={overviewParagraphs}
@@ -159,7 +159,7 @@ export const SMPConstructionStair = () => {
         />
         <ProjectVideo
           description="Watch walkthrough of this custom floating staircase in Downtown Miami."
-          thumbnailUrl="/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.png"
+          thumbnailUrl="/images/Projects-done/05-26-Stair-Downtown/stair-diagonal.webp"
           localVideoUrl="/images/Projects-done/05-26-Stair-Downtown/showcase.mp4"
         />
         <ProjectsCTA />

@@ -40,6 +40,7 @@
     "build:react": "react-scripts build",
     "prerender": "node scripts/prerender.mjs",
     "convert-images": "node scripts/convert-images.mjs",
+    "resize-images": "node scripts/resize-images.mjs",
     "check-image-references": "node scripts/update-image-references.mjs",
     "update-image-references": "node scripts/update-image-references.mjs --write",
     "prebuild": "npx playwright install --with-deps chromium",

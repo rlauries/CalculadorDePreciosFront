@@ -153,6 +153,7 @@ export const JustinHollywoodCladding = () => {
             buttonText="VIEW PROJECT"
             buttonUrl="#project-overview"
             backgroundImage="/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp"
+            backgroundAlt="Completed outdoor cladding project in Hollywood, Florida"
           />
           <section id="project-overview">
             <ProjectOverview

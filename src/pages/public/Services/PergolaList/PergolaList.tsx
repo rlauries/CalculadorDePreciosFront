@@ -6,7 +6,7 @@ import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCase
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
-import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
 
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";

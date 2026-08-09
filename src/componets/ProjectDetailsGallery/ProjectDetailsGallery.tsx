@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import "./ProjectDetailsGallery.css";
 
 export type ServiceItem = {
@@ -8,7 +8,9 @@ export type ServiceItem = {
 
 export type GalleryImage = {
   imageUrl: string;
-  alt?: string;
+  alt: string;
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -25,7 +27,7 @@ export function ProjectDetailsGallery({ services, images }: Props) {
         <ul>
           {services.map(({ label, icon: Icon }) => (
             <li key={label}>
-              <Icon />
+              <Icon aria-hidden="true" focusable="false" />
               <span>{label}</span>
             </li>
           ))}
@@ -36,11 +38,15 @@ export function ProjectDetailsGallery({ services, images }: Props) {
         <h3>PROJECT GALLERY</h3>
 
         <div className="gallery-grid">
-          {images.map((image, index) => (
+          {images.map((image) => (
             <img
-              key={index}
+              key={image.imageUrl}
               src={image.imageUrl}
-              alt={image.alt ?? `Project image ${index + 1}`}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>

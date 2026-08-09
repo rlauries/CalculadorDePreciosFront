@@ -128,7 +128,28 @@
 .hero-thumb-image {
   transition: all 0.25s ease;
 }
+.hero-showcase-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
+.hero-showcase-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 /* Ajustes responsive */
 @media (max-width: 900px) {
   .hero-showcase-content {

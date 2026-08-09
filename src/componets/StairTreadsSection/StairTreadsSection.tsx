@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "./StairTreadsSection.css";
 import { SectionIntro } from "../SectionIntro/SectionIntro.tsx";
 
@@ -52,7 +52,7 @@ const treadItems: TreadItem[] = [
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
   {
-    name: "White-Oak.png",
+    name: "White Oak",
     image: "/images/originals/Stairs/Wood-Types/White-Oak.webp",
     thicknesses: ["2", "2.5", "3", "3.5", "4", "landing"]
   },
@@ -62,8 +62,12 @@ const treadItems: TreadItem[] = [
 export const StairTreadsSection: React.FC = () => {
   const [selectedThickness, setSelectedThickness] = useState<string>("2");
 
-  const filteredItems = treadItems.filter((item) =>
-    item.thicknesses.includes(selectedThickness)
+  const filteredItems = useMemo(
+    () =>
+      treadItems.filter((item) =>
+        item.thicknesses.includes(selectedThickness)
+      ),
+    [selectedThickness]
   );
     
   return (
@@ -79,10 +83,11 @@ export const StairTreadsSection: React.FC = () => {
             <button
               key={option.value}
               className={`stair-treads-tab ${
-                selectedThickness === option.value ? "active" : ""
-              }`}
+                  selectedThickness === option.value ? "active" : ""
+                }`}
               onClick={() => setSelectedThickness(option.value)}
               type="button"
+              aria-pressed={selectedThickness === option.value}
             >
               {option.label}
             </button>
@@ -97,6 +102,8 @@ export const StairTreadsSection: React.FC = () => {
                   src={item.image}
                   alt={item.name}
                   className="stair-treads-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 className="stair-treads-name">{item.name}</h3>

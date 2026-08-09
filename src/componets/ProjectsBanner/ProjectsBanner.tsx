@@ -8,6 +8,7 @@ type ProjectsBannerProps = {
   buttonText?: string;
   buttonUrl?: string;
   backgroundImage: string;
+  backgroundAlt?: string;
 };
 
 export function ProjectsBanner({
@@ -17,12 +18,19 @@ export function ProjectsBanner({
   buttonText = "VIEW PROJECT",
   buttonUrl = "#",
   backgroundImage,
+  backgroundAlt = "",
 }: ProjectsBannerProps) {
   return (
-    <section
-      className="projects-banner"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <section className="projects-banner">
+      <img
+        className="projects-banner-background"
+        src={backgroundImage}
+        alt={backgroundAlt}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+      />
+
       <div className="projects-banner-overlay" />
 
       <div className="projects-banner-content">
@@ -32,15 +40,15 @@ export function ProjectsBanner({
 
         {features.length > 0 && (
           <div className="projects-banner-features">
-            {features.map((feature, index) => (
-              <span key={index}>{feature}</span>
+            {features.map((feature) => (
+              <span key={feature}>{feature}</span>
             ))}
           </div>
         )}
 
         <a href={buttonUrl} className="projects-banner-button">
           {buttonText}
-          <ArrowRight size={18} />
+          <ArrowRight size={18} aria-hidden="true" />
         </a>
       </div>
     </section>

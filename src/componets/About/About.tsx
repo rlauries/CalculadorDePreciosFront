@@ -1,62 +1,84 @@
-import React from 'react';
-import './About.css';
+import React from "react";
+import "./About.css";
 
+type AboutCardProps = {
+  href: string;
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+  className: string;
+};
+
+function AboutCard({
+  href,
+  image,
+  alt,
+  title,
+  description,
+  className,
+}: AboutCardProps) {
+  return (
+    <a
+      href={href}
+      className={`about-card-home ${className}`}
+      aria-label={`View ${title}`}
+    >
+      <img
+        className="about-card-image"
+        src={image}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+
+      <div className="about-card-overlay" />
+
+      <div className="card-home-text">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </a>
+  );
+}
 
 const About: React.FC = () => {
   return (
     <section className="about-section">
       <div className="about-grid-home">
-          
-            <div
-              className="about-card-home card-1"
-              style={{ backgroundImage: "url('/images/originals/Fences/modern-yan-gate.webp')" }}
-              
-            >
-              <a href="/fences">
-                <div className="card-home-text">
-                  <h3>OUR LEGACY</h3>
-                  <p>
-                    Achieve your ideas.
-                  </p>
-                </div>
-              </a>
-            </div>
+        <AboutCard
+          href="/fences"
+          image="/images/originals/Fences/modern-yan-gate.webp"
+          alt="Modern custom aluminum gate and fence"
+          title="OUR LEGACY"
+          description="Achieve your ideas."
+          className="card-1"
+        />
+
         <div className="about-card-home card-2">
           <div className="card-home-text">
             <h3>WHAT WE STAND FOR</h3>
-            <p>
-              The results we deliver.
-            </p>
+            <p>The results we deliver.</p>
           </div>
         </div>
 
-        <div
-          className="about-card-home card-3"
-          style={{ backgroundImage: "url('/images/originals/Pergolas/big-pergola-hotel.png')" }}
-        >
-          <a href="/pergolas">
-            <div className="card-home-text">
-              <h3>OUR APPROACH</h3>
-              <p>
-                Strategies that evolve with their goals.
-              </p>
-            </div>
-          </a>
-        </div>
+        <AboutCard
+          href="/pergolas"
+          image="/images/originals/Pergolas/big-pergola-hotel.webp"
+          alt="Large custom pergola for an outdoor hospitality area"
+          title="OUR APPROACH"
+          description="Strategies that evolve with their goals."
+          className="card-3"
+        />
 
-        <div
-          className="about-card-home card-4"
-          style={{ backgroundImage: "url('/images/originals/Stairs/composite-stair-outdoor.png')" }}
-        >
-          <a href="/stairs">
-            <div className="card-home-text">
-              <h3>THE IMPACT</h3>
-              <p>
-                Informed decisions, and stay financially resilient.
-              </p>
-            </div>
-          </a>
-        </div>
+        <AboutCard
+          href="/stairs"
+          image="/images/originals/Stairs/composite-stair-outdoor.webp"
+          alt="Custom aluminum and composite outdoor staircase"
+          title="THE IMPACT"
+          description="Informed decisions and structures built for long-term value."
+          className="card-4"
+        />
 
         <div className="about-card-home card-5">
           <div className="dot" />
@@ -66,4 +88,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

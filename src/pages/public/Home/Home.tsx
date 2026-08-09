@@ -1,8 +1,8 @@
 import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion.jsx';
 import './Home.css';
-import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider.jsx';
-import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider.jsx';
-import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider.tsx';
+import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider.tsx';
+import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
 import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';

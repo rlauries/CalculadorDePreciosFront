@@ -4,7 +4,7 @@ import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedS
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
 import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
 import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
-import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.jsx';
+import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
 import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 

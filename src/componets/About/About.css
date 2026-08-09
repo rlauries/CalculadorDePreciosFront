@@ -3,55 +3,85 @@
   color: white;
   width: 100%;
   padding: 80px 40px;
-  
   border-radius: 5px;
 }
 
 .about-grid-home {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);  /* 6 columnas */
-  grid-template-rows: repeat(2,250px);   /* 2 filas */
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 250px);
   gap: 20px;
-  
 }
 
-
-/* Estilos comunes para las tarjetas */
+/* Tarjetas generales */
 .about-card-home {
-  background-size: cover;         /* 🔁 Escala la imagen para cubrir todo el área */
-  background-position: center;    /* 📍 Centra la imagen dentro del área */
-  background-repeat: no-repeat;   /* 🚫 Evita que la imagen se repita */
   width: 100%;
   height: 100%;
   background-color: #1a1a1a;
   border-radius: 16px;
   overflow: hidden;
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: relative;
-  
+
+  color: white;
+  text-decoration: none;
 }
 
-.card-home-text {
-  border-radius: 8px;
-  position: relative;
+/* Imagen que sustituye al background-image */
+.about-card-image {
+  position: absolute;
+  inset: 0;
 
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+
+  transition: transform 0.4s ease;
+}
+
+/* Oscurecimiento sobre la imagen */
+.about-card-overlay {
+  position: absolute;
+  inset: 0;
   z-index: 1;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  pointer-events: none;
+}
+
+/* Mantiene el texto por encima */
+.card-home-text {
+  position: relative;
+  z-index: 2;
+
   width: 90%;
-  margin: 0 auto;
-  padding: 15px;
   margin: 15px auto;
+  padding: 15px;
+
+  border-radius: 8px;
+
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-   background: radial-gradient(
+
+  background:
+    radial-gradient(
       circle at 20% 10%,
       rgba(0, 0, 0, 0.05),
       transparent 50%
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
-
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.85)
+    );
 }
-
 
 .about-card-home h3 {
   font-size: 1.7rem;
@@ -64,67 +94,22 @@
   font-size: 29px;
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  font-family: 'Alex Brush', cursive;
+  font-family: "Alex Brush", cursive;
 }
 
-.dot {
-  background-color: rgb(241, 104, 58);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: auto;
+/* Efecto opcional */
+.about-card-home:hover .about-card-image {
+  transform: scale(1.04);
+}
+.card-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 
 .card-2 {
   grid-column: 3 / span 2;
   grid-row: 1;
-  
   background-color: rgb(241, 104, 58);
-  
-}
-.card-2 .card-home-text{
-    color: white;
-    background: transparent;
-    margin: 5% auto;
-    text-shadow: none;
-   
-
-}
-.card-2 .card-home-text h3{
-    font-size: 20px;
-    color: white;
-    margin-bottom: 0px;
-}
-.card-2 .card-home-text p{
-    color: white;
-
-}    
-
-
-.card-3::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* ✅ opacidad deseada */
-  z-index: 0;
-}
-
-.card-4::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* ✅ opacidad deseada */
-  z-index: 0;
-}
-
-.card-5 {
-  grid-column: 6/ span 1;
-  grid-row: 2;
-  
-}
-.card-1 {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
 }
 
 .card-3 {
@@ -136,10 +121,55 @@
   grid-column: 3 / span 3;
   grid-row: 2;
 }
-.card-link {
-  display: block;
-  width: 100%;
-  height: 100%;
+
+.card-5 {
+  grid-column: 6 / span 1;
+  grid-row: 2;
+
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(241, 104, 58);
+
+  box-shadow:
+        0 0 12px rgba(241,104,58,.5),
+        0 0 30px rgba(241,104,58,.25);
+}
+.card-1 .about-card-overlay {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.card-3 .about-card-overlay {
+  background: rgba(55, 51, 51, 0.3);
+}
+
+.card-4 .about-card-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+.card-2 {
+  justify-content: center;
+}
+
+.card-2 .card-home-text {
+  color: white;
+  background: transparent;
+  margin: 5% auto;
+  text-shadow: none;
+}
+
+.card-2 .card-home-text h3 {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0;
+}
+
+.card-2 .card-home-text p {
+  color: white;
 }
 
 /* Large tablet */

@@ -66,8 +66,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-slick": "^0.23.13",
     "playwright": "^1.61.1",

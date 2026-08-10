@@ -15,7 +15,7 @@ export const SectionIntro: React.FC<SectionIntroProps> = ({
   
 }) => {
   return (
-    <AnimatedSection>
+    
       <div className="section-intro">
         <h2>
           {title} <strong>|</strong>
@@ -23,6 +23,6 @@ export const SectionIntro: React.FC<SectionIntroProps> = ({
         
         <p>{description}</p>
       </div>
-    </AnimatedSection>
+    
   );
 };

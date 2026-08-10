@@ -1,5 +1,4 @@
 import React from "react";
-import { AnimatedSection } from "../AnimatedSection/AnimatedSection.tsx";
 import "./SectionIntro.css";
 
 interface SectionIntroProps {

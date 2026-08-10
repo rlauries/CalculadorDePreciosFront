@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Gallery.css';
 import '../../../pages/public/Home/Home.css';
-import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.jsx';
+import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.tsx';
 import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
 import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';

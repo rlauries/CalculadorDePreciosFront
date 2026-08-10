@@ -1,6 +1,6 @@
 import './FenceList.css';
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.jsx';
+import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.tsx';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';

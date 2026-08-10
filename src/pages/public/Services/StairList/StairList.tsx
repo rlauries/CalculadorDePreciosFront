@@ -1,4 +1,4 @@
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner'
+import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.tsx';
 import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
 import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';

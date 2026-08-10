@@ -1,5 +1,5 @@
 
-import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner.jsx";
+import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner.tsx";
 // Usa el MISMO import de DesignTailorCard que en FenceList
 import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignTailorCard.jsx";
 import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";

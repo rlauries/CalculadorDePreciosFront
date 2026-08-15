@@ -1,18 +1,42 @@
-import './PergolaList.css'; // si quieres agregar estilos aparte
-import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.tsx';
-import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
-import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
-import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
-import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
-import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
+import React, { lazy, Suspense } from "react";
+
+import "./PergolaList.css";
+
+import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
+import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
+import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.tsx";
 
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
-import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
-import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
+import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
+import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+
+
+const DesignTailorCard = lazy(() =>
+  import("../../../../componets/DesignTailorCard/DesignTailorCard.jsx")
+    .then(module => ({ default: module.DesignTailorCard }))
+);
+
+const HeroBanner = lazy(() =>
+  import("../../../../componets/HeroBanner/HeroBanner.tsx")
+    .then(module => ({ default: module.HeroBanner }))
+);
+
+const AnimatedShowCaseCarousel = lazy(() =>
+  import("../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
+    .then(module => ({ default: module.AnimatedShowCaseCarousel }))
+);
+
+const FeatureShowcaseCarousel = lazy(() =>
+  import("../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx")
+    .then(module => ({ default: module.FeatureShowcaseCarousel }))
+);
+
+const BannerImageHalf = lazy(() =>
+  import("../../../../componets/Half-Image-Banner/BannerImageHalf.tsx")
+    .then(module => ({ default: module.BannerImageHalf }))
+);
 
 interface FeaturedPergola {
   id: number;
@@ -60,7 +84,7 @@ const featuredPergolas: FeaturedPergola[] = [
   
 ];
 
-// const PergolasDB = [
+
 //   {
 //     id: 1,
 //     name: "Steel Pergola",
@@ -189,70 +213,36 @@ const PergolaList = () => {
               />
           </section> 
           
-          <AnimatedSection>
-            <SectionIntro 
-                title="Explore Our Pergola Styles" 
-                description='Discover the perfect pergola that suits your lifestyle — from modern aluminum designs to classic wooden structures. Compare features and find your ideal match.'
-            />
-          </AnimatedSection>  
+          <SectionIntro 
+            title="Explore Our Pergola Styles" 
+            description="Discover the perfect pergola that suits your lifestyle — from modern aluminum designs to classic wooden structures. Compare features and find your ideal match."
+          />
           
-            
-          {/* <AnimatedSection>
-            <div className="pergola-list-grid">
-              {pergolas.map((item) => (
-                <div className="pergola-card" key={item.id}>
-                  <div className="pergola-image" onClick={() => openModal(item)}>
-                    {item.imageUrl ? (
-                      <div className="image-wrapper">
-                        <img src={item.imageUrl} alt={item.name} />
-                        <div className="image-label">{item.name}</div>
-                      </div>
-                    ) : (
-                      <div className="no-image">No Image</div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>  
-          {showModal && selectedPergola && (
-            <div className="modal-overlay" onClick={closeModal}>
-              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-button" onClick={closeModal}>×</button>
-                <h2>{selectedPergola.name}<strong class="hero-strong"> | </strong></h2>
-                <img src={selectedPergola.imageUrl} alt={selectedPergola.name} />
-                <p><strong>Overview:</strong> {selectedPergola.overview}</p>
-                <p><strong>Durability:</strong> {selectedPergola.durability}</p>
-                <p><strong>Maintenance:</strong> {selectedPergola.maintenance}</p>
-                <p><strong>Appearance:</strong> {selectedPergola.appearance}</p>
-                <p><strong>Cost:</strong> {selectedPergola.cost}</p>
-              </div>
-            </div>
-          )} */}
-          <AnimatedSection>
-            <FeatureShowcaseCarousel
-              title='OUR SYSTEMS'
-              subtitle='Project Showcase'
-              mainImage="/images/originals/Fences/rail-view.webp"
-              items={featuredPergolas}
-            />
-          </AnimatedSection>
-          <AnimatedSection>
-            <HeroBanner
-              title="Pergola Styles"
-              subtitle='From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality'
-              onButtonClick={()=>window.location.href="/contactus"}
-              imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.webp"
-            />     
-          </AnimatedSection>
-        
-          <section>
-                    <div className='myths-info' 
-                        
-              >
-                  <div className="myth-info-bg"></div>
+          <Suspense fallback={null}>
 
-                    <AnimatedSection>
+            <AnimatedSection>
+              <FeatureShowcaseCarousel
+                title="OUR SYSTEMS"
+                subtitle="Project Showcase"
+                mainImage="/images/originals/Fences/rail-view.webp"
+                items={featuredPergolas}
+              />
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <HeroBanner
+                title="Pergola Styles"
+                subtitle="From sleek aluminum to timeless wood, explore the perfect pergola that elevates your outdoor space. Discover styles that blend beauty, shade, and functionality"
+                onButtonClick={() => window.location.href = "/contactus"}
+                imageUrl="/images/originals/Pergolas/aluminum-modern-pergola.webp"
+              />
+            </AnimatedSection>
+
+            <section>
+              <div className="myths-info">
+                <div className="myth-info-bg"></div>
+
+                <AnimatedSection>
                       <BannerImageHalf 
                         image="/images/originals/Pergolas/led-myth.webp" 
                         title="LED PERGOLA LIGHTING MYTH" 
@@ -277,23 +267,26 @@ const PergolaList = () => {
                         subtitle="Some believe insulated roof panels make pergolas look bulky or overly industrial. In reality, modern insulated panels provide excellent thermal protection, reduce heat under the structure, and create a clean architectural finish that enhances comfort and usability year-round."
                         reversed={false}
                       />
-                    </AnimatedSection>  
-                  </div>
-          </section>
-          
-          <AnimatedSection>
+                    </AnimatedSection> 
+              </div>
+            </section>
+
+            <AnimatedSection>
               <AnimatedShowCaseCarousel 
                 slides={slides}
                 eyebrow="Next-Generation Materials"
                 headline="CREATE LUXURY OUTDOOR SPACES"
                 subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
                 buttonLabel="Explore Fans"
-                onButtonClick={() => (window.location.href = "/fans")}
+                onButtonClick={() => window.location.href = "/fans"}
               />
-          </AnimatedSection>
-          <AnimatedSection>
-            <DesignTailorCard/>
-          </AnimatedSection>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <DesignTailorCard />
+            </AnimatedSection>
+
+          </Suspense>
         </section>
         
       </main>

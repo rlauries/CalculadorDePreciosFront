@@ -1,18 +1,39 @@
+import React, { lazy, Suspense } from "react";
 
-import { HeroBanner } from "../../../../componets/HeroBanner/HeroBanner.tsx";
-// Usa el MISMO import de DesignTailorCard que en FenceList
-import { DesignTailorCard } from "../../../../componets/DesignTailorCard/DesignTailorCard.jsx";
-import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
-import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
-import { AnimatedShowCaseCarousel } from "../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx";
 import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.tsx";
-import { FeatureShowcaseCarousel } from "../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx";
-import { BannerImageHalf } from "../../../../componets/Half-Image-Banner/BannerImageHalf.tsx";
-import SEO  from "../../../../componets/SEO/SEO.tsx";
+import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
+import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
+
+import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
 import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
+
+const HeroBanner = lazy(() =>
+  import("../../../../componets/HeroBanner/HeroBanner.tsx")
+    .then(module => ({ default: module.HeroBanner }))
+);
+
+const DesignTailorCard = lazy(() =>
+  import("../../../../componets/DesignTailorCard/DesignTailorCard.jsx")
+    .then(module => ({ default: module.DesignTailorCard }))
+);
+
+const AnimatedShowCaseCarousel = lazy(() =>
+  import("../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
+    .then(module => ({ default: module.AnimatedShowCaseCarousel }))
+);
+
+const FeatureShowcaseCarousel = lazy(() =>
+  import("../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx")
+    .then(module => ({ default: module.FeatureShowcaseCarousel }))
+);
+
+const BannerImageHalf = lazy(() =>
+  import("../../../../componets/Half-Image-Banner/BannerImageHalf.tsx")
+    .then(module => ({ default: module.BannerImageHalf }))
+);
 
 interface FeaturedCladding {
   id: number;
@@ -46,7 +67,7 @@ const featuredCladdings : FeaturedCladding[] = [
   },
 ];
 
-// const CladdingServicesDB = [
+
 //   {
 //     id: 101,
 //     name: "Composite Cladding",
@@ -157,101 +178,67 @@ export const CladdingList = () => {
               />
           </section>      
           
-          <AnimatedSection>
-            <SectionIntro 
-                title="Explore Our Cladding Options" 
-                description="From warm wood textures to low-maintenance composite and PVC, discover cladding solutions that elevate your ceilings, walls, pergolas, and outdoor structures with lasting style and protection."
-            />
-          </AnimatedSection> 
+          <SectionIntro
+            title="Explore Our Cladding Options"
+            description="From warm wood textures to low-maintenance composite and PVC, discover cladding solutions that elevate your ceilings, walls, pergolas, and outdoor structures with lasting style and protection."
+          />
             
-          {/* {showModal && selectedCladding && (
-            <div className="modal-overlay" onClick={closeModal}>
-              <div
-                className="modal-content"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button className="close-button" onClick={closeModal}>
-                  ×
-                </button>
-                <h2>
-                  {selectedCladding.name}
-                  <strong className="hero-strong"> | </strong>
-                </h2>
-                <img
-                  src={selectedCladding.imageUrl}
-                  alt={selectedCladding.name}
-                />
-                <p>
-                  <strong>Overview:</strong> {selectedCladding.overview}
-                </p>
-                <p>
-                  <strong>Durability:</strong> {selectedCladding.durability}
-                </p>
-                <p>
-                  <strong>Versatility:</strong> {selectedCladding.versatility}
-                </p>
-                <p>
-                  <strong>Maintenance:</strong> {selectedCladding.maintenance}
-                </p>
-                <p>
-                  <strong>Aesthetic Options:</strong>{" "}
-                  {selectedCladding.aestheticOptions}
-                </p>
-              </div>
-            </div>
-          )} */}
-          <AnimatedSection>
+          
+          <Suspense fallback={null}>
+
+            <AnimatedSection>
               <FeatureShowcaseCarousel
                 title="CLADDING SYSTEMS"
                 subtitle="Project Showcase"
                 mainImage="/images/originals/Claddings/cladding-pergolas-render.webp"
                 items={featuredCladdings}
               />
+            </AnimatedSection>
 
-          </AnimatedSection>  
-          <AnimatedSection>
-            <section>
-              <HeroBanner
-                title="Cladding Service"
-                subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
-                onButtonClick={() => (window.location.href = "/contactus")}
-                imageUrl="/images/originals/Claddings/hero-cladding.webp"
-              />
+            <AnimatedSection>
+              <section>
+                <HeroBanner
+                  title="Cladding Service"
+                  subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
+                  onButtonClick={() => (window.location.href = "/contactus")}
+                  imageUrl="/images/originals/Claddings/hero-cladding.webp"
+                />
+              </section>
+            </AnimatedSection>
+
+            <section className="myths-info">
+                <div className="myth-info-bg"></div>
+
+                <AnimatedSection>
+                  <BannerImageHalf
+                    image="/images/originals/Claddings/wood-cladding-myth.webp"
+                    title="CLADDING WOOD MYTH"
+                    subtitle="Many people believe wood cladding quickly deteriorates outdoors and requires constant maintenance..."
+                    reversed={false}
+                  />
+                </AnimatedSection>
+
+                <AnimatedSection>
+                <BannerImageHalf
+                  image="/images/originals/Claddings/MyLogHouse.webp" 
+                  title="CLADDING PVC MYTH" 
+                  subtitle="A common misconception is that PVC cladding looks artificial and lacks durability. Modern exterior-grade PVC systems are engineered to resist moisture, UV exposure, warping, and rot while maintaining a clean architectural finish. They provide a long-lasting solution with very little maintenance."
+                  reversed={true}
+                /> 
+              </AnimatedSection>
+
+              <AnimatedSection>    
+                <BannerImageHalf
+                  image="/images/originals/Claddings/garage-composite.webp" 
+                  title="CLADDING COMPOSITE MYTH" 
+                  subtitle="Some assume composite cladding fades quickly or cannot replicate the beauty of natural materials. In reality, modern composite systems are designed with advanced textures and color stability that resist fading, moisture, and insects while maintaining a consistent, elegant appearance for years."
+                  reversed={false}
+                />
+              </AnimatedSection>            
             </section>
-          </AnimatedSection>
-          <section className='myths-info'>
-            <div className="myth-info-bg"></div>
 
             <AnimatedSection>
-              <BannerImageHalf 
-                image="/images/originals/Claddings/wood-cladding-myth.webp" 
-                title="CLADDING WOOD MYTH" 
-                subtitle="Many people believe wood cladding quickly deteriorates outdoors and requires constant maintenance. In reality, properly treated and sealed exterior wood cladding can withstand weather, moisture, and sun exposure for many years while delivering a warm, natural architectural look that synthetic materials often try to imitate."
-                reversed={false}
-              />
-            </AnimatedSection>
-
-            <AnimatedSection>
-              <BannerImageHalf
-                image="/images/originals/Claddings/MyLogHouse.webp" 
-                title="CLADDING PVC MYTH" 
-                subtitle="A common misconception is that PVC cladding looks artificial and lacks durability. Modern exterior-grade PVC systems are engineered to resist moisture, UV exposure, warping, and rot while maintaining a clean architectural finish. They provide a long-lasting solution with very little maintenance."
-                reversed={true}
-              /> 
-            </AnimatedSection>
-
-            <AnimatedSection>    
-              <BannerImageHalf
-                image="/images/originals/Claddings/garage-composite.webp" 
-                title="CLADDING COMPOSITE MYTH" 
-                subtitle="Some assume composite cladding fades quickly or cannot replicate the beauty of natural materials. In reality, modern composite systems are designed with advanced textures and color stability that resist fading, moisture, and insects while maintaining a consistent, elegant appearance for years."
-                reversed={false}
-              />
-            </AnimatedSection>
-          </section>
-          
-          <AnimatedSection>
-              <AnimatedShowCaseCarousel 
+              <AnimatedShowCaseCarousel
                 slides={slides}
                 eyebrow="Next-Generation Materials"
                 headline="CREATE LUXURY OUTDOOR SPACES"
@@ -259,10 +246,13 @@ export const CladdingList = () => {
                 buttonLabel="Explore Fans"
                 onButtonClick={() => (window.location.href = "/fans")}
               />
-          </AnimatedSection>
-          <AnimatedSection>
-              <DesignTailorCard/>
-          </AnimatedSection>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <DesignTailorCard />
+            </AnimatedSection>
+
+          </Suspense>
         </main>
       
     </>    

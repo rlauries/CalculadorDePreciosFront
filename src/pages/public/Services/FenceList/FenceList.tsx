@@ -1,18 +1,41 @@
-import './FenceList.css';
-import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard.jsx';
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.tsx';
-import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
-import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
-import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
-import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
-import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
+import React, { lazy, Suspense } from "react";
+
+import "./FenceList.css";
+
+import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
+import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
+import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.tsx";
 
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
-import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
-import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
+import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
+import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+
+const DesignTailorCard = lazy(() =>
+  import("../../../../componets/DesignTailorCard/DesignTailorCard.jsx")
+    .then(module => ({ default: module.DesignTailorCard }))
+);
+
+const HeroBanner = lazy(() =>
+  import("../../../../componets/HeroBanner/HeroBanner.tsx")
+    .then(module => ({ default: module.HeroBanner }))
+);
+
+const AnimatedShowCaseCarousel = lazy(() =>
+  import("../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
+    .then(module => ({ default: module.AnimatedShowCaseCarousel }))
+);
+
+const FeatureShowcaseCarousel = lazy(() =>
+  import("../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx")
+    .then(module => ({ default: module.FeatureShowcaseCarousel }))
+);
+
+const BannerImageHalf = lazy(() =>
+  import("../../../../componets/Half-Image-Banner/BannerImageHalf.tsx")
+    .then(module => ({ default: module.BannerImageHalf }))
+);
 
 interface FeaturedFence {
   id: number;
@@ -64,7 +87,7 @@ const featureFences : FeaturedFence[] = [
     linkTo: "/fences/composite"
   }
 ];
-// const FencePanels = [
+
 //   {
 //     id: 1,
 //     name: "Chain Link",
@@ -195,30 +218,13 @@ const FenceList = () => {
               />
           </section>            
 
-            
-            
-            <AnimatedSection>
-              <SectionIntro 
-                  title="Explore Our Fence Designs" 
-                  description='We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most.'
-              />
-            </AnimatedSection> 
-            {/* 
-            
-            {showModal && setSelectedFence && (
-              <div className="modal-overlay" onClick={CloseModal}>
-                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                  <button className="close-button" onClick={CloseModal}>×</button>
-                  <h2>{selectedFence.name}<strong class="hero-strong"> | </strong></h2>
-                  <img src={selectedFence.imageUrl} alt="" />
-                  <p><strong>Overview:</strong>{selectedFence.overview}</p>
-                  <p><strong>Durability:</strong>{selectedFence.durability}</p>
-                  <p><strong>Versatility:</strong>{selectedFence.versatility}</p>
-                  <p><strong>Maintenance:</strong>{selectedFence.maintenance}</p>
-                  <p><strong>Aesthetic Options:</strong>{selectedFence.aestheticOptions}</p>
-                </div>
-              </div>
-            )}  */}
+          <SectionIntro 
+            title="Explore Our Fence Designs" 
+            description="We don’t just build fences — we create boundaries that bring peace, privacy that nurtures connection, and strength that protects what matters most."
+          /> 
+        
+          <Suspense fallback={null}>
+
             <AnimatedSection>
               <FeatureShowcaseCarousel
                 title="FENCE SYSTEMS"
@@ -227,61 +233,65 @@ const FenceList = () => {
                 items={featureFences}
               />
             </AnimatedSection>
-            <AnimatedSection> 
+
+            <AnimatedSection>
               <HeroBanner
                 title="Fence Styles"
                 subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
-                onButtonClick={()=>window.location.href="/contactus"}
+                onButtonClick={() => window.location.href = "/contactus"}
                 imageUrl="/images/Privacy-Fence-Banner.webp"
               />
             </AnimatedSection>
-            <section>
-                <div className='myths-info' 
-                    
-                >
-                    <div className="myth-info-bg"></div>
+          <section>
+              <div className='myths-info' 
+                  
+              >
+                  <div className="myth-info-bg"></div>
 
-                    <AnimatedSection>
-                        <BannerImageHalf 
-                            image="images/originals/Fences/aluminum-myth.webp" 
-                            title="ALUMINUM FENCE MYTH" 
-                            subtitle="Many people assume aluminum fences are lightweight and less durable than steel. In reality, modern powder-coated aluminum fencing is engineered to resist rust, corrosion, and harsh weather conditions while maintaining its strength and elegant appearance. It offers long-term durability with virtually no maintenance."
-                            reversed={false}
-                        />
-                    </AnimatedSection>
-                    <AnimatedSection>
-                        <BannerImageHalf
-                            image="images/originals/Fences/composite-myth.webp" 
-                            title="COMPOSITE FENCE MYTH" 
-                            subtitle="A common misconception is that composite fencing looks artificial or lacks the warmth of natural materials. Today’s composite systems are designed with realistic textures and colors that replicate wood while offering superior resistance to moisture, fading, and insects. The result is a fence that keeps its appearance for years with minimal upkeep."
-                            reversed={true} // Esto invierte el orden de imagen y texto
-                        /> 
-                    </AnimatedSection>
-                    <AnimatedSection>    
-                        <BannerImageHalf
-                            image="images/originals/Fences/dura-fence-myth.webp" 
-                            title="DURAFENCE MYTH" 
-                            subtitle="Some believe modern modular fence systems sacrifice strength for convenience. In reality, systems like DuraFence are engineered for both structural stability and long-term performance. Their reinforced panels and durable materials create a secure boundary that withstands weather, impact, and daily wear while maintaining a clean architectural look."
-                            reversed={false}
-                        />
-                    </AnimatedSection>    
-                </div>
+                  <AnimatedSection>
+                      <BannerImageHalf 
+                          image="images/originals/Fences/aluminum-myth.webp" 
+                          title="ALUMINUM FENCE MYTH" 
+                          subtitle="Many people assume aluminum fences are lightweight and less durable than steel. In reality, modern powder-coated aluminum fencing is engineered to resist rust, corrosion, and harsh weather conditions while maintaining its strength and elegant appearance. It offers long-term durability with virtually no maintenance."
+                          reversed={false}
+                      />
+                  </AnimatedSection>
+                  <AnimatedSection>
+                      <BannerImageHalf
+                          image="images/originals/Fences/composite-myth.webp" 
+                          title="COMPOSITE FENCE MYTH" 
+                          subtitle="A common misconception is that composite fencing looks artificial or lacks the warmth of natural materials. Today’s composite systems are designed with realistic textures and colors that replicate wood while offering superior resistance to moisture, fading, and insects. The result is a fence that keeps its appearance for years with minimal upkeep."
+                          reversed={true} // Esto invierte el orden de imagen y texto
+                      /> 
+                  </AnimatedSection>
+                  <AnimatedSection>    
+                      <BannerImageHalf
+                          image="images/originals/Fences/dura-fence-myth.webp" 
+                          title="DURAFENCE MYTH" 
+                          subtitle="Some believe modern modular fence systems sacrifice strength for convenience. In reality, systems like DuraFence are engineered for both structural stability and long-term performance. Their reinforced panels and durable materials create a secure boundary that withstands weather, impact, and daily wear while maintaining a clean architectural look."
+                          reversed={false}
+                      />
+                  </AnimatedSection>    
+              </div>
             </section>
+              {/* Tus BannerImageHalf se quedan igual */}
 
-            
-            <AnimatedSection>
+              <AnimatedSection>
                 <AnimatedShowCaseCarousel 
                   slides={slides}
                   eyebrow="Next-Generation Materials"
                   headline="CREATE LUXURY OUTDOOR SPACES"
                   subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
                   buttonLabel="Contact Us"
-                  onButtonClick={() => (window.location.href = "/contactus")}
+                  onButtonClick={() => window.location.href = "/contactus"}
                 />
-            </AnimatedSection>
-            <AnimatedSection>
-                <DesignTailorCard/>
-            </AnimatedSection>
+              </AnimatedSection>
+
+              <AnimatedSection>
+                <DesignTailorCard />
+              </AnimatedSection>
+
+            </Suspense>
           </div>
         </main>
       </>    

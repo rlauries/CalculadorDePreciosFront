@@ -1,16 +1,27 @@
-import { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import './Gallery.css';
-import '../../../pages/public/Home/Home.css';
 import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.tsx';
-import { TypeOfFenceMaterialOptions, TypeOfPergolaMaterialOptions } from '../../../assets/ServiceFileteredOptions.js';
-import { HomeImprovement } from '../../../componets/HomeImprovement/HomeImprovement.jsx';
+import {
+  TypeOfFenceMaterialOptions,
+  TypeOfPergolaMaterialOptions
+} from '../../../assets/ServiceFileteredOptions.js';
+
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
+
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
 import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 import SITE_CONFIG from '../../../componets/SEO/siteConfig.js';
+
+
+const HomeImprovement = lazy(() =>
+  import('../../../componets/HomeImprovement/HomeImprovement.jsx')
+    .then(module => ({
+      default: module.HomeImprovement
+    }))
+);
 
 interface GalleryItem {
   id: number;
@@ -498,7 +509,7 @@ const Gallery = () => {
                           </label>
                           <p>A Showcase of Style</p>
                       </div>
-                      <img src="/images/originals/Fences/fence-wood-lights.webp" alt="Fence wood lights" />
+                      <img src="/images/originals/Fences/fence-wood-lights.webp" alt="Fence wood lights" loading="lazy" decoding="async" />
                       <button onClick={switchToFence}>Display More</button>
                   </div>
 
@@ -511,7 +522,8 @@ const Gallery = () => {
                           </label>
                           <p>Elevate Your Outdoors</p>
                       </div>
-                      <img src="/images/originals/Pergolas/big-britgt-pergola.webp" alt="Big bright pergola" />
+                      <img src="/images/originals/Pergolas/big-britgt-pergola.webp" 
+                      alt="Big bright pergola" loading="lazy" decoding="async" />
                       <button onClick={switchToPergola}>Display More</button>
                   </div>
                   
@@ -524,7 +536,11 @@ const Gallery = () => {
                             </label>
                             <p>Path To The Sky</p>
                         </div>
-                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.webp" alt="Custom floating stair systems" />
+                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.webp" 
+                             alt="Custom floating stair systems" 
+                             loading="lazy"
+                             decoding="async"
+                        />
                         <button onClick={switchToStair}>Display More</button>
                     </div>
                 </div>
@@ -562,7 +578,7 @@ const Gallery = () => {
                           <div className="gallery-grid">
                             {filteredGallery.map((img) => (
                               <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
-                                <img src={img.imageUrl} alt={img.name} />
+                                <img src={img.imageUrl} alt={img.name} loading="lazy" decoding="async" />
                                 <p>{img.name} <strong> | </strong></p>
                               </div>
                             ))}
@@ -572,8 +588,10 @@ const Gallery = () => {
               )}
           <div>
             <AnimatedSection>
-              <HomeImprovement />
-            </AnimatedSection>  
+              <Suspense fallback={null}>
+                <HomeImprovement />
+              </Suspense>
+            </AnimatedSection>
           </div>
 
           
@@ -586,7 +604,7 @@ const Gallery = () => {
             <div className='modal-overlay' onClick={ClosedModal}>
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className='close-button' onClick={ClosedModal}>×</button>
-                <img src={selecteImage.imageUrl} alt="" />
+                <img src={selecteImage.imageUrl} alt="" loading="lazy" decoding="async" />
                 <h2>{selecteImage.name} <strong> | </strong></h2>
                 <div className='buttons-home'>
                       <button className='service-home' onClick={handleRoute}>

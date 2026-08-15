@@ -1,18 +1,45 @@
-import { HeroBanner } from '../../../../componets/HeroBanner/HeroBanner.tsx';
-import { DesignTailorCard } from '../../../../componets/DesignTailorCard/DesignTailorCard';
-import { AnimatedSection } from '../../../../componets/AnimatedSection/AnimatedSection.tsx';
-import { SectionIntro } from '../../../../componets/SectionIntro/SectionIntro.tsx';
-import { HeroVideo } from '../../../../componets/HeroVideo/HeroVideo.tsx';
-import { FeatureShowcaseCarousel } from '../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx';
-import { BannerImageHalf } from '../../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
-import { StairTreadsSection } from '../../../../componets/StairTreadsSection/StairTreadsSection.tsx';
-import { AnimatedShowCaseCarousel } from '../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx';
+import React, { lazy, Suspense } from "react";
+
+import { AnimatedSection } from "../../../../componets/AnimatedSection/AnimatedSection.tsx";
+import { SectionIntro } from "../../../../componets/SectionIntro/SectionIntro.tsx";
+import { HeroVideo } from "../../../../componets/HeroVideo/HeroVideo.tsx";
 
 import SEO from "../../../../componets/SEO/SEO.tsx";
 import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
-import BreadcrumbSchema from '../../../../componets/SEO/BreadcrumbSchema.ts';
-import SITE_CONFIG from '../../../../componets/SEO/siteConfig.js';
+import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
+import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+
+
+const HeroBanner = lazy(() =>
+  import("../../../../componets/HeroBanner/HeroBanner.tsx")
+    .then(module => ({ default: module.HeroBanner }))
+);
+
+const DesignTailorCard = lazy(() =>
+  import("../../../../componets/DesignTailorCard/DesignTailorCard")
+    .then(module => ({ default: module.DesignTailorCard }))
+);
+
+const FeatureShowcaseCarousel = lazy(() =>
+  import("../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx")
+    .then(module => ({ default: module.FeatureShowcaseCarousel }))
+);
+
+const BannerImageHalf = lazy(() =>
+  import("../../../../componets/Half-Image-Banner/BannerImageHalf.tsx")
+    .then(module => ({ default: module.BannerImageHalf }))
+);
+
+const StairTreadsSection = lazy(() =>
+  import("../../../../componets/StairTreadsSection/StairTreadsSection.tsx")
+    .then(module => ({ default: module.StairTreadsSection }))
+);
+
+const AnimatedShowCaseCarousel = lazy(() =>
+  import("../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
+    .then(module => ({ default: module.AnimatedShowCaseCarousel }))
+);
 
 interface FeaturedStair  {
   id: number;
@@ -65,7 +92,7 @@ const slides : Slide[] = [
   }
 ];
 
-// const StairDB = [
+
 //   {
 //     id: 1,
 //     name: 'Aluminum - Wood ',
@@ -151,90 +178,80 @@ export const StairList = () => {
                     ariaLabel="Custom welding, pergolas, stairs and cladding projects"
                 />
             </section>  
-            <AnimatedSection>
-              <SectionIntro 
-                  title="Explore Our Stair Design" 
-                  description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
-              />
-            </AnimatedSection>
-            {/* {showModal && selectedStair && (
-              <div className="modal-overlay" onClick={closeModal}>
-                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                  <button className="close-button" onClick={closeModal}>×</button>
-                  <h2>{selectedStair.name}<strong class="hero-strong"> | </strong></h2>
-                  <img src={selectedStair.imageUrl} alt={selectedStair.name} />
-                  <p><strong>Overview:</strong> {selectedStair.overview}</p>
-                  <p><strong>Durability:</strong> {selectedStair.durability}</p>
-                  <p><strong>Maintenance:</strong> {selectedStair.maintenance}</p>
-                  <p><strong>Appearance:</strong> {selectedStair.appearance}</p>
-                  <p><strong>Cost:</strong> {selectedStair.cost}</p>
-                </div>
-              </div>
-            )} */}
-            <AnimatedSection>
-              <FeatureShowcaseCarousel
-                title='STAIR SYSTEM'
-                subtitle='Project Showcase'
-                mainImage="/images/originals/Claddings/cladding-pergolas-render.webp"
-                items={featuredStairs}
-              />  
-            </AnimatedSection>
-            <AnimatedSection>
-              <section>
-                <HeroBanner
-                  title="Stair Services"
-                  subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
-                  onButtonClick={()=>window.location.href="/contactus"}
-                  imageUrl="/images/originals/Stairs/Nilis-house.webp"
-                />
-              </section>
-            </AnimatedSection>
-            <AnimatedSection>
-              <StairTreadsSection />
-            </AnimatedSection>
+            <SectionIntro 
+              title="Explore Our Stair Design" 
+              description="Discover the perfect modern stair design that elevates your space — from sleek floating steps to bold architectural structures. Explore styles that blend function, safety, and contemporary elegance."
+            />
             
-            <section className='myths-info'>
-              <div className="myth-info-bg"></div>
+            <Suspense fallback={null}>
               <AnimatedSection>
-                <BannerImageHalf 
-                  image="images/originals/Stairs/wood-stair-indoor.webp" 
-                  title="ALUMINUM & WOOD STAIRS MYTH" 
-                  subtitle="Some people believe aluminum and wood stair systems are not strong enough for outdoor use. In reality, when engineered correctly, aluminum structures combined with hardwood treads provide excellent structural strength, weather resistance, and a refined architectural appearance that lasts for years with minimal maintenance."
-                  reversed={false}
-                />
+                <FeatureShowcaseCarousel
+                  title='STAIR SYSTEM'
+                  subtitle='Project Showcase'
+                  mainImage="/images/originals/Claddings/cladding-pergolas-render.webp"
+                  items={featuredStairs}
+                />  
               </AnimatedSection>
-
               <AnimatedSection>
-                <BannerImageHalf
-                  image="images/originals/Stairs/floating-indoors.webp" 
-                  title="FLOATING STAIRCASE MYTH" 
-                  subtitle="Many assume floating staircases are unsafe or unstable because they appear to 'float' without visible support. Modern floating stair systems are designed with hidden steel or aluminum structures that provide exceptional strength while delivering a clean, contemporary design that enhances open spaces and architectural aesthetics."
-                  reversed={true}
-                /> 
+                <section>
+                  <HeroBanner
+                    title="Stair Services"
+                    subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
+                    onButtonClick={()=>window.location.href="/contactus"}
+                    imageUrl="/images/originals/Stairs/Nilis-house.webp"
+                  />
+                </section>
               </AnimatedSection>
+              <AnimatedSection>
+                <StairTreadsSection />
+              </AnimatedSection>
+              
+              <section>
+                <div className="myths-info">
+                  <div className="myth-info-bg"></div>
 
-              <AnimatedSection>    
-                <BannerImageHalf
-                  image="images/originals/Stairs/composite-stair-outdoor.webp" 
-                  title="ALUMINUM COMPOSITE STAIRS MYTH" 
-                  subtitle="A common misconception is that composite stair systems look artificial and lack durability. In reality, modern composite stair materials are engineered to resist moisture, UV exposure, insects, and warping while maintaining a consistent color and texture, providing a long-lasting and low-maintenance solution for exterior staircases."
-                  reversed={false}
-                />
+                  <AnimatedSection>
+                    <BannerImageHalf
+                      image="/images/originals/Stairs/wood-stair-indoor.webp"
+                      title="ALUMINUM & WOOD STAIRS MYTH"
+                      subtitle="Some people believe aluminum and wood stair systems are not strong enough for outdoor use. In reality, when engineered correctly, aluminum structures combined with hardwood treads provide excellent structural strength, weather resistance, and a refined architectural appearance that lasts for years with minimal maintenance."
+                      reversed={false}
+                    />
+                  </AnimatedSection>
+
+                  <AnimatedSection>
+                    <BannerImageHalf
+                      image="/images/originals/Stairs/floating-indoors.webp"
+                      title="FLOATING STAIRCASE MYTH"
+                      subtitle="Many assume floating staircases are unsafe or unstable because they appear to 'float' without visible support. Modern floating stair systems are designed with hidden steel or aluminum structures that provide exceptional strength while delivering a clean, contemporary design that enhances open spaces and architectural aesthetics."
+                      reversed={true}
+                    />
+                  </AnimatedSection>
+
+                  <AnimatedSection>
+                    <BannerImageHalf
+                      image="/images/originals/Stairs/composite-stair-outdoor.webp"
+                      title="ALUMINUM COMPOSITE STAIRS MYTH"
+                      subtitle="A common misconception is that composite stair systems look artificial and lack durability. In reality, modern composite stair materials are engineered to resist moisture, UV exposure, insects, and warping while maintaining a consistent color and texture, providing a long-lasting and low-maintenance solution for exterior staircases."
+                      reversed={false}
+                    />
+                  </AnimatedSection>
+                </div>
+              </section>
+              <AnimatedSection>
+                  <AnimatedShowCaseCarousel 
+                    slides={slides}
+                    eyebrow="Completed Projects"
+                    headline="DESIGNED TO IMPRESS. "
+                    subheadline="Explore our completed staircase projects across South Florida. See materials, fabrication details, and finished installations."
+                    buttonLabel="VIEW PROJECT"
+                    onButtonClick={() => (window.location.href = "/contactus")}
+                  />
+              </AnimatedSection>  
+              <AnimatedSection>
+                <DesignTailorCard/>
               </AnimatedSection>
-            </section>  
-            <AnimatedSection>
-                <AnimatedShowCaseCarousel 
-                  slides={slides}
-                  eyebrow="Completed Projects"
-                  headline="DESIGNED TO IMPRESS. "
-                  subheadline="Explore our completed staircase projects across South Florida. See materials, fabrication details, and finished installations."
-                  buttonLabel="VIEW PROJECT"
-                  onButtonClick={() => (window.location.href = "/contactus")}
-                />
-            </AnimatedSection>  
-            <AnimatedSection>
-              <DesignTailorCard/>
-            </AnimatedSection>
+            </Suspense>        
         </main>
     </>          
   )

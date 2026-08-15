@@ -1,19 +1,33 @@
+import React, { lazy, Suspense } from "react";
+
 import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion.jsx';
 import './Home.css';
-import { PergolaSlider } from '../../../componets/PergolaSlider/PergolaSlider.tsx';
-import { FenceSlider } from '../../../componets/FenceSlider/FenceSlider.tsx';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
+
 import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
-import About  from '../../../componets/About/About.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
 import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 import SITE_CONFIG from '../../../componets/SEO/siteConfig.js';
+
+const About = lazy(() =>
+  import("../../../componets/About/About.tsx")
+);
+
+const PergolaSlider = lazy(() =>
+  import("../../../componets/PergolaSlider/PergolaSlider.tsx")
+    .then(module => ({ default: module.PergolaSlider }))
+);
+
+const FenceSlider = lazy(() =>
+  import("../../../componets/FenceSlider/FenceSlider.tsx")
+    .then(module => ({ default: module.FenceSlider }))
+);
 
 
 const seo : SeoData = {
@@ -113,18 +127,24 @@ const Home = () => {
             
             {/* -------- About ---------*/}
             <section>
-            <AnimatedSection>      
-                <About/>
+            <AnimatedSection>  
+                <Suspense fallback={null}>
+                    <About />   
+                </Suspense>
             </AnimatedSection>
             </section>
             
             <section className='home-services-sliders'>
                 <AnimatedSection>
-                    <PergolaSlider/>
+                    <Suspense fallback={null}>
+                        <PergolaSlider />
+                    </Suspense>
                 </AnimatedSection>
             
                 <AnimatedSection>
-                    <FenceSlider/>
+                    <Suspense fallback={null}>
+                        <FenceSlider />
+                    </Suspense>
                 </AnimatedSection>
             </section>
         

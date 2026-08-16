@@ -1,19 +1,21 @@
 import React from 'react'
 import './HomeImprovement.css'
 import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export const HomeImprovement = () => {
     const images = [
-        { src: "images/originals/HomeImprovement/front-porch.webp", alt: "Home Improvement 1" },
-        { src: "images/originals/HomeImprovement/sofie-cladding.webp", alt: "Home Improvement 2" },
-        { src: "images/originals/HomeImprovement/big-cladding.webp", alt: "Home Improvement 3" },
+        { src: "/images/originals/HomeImprovement/front-porch.webp", alt: "Home Improvement 1" },
+        { src: "/images/originals/HomeImprovement/sofie-cladding.webp", alt: "Home Improvement 2" },
+        { src: "/images/originals/HomeImprovement/big-cladding.webp", alt: "Home Improvement 3" },
     ];
 
     const settings = {
         dots: true,
         infinite: true,
         speed: 800,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,

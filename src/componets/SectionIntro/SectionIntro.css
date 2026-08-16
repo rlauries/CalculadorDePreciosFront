@@ -1,24 +1,30 @@
 .section-intro {
   width: 100%;
   max-width: 1100px;
+
   margin: 80px auto;
   padding: 0 40px;
+
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
+
   text-align: center;
-  width: 100%;
-  
+
+  box-sizing: border-box;
+
+  /* ayuda a reservar espacio y reducir layout shift */
+  min-height: 220px;
 }
-
-
 
 .section-intro h2 {
   font-size: 50px;
+  line-height: 1.15;
   font-weight: 700;
   color: black;
-  margin-bottom: 20px;
+
+  margin: 0 0 20px 0;
 }
 
 .section-intro h2 strong {
@@ -29,28 +35,49 @@
   font-size: 18px;
   line-height: 1.7;
   color: #555;
-  
+
+  margin: 0;
+
+  max-width: 1000px;
 }
-@media screen and (max-width: 1100px){
-  .section-intro h2{
-    font-size: 40px;
-  }
-  .section-intro p{
-    font-size: 18px;
+
+
+@media screen and (max-width: 1100px) {
+  .section-intro {
+    min-height: 200px;
   }
 
-}
-@media screen and (max-width: 905px){
-  .section-intro{
-    margin-bottom: 0px;
-    margin-bottom: 40px;
+  .section-intro h2 {
+    font-size: 40px;
+  }
+
+  .section-intro p {
+    font-size: 18px;
   }
 }
-@media screen and (max-width: 620px){
-  .section-intro h2{
+
+
+@media screen and (max-width: 905px) {
+  .section-intro {
+    margin: 60px auto 40px;
+    min-height: 190px;
+  }
+}
+
+
+@media screen and (max-width: 620px) {
+  .section-intro {
+    padding: 0 20px;
+    margin: 50px auto 30px;
+
+    min-height: 210px;
+  }
+
+  .section-intro h2 {
     font-size: 30px;
   }
-  .section-intro p{
+
+  .section-intro p {
     font-size: 16px;
   }
 }

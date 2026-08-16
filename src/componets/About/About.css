@@ -2,15 +2,17 @@
   background: #e2e1e1;
   color: white;
   width: 100%;
-  padding: 80px 40px;
+  
   border-radius: 5px;
 }
 
 .about-grid-home {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-template-rows: repeat(2, 250px);
   gap: 20px;
+  width: 100%;
+  min-width: 0;
 }
 
 /* Tarjetas generales */

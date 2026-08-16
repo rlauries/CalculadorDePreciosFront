@@ -123,7 +123,7 @@ export const Header = () => {
                         <a href="/pergolas">Pergolas / Trellis</a>
                         <a href="/stairs">Stairs</a>
                         <a href="/claddings">Exterior Claddings</a>
-                        <button className="mega-menu-links-button" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
+                        <button className="contactus-button" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
                            CONTACT US
                         </button>
                      </div>

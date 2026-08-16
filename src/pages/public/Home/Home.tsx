@@ -8,7 +8,7 @@ import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
 import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
-import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
+// import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
@@ -81,7 +81,7 @@ const Home = () => {
                     ariaLabel="Custom welding, pergolas, stairs and cladding projects"
                 />
             </section>
-            <PromoTicker/>
+            {/* <PromoTicker/> */}
             <SectionIntro
                 title="DESIGNED TO LAST"
                 description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."

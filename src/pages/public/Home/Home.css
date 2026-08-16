@@ -297,33 +297,44 @@
   
   /* Forth Banner */
 
-  .forth-banner{
+  .forth-banner {
     background-color: #e2e1e1;
     height: auto;
+
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    padding-bottom: 80px;
-    margin-bottom: 100px;
+
     width: 100%;
+    padding: 40px 40px 80px;
+
+    margin-bottom: 100px;
+
+    box-sizing: border-box;
+    overflow: hidden;
   }
-  .forth-banner .info{
+  .forth-banner .info {
+    width: 100%;
     padding: 40px;
+
     display: flex;
-    flex-direction: column;      /* h2 arriba, p abajo */
-    justify-content: center;     /* centra verticalmente TODO el bloque (h2+p) */
-    align-items: center;         /* centra horizontalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+
+    box-sizing: border-box;
   }
 
-  .info-subtitle{
-    width:60%;
-    display:flex;
-    justify-content:center;
-    align-items:end;
+ .info-subtitle {
+    width: 60%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
     text-align: center;
 
-    
+    box-sizing: border-box;
   }
   .forth-banner h2{
     font-size: 2rem;
@@ -333,6 +344,7 @@
   .forth-banner img{
     height: auto;
     width: 100%;
+    display: block;
   }
   .forth-banner strong{
     color: #f1683a;
@@ -347,6 +359,12 @@
     margin-top: 100px;
   }
 
+  .home-container,
+  .home-container *,
+  .home-container *::before,
+  .home-container *::after {
+    box-sizing: border-box;
+  }
 /* -------MEDIA QUERIES------- */
 
 

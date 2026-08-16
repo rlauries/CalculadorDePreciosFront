@@ -4,6 +4,8 @@
   width: 100%;
   
   border-radius: 5px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .about-grid-home {
@@ -181,8 +183,10 @@
   }
 
   .about-grid-home {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: auto;
+    width: 100%;
+    min-width: 0;
   }
 
   .card-1 {

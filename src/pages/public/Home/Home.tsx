@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 
 import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion.jsx';
+import FAQSchema from "../../../componets/SEO/FAQSchema.ts";
+import { faqItems } from "../../../componets/FrequentlyAskQuestion/faqData.ts";
 import './Home.css';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
 
@@ -59,7 +61,8 @@ const Home = () => {
                         name: "Home",
                         url: `${SITE_CONFIG.siteUrl}/`
                     }
-                ])
+                ]),
+                FAQSchema(faqItems)
             ]}
          />
 

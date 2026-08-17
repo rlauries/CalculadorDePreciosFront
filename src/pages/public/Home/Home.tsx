@@ -64,12 +64,12 @@ const Home = () => {
          />
 
         <main className='home-container'
-            style={{
-                        backgroundImage: "url(/images/originals/backgroundMyth.avif)",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat"
-                    }}
+            // style={{
+            //             backgroundImage: "url(/images/originals/backgroundMyth.avif)",
+            //             backgroundSize: "cover",
+            //             backgroundPosition: "center",
+            //             backgroundRepeat: "no-repeat"
+            //         }}
         >
             <section className="video-section">
                 <HeroVideo

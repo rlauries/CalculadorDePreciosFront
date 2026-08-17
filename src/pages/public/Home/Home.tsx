@@ -7,7 +7,7 @@ import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImag
 import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
-// import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
+import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
@@ -82,10 +82,10 @@ const Home = () => {
                 />
             </section>
             <PromoTicker/>
-            {/* <SectionIntro
+            <SectionIntro
                 title="DESIGNED TO LAST"
                 description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."
-            /> */}
+            />
 
             {/* ----Hero Down Banner ---- */}
             <section>
@@ -97,9 +97,11 @@ const Home = () => {
 
                             <div className="feature-card-image-wrapper">
                                 <img
-                                src="/images/originals/Claddings/Capture-1.webp"
-                                alt="Pivot 6 XL"
-                                className="feature-card-image"
+                                    src="/images/originals/Claddings/Capture-1.webp"
+                                    alt="Custom Cladding Services"
+                                    className="feature-card-image"
+                                    fetchPriority="high"
+                                    decoding="async"
                                 />
                             </div>
 

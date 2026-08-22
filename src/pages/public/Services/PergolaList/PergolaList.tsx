@@ -11,6 +11,8 @@ import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
+import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
 
 const DesignTailorCard = lazy(() =>
@@ -189,7 +191,22 @@ const PergolaList = () => {
                       name: "Pergolas",
                       url: `${SITE_CONFIG.siteUrl}/pergolas`
                   }
-              ])
+              ]),
+              ServiceSchema({
+                name: "Custom Pergola Design and Installation",
+                serviceType: "Pergola Fabrication and Installation",
+                description:
+                  "Custom pergola fabrication and installation for residential and commercial properties in South Florida, including aluminum pergolas, insulated roof systems, and custom architectural designs.",
+                url: "/pergolas",
+              }),
+              VideoSchema({
+                  name: "Custom Pergola Projects in South Florida",
+                  description:
+                      "A showcase of custom pergola fabrication and installation projects by Lauries Welding Group in South Florida.",
+                  thumbnailUrl: "/images/videos/pergola-poster.webp",
+                  contentUrl: "/images/videos/pergola-hero.mp4",
+                  uploadDate: "FECHA-REAL"
+              })
           ]}
       />
 
@@ -209,7 +226,7 @@ const PergolaList = () => {
                   className="hero-video"
                   pauseTime={4000}
                   poster="/images/videos/product-promo-poster.webp"
-                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
+                  ariaLabel="Custom pergola fabrication and installation projects in South Florida"
               />
           </section> 
           

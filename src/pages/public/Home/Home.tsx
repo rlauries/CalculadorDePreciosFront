@@ -16,6 +16,9 @@ import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
 import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 import SITE_CONFIG from '../../../componets/SEO/siteConfig.js';
+import OrganizationSchema from "../../../componets/SEO/OrganizationSchema.ts";
+import VideoSchema from "../../../componets/SEO/VideoSchema.ts";
+
 
 const About = lazy(() =>
   import("../../../componets/About/About.tsx")
@@ -55,6 +58,7 @@ const Home = () => {
             image={seo.image}
             type="website"
             schemas={[
+                OrganizationSchema(),
                 LocalBusinessSchema(),
                 BreadcrumbSchema([
                     {
@@ -62,7 +66,21 @@ const Home = () => {
                         url: `${SITE_CONFIG.siteUrl}/`
                     }
                 ]),
-                FAQSchema(faqItems)
+                FAQSchema(faqItems),
+                VideoSchema({
+                    name: "Lauries Welding Group Custom Fabrication Projects",
+
+                    description:
+                    "A showcase of custom welding, pergolas, stairs, fences, gates, cladding and metal fabrication projects by Lauries Welding Group in South Florida.",
+
+                    thumbnailUrl:
+                    "/images/videos/product-promo-poster.webp",
+
+                    contentUrl:
+                    "/images/videos/product-promo.mp4",
+
+                    uploadDate: "YYYY-MM-DD",
+                }),
             ]}
          />
 

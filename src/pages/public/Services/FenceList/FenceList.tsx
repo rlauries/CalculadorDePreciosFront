@@ -11,6 +11,8 @@ import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
+import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
 const DesignTailorCard = lazy(() =>
   import("../../../../componets/DesignTailorCard/DesignTailorCard.jsx")
@@ -188,6 +190,7 @@ const FenceList = () => {
             type="website"
             schemas={[
                 LocalBusinessSchema(),
+
                 BreadcrumbSchema([
                     {
                         name: "Home",
@@ -196,8 +199,25 @@ const FenceList = () => {
                     {
                         name: "Fences",
                         url: `${SITE_CONFIG.siteUrl}/fences`
-                    }
-                ])
+                    },
+                ]),
+
+                ServiceSchema({
+                    name: "Custom Fence and Gate Installation",
+                    serviceType: "Fence and Gate Fabrication and Installation",
+                    description:
+                        "Custom fence and gate fabrication and installation for residential and commercial properties in South Florida.",
+                    url: "/fences",
+                }),
+
+                VideoSchema({
+                    name: "Custom Fence and Gate Projects in South Florida",
+                    description:
+                        "A showcase of custom fence and gate fabrication and installation projects by Lauries Welding Group in South Florida.",
+                    thumbnailUrl: "/images/videos/product-promo-poster.webp",
+                    contentUrl: "/images/videos/fence-hero.mp4",
+                    uploadDate: "FECHA-REAL"
+                })
             ]}
         /> 
         <main>
@@ -214,8 +234,7 @@ const FenceList = () => {
                   className="hero-video"
                   pauseTime={4000}
                   poster="/images/videos/product-promo-poster.webp"
-                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
-              />
+                  ariaLabel="Custom fence and gate fabrication projects in South Florida"               />
           </section>            
 
           <SectionIntro 

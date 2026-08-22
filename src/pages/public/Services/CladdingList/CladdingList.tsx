@@ -9,6 +9,8 @@ import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
 import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
+import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
+import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
 const HeroBanner = lazy(() =>
   import("../../../../componets/HeroBanner/HeroBanner.tsx")
@@ -158,7 +160,22 @@ export const CladdingList = () => {
                     name: "Cladding",
                     url: `${SITE_CONFIG.siteUrl}/claddings`
                 }
-            ])
+            ]),
+            ServiceSchema({
+              name: "Exterior Architectural Cladding Installation",
+              serviceType: "Exterior Cladding Installation",
+              description:
+                "Architectural exterior cladding installation for residential and commercial properties, including walls, ceilings, facades, pergolas, and outdoor structures.",
+              url: "/claddings",
+            }),
+            VideoSchema({
+                name: "Custom Pergola Projects in South Florida",
+                description:
+                    "A showcase of custom pergola fabrication and installation projects by Lauries Welding Group in South Florida.",
+                thumbnailUrl: "/images/videos/pergola-poster.webp",
+                contentUrl: "/images/videos/cladding-hero.mp4",
+                uploadDate: "FECHA-REAL"
+            })
         ]}
       />   
       <main style={{
@@ -174,7 +191,7 @@ export const CladdingList = () => {
                   className="hero-video"
                   pauseTime={4000}
                   poster="/images/videos/product-promo-poster.webp"
-                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
+                  ariaLabel="Custom exterior cladding installation projects in South Florida"
               />
           </section>      
           

@@ -9,6 +9,8 @@ import type { SeoData } from "../../../../componets/SEO/types.ts";
 import LocalBusinessSchema from "../../../../componets/SEO/LocalBusinessSchema.ts";
 import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
+import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
+import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
 
 const HeroBanner = lazy(() =>
@@ -159,7 +161,22 @@ export const StairList = () => {
                         name: "Stairs",
                         url: `${SITE_CONFIG.siteUrl}/stairs`
                     }
-                ])
+                ]),
+                ServiceSchema({
+                  name: "Custom Stair Fabrication and Installation",
+                  serviceType: "Custom Stair Fabrication",
+                  description:
+                    "Custom steel and aluminum stair fabrication and installation, including modern stair structures, landings, railings, wood treads, and composite treads.",
+                  url: "/stairs",
+                }),
+                VideoSchema({
+                    name: "Custom Stair Projects in South Florida",
+                    description:
+                        "A showcase of custom stair fabrication and installation projects by Lauries Welding Group in South Florida.",
+                    thumbnailUrl: "/images/videos/stair-poster.webp",
+                    contentUrl: "/images/videos/stair-hero.mp4",
+                    uploadDate: "FECHA-REAL"
+                })
             ]}
         />
         <main style={{
@@ -175,7 +192,7 @@ export const StairList = () => {
                     className="hero-video"
                     pauseTime={4000}
                     poster="/images/videos/product-promo-poster.webp"
-                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
+                    ariaLabel="Custom stair fabrication and installation projects in South Florida"
                 />
             </section>  
             <SectionIntro 

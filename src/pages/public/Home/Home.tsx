@@ -6,10 +6,7 @@ import { faqItems } from "../../../componets/FrequentlyAskQuestion/faqData.ts";
 import './Home.css';
 import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
 
-import { HeroVideo } from '../../../componets/HeroVideo/HeroVideo.tsx';
 import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
-import { ContactUsButton } from '../../../componets/ContactUsButton/ContactUsButton.tsx';
-import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
@@ -18,7 +15,9 @@ import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 import SITE_CONFIG from '../../../componets/SEO/siteConfig.js';
 import OrganizationSchema from "../../../componets/SEO/OrganizationSchema.ts";
 import VideoSchema from "../../../componets/SEO/VideoSchema.ts";
-
+import { HeroBanner } from "../../../componets/HeroBanner/HeroBanner.tsx";
+import { FeatureIntro } from "../../../componets/FeatureIntro/FeatureIntro.tsx";
+import { ServicesGrid } from "../../../componets/ServicesGrid/ServicesGrid.tsx";
 
 const About = lazy(() =>
   import("../../../componets/About/About.tsx")
@@ -92,70 +91,67 @@ const Home = () => {
                         backgroundRepeat: "no-repeat"
                     }}
         >
-            <section className="video-section">
-                <HeroVideo
-                    src="/images/videos/product-promo.mp4"
-                    videoId="slow-video"
-                    className="hero-video"
-                    pauseTime={4000}
-                    poster="/images/videos/product-promo-poster.webp"
-                    ariaLabel="Custom welding, pergolas, stairs and cladding projects"
+            <section className="hero-section">
+               <HeroBanner
+                    image="/images/home-hero-collage.png"
+                    title="CUSTOM OUTDOOR STRUCTURES"
+                    subtitle="BUILT TO LAST. DESIGNED FOR YOU."
+                    services={[
+                        "PERGOLAS",
+                        "FENCES & GATES",
+                        "STAIRS & RAILINGS",
+                        "CLADDING"
+                    ]}
+                    primaryButtonText="GET A FREE ESTIMATE"
+                    primaryButtonLink="/contactus"
+                    secondaryButtonText="VIEW OUR PROJECTS"
+                    secondaryButtonLink="/gallery"
                 />
             </section>
             <PromoTicker/>
-            <SectionIntro
+            <FeatureIntro
                 title="DESIGNED TO LAST"
                 description="We are a fabrication-driven company dedicated to building durable, functional, and visually striking outdoor structures. From custom fences and gates to pergolas, stairs, and exterior cladding systems, every project is engineered with precision and built to perform. Our commitment is simple: quality craftsmanship, honest work, and structures designed to last."
+                image="/images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.webp"
+                imageAlt="Modern custom aluminum fence and gate by Lauries Welding Group"
             />
 
-            {/* ----Hero Down Banner ---- */}
-            <section>
-            <AnimatedSection>   
-                <div className="hero-down-banner">
-                    <a href="/claddings" className="hero-down-container-link">
-                        <div className="feature-card">
-                            <div className="feature-card-bg"></div>
-
-                            <div className="feature-card-image-wrapper">
-                                <img
-                                    src="/images/originals/Claddings/Capture-1.webp"
-                                    alt="Custom Cladding Services"
-                                    className="feature-card-image"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                />
-                            </div>
-
-                            <div className="feature-card-content">
-                                <h3>CLADDING SERVICES</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <div className="hero-down-text">
-                        <h2>
-                            TRANSFORM YOUR OUTDOOR<strong> | </strong>
-                        </h2>
-                        <h4>
-                            <em>Discover structures built to endure and impress.</em>
-                        </h4>
-                        <p>
-                        Our collection blends innovation, thoughtful design, and expert craftsmanship—ranging from modern aluminum systems to the natural beauty of wood. Each model is engineered for durability, comfort, and year-round usability, turning any outdoor space into a personalized sanctuary.
-                        </p>
-                    <ContactUsButton/>
-                </div>
-                <div className="gray-gradient-bottom" />
-                </div>
-            </AnimatedSection>  
-            </section>
+            
+            
             
             {/* -------- About ---------*/}
-            <section>
-            <AnimatedSection>  
-                <Suspense fallback={null}>
-                    <About />   
-                </Suspense>
-            </AnimatedSection>
-            </section>
+           <ServicesGrid
+                services={[
+                    {
+                    title: "PERGOLAS",
+                    description: "Custom aluminum pergolas with style and durability.",
+                    link: "/pergolas",
+                    linkText: "Explore Pergolas",
+                    icon: "/images/icons/pergola-icon.png",
+                    },
+                    {
+                    title: "FENCES & GATES",
+                    description: "Modern fences and gates built for security and beauty.",
+                    link: "/fences",
+                    linkText: "View Fences",
+                    icon: "/images/icons/fence-icon.png",
+                    },
+                    {
+                    title: "STAIRS & RAILINGS",
+                    description: "Custom metal stairs and railings built with precision.",
+                    link: "/stairs",
+                    linkText: "View Stairs",
+                    icon: "/images/icons/stair-icon.png",
+                    },
+                    {
+                    title: "CLADDING",
+                    description: "Architectural cladding that transforms any space.",
+                    link: "/claddings",
+                    linkText: "View Cladding",
+                    icon: "/images/icons/cladding-icon.png",
+                    },
+                ]}
+            />
             
             <section className='home-services-sliders'>
                 <AnimatedSection>

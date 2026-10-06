@@ -19,10 +19,10 @@ const DesignTailorCard = lazy(() =>
     .then(module => ({ default: module.DesignTailorCard }))
 );
 
-const HeroBanner = lazy(() =>
-  import("../../../../componets/HeroBanner/HeroBanner.tsx")
-    .then(module => ({ default: module.HeroBanner }))
-);
+// const HeroBanner = lazy(() =>
+//   import("../../../../componets/HeroBanner/HeroBanner.tsx")
+//     .then(module => ({ default: module.HeroBanner }))
+// );
 
 const AnimatedShowCaseCarousel = lazy(() =>
   import("../../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
@@ -252,15 +252,7 @@ const FenceList = () => {
                 items={featureFences}
               />
             </AnimatedSection>
-
-            <AnimatedSection>
-              <HeroBanner
-                title="Fence Styles"
-                subtitle="From classic to modern, discover the perfect fence that suits your needs and enhances your property’s appeal. Check out our diverse range of styles today!"
-                onButtonClick={() => window.location.href = "/contactus"}
-                imageUrl="/images/Privacy-Fence-Banner.webp"
-              />
-            </AnimatedSection>
+            
           <section>
               <div className='myths-info' 
                   

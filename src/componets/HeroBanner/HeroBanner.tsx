@@ -2,45 +2,90 @@ import React from "react";
 import "./HeroBanner.css";
 
 interface HeroBannerProps {
-  title: string;
-  subtitle: string;
-  imageUrl: string;
-  onButtonClick?: () => void;
+  image: string;
+  title?: string;
+  subtitle?: string;
+  services?: string[];
+  primaryButtonText?: string;
+  primaryButtonLink?: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
+  showContent?: boolean;
+  ariaLabel?: string;
 }
 
 export const HeroBanner: React.FC<HeroBannerProps> = ({
-  title,
-  subtitle,
-  imageUrl,
-  onButtonClick,
+  image,
+  title = "CUSTOM OUTDOOR STRUCTURES",
+  subtitle = "BUILT TO LAST. DESIGNED FOR YOU.",
+  services = [
+    "PERGOLAS",
+    "FENCES & GATES",
+    "STAIRS & RAILINGS",
+    "CLADDING",
+  ],
+  primaryButtonText = "GET A FREE ESTIMATE",
+  primaryButtonLink = "/contactus",
+  secondaryButtonText = "VIEW OUR PROJECTS",
+  secondaryButtonLink = "/gallery",
+  showContent = true,
+  ariaLabel = "Custom outdoor structures by Lauries Welding Group",
 }) => {
   return (
-    <div className="hero-banner">
+    <section className="hero-banner" aria-label={ariaLabel}>
       <img
+        src={image}
+        alt=""
         className="hero-banner-image"
-        src={imageUrl}
-        alt={title}
+        fetchPriority="high"
         loading="eager"
         decoding="async"
       />
 
-      <div className="hero-overlay">
-        <h1 className="hero-title">
-          {title} <strong className="hero-strong">|</strong>
-        </h1>
+      {showContent && (
+        <div className="hero-banner-overlay">
+          <div className="hero-banner-content">
 
-        <p className="hero-subtitle">
-          {subtitle}
-        </p>
+            <h1>{title}</h1>
 
-        <button
-          type="button"
-          className="hero-button"
-          onClick={onButtonClick}
-        >
-          Contact Us
-        </button>
-      </div>
-    </div>
+            <h2>{subtitle}</h2>
+
+            <p className="hero-banner-services">
+              {services.map((service, index) => (
+                <React.Fragment key={service}>
+                  <span className="hero-banner-service-span">{service}</span>
+
+                  {index < services.length - 1 && (
+                    <span
+                      className="hero-service-separator"
+                      aria-hidden="true"
+                    >
+                      •
+                    </span>
+                  )}
+                </React.Fragment>
+              ))}
+            </p>
+
+            <div className="hero-banner-buttons">
+              <a
+                href={primaryButtonLink}
+                className="hero-button hero-button-primary"
+              >
+                {primaryButtonText}
+              </a>
+
+              <a
+                href={secondaryButtonLink}
+                className="hero-button hero-button-secondary"
+              >
+                {secondaryButtonText}
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
+    </section>
   );
 };

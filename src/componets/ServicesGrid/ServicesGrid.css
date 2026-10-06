@@ -1,0 +1,151 @@
+.services-grid {
+  width: min(1200px, 92%);
+  margin: 60px auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+
+/* CARD */
+
+.services-grid__card {
+  min-width: 0;
+  min-height: 230px;
+
+  padding: 30px 22px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  background: #fff;
+  border: 1px solid #dedede;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.services-grid__card:hover {
+  transform: translateY(-5px);
+
+  border-color: #f1683a;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ICON */
+
+.services-grid__icon {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  color: #f1683a;
+}
+
+.services-grid__icon svg {
+  width: 45px;
+  height: 45px;
+
+  stroke: currentColor;
+}
+
+
+/* TITLE */
+
+.services-grid__title {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  line-height: 1.1;
+
+  font-weight: 800;
+  color: #111;
+}
+
+
+/* DESCRIPTION */
+
+.services-grid__description {
+  margin: 0 0 18px;
+
+  max-width: 220px;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #444;
+}
+
+
+/* LINK */
+
+.services-grid__link {
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #111;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.services-grid__link span {
+  color: #f1683a;
+  font-size: 17px;
+}
+
+.services-grid__link:hover {
+  color: #f1683a;
+  gap: 11px;
+}
+
+
+/* TABLET */
+
+@media screen and (max-width: 950px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 550px) {
+  .services-grid {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+    margin: 40px auto;
+  }
+
+  .services-grid__card {
+    min-height: 210px;
+    padding: 25px 20px;
+  }
+}

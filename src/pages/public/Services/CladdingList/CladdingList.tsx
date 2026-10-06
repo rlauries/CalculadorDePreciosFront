@@ -12,10 +12,10 @@ import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
 import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
-const HeroBanner = lazy(() =>
-  import("../../../../componets/HeroBanner/HeroBanner.tsx")
-    .then(module => ({ default: module.HeroBanner }))
-);
+// const HeroBanner = lazy(() =>
+//   import("../../../../componets/HeroBanner/HeroBanner.tsx")
+//     .then(module => ({ default: module.HeroBanner }))
+// );
 
 const DesignTailorCard = lazy(() =>
   import("../../../../componets/DesignTailorCard/DesignTailorCard.jsx")
@@ -212,16 +212,7 @@ export const CladdingList = () => {
               />
             </AnimatedSection>
 
-            <AnimatedSection>
-              <section>
-                <HeroBanner
-                  title="Cladding Service"
-                  subtitle="Transform ceilings, walls, and outdoor structures with premium cladding solutions in composite, wood, and PVC — designed to protect, enhance, and modernize your spaces."
-                  onButtonClick={() => (window.location.href = "/contactus")}
-                  imageUrl="/images/originals/Claddings/hero-cladding.webp"
-                />
-              </section>
-            </AnimatedSection>
+            
 
             <section className="myths-info">
                 <div className="myth-info-bg"></div>

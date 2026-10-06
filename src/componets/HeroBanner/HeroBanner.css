@@ -1,122 +1,178 @@
 .hero-banner {
-  position: relative;
   width: 100%;
-  height: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: left;
-
-  border-radius: 15px;
-  overflow: hidden;
+  position: relative;
+  background: red;
 }
 
-/* Reemplaza el antiguo background-image */
 .hero-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero-banner::after {
+  content: "";
   position: absolute;
   inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.40) 0%,
+      rgba(0, 0, 0, 0.12) 35%,
+      rgba(0, 0, 0, 0) 65%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.25) 32%,
+      rgba(0, 0, 0, 0) 62%
+    );
+
+  pointer-events: none;
+  z-index: 1;
+}
+/* TEMPORAL PARA DEBUG */
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  color: white;
+  padding: 30px;
+}
+
+
+.hero-banner {
+  width: 100%;
+  position: relative;
+  background: red;
+}
+
+.hero-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-banner-overlay {
+  position: absolute;
+
+  top: -280px;
+  left: 0;
 
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-  object-position: center;
-
-  z-index: 0;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 12px;
-  text-align: center;
-  color: white;
-  width: 40%;
-  height: auto;
-  max-width: 80%;
-  margin: 40px 40px;
-
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
   color: white;
-  text-shadow: 0 2px 3px rgb(12, 11, 11);
 }
 
-.hero-strong {
-  color: #f1683a;
-}
-
-.hero-subtitle {
-  margin-bottom: 2rem;
+.hero-banner-content {
+  width: 40%;
+  margin-left: 30px;
   color: white;
-  text-shadow: 0 2px 3px rgb(48, 45, 45);
-  font-size: 16px;
+}
+.hero-banner-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+}
+.hero-banner-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: rgb(241, 104, 58);
+}
+.hero-banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-banner-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+}
+.hero-banner-service-span {
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+.hero-service-separator {
+  
+  color: white;
+}
+.hero-banner-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .hero-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  height: 30px;
-  width: auto;
-  background: transparent;
+  min-height: 42px;
+  padding: 10px 22px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  border-radius: 2px;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* GET A FREE ESTIMATE */
+.hero-button-primary {
+  background-color: #f1683a;
   border: 1px solid #f1683a;
   color: white;
-  letter-spacing: 3px;
-  text-shadow: 0 2px 3px rgb(12, 11, 11);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 20px;
 }
 
-.hero-button:hover {
+.hero-button-primary:hover {
   background-color: #d95422;
+  border-color: #d95422;
+  transform: translateY(-2px);
 }
 
-@media (max-width: 1131px) {
-  .hero-overlay {
-    width: 45%;
-    margin-left: 10%;
-    padding: 20px;
-  }
+/* VIEW OUR PROJECTS */
+.hero-button-secondary {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
-@media (max-width: 905px) {
-  .hero-title {
-    font-size: 30px;
-  }
+.hero-button-secondary:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
 
-  .hero-subtitle {
-    font-size: 14px;
+/* ==============Media Queries================== */
+
+@media screen and (max-width: 600px) {
+  .hero-banner-buttons {
+    gap: 8px;
+    margin-top: 12px;
   }
 
   .hero-button {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 750px) {
-  .hero-overlay {
-    width: 80%;
-    margin-left: 10%;
-    padding: 20px;
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 8px;
+    letter-spacing: 0.3px;
   }
 }

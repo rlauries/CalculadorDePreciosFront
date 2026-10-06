@@ -13,10 +13,10 @@ import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
 import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
 
 
-const HeroBanner = lazy(() =>
-  import("../../../../componets/HeroBanner/HeroBanner.tsx")
-    .then(module => ({ default: module.HeroBanner }))
-);
+// const HeroBanner = lazy(() =>
+//   import("../../../../componets/HeroBanner/HeroBanner.tsx")
+//     .then(module => ({ default: module.HeroBanner }))
+// );
 
 const DesignTailorCard = lazy(() =>
   import("../../../../componets/DesignTailorCard/DesignTailorCard")
@@ -209,16 +209,7 @@ export const StairList = () => {
                   items={featuredStairs}
                 />  
               </AnimatedSection>
-              <AnimatedSection>
-                <section>
-                  <HeroBanner
-                    title="Stair Services"
-                    subtitle='Enhance your space with our expert stair solutions. From elegant designs to sturdy constructions, we provide stairs that combine safety and style for every home and business.'
-                    onButtonClick={()=>window.location.href="/contactus"}
-                    imageUrl="/images/originals/Stairs/Nilis-house.webp"
-                  />
-                </section>
-              </AnimatedSection>
+              
               <AnimatedSection>
                 <StairTreadsSection />
               </AnimatedSection>

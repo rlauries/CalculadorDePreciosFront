@@ -19,9 +19,7 @@ import { HeroBanner } from "../../../componets/HeroBanner/HeroBanner.tsx";
 import { FeatureIntro } from "../../../componets/FeatureIntro/FeatureIntro.tsx";
 import { ServicesGrid } from "../../../componets/ServicesGrid/ServicesGrid.tsx";
 
-const About = lazy(() =>
-  import("../../../componets/About/About.tsx")
-);
+
 
 const PergolaSlider = lazy(() =>
   import("../../../componets/PergolaSlider/PergolaSlider.tsx")

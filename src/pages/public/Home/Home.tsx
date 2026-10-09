@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 
 import {FAQSection} from "../../../componets/FAQSection/FAQSection.tsx";
 import { faqItems } from "../../../componets/FAQSection/faqData.ts";

@@ -1,0 +1,259 @@
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.why-choose {
+  width: min(1200px, 92%);
+  margin: 80px auto;
+}
+
+
+/* TITLE */
+
+.why-choose__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 45px;
+}
+
+.why-choose__heading h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1;
+
+  font-weight: 800;
+  text-align: center;
+}
+
+.why-choose__accent {
+  width: 4px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  background-color: #f1683a;
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.why-choose__grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  align-items: stretch;
+}
+
+
+/* ITEM */
+
+.why-choose__item {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 0 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* SEPARATOR */
+
+.why-choose__item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 25%;
+
+  width: 1px;
+  height: 55%;
+
+  background-color: #d8d8d8;
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.why-choose__icon-wrapper {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose__icon {
+  display: block;
+
+  width: 50px;
+  height: 50px;
+
+  object-fit: contain;
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.why-choose__item h3 {
+  margin: 0 0 10px;
+
+  color: #111;
+
+  font-size: 13px;
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.why-choose__item p {
+  max-width: 180px;
+
+  margin: 0;
+
+  color: #444;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 950px) {
+
+  .why-choose {
+    margin: 60px auto;
+  }
+
+  .why-choose__grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    row-gap: 45px;
+  }
+
+  .why-choose__item {
+    padding: 0 22px;
+  }
+
+  /*
+    Remove all desktop separators first
+  */
+  .why-choose__item:not(:last-child)::after {
+    display: none;
+  }
+
+  /*
+    Separators between first three items
+  */
+  .why-choose__item:nth-child(1)::after,
+  .why-choose__item:nth-child(2)::after {
+    display: block;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 600px) {
+
+  .why-choose {
+    width: 90%;
+
+    margin: 45px auto;
+  }
+
+  .why-choose__heading {
+    margin-bottom: 35px;
+  }
+
+  .why-choose__heading h2 {
+    font-size: 21px;
+  }
+
+  .why-choose__accent {
+    height: 21px;
+  }
+
+  .why-choose__grid {
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 10px;
+    row-gap: 35px;
+  }
+
+  .why-choose__item {
+    padding: 0 10px;
+  }
+
+  .why-choose__item::after {
+    display: none !important;
+  }
+
+  .why-choose__icon-wrapper {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 10px;
+  }
+
+  .why-choose__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .why-choose__item h3 {
+    font-size: 11px;
+  }
+
+  .why-choose__item p {
+    max-width: 150px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media screen and (max-width: 400px) {
+
+  .why-choose__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose__item p {
+    max-width: 240px;
+  }
+}

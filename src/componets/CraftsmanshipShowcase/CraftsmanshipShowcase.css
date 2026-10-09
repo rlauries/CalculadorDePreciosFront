@@ -1,0 +1,525 @@
+/* =====================================================
+   CRAFTSMANSHIP SHOWCASE
+===================================================== */
+
+.craft-showcase {
+  position: relative;
+
+  width: 100%;
+  min-height: 540px;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  overflow: hidden;
+
+  background: #0b0b0b;
+}
+
+
+/* =====================================================
+   BLACK CONTENT PANEL
+===================================================== */
+
+.craft-showcase__content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      #202020 0%,
+      #111 45%,
+      #080808 100%
+    );
+
+  color: #fff;
+
+  z-index: 5;
+}
+
+
+/*
+Creates the angled transition between
+the black panel and first image.
+*/
+
+.craft-showcase__content::after {
+  content: "";
+
+  position: absolute;
+
+  top: -5%;
+  right: -30px;
+
+  width: 60px;
+  height: 110%;
+
+  background: #0c0c0c;
+
+  transform: rotate(5deg);
+
+  border-radius: 0 50% 50% 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+.craft-showcase__content-inner {
+  width: min(520px, 82%);
+
+  margin-left: clamp(30px, 6vw, 90px);
+
+  padding: 60px 0;
+}
+
+
+/* EYEBROW */
+
+.craft-showcase__eyebrow {
+  margin: 0 0 22px;
+
+  color: #f1683a;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* TITLE */
+
+.craft-showcase__title {
+  max-width: 430px;
+
+  margin: 0 0 20px;
+
+  color: #fff;
+
+  font-size: clamp(32px, 3.3vw, 52px);
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* DESCRIPTION */
+
+.craft-showcase__description {
+  max-width: 440px;
+
+  margin: 0 0 32px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.craft-showcase__features {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 35px;
+}
+
+
+.craft-showcase__feature {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+
+.craft-showcase__feature-icon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+}
+
+
+.craft-showcase__feature h3 {
+  margin: 0 0 3px;
+
+  color: #fff;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.craft-showcase__feature p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.craft-showcase__button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease;
+}
+
+
+.craft-showcase__button span {
+  color: #f1683a;
+
+  font-size: 17px;
+}
+
+
+.craft-showcase__button:hover {
+  background: #f1683a;
+
+  border-color: #f1683a;
+
+  gap: 14px;
+}
+
+
+.craft-showcase__button:hover span {
+  color: #fff;
+}
+
+
+/* =====================================================
+   IMAGES GRID
+===================================================== */
+
+.craft-showcase__images {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.05fr
+    1.1fr;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+.craft-showcase__image-panel {
+  position: relative;
+
+  min-width: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+.craft-showcase__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+
+.craft-showcase__image-panel:hover
+.craft-showcase__image {
+  transform: scale(1.035);
+}
+
+
+/* =====================================================
+   ANGLED / CURVED DIVISIONS
+===================================================== */
+
+/*
+First image
+*/
+
+.craft-showcase__image-panel--1 {
+  clip-path: polygon(
+    10% 0,
+    100% 0,
+    92% 100%,
+    0 100%
+  );
+
+  margin-left: -20px;
+}
+
+
+/*
+Second image
+*/
+
+.craft-showcase__image-panel--2 {
+  clip-path: polygon(
+    8% 0,
+    100% 0,
+    92% 100%,
+    0 100%
+  );
+
+  margin-left: -25px;
+}
+
+
+/*
+Third image
+*/
+
+.craft-showcase__image-panel--3 {
+  clip-path: polygon(
+    8% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  margin-left: -25px;
+}
+
+
+/* White separation lines */
+
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width: 1000px) {
+
+  .craft-showcase {
+    grid-template-columns: 45% 55%;
+
+    min-height: 520px;
+  }
+
+
+  .craft-showcase__content-inner {
+    width: 84%;
+
+    margin-left: 35px;
+  }
+
+
+  .craft-showcase__title {
+    font-size: 34px;
+  }
+
+
+  .craft-showcase__features {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .craft-showcase__feature p {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 700px) {
+
+  .craft-showcase {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+
+  .craft-showcase__content {
+    min-height: auto;
+  }
+
+
+  .craft-showcase__content::after {
+    display: none;
+  }
+
+
+  .craft-showcase__content-inner {
+    width: auto;
+
+    margin: 0;
+
+    padding: 50px 25px;
+  }
+
+
+  .craft-showcase__title {
+    max-width: 350px;
+
+    font-size: 32px;
+  }
+
+
+  .craft-showcase__description {
+    max-width: 400px;
+
+    font-size: 13px;
+  }
+
+
+  .craft-showcase__features {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .craft-showcase__feature {
+    display: block;
+  }
+
+
+  .craft-showcase__feature-icon {
+    margin-bottom: 7px;
+  }
+
+
+  .craft-showcase__feature p {
+    display: none;
+  }
+
+
+  /* IMAGES */
+
+  .craft-showcase__images {
+    width: 100%;
+    height: 300px;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  .craft-showcase__image-panel--1,
+  .craft-showcase__image-panel--2,
+  .craft-showcase__image-panel--3 {
+    margin-left: 0;
+
+    clip-path: none;
+  }
+
+
+  /*
+    On mobile keep simple vertical separators.
+  */
+
+  .craft-showcase__image-panel--1::after,
+  .craft-showcase__image-panel--2::after {
+    top: 0;
+    right: 0;
+
+    width: 2px;
+    height: 100%;
+
+    transform: none;
+
+    border-radius: 0;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width: 450px) {
+
+  .craft-showcase__content-inner {
+    padding: 40px 20px;
+  }
+
+
+  .craft-showcase__title {
+    font-size: 27px;
+  }
+
+
+  .craft-showcase__features {
+    grid-template-columns: 1fr;
+  }
+
+
+  .craft-showcase__feature {
+    display: flex;
+  }
+
+
+  .craft-showcase__images {
+    height: 230px;
+  }
+}

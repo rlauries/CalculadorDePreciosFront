@@ -1,12 +1,9 @@
 import React, { lazy, Suspense } from "react";
 
-import { FrequentlyAskQuestion } from '../../../componets/FrequentlyAskQuestion/FrequentlyAskQuestion.jsx';
+import {FAQSection} from "../../../componets/FAQSection/FAQSection.tsx";
+import { faqItems } from "../../../componets/FAQSection/faqData.ts";
 import FAQSchema from "../../../componets/SEO/FAQSchema.ts";
-import { faqItems } from "../../../componets/FrequentlyAskQuestion/faqData.ts";
 import './Home.css';
-import { BannerImageHalf } from '../../../componets/Half-Image-Banner/BannerImageHalf.tsx';
-
-import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
 import { PromoTicker } from '../../../componets/PromoTicker/PromoTicker.tsx';
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
@@ -18,19 +15,19 @@ import VideoSchema from "../../../componets/SEO/VideoSchema.ts";
 import { HeroBanner } from "../../../componets/HeroBanner/HeroBanner.tsx";
 import { FeatureIntro } from "../../../componets/FeatureIntro/FeatureIntro.tsx";
 import { ServicesGrid } from "../../../componets/ServicesGrid/ServicesGrid.tsx";
+import { FeaturedProjects } from "../../../componets/FeaturedProjects/FeaturedProjects.tsx";
+import { WhyChooseUs } from "../../../componets/WhyChooseUs/WhyChooseUs.tsx";
+import { CraftsmanshipShowcase } from "../../../componets/CraftsmanshipShowcase/CraftsmanshipShowcase.tsx";
 
 
-
-const PergolaSlider = lazy(() =>
-  import("../../../componets/PergolaSlider/PergolaSlider.tsx")
-    .then(module => ({ default: module.PergolaSlider }))
+const AnimatedShowCaseCarousel = lazy(() =>
+  import("../../../componets/AnimatedShowCaseCarousel/AnimatedShowCaseCarousel.tsx")
+    .then(module => ({ default: module.AnimatedShowCaseCarousel }))
 );
-
-const FenceSlider = lazy(() =>
-  import("../../../componets/FenceSlider/FenceSlider.tsx")
-    .then(module => ({ default: module.FenceSlider }))
-);
-
+interface Slide {
+  id: number;
+  image: string;
+}
 
 const seo : SeoData = {
     title:
@@ -44,6 +41,16 @@ const seo : SeoData = {
     image:
         "/images/originals/Claddings/Capture-1.webp"
 };
+const slides : Slide[] = [
+  { id: 1, image: "/images/originals/Fences/05329352.webp" },
+  { id: 2, image: "/images/originals/Fences/PVC-gm4.webp" },
+  { id: 3, image: "/images/originals/Fences/jose-luis-gates.webp" },
+  { id: 4, image: "/images/originals/Fences/yan-gate.webp" },
+  { id: 5, image: "/images/originals/Fences/big-modern.webp" },
+  { id: 6, image: "/images/originals/Fences/tennis-court.webp" },
+  { id: 7, image: "/images/originals/Fences/Aluminum-row-3-c.webp" }
+];
+
 const Home = () => {
    
   return (
@@ -114,10 +121,6 @@ const Home = () => {
                 imageAlt="Modern custom aluminum fence and gate by Lauries Welding Group"
             />
 
-            
-            
-            
-            {/* -------- About ---------*/}
            <ServicesGrid
                 services={[
                     {
@@ -150,84 +153,126 @@ const Home = () => {
                     },
                 ]}
             />
-            
-            <section className='home-services-sliders'>
-                <AnimatedSection>
-                    <Suspense fallback={null}>
-                        <PergolaSlider />
-                    </Suspense>
-                </AnimatedSection>
-            
-                <AnimatedSection>
-                    <Suspense fallback={null}>
-                        <FenceSlider />
-                    </Suspense>
-                </AnimatedSection>
-            </section>
-        
-    
-            <section>
-                <div className='myths-info' 
-                
-                >
-                    <div className="myth-info-bg"></div>
-                    <AnimatedSection>
-                        <BannerImageHalf 
-                            image="/images/originals/Pergolas/IMG_7746.webp" 
-                            title=" WOOD PERGOLA MYTH" 
-                            subtitle="Discover the truth behind wood pergolas and why they're a durable, timeless choice for your outdoor space. Don't let misconceptions hold you back!"
-                            reversed={false}
-                            link="/pergolas"
-
-                        />
-                    </AnimatedSection>
-                    <AnimatedSection>
-                        <BannerImageHalf
-                            image="/images/originals/Fences/design-an-aluminum-decorative-fence-for-the-front-yard-of-modern-houses.webp" 
-                            title=" OUTDOOR LIGHTING MYTH" 
-                            subtitle="Learn how outdoor string LED lights are not only energy-efficient and long-lasting but also weather-resistant, providing a vibrant and cozy atmosphere year-round. Say goodbye to concerns about durability and maintenance, and illuminate your outdoor spaces with ease and style."
-                            reversed={true} // Esto invierte el orden de imagen y texto
-                            link="/fences"
-                        /> 
-                    </AnimatedSection>
-                    <AnimatedSection>    
-                        <BannerImageHalf
-                            image="/images/originals/Claddings/wood-cladding-myth.webp" 
-                            title="PVC Cladding Myth" 
-                            subtitle="Modern exterior-grade PVC is engineered to resist moisture, UV exposure, warping, and rot — making it a reliable and long-lasting solution for pergolas. It delivers a clean architectural finish with minimal maintenance."
-                            reversed={false}
-                            link="/claddings"
-
-                        />
-                    </AnimatedSection>    
-                </div>
-            </section>
-            <section className="gray-gradient-section">
-                <div className="gray-gradient-bottom" />
-            </section>
-            <section>
-                <div className='forth-banner'>
-                    <AnimatedSection>
-                        <span className='info'>
-                            <div className="info-subtitle">
-                                <h2>Personalized Service <strong>|</strong></h2>
-                            </div>
-                            <p>
-                                From concept to completion, we deliver top-quality fabrication and structural solutions that stand the test of time. Our team is committed to excellence in every weld, every project, every time.
-                            </p>
-                        </span>
-                        
-                        <img src="/images/workers-banner.webp" alt="" />
-                    </AnimatedSection>   
-                </div>
-                
-            </section>
-            <section>
-            
-                <AnimatedSection>
-                    <FrequentlyAskQuestion/>
-                </AnimatedSection>
-            </section>
+            <FeaturedProjects
+                projects={[
+                    {
+                    title: "Downtown Miami Custom Staircase",
+                    location: "Miami, FL",
+                    category: "Stairs & Railings",
+                    image: "/images/Projects-done/05-26-Stair-Downtown/after.webp",
+                    imageAlt:
+                        "Custom metal staircase project in Downtown Miami",
+                    link: "/stairs/downtown-miami",
+                    },
+                    {
+                    title: "Nick Custom Staircase",
+                    location: "Sunny Isles, FL",
+                    category: "Stairs & Railings",
+                    image: "/images/Projects-done/04-14-Nick-Sonny-Isle/Image/after.webp",
+                    imageAlt:
+                        "Custom floating staircase by Lauries Welding Group",
+                    link: "/stairs/nick-custom-staircase",
+                    },
+                    {
+                    title: "Justin Architectural Cladding",
+                    location: "Hollywood, FL",
+                    category: "Cladding",
+                    image: "/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp",
+                    imageAlt:
+                        "Architectural cladding project in Hollywood Florida",
+                    link: "/claddings/justin-hollywood-cladding",
+                    },
+                ]}
+                />
+            <AnimatedShowCaseCarousel 
+                slides={slides}
+                eyebrow="Next-Generation Materials"
+                headline="CREATE LUXURY OUTDOOR SPACES"
+                subheadline="Smart comfort solutions designed to complement your pergola and outdoor living space."
+                buttonLabel="Contact Us"
+                onButtonClick={() => window.location.href = "/contactus"}
+            />
+            <WhyChooseUs
+                items={[
+                    {
+                    id: 1,
+                    icon: "/images/icons/tool-icon.png",
+                    title: "CUSTOM FABRICATION",
+                    description:
+                        "Every piece is custom fabricated in our shop.",
+                    },
+                    {
+                    id: 2,
+                    icon: "/images/icons/condecoration-icon.png",
+                    title: "ENGINEERED SOLUTIONS",
+                    description:
+                        "Built to meet code and structural requirements.",
+                    },
+                    {
+                    id: 3,
+                    icon: "/images/icons/worker-icon.png",
+                    title: "PROFESSIONAL INSTALLATION",
+                    description:
+                        "Expert installation by our experienced team.",
+                    },
+                    {
+                    id: 4,
+                    icon: "/images/icons/shield-icon.png",
+                    title: "LICENSED & INSURED",
+                    description:
+                        "Fully licensed, insured and committed to safety.",
+                    },
+                    {
+                    id: 5,
+                    icon: "/images/icons/navigation-icon.png",
+                    title: "SOUTH FLORIDA EXPERTS",
+                    description:
+                        "Local experts who understand our climate and conditions.",
+                    },
+                ]}
+                />
+            <CraftsmanshipShowcase
+                eyebrow="BUILT IN-HOUSE. INSTALLED BY PROFESSIONALS."
+                title="QUALITY CRAFTED. SERVICE DELIVERED."
+                description="From concept to completion, we handle every step in-house to ensure the highest quality and attention to detail in every project."
+                features={[
+                    {
+                    icon: "/images/icons/tool-black-icon.png",
+                    title: "Custom Fabrication",
+                    description: "Built in our local shop",
+                    },
+                    {
+                    icon: "/images/icons/diamond-black-icon.png",
+                    title: "Quality Materials",
+                    description: "Aluminum, steel & more",
+                    },
+                    {
+                    icon: "/images/icons/worker-black-icon.png",
+                    title: "Professional Installation",
+                    description: "On-time, on-budget",
+                    },
+                ]}
+                images={[
+                    {
+                    src: "/images/shopsaw-cutter.png",
+                    alt: "Metal fabrication at Lauries Welding Group",
+                    position: "center",
+                    },
+                    {
+                    src: "/images/welder-structure.png",
+                    alt: "Professional welder fabricating a custom structure",
+                    position: "center",
+                    },
+                    {
+                    src: "/images/workers-collage.png",
+                    alt: "Lauries Welding Group professional installation",
+                    position: "center",
+                    },
+                ]}
+                buttonText="LEARN MORE ABOUT US"
+                buttonLink="/contactus"
+                />    
+            <FAQSection items={faqItems} />
             
                     
         

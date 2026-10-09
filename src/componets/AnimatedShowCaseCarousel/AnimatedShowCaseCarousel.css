@@ -1,186 +1,641 @@
+/* =====================================================
+   ANIMATED SHOWCASE CAROUSEL
+===================================================== */
+
 .hero-showcase {
   position: relative;
+
   width: 100%;
-  min-height: 80vh;
+  height: clamp(620px, 75vw, 820px);
+
   overflow: hidden;
+
+  background-color: #111;
   color: #fff;
-  
 }
 
-/* Imagen grande de fondo */
-.hero-showcase-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1.02);
-}
 
-/* Capa oscura ligera */
-.hero-showcase-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-      circle at 20% 10%,
-      rgba(0, 0, 0, 0.05),
-      transparent 50%
-    ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
-}
+/* =====================================================
+   MAIN IMAGE
+===================================================== */
 
-/* Texto principal abajo izquierda */
-.hero-showcase-content {
-  position: absolute;
-  left: 5%;
-  bottom: 18%;
-  max-width: 420px;
-  z-index: 2;
-}
-
-.hero-showcase-eyebrow {
-  font-size: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  
-}
-
-.eyebrow-accent {
-  font-style: italic;
-  opacity: 0.8;
-  color: white;
-  font-size: 20px;
-}
-
-.hero-showcase-headline {
-  font-size: 42px;
-  letter-spacing: 1px;
-  margin: 0 0 12px 0;
-  color: white;
-
-}
-
-.hero-showcase-subheadline {
-  font-size: 15px;
-  max-width: 360px;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 18px;
-  
-}
-
-.hero-showcase-btn {
-  padding: 10px 26px;
-  border-radius: 999px;
-  border: none;
-  background-color: #f1683a;
-  color:white;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* Carrusel de miniaturas abajo-centro/derecha */
-.hero-showcase-thumbs {
-  position: absolute;
-  bottom: 4%;
-  right: 5%;
-  left: 5%;
-  z-index: 2;
-}
-.hero-showcase-thumbs .slick-list {
-  overflow: visible;      /* ← clave */
-}
-
-/* Cada tarjeta pequeña */
-.hero-thumb-card {
-  padding: 4px;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-thumb-card.active {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  
-  
-}
-
-.hero-thumb-image {
-  width: 100%;
-  height: 130px;
-  border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-}
-.hero-thumb-card.active .hero-thumb-image {
-  border: 2px solid #f1683a;
-  box-shadow: 0 8px 25px rgba(241, 104, 58, 0.35);
-  transform: translateY(-4px);
-}
-.hero-thumb-card {
-  transition: transform 0.25s ease;
-}
-
-.hero-thumb-image {
-  transition: all 0.25s ease;
-}
 .hero-showcase-bg-wrapper {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   overflow: hidden;
+  cursor: pointer;
+
+  z-index: 0;
 }
 
 .hero-showcase-bg {
+  display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
+
+  transition: transform 0.6s ease;
+}
+
+.hero-showcase-bg-wrapper:hover .hero-showcase-bg {
+  transform: scale(1.02);
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.hero-showcase-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.65) 30%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(28, 27, 27, 0.75) 0%,
+      rgba(39, 38, 38, 0.05) 0%
+    );
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero-showcase-content {
+  position: absolute;
+
+  left: 5%;
+  top: 12%;
+
+  width: min(440px, 40%);
+
+  z-index: 3;
+
+  color: #fff;
+}
+
+.hero-showcase-eyebrow {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #fff;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-showcase-headline {
+  margin: 0 0 12px;
+
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #fff;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 5px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-showcase-subheadline {
+  max-width: 380px;
+
+  margin: 0 0 20px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: #fff;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.hero-showcase-btn {
+  padding: 11px 25px;
+
+  border: 1px solid #f1683a;
+  border-radius: 2px;
+
+  background-color: #f1683a;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-showcase-btn:hover {
+  background-color: #d95422;
+  border-color: #d95422;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   THUMBNAIL CAROUSEL
+===================================================== */
+
+/* =====================================================
+   THUMBNAIL CAROUSEL
+===================================================== */
+
+.hero-showcase-thumbs {
+  position: absolute;
+
+  left: 50%;
+  bottom: 4%;
+
+  width: min(620px, 72%);
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
   display: block;
 }
+
+
+/* Slick necesita ancho disponible */
+
+.hero-showcase-thumbs .slick-slider {
+  width: 100%;
+}
+
+.hero-showcase-thumbs .slick-list {
+  width: 100%;
+
+  padding: 8px 0 12px;
+
+  overflow: hidden;
+}
+
+.hero-showcase-thumbs .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.hero-showcase-thumbs .slick-slide {
+  height: auto;
+}
+
+.hero-showcase-thumbs .slick-slide > div {
+  padding: 0 5px;
+}
+
+
+/* =====================================================
+   THUMB CARD
+===================================================== */
+
+.hero-thumb-card {
+  position: relative;
+
+  width: 100%;
+  height: 85px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
 
 .hero-thumb-image {
+  display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  display: block;
+  object-position: center;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
-/* Ajustes responsive */
-@media (max-width: 900px) {
+
+
+/* ACTIVE */
+
+.hero-thumb-card.active {
+  transform: translateY(-4px);
+}
+
+.hero-thumb-card.active .hero-thumb-image {
+  border-color: #f1683a;
+  border-width: 3px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+
+/* HOVER */
+
+.hero-thumb-card:hover .hero-thumb-image {
+  transform: scale(1.03);
+}
+
+
+/* =====================================================
+   SLICK ARROWS
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev,
+.hero-showcase-thumbs .slick-next {
+  width: 32px;
+  height: 32px;
+
+  z-index: 20;
+}
+
+.hero-showcase-thumbs .slick-prev {
+  left: -35px;
+}
+
+.hero-showcase-thumbs .slick-next {
+  right: -35px;
+}
+
+.hero-showcase-thumbs .slick-prev::before,
+.hero-showcase-thumbs .slick-next::before {
+  font-size: 24px;
+  opacity: 1;
+  color: #fff;
+}
+
+/* HOVER */
+
+.hero-thumb-card:hover .hero-thumb-image {
+  transform: scale(1.03);
+}
+
+
+/* =====================================================
+   SLICK ARROWS
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev,
+.hero-showcase-thumbs .slick-next {
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+}
+
+.hero-showcase-thumbs .slick-prev {
+  left: -35px;
+}
+
+.hero-showcase-thumbs .slick-next {
+  right: -35px;
+}
+
+/* =====================================================
+   PREVIOUS / NEXT
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev,
+.hero-showcase-thumbs .slick-next {
+  position: absolute;
+  top: 50%;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  background: rgba(75, 75, 75, 0.85);
+
+  transform: translateY(-50%);
+
+  z-index: 20;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* POSITION */
+
+.hero-showcase-thumbs .slick-prev {
+  left: -48px;
+}
+
+.hero-showcase-thumbs .slick-next {
+  right: -48px;
+}
+
+
+/* =====================================================
+   REMOVE DEFAULT SLICK ARROW
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev::before,
+.hero-showcase-thumbs .slick-next::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  opacity: 1;
+
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+
+/* PREVIOUS ARROW */
+
+.hero-showcase-thumbs .slick-prev::before {
+  transform:
+    translate(-35%, -50%)
+    rotate(-135deg);
+}
+
+
+/* NEXT ARROW */
+
+.hero-showcase-thumbs .slick-next::before {
+  transform:
+    translate(-65%, -50%)
+    rotate(45deg);
+}
+.hero-showcase-thumbs .slick-prev,
+.hero-showcase-thumbs .slick-next {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev:hover,
+.hero-showcase-thumbs .slick-next:hover {
+  background: rgba(95, 95, 95, 0.95);
+
+  border-color: #fff;
+
+  transform:
+    translateY(-50%)
+    scale(1.06);
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+.hero-showcase-thumbs .slick-prev:focus,
+.hero-showcase-thumbs .slick-next:focus {
+  background: rgba(75, 75, 75, 0.95);
+
+  border-color: #fff;
+
+  outline: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .hero-showcase-thumbs .slick-prev,
+  .hero-showcase-thumbs .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero-showcase-thumbs .slick-prev {
+    left: -34px;
+  }
+
+  .hero-showcase-thumbs .slick-next {
+    right: -34px;
+  }
+
+  .hero-showcase-thumbs .slick-prev::before,
+  .hero-showcase-thumbs .slick-next::before {
+    width: 6px;
+    height: 6px;
+
+    border-width: 2px;
+  }
+}
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width: 900px) {
+
+  .hero-showcase {
+    height: 650px;
+  }
+
   .hero-showcase-content {
-    bottom: 26%;
-    max-width: 80%;
+    top: 10%;
+    left: 6%;
+
+    width: 60%;
   }
 
   .hero-showcase-headline {
-    font-size: 32px;
-  }
-
-  .hero-thumb-image {
-    height: 110px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-showcase-content {
-    bottom: 32%;
-    left: 7%;
-  }
-
-  .hero-showcase-headline {
-    font-size: 26px;
+    font-size: 36px;
   }
 
   .hero-showcase-subheadline {
+    font-size: 14px;
+  }
+
+  .hero-thumb-card {
+    height: 105px;
+  }
+
+  .hero-showcase-thumbs {
+    left: 4%;
+    right: 4%;
+    bottom: 4%;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .hero-showcase {
+    height: 570px;
+  }
+
+  .hero-showcase-bg {
+    object-position: center;
+  }
+
+  .hero-showcase-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.15) 100%
+      );
+  }
+
+  .hero-showcase-content {
+    top: 8%;
+    left: 6%;
+
+    width: 88%;
+  }
+
+  .hero-showcase-eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-showcase-headline {
+    font-size: 28px;
+  }
+
+  .hero-showcase-subheadline {
+    max-width: 300px;
+
     font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .hero-showcase-btn {
+    padding: 8px 16px;
+
+    font-size: 10px;
+  }
+
+  .hero-showcase-thumbs {
+    left: 3%;
+    right: 3%;
+    bottom: 3%;
+  }
+
+  .hero-thumb-card {
+    height: 80px;
+    border-radius: 7px;
   }
 
   .hero-thumb-image {
-    height: 90px;
+    border-radius: 7px;
+  }
+
+  .hero-showcase-thumbs .slick-slide > div {
+    padding: 0 4px;
+  }
+
+  .hero-showcase-thumbs .slick-prev {
+    left: -12px;
+  }
+
+  .hero-showcase-thumbs .slick-next {
+    right: -12px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width: 420px) {
+
+  .hero-showcase {
+    height: 520px;
+  }
+
+  .hero-showcase-content {
+    top: 7%;
+  }
+
+  .hero-showcase-headline {
+    font-size: 24px;
+  }
+
+  .hero-showcase-subheadline {
+    font-size: 12px;
+  }
+
+  .hero-thumb-card {
+    height: 68px;
   }
 }

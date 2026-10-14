@@ -26,10 +26,6 @@ import "./Header.css";
    TYPES
 ===================================================== */
 
-interface HeaderNavItem {
-  label: string;
-  path: string;
-}
 
 interface HeaderProps {
   logo?: string;
@@ -43,24 +39,7 @@ interface HeaderProps {
    NAVIGATION DATA
 ===================================================== */
 
-const navigation: HeaderNavItem[] = [
-  {
-    label: "Home",
-    path: "/",
-  },
-  {
-    label: "Gallery",
-    path: "/gallery",
-  },
-  {
-    label: "Projects",
-    path: "/gallery",
-  },
-  {
-    label: "Contact",
-    path: "/contactus",
-  },
-];
+
 
 const services = [
   {
@@ -401,7 +380,7 @@ export const Header: React.FC<HeaderProps> = ({
           megaMenuOpen ? "lwg-mega-menu--open" : ""
         }`}
         aria-hidden={!megaMenuOpen}
-        inert={!megaMenuOpen}
+        {...({ inert: !megaMenuOpen } as React.HTMLAttributes<HTMLDivElement>)}
       >
         <div className="lwg-mega-menu__container">
 
@@ -502,7 +481,9 @@ export const Header: React.FC<HeaderProps> = ({
         }`}
         aria-label="Mobile navigation"
         aria-hidden={!mobileMenuOpen}
-        inert={!mobileMenuOpen}
+        {...({
+          inert: !mobileMenuOpen,
+        } as React.HTMLAttributes<HTMLElement>)}
       >
 
         <Link

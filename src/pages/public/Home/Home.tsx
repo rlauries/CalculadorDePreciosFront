@@ -18,7 +18,6 @@ import { ServicesGrid } from "../../../componets/ServicesGrid/ServicesGrid.tsx";
 import { FeaturedProjects } from "../../../componets/FeaturedProjects/FeaturedProjects.tsx";
 import { WhyChooseUs } from "../../../componets/WhyChooseUs/WhyChooseUs.tsx";
 import { CraftsmanshipShowcase } from "../../../componets/CraftsmanshipShowcase/CraftsmanshipShowcase.tsx";
-import { ContactFooter } from "../../../componets/ContactFooter/ContactFooter.tsx";
 
 
 const AnimatedShowCaseCarousel = lazy(() =>
@@ -51,28 +50,7 @@ const slides : Slide[] = [
   { id: 6, image: "/images/originals/Fences/tennis-court.webp" },
   { id: 7, image: "/images/originals/Fences/Aluminum-row-3-c.webp" }
 ];
-const footerNavigation = [
-  {
-    label: "Services",
-    href: "/pergolas",
-  },
-  {
-    label: "Gallery",
-    href: "/gallery",
-  },
-  {
-    label: "Projects",
-    href: "/gallery",
-  },
-  {
-    label: "About",
-    href: "/",
-  },
-  {
-    label: "Contact",
-    href: "/contactus",
-  },
-];
+
 
 const Home = () => {
    

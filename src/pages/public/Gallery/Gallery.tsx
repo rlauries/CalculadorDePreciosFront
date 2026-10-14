@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import './Gallery.css';
 import {
   TypeOfFenceMaterialOptions,
@@ -33,16 +33,13 @@ interface GalleryItem {
   matrialId: number;
 }
 
-interface MaterialOption {
-  id: number;
-  name: string;
-}
+
 const galleryCategories: GalleryCategory[] = [
   {
     id: 1,
     title: "FENCES",
     subtitle: "A Showcase of Style",
-    image: "/images/originals/Fences/fence-wood-lights.webp",
+    image: "/images/originals/Fences/ALUMINUM-FENCE-installer.webp",
     imageAlt: "Modern custom fence",
     link: "/fences",
   },
@@ -50,7 +47,7 @@ const galleryCategories: GalleryCategory[] = [
     id: 2,
     title: "PERGOLAS",
     subtitle: "Elevate Your Outdoors",
-    image: "/images/originals/Pergolas/big-britgt-pergola.webp",
+    image: "/images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.webp",
     imageAlt: "Modern aluminum pergola",
     link: "/pergolas",
   },
@@ -59,7 +56,7 @@ const galleryCategories: GalleryCategory[] = [
     title: "STAIRS",
     subtitle: "Path To The Sky",
     image:
-      "/images/originals/Stairs/custom-floating-stair-systems-small.webp",
+      "/images/originals/Stairs/Stairs.webp",
     imageAlt: "Modern floating staircase",
     link: "/stairs",
   },
@@ -399,54 +396,13 @@ const seo: SeoData = {
 };
 
 const Gallery = () => {
-  const [gallery] = useState<GalleryItem[]>(GalleryList);
-
-  const [filteredGallery, setFilteredGallery] =
-    useState<GalleryItem[]>(GalleryList);
-
-  const [serviceTypeId, setServiceTypeId] =
-    useState<number>(0);
-
-  const [selectedMateriaSelect, setSelectedMateriaSelect] =
-    useState<number>(7);
+  
 
   const [selecteImage, setSelecteImage] =
     useState<GalleryItem | null>(null);
 
   const [showModal, setShowModal] =
     useState<boolean>(false);
-
-  
-
- 
-  
-
-
-  useEffect(() => {
-    let result = gallery;
-
-    if (selectedMateriaSelect !== 7) {
-      result = result.filter(g => g.matrialId === selectedMateriaSelect);
-    }
-
-    // si quieres filtrar también por serviceTypeId:
-    if (serviceTypeId > 0) {
-      result = result.filter(g => g.serviceTypeId === serviceTypeId);
-    }
-
-    setFilteredGallery(result);
-  }, [gallery, selectedMateriaSelect, serviceTypeId]);
-  
-  const materialOptions: MaterialOption[] =
-    serviceTypeId === 1
-      ? TypeOfFenceMaterialOptions
-      : serviceTypeId === 2
-        ? TypeOfPergolaMaterialOptions
-        : [];
-  const OpenModal = (image: GalleryItem): void => {
-    setSelecteImage(image);
-    setShowModal(true);
-  };
 
   const ClosedModal = (): void => {
     setSelecteImage(null);

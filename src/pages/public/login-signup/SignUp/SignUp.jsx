@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer} from '../../../../componets/Footer'
+
 import { Header} from '../../../../componets/Header/Header.tsx';
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
@@ -269,7 +269,7 @@ const SignUp = () => {
                 </div>
             </form>
         </section>
-        <Footer/>
+        
         
     </div>
   )

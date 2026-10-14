@@ -18,6 +18,7 @@ import { ServicesGrid } from "../../../componets/ServicesGrid/ServicesGrid.tsx";
 import { FeaturedProjects } from "../../../componets/FeaturedProjects/FeaturedProjects.tsx";
 import { WhyChooseUs } from "../../../componets/WhyChooseUs/WhyChooseUs.tsx";
 import { CraftsmanshipShowcase } from "../../../componets/CraftsmanshipShowcase/CraftsmanshipShowcase.tsx";
+import { ContactFooter } from "../../../componets/ContactFooter/ContactFooter.tsx";
 
 
 const AnimatedShowCaseCarousel = lazy(() =>
@@ -49,6 +50,28 @@ const slides : Slide[] = [
   { id: 5, image: "/images/originals/Fences/big-modern.webp" },
   { id: 6, image: "/images/originals/Fences/tennis-court.webp" },
   { id: 7, image: "/images/originals/Fences/Aluminum-row-3-c.webp" }
+];
+const footerNavigation = [
+  {
+    label: "Services",
+    href: "/pergolas",
+  },
+  {
+    label: "Gallery",
+    href: "/gallery",
+  },
+  {
+    label: "Projects",
+    href: "/gallery",
+  },
+  {
+    label: "About",
+    href: "/",
+  },
+  {
+    label: "Contact",
+    href: "/contactus",
+  },
 ];
 
 const Home = () => {
@@ -98,7 +121,7 @@ const Home = () => {
         >
             <section className="hero-section">
                <HeroBanner
-                    image="/images/home-hero-collage.png"
+                    image="/images/home-hero-collage.webp"
                     title="CUSTOM OUTDOOR STRUCTURES"
                     subtitle="BUILT TO LAST. DESIGNED FOR YOU."
                     services={[
@@ -128,28 +151,28 @@ const Home = () => {
                     description: "Custom aluminum pergolas with style and durability.",
                     link: "/pergolas",
                     linkText: "Explore Pergolas",
-                    icon: "/images/icons/pergola-icon.png",
+                    icon: "/images/icons/pergola-icon.webp",
                     },
                     {
                     title: "FENCES & GATES",
                     description: "Modern fences and gates built for security and beauty.",
                     link: "/fences",
                     linkText: "View Fences",
-                    icon: "/images/icons/fence-icon.png",
+                    icon: "/images/icons/fence-icon.webp",
                     },
                     {
                     title: "STAIRS & RAILINGS",
                     description: "Custom metal stairs and railings built with precision.",
                     link: "/stairs",
                     linkText: "View Stairs",
-                    icon: "/images/icons/stair-icon.png",
+                    icon: "/images/icons/stair-icon.webp",
                     },
                     {
                     title: "CLADDING",
                     description: "Architectural cladding that transforms any space.",
                     link: "/claddings",
                     linkText: "View Cladding",
-                    icon: "/images/icons/cladding-icon.png",
+                    icon: "/images/icons/cladding-icon.webp",
                     },
                 ]}
             />
@@ -196,35 +219,35 @@ const Home = () => {
                 items={[
                     {
                     id: 1,
-                    icon: "/images/icons/tool-icon.png",
+                    icon: "/images/icons/tool-icon.webp",
                     title: "CUSTOM FABRICATION",
                     description:
                         "Every piece is custom fabricated in our shop.",
                     },
                     {
                     id: 2,
-                    icon: "/images/icons/condecoration-icon.png",
+                    icon: "/images/icons/condecoration-icon.webp",
                     title: "ENGINEERED SOLUTIONS",
                     description:
                         "Built to meet code and structural requirements.",
                     },
                     {
                     id: 3,
-                    icon: "/images/icons/worker-icon.png",
+                    icon: "/images/icons/worker-icon.webp",
                     title: "PROFESSIONAL INSTALLATION",
                     description:
                         "Expert installation by our experienced team.",
                     },
                     {
                     id: 4,
-                    icon: "/images/icons/shield-icon.png",
+                    icon: "/images/icons/shield-icon.webp",
                     title: "LICENSED & INSURED",
                     description:
                         "Fully licensed, insured and committed to safety.",
                     },
                     {
                     id: 5,
-                    icon: "/images/icons/navigation-icon.png",
+                    icon: "/images/icons/navigation-icon.webp",
                     title: "SOUTH FLORIDA EXPERTS",
                     description:
                         "Local experts who understand our climate and conditions.",
@@ -237,34 +260,34 @@ const Home = () => {
                 description="From concept to completion, we handle every step in-house to ensure the highest quality and attention to detail in every project."
                 features={[
                     {
-                    icon: "/images/icons/tool-black-icon.png",
+                    icon: "/images/icons/tool-black-icon.webp",
                     title: "Custom Fabrication",
                     description: "Built in our local shop",
                     },
                     {
-                    icon: "/images/icons/diamond-black-icon.png",
+                    icon: "/images/icons/diamond-black-icon.webp",
                     title: "Quality Materials",
                     description: "Aluminum, steel & more",
                     },
                     {
-                    icon: "/images/icons/worker-black-icon.png",
+                    icon: "/images/icons/worker-black-icon.webp",
                     title: "Professional Installation",
                     description: "On-time, on-budget",
                     },
                 ]}
                 images={[
                     {
-                    src: "/images/shopsaw-cutter.png",
+                    src: "/images/shopsaw-cutter.webp",
                     alt: "Metal fabrication at Lauries Welding Group",
                     position: "center",
                     },
                     {
-                    src: "/images/welder-structure.png",
+                    src: "/images/welder-structure.webp",
                     alt: "Professional welder fabricating a custom structure",
                     position: "center",
                     },
                     {
-                    src: "/images/workers-collage.png",
+                    src: "/images/workers-collage.webp",
                     alt: "Lauries Welding Group professional installation",
                     position: "center",
                     },

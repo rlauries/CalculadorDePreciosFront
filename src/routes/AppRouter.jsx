@@ -16,9 +16,32 @@ import { SMPConstructionStair } from '../pages/public/ProyectPages/SMPConstructi
 import { NickSonyIsle } from '../pages/public/ProyectPages/NickSonyIsle/NickSonyIsle.tsx';
 import { TrussCalculatorPage } from '../pages/public/TrussCalculatorPage/TrussCalculatorPage.tsx';
 import { JustinHollywoodCladding } from '../pages/public/ProyectPages/JustinHollywoodCladding/JustinHollywoodCladding.tsx';
+import { ContactFooter } from '../componets/ContactFooter/ContactFooter.tsx';
 
 
-// Lazy Load Components
+// Footer navigation links
+const footerNavigation = [
+  {
+    label: "Services",
+    href: "/pergolas",
+  },
+  {
+    label: "Gallery",
+    href: "/gallery",
+  },
+  {
+    label: "Projects",
+    href: "/gallery",
+  },
+  {
+    label: "About",
+    href: "/",
+  },
+  {
+    label: "Contact",
+    href: "/contactus",
+  },
+];
 
 
 // Error Boundary Component
@@ -82,6 +105,24 @@ export const AppRouter = () => {
           </Routes>
         </Suspense>
       </ErrorBoundary>
+      <ContactFooter
+          eyebrow="READY TO BUILD YOUR PROJECT?"
+          title="LET'S BUILD SOMETHING AMAZING TOGETHER."
+          description="Tell us about your project and get a free estimate from our team."
+
+          buttonText="GET A FREE ESTIMATE"
+          buttonLink="/contactus"
+
+          backgroundImage="/images/originals/Fences/cta-background.png"
+
+          logo="/images/Logo/logo-creativo - Copy.png"
+          logoAlt="Lauries Welding Group"
+
+          navigation={footerNavigation}
+
+          phone="(786) 486-8465"
+          email="info@laurieswelding.com"
+      />
     </>
   );
 };

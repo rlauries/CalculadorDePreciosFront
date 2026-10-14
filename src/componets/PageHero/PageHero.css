@@ -1,0 +1,323 @@
+/* =====================================================
+   PAGE HERO
+===================================================== */
+
+.page-hero {
+  position: relative;
+
+  width: 100%;
+  height: var(--page-hero-height, 420px);
+
+  overflow: hidden;
+
+  background-color: #101010;
+  color: #ffffff;
+
+  isolation: isolate;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BACKGROUND IMAGE
+===================================================== */
+
+.page-hero__image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: var(
+    --page-hero-image-position,
+    center
+  );
+
+  z-index: -2;
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, var(--page-hero-overlay)) 0%,
+      rgba(0, 0, 0, 0.65) 35%,
+      rgba(0, 0, 0, 0.30) 70%,
+      rgba(0, 0, 0, 0.10) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.30) 0%,
+      transparent 70%
+    );
+}
+
+
+/* =====================================================
+   CONTENT CONTAINER
+===================================================== */
+
+.page-hero__container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1450px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  padding: 115px 4% 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   BREADCRUMBS
+===================================================== */
+
+.page-hero__breadcrumbs {
+  margin-bottom: 20px;
+}
+
+.page-hero__breadcrumbs ol {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.page-hero__breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.page-hero__breadcrumbs a,
+.page-hero__breadcrumbs li > span:not(
+  .page-hero__separator
+) {
+  color: #eeeeee;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  text-decoration: none;
+}
+
+.page-hero__breadcrumbs a:hover {
+  color: #f1683a;
+}
+
+.page-hero__separator {
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   ORANGE ACCENT
+===================================================== */
+
+.page-hero__accent {
+  display: block;
+
+  width: 30px;
+  height: 3px;
+
+  margin-bottom: 12px;
+
+  background-color: #f1683a;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.page-hero__title {
+  max-width: 650px;
+
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 800;
+
+  line-height: 0.98;
+  letter-spacing: -1px;
+
+  text-transform: uppercase;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.page-hero__description {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.65;
+  text-align: left;
+
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width: 900px) {
+
+  .page-hero {
+    min-height: 380px;
+  }
+
+  .page-hero__container {
+    padding: 105px 5% 40px;
+  }
+
+  .page-hero__title {
+    max-width: 550px;
+
+    font-size: clamp(34px, 5vw, 48px);
+  }
+
+  .page-hero__description {
+    max-width: 550px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .page-hero {
+    height: auto;
+    min-height: 440px;
+  }
+
+  .page-hero__container {
+    min-height: 440px;
+
+    padding: 105px 22px 40px;
+
+    justify-content: center;
+  }
+
+  .page-hero__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.65) 60%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+  }
+
+  .page-hero__breadcrumbs {
+    margin-bottom: 18px;
+  }
+
+  .page-hero__breadcrumbs a,
+  .page-hero__breadcrumbs li > span:not(
+    .page-hero__separator
+  ) {
+    font-size: 12px;
+  }
+
+  .page-hero__accent {
+    width: 28px;
+    height: 3px;
+  }
+
+  .page-hero__title {
+    max-width: 100%;
+
+    font-size: clamp(32px, 8vw, 43px);
+
+    line-height: 1.02;
+  }
+
+  .page-hero__description {
+    max-width: 100%;
+
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width: 420px) {
+
+  .page-hero__container {
+    padding: 100px 18px 35px;
+  }
+
+  .page-hero__title {
+    font-size: 32px;
+  }
+
+  .page-hero__description {
+    font-size: 12.5px;
+  }
+}

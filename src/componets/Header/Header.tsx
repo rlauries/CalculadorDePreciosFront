@@ -1,236 +1,627 @@
-import { useContext, useState,useEffect, useRef} from 'react'
-import './Header.css'
-import { AuthContext } from '../../context/AuthContext.jsx';
-import { ContactUsButton } from '../ContactUsButton/ContactUsButton.tsx';
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 
+import {
+  Link,
+  useLocation,
+} from "react-router-dom-v5-compat";
 
+import {
+  Phone,
+  ArrowRight,
+  Menu,
+  X,
+  ChevronDown,
+} from "lucide-react";
 
-export const Header = () => {
+import { AuthContext } from "../../context/AuthContext.jsx";
 
-   const {user, logout} = useContext(AuthContext);
-   const megaMenuRef = useRef<HTMLDivElement | null>(null);
-   const mobileServicesRef = useRef<HTMLDivElement | null>(null);
+import "./Header.css";
 
-   const [menuOpen, setMenuOpen] = useState(false);
-   const toggleMenu = () => setMenuOpen((prev) => !prev);
-   
-   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
-   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+/* =====================================================
+   TYPES
+===================================================== */
 
-   
+interface HeaderNavItem {
+  label: string;
+  path: string;
+}
 
-   //---- Cierra el mega menú al hacer clic fuera de él ------
-   useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-         const target = event.target as Node;
+interface HeaderProps {
+  logo?: string;
+  phone?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  transparent?: boolean;
+}
 
-         const clickedInsideDesktop =
-            megaMenuRef.current && megaMenuRef.current.contains(target);
+/* =====================================================
+   NAVIGATION DATA
+===================================================== */
 
-         const clickedInsideMobile =
-            mobileServicesRef.current && mobileServicesRef.current.contains(target);
+const navigation: HeaderNavItem[] = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "Gallery",
+    path: "/gallery",
+  },
+  {
+    label: "Projects",
+    path: "/gallery",
+  },
+  {
+    label: "Contact",
+    path: "/contactus",
+  },
+];
 
-         if (!clickedInsideDesktop && !clickedInsideMobile) {
-            setDesktopServicesOpen(false);
-            setMobileServicesOpen(false);
-         }
-      };
+const services = [
+  {
+    label: "Fences & Gates",
+    path: "/fences",
+  },
+  {
+    label: "Pergolas & Trellis",
+    path: "/pergolas",
+  },
+  {
+    label: "Stairs & Railings",
+    path: "/stairs",
+  },
+  {
+    label: "Exterior Cladding",
+    path: "/claddings",
+  },
+];
 
-      document.addEventListener("mousedown", handleClickOutside);
+/* =====================================================
+   COMPONENT
+===================================================== */
 
-      return () => {
-         document.removeEventListener("mousedown", handleClickOutside);
-      };
-   }, []);
+export const Header: React.FC<HeaderProps> = ({
+  logo = "/images/Logo/logo-creativo - Copy.png",
+  phone = "(954) 464-7457",
+  buttonText = "GET A FREE ESTIMATE",
+  buttonLink = "/contactus",
+  transparent = true,
+}) => {
+  const { user, logout } = useContext(AuthContext);
 
-   const closeMenu = () => {
-      setMenuOpen(false);
-      setMobileServicesOpen(false);
-      setDesktopServicesOpen(false);
-   };
+  const location = useLocation();
+
+  const megaMenuRef = useRef<HTMLDivElement | null>(null);
+  const servicesButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  const phoneHref = phone.replace(/[^\d+]/g, "");
+
+  /* =====================================================
+     CLOSE MENUS
+  ===================================================== */
+
+  const closeMenus = () => {
+    setMegaMenuOpen(false);
+    setMobileMenuOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  /* =====================================================
+     CLICK OUTSIDE
+  ===================================================== */
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+
+      const clickedInsideMegaMenu =
+        megaMenuRef.current?.contains(target);
+
+      const clickedServicesButton =
+        servicesButtonRef.current?.contains(target);
+
+      if (
+        !clickedInsideMegaMenu &&
+        !clickedServicesButton
+      ) {
+        setMegaMenuOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
+
+  /* =====================================================
+     CLOSE ON ROUTE CHANGE
+  ===================================================== */
+
+  useEffect(() => {
+    closeMenus();
+  }, [location.pathname]);
+
+  /* =====================================================
+     ESCAPE KEY
+  ===================================================== */
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenus();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener(
+        "keydown",
+        handleEscape
+      );
+    };
+  }, []);
+
+  /* =====================================================
+     ACTIVE ROUTE
+  ===================================================== */
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
 
     return (
-      <header className='main-header'>
-         <div className="image-container">
-            <img className='company-name-logo' 
-                 src="/images/Logo/SmallLauriesLogo.png" 
-                 alt="Lauries Welding Group" 
-                 style={{ width: "140px", height: "auto", display: "block" }}
+      location.pathname === path ||
+      location.pathname.startsWith(`${path}/`)
+    );
+  };
+
+  const servicesActive = services.some((service) =>
+    isActive(service.path)
+  );
+
+  /* =====================================================
+     RENDER
+  ===================================================== */
+
+  return (
+    <header
+      className={`lwg-header ${
+        transparent ? "lwg-header--transparent" : ""
+      }`}
+    >
+      <div className="lwg-header__container">
+
+        {/* LOGO */}
+
+        <Link
+          to="/"
+          className="lwg-header__logo-link"
+          onClick={closeMenus}
+        >
+          <img
+            src={logo}
+            alt="Lauries Welding Group"
+            className="lwg-header__logo"
+          />
+        </Link>
+
+
+        {/* =====================================
+            DESKTOP NAVIGATION
+        ===================================== */}
+
+        <nav
+          className="lwg-header__navigation"
+          aria-label="Main navigation"
+        >
+
+          {/* HOME */}
+
+          <Link
+            to="/"
+            className={`lwg-header__nav-link ${
+              isActive("/")
+                ? "lwg-header__nav-link--active"
+                : ""
+            }`}
+            onClick={closeMenus}
+          >
+            HOME
+          </Link>
+
+
+          {/* SERVICES */}
+
+          <button
+            ref={servicesButtonRef}
+            type="button"
+            className={`lwg-header__nav-link lwg-header__services-trigger ${
+              servicesActive || megaMenuOpen
+                ? "lwg-header__nav-link--active"
+                : ""
+            }`}
+            onClick={() =>
+              setMegaMenuOpen((prev) => !prev)
+            }
+            aria-expanded={megaMenuOpen}
+            aria-controls="lwg-mega-menu"
+          >
+            SERVICES
+
+            <ChevronDown
+              size={14}
+              className={
+                megaMenuOpen
+                  ? "lwg-header__chevron--open"
+                  : ""
+              }
             />
-         </div>
+          </button>
 
-          {/* Botón hamburguesa (solo se ve en mobile) */}
 
-         <button
-            className={`hamburger ${menuOpen ? "open" : ""}`}
-            onClick={toggleMenu}
-            aria-label="Toggle navigation"
+          {/* GALLERY */}
+
+          <Link
+            to="/gallery"
+            className={`lwg-header__nav-link ${
+              isActive("/gallery")
+                ? "lwg-header__nav-link--active"
+                : ""
+            }`}
+            onClick={closeMenus}
+          >
+            GALLERY
+          </Link>
+
+
+          {/* CONTACT */}
+
+          <Link
+            to="/contactus"
+            className={`lwg-header__nav-link ${
+              isActive("/contactus")
+                ? "lwg-header__nav-link--active"
+                : ""
+            }`}
+            onClick={closeMenus}
+          >
+            CONTACT
+          </Link>
+
+        </nav>
+
+
+        {/* =====================================
+            ACTIONS
+        ===================================== */}
+
+        <div className="lwg-header__actions">
+
+          {/* PHONE */}
+
+          <a
+            href={`tel:${phoneHref}`}
+            className="lwg-header__phone"
+          >
+            <Phone size={17} aria-hidden="true" />
+
+            <span>{phone}</span>
+          </a>
+
+
+          {/* ESTIMATE BUTTON */}
+
+          <Link
+            to={buttonLink}
+            className="lwg-header__estimate"
+            onClick={closeMenus}
+          >
+            <span>{buttonText}</span>
+
+            <ArrowRight
+              size={16}
+              aria-hidden="true"
+            />
+          </Link>
+
+
+          {/* AUTH */}
+
+          {user && (
+            <button
+              type="button"
+              className="lwg-header__logout"
+              onClick={() => {
+                logout();
+                closeMenus();
+              }}
             >
-              
-            <span />
-            <span />
-            <span />
-         </button>
+              Logout
+            </button>
+          )}
 
-         {/* NAV */}
+        </div>
 
-         {/* NAV */}
-         <nav className={`nav-bar ${menuOpen ? "open" : ""}`}>
-            <div className="flex-grow" />
 
-            <a className="nav-btn" href="/home" onClick={closeMenu}>
-               Home
-            </a>
-            <a className="nav-btn" href="/gallery" onClick={closeMenu}>
-               Gallery
-            </a>
+        {/* =====================================
+            MOBILE TOGGLE
+        ===================================== */}
 
-            <div className="nav-btn dropdown">
-               <button
-                  className="dropbtn"
-                  onClick={() => setDesktopServicesOpen(prev => !prev)}
-               >
-                  Services▾
-               </button>
+        <button
+          type="button"
+          className="lwg-header__menu-toggle"
+          onClick={() =>
+            setMobileMenuOpen((prev) => !prev)
+          }
+          aria-label={
+            mobileMenuOpen
+              ? "Close navigation"
+              : "Open navigation"
+          }
+          aria-expanded={mobileMenuOpen}
+          aria-controls="lwg-mobile-navigation"
+        >
+          {mobileMenuOpen ? (
+            <X size={25} />
+          ) : (
+            <Menu size={25} />
+          )}
+        </button>
+
+      </div>
+
+
+      {/* =====================================
+          MEGA MENU DESKTOP
+      ===================================== */}
+
+      <div
+        id="lwg-mega-menu"
+        ref={megaMenuRef}
+        className={`lwg-mega-menu ${
+          megaMenuOpen ? "lwg-mega-menu--open" : ""
+        }`}
+        aria-hidden={!megaMenuOpen}
+        inert={!megaMenuOpen}
+      >
+        <div className="lwg-mega-menu__container">
+
+          {/* IMAGE */}
+
+          <div className="lwg-mega-menu__image">
+
+            <img
+              src="/images/originals/Pergolas/IMG_7746.webp"
+              alt="Custom pergola by Lauries Welding Group"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <div className="lwg-mega-menu__image-overlay">
+
+              <p>EXPLORE OUR WORK</p>
+
+              <h3>OUR SERVICES</h3>
+
+              <span>
+                Inspired by your needs.
+                Built for your space.
+              </span>
+
+              <Link
+                to="/gallery"
+                onClick={closeMenus}
+              >
+                VIEW OUR GALLERY
+                <ArrowRight size={15} />
+              </Link>
+
             </div>
 
-               
-               <div ref={megaMenuRef}
-                    className={`mega-menu ${desktopServicesOpen ? "open" : ""}`}
-                    
-               >
-                  <div className="mega-menu-container"
-                       
-                  >
-
-                     {/* LEFT SIDE IMAGE */}
-                     <div className="mega-menu-image"
-                          style={{
-                             backgroundImage: `url(/images/originals/Pergolas/IMG_7746.webp)`
-                          }}                     >
-                        {/* <img src="//imagesoriginals/Pergolas/IMG_7746.jpg" alt="Services" /> */}
-                        <div className="mega-menu-image-overlay">
-                           <h3>OUR SERVICES</h3>
-                           <p>Inspired by your needs</p>
-                           <a href="/gallery">View All Services</a>
-                        </div>
-                     </div>
-
-                     {/* RIGHT SIDE LINKS */}
-                     <div className="mega-menu-links">
-                        <h3>RESIDENTIAL & COMMERCIAL</h3>
-                        <a href="/fences">Fence / Gate</a>
-                        <a href="/pergolas">Pergolas / Trellis</a>
-                        <a href="/stairs">Stairs</a>
-                        <a href="/claddings">Exterior Claddings</a>
-                        <button className="contactus-button" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
-                           CONTACT US
-                        </button>
-                     </div>
-
-                  </div>
-               </div>
-               
+          </div>
 
 
-            <ContactUsButton />
-            
-            {user ? (
-               <div className="nav-btn logout">
-                  <span className="welcome-user">Welcome, {user.username}</span>
-                  <button className="logout-btn" onClick={() => { logout(); closeMenu(); }}>
-                  Logout
-                  </button>
-               </div>
-            ) : (
-               <a href="/login" className="nav-btn login" onClick={closeMenu}>
-                  Login
-               </a>
-            )}
-         </nav>
+          {/* LINKS */}
 
-         {/* OVERLAY MOBILE */}
-         {menuOpen && (
-            <div className="mobile-menu-overlay">
-               <div className="mobile-menu-header">
-                  <button
-                     className="mobile-menu-close"
-                     onClick={closeMenu}
-                     aria-label="Close menu"
-                     >
-                        ✕
-                  </button>
-               </div>
+          <div className="lwg-mega-menu__content">
 
-               <button className="mobile-menu-cta" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
-                  CONTACT US
-               </button>
+            <p className="lwg-mega-menu__eyebrow">
+              RESIDENTIAL & COMMERCIAL
+            </p>
 
-               <nav className="mobile-menu-list">
-                  <button className="mobile-menu-item" onClick={() => { window.location.href = "/home"; closeMenu(); }}>
-                     Home
-                  </button>
-                  <button className="mobile-menu-item" onClick={() => { window.location.href = "/gallery"; closeMenu(); }}>
-                     Gallery
-                  </button>
-                  
-                  {/* SERVICES DROPDOWN EN FLUJO NORMAL */}
-                  <div className="dropdown-mobile" 
-                       ref={mobileServicesRef}>
-                     <button
-                        type="button"
-                        className="dropdown-mobile-header"
-                        onClick={() => setMobileServicesOpen(v => !v)}   // 👉 abre/cierra
-                     >
-                        <span>Services</span>
-                        <span className={`chevron ${mobileServicesOpen ? "rotate" : ""}`}>▾</span>
-                     </button>
+            <h3>
+              CUSTOM FABRICATION
+              <br />
+              & INSTALLATION
+            </h3>
 
-                     {mobileServicesOpen && (
-                        <div className="dropdown-mobile-content">
-                           <a className="dropdown-link" href="/fences" onClick={closeMenu}>
-                              Fence/Gate
-                           </a>
-                           <a className="dropdown-link" href="/pergolas" onClick={closeMenu}>
-                              Pergolas/Trellis
-                           </a>
-                           <a className="dropdown-link" href="/stairs" onClick={closeMenu}>
-                              Stairs
-                           </a>
-                           <a className="dropdown-link" href="/claddings" onClick={closeMenu}>
-                              Exterior Claddings
-                           </a>
-                        </div>
-                     )}
-                  </div>
+            <div className="lwg-mega-menu__links">
 
-                  <button className="mobile-menu-item" onClick={() => { window.location.href = "/contactus"; closeMenu(); }}>
-                     Contact Us
-                  </button>
-                 
-                  {user ? (
-                  <button
-                     className="mobile-menu-item"
-                     onClick={() => { logout(); closeMenu(); }}
-                  >
-                     Logout
-                  </button>
-                  ) : (
-                  <button
-                     className="mobile-menu-item"
-                     onClick={() => { window.location.href = "/login"; closeMenu(); }}
-                  >
-                     Login
-                  </button>
-                  )}
-               </nav>
+              {services.map((service) => (
+                <Link
+                  key={service.path}
+                  to={service.path}
+                  onClick={closeMenus}
+                  className="lwg-mega-menu__link"
+                >
+                  <span>{service.label}</span>
+
+                  <ArrowRight
+                    size={16}
+                    aria-hidden="true"
+                  />
+                </Link>
+              ))}
+
             </div>
-         )}   
-         
-         
 
-         
-         
-      </header>
-    )
-}
+            <Link
+              to="/contactus"
+              onClick={closeMenus}
+              className="lwg-mega-menu__contact"
+            >
+              DISCUSS YOUR PROJECT
+              <ArrowRight size={16} />
+            </Link>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      {/* =====================================
+          MOBILE NAVIGATION
+      ===================================== */}
+
+      <nav
+        id="lwg-mobile-navigation"
+        className={`lwg-header__mobile-nav ${
+          mobileMenuOpen
+            ? "lwg-header__mobile-nav--open"
+            : ""
+        }`}
+        aria-label="Mobile navigation"
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
+      >
+
+        <Link
+          to="/"
+          onClick={closeMenus}
+          className="lwg-header__mobile-link"
+        >
+          HOME
+        </Link>
+
+
+        {/* MOBILE SERVICES */}
+
+        <div className="lwg-header__mobile-services">
+
+          <button
+            type="button"
+            className="lwg-header__mobile-services-button"
+            onClick={() =>
+              setMobileServicesOpen((prev) => !prev)
+            }
+            aria-expanded={mobileServicesOpen}
+          >
+            SERVICES
+
+            <ChevronDown
+              size={18}
+              className={
+                mobileServicesOpen
+                  ? "lwg-header__chevron--open"
+                  : ""
+              }
+            />
+          </button>
+
+          {mobileServicesOpen && (
+            <div className="lwg-header__mobile-services-links">
+
+              {services.map((service) => (
+                <Link
+                  key={service.path}
+                  to={service.path}
+                  onClick={closeMenus}
+                >
+                  {service.label}
+                </Link>
+              ))}
+
+            </div>
+          )}
+
+        </div>
+
+
+        <Link
+          to="/gallery"
+          onClick={closeMenus}
+          className="lwg-header__mobile-link"
+        >
+          GALLERY
+        </Link>
+
+        <Link
+          to="/contactus"
+          onClick={closeMenus}
+          className="lwg-header__mobile-link"
+        >
+          CONTACT
+        </Link>
+
+
+        {/* MOBILE AUTH */}
+
+        {user ? (
+          <button
+            type="button"
+            className="lwg-header__mobile-link"
+            onClick={() => {
+              logout();
+              closeMenus();
+            }}
+          >
+            LOGOUT
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            onClick={closeMenus}
+            className="lwg-header__mobile-link"
+          >
+            LOGIN
+          </Link>
+        )}
+
+
+        {/* MOBILE PHONE */}
+
+        <a
+          href={`tel:${phoneHref}`}
+          className="lwg-header__mobile-phone"
+        >
+          <Phone size={17} />
+          {phone}
+        </a>
+
+
+        {/* MOBILE CTA */}
+
+        <Link
+          to={buttonLink}
+          className="lwg-header__mobile-estimate"
+          onClick={closeMenus}
+        >
+          {buttonText}
+          <ArrowRight size={16} />
+        </Link>
+
+      </nav>
+
+    </header>
+  );
+};

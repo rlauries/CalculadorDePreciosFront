@@ -1,0 +1,475 @@
+/* =====================================================
+   CONTACT FOOTER
+===================================================== */
+
+.contact-footer {
+  width: 100%;
+  background: #262626;
+  color: #fff;
+}
+
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.contact-footer__cta {
+  position: relative;
+
+  width: 100%;
+
+  padding: 55px 6%;
+
+  background-color: #101010;
+  background-size: cover;
+  background-position: center;
+
+  box-sizing: border-box;
+}
+
+.contact-footer__cta-container {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+
+/* =====================================================
+   CTA LEFT
+===================================================== */
+
+.contact-footer__cta-left {
+  max-width: 650px;
+}
+
+.contact-footer__eyebrow {
+  margin: 0 0 12px;
+
+  color: #f1683a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-footer__title {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #fff;
+
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 800;
+
+  line-height: 1.05;
+  letter-spacing: -1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CTA RIGHT
+===================================================== */
+
+.contact-footer__cta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 22px;
+}
+
+.contact-footer__description {
+  margin: 0;
+
+  max-width: 340px;
+
+  color: #e5e5e5;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.contact-footer__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 48px;
+
+  padding: 12px 24px;
+
+  background-color: #f1683a;
+
+  border: 1px solid #f1683a;
+  border-radius: 2px;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-footer__button:hover {
+  background-color: #d95422;
+  border-color: #d95422;
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   BOTTOM FOOTER
+===================================================== */
+
+.contact-footer__bottom {
+  width: 100%;
+
+  padding: 22px 6%;
+
+  background: #080808;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  box-sizing: border-box;
+}
+
+.contact-footer__bottom-container {
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 0.8fr)
+    minmax(350px, 1.8fr)
+    minmax(220px, 0.9fr);
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.contact-footer__logo-link {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+}
+
+.contact-footer__logo {
+  display: block;
+
+  width: 155px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.contact-footer__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 25px;
+}
+
+.contact-footer__nav-link {
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: color 0.2s ease;
+}
+
+.contact-footer__nav-link:hover {
+  color: #f1683a;
+}
+
+
+/* =====================================================
+   CONTACT INFO
+===================================================== */
+
+.contact-footer__contact {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 10px;
+  color: #fff;
+
+}
+
+.contact-footer__contact-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.contact-footer__contact-item svg {
+  flex-shrink: 0;
+
+  color: #f1683a;
+}
+
+.contact-footer__contact-item:hover {
+  color: #f1683a;
+}
+/* =====================================================
+   FOOTER CONTACT - OVERRIDE GLOBAL SPAN
+===================================================== */
+
+.contact-footer .contact-footer__contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  text-decoration: none;
+}
+
+/* Phone and email text */
+
+.contact-footer .contact-footer__contact-item span {
+  display: inline;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Icons */
+
+.contact-footer .contact-footer__contact-item svg {
+  flex-shrink: 0;
+  color: #f1683a;
+}
+
+/* Hover */
+
+.contact-footer .contact-footer__contact-item:hover span {
+  color: #f1683a;
+}
+
+/* Mobile */
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width: 1000px) {
+
+  .contact-footer__cta {
+    padding: 45px 5%;
+  }
+
+  .contact-footer__cta-container {
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 35px;
+  }
+
+  .contact-footer__title {
+    font-size: 34px;
+  }
+
+  .contact-footer__bottom-container {
+    grid-template-columns: 1fr 2fr;
+
+    gap: 25px;
+  }
+
+  .contact-footer__contact {
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 30px;
+  }
+
+  .contact-footer__navigation {
+    justify-content: flex-end;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 650px) {
+
+  .contact-footer__cta {
+    padding: 45px 22px;
+  }
+
+  .contact-footer__cta-container {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .contact-footer__title {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+
+  .contact-footer__description {
+    font-size: 14px;
+  }
+
+  .contact-footer__cta-right {
+    gap: 18px;
+  }
+
+  .contact-footer__button {
+    min-height: 44px;
+
+    padding: 11px 20px;
+
+    font-size: 11px;
+  }
+  @media screen and (max-width: 650px) {
+    .contact-footer .contact-footer__contact-item span {
+        font-size: 12px;
+    }
+  }
+
+  /* FOOTER */
+
+  .contact-footer__bottom {
+    padding: 30px 22px;
+  }
+
+  .contact-footer__bottom-container {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+
+    gap: 25px;
+  }
+
+  .contact-footer__logo {
+    width: 145px;
+  }
+
+  .contact-footer__navigation {
+    justify-content: center;
+
+    gap: 15px 20px;
+  }
+
+  .contact-footer__nav-link {
+    font-size: 11px;
+  }
+
+  .contact-footer__contact {
+    grid-column: auto;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+  }
+
+  .contact-footer__contact-item {
+    font-size: 12px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width: 420px) {
+
+  .contact-footer__title {
+    font-size: 27px;
+  }
+
+  .contact-footer__eyebrow {
+    font-size: 10px;
+  }
+
+  .contact-footer__navigation {
+    gap: 12px 15px;
+  }
+
+  .contact-footer__nav-link {
+    font-size: 10px;
+  }
+}

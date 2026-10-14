@@ -1,19 +1,21 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import './Gallery.css';
-import { HeroBanner } from '../../../componets/HeroBanner/HeroBanner.tsx';
 import {
   TypeOfFenceMaterialOptions,
   TypeOfPergolaMaterialOptions
 } from '../../../assets/ServiceFileteredOptions.js';
+import {
+  GalleryShowcase,
+  type GalleryCategory,
+} from "../../../componets/GalleryShowcase/GalleryShowcase.tsx";  
 
-import { AnimatedSection } from '../../../componets/AnimatedSection/AnimatedSection.tsx';
-import { SectionIntro } from '../../../componets/SectionIntro/SectionIntro.tsx';
 
 import SEO from '../../../componets/SEO/SEO.tsx';
 import LocalBusinessSchema from '../../../componets/SEO/LocalBusinessSchema.ts';
 import type { SeoData } from '../../../componets/SEO/types.ts';
 import BreadcrumbSchema from '../../../componets/SEO/BreadcrumbSchema.ts';
 import SITE_CONFIG from '../../../componets/SEO/siteConfig.js';
+import { PageHero } from '../../../componets/PageHero/PageHero.tsx';
 
 
 const HomeImprovement = lazy(() =>
@@ -35,7 +37,33 @@ interface MaterialOption {
   id: number;
   name: string;
 }
-
+const galleryCategories: GalleryCategory[] = [
+  {
+    id: 1,
+    title: "FENCES",
+    subtitle: "A Showcase of Style",
+    image: "/images/originals/Fences/fence-wood-lights.webp",
+    imageAlt: "Modern custom fence",
+    link: "/fences",
+  },
+  {
+    id: 2,
+    title: "PERGOLAS",
+    subtitle: "Elevate Your Outdoors",
+    image: "/images/originals/Pergolas/big-britgt-pergola.webp",
+    imageAlt: "Modern aluminum pergola",
+    link: "/pergolas",
+  },
+  {
+    id: 3,
+    title: "STAIRS",
+    subtitle: "Path To The Sky",
+    image:
+      "/images/originals/Stairs/custom-floating-stair-systems-small.webp",
+    imageAlt: "Modern floating staircase",
+    link: "/stairs",
+  },
+];
 
 const GalleryList: GalleryItem[] = [
     // ----Fences----
@@ -388,26 +416,10 @@ const Gallery = () => {
   const [showModal, setShowModal] =
     useState<boolean>(false);
 
-  const scrollDown = () => window.scrollBy({ top: 400, behavior: 'smooth' });
   
-  const switchToFence = () => {
-      setServiceTypeId(1);
-      setFilteredGallery(gallery.filter(g => g.serviceTypeId === 1));
-      setSelectedMateriaSelect(7);
-      scrollDown();
-  };
+
  
-  const switchToPergola = () => {
-      setServiceTypeId(2);
-      setFilteredGallery(gallery.filter(g => g.serviceTypeId === 2));
-      setSelectedMateriaSelect(7);
-      scrollDown();
-  };
-  const switchToStair = () => {
-    setServiceTypeId(3);
-    setFilteredGallery(gallery.filter(g => g.serviceTypeId === 3));
-    scrollDown();
-  }
+  
 
 
   useEffect(() => {
@@ -483,117 +495,49 @@ const Gallery = () => {
                   }}
       >
           
-          <HeroBanner
-            title="GALLERY"
-            subtitle="Browse through our curated collection of stunning fences, pergolas, and more. Each piece tells a story of quality, creativity!"
-            onButtonClick={()=>window.location.href="/contactus"}
-            imageUrl="/images/Hero-Gallery-02.webp"
-          />
+         
           
-          <SectionIntro
+          <PageHero
+            image="/images/originals/Fences/front-gate.png"
+            imageAlt="Modern custom aluminum fence with integrated outdoor lighting"
+
             title="OUR COMPLETED PROJECTS"
+
             description="Explore a curated selection of custom fences, pergolas, stairs, and exterior claddings crafted with precision and purpose. Each project reflects our commitment to structural integrity, refined design, and long-term durability. From modern aluminum systems to timeless wood finishes, we build outdoor spaces that are engineered to perform and designed to inspire."
+
+            breadcrumbs={[
+              {
+                label: "Home",
+                path: "/",
+              },
+              {
+                label: "Gallery",
+              },
+            ]}
+
+            overlayOpacity={0.75}
+
+            height="420px"
+
+            imagePosition="center"
+
+            showAccent={true}
           />
       
           
-          {/* ------- Service Type Section -------  */}
-              <AnimatedSection>
-                <div className='service-type'>
-
-                  {/* -------Fence ---------- */}
-
-                  <div className="fence">
-                      <div className='text'>
-                          <label >
-                              Fences<strong> | </strong>
-                          </label>
-                          <p>A Showcase of Style</p>
-                      </div>
-                      <img src="/images/originals/Fences/fence-wood-lights.webp" alt="Fence wood lights" loading="lazy" decoding="async" />
-                      <button onClick={switchToFence}>Display More</button>
-                  </div>
-
-                  {/* -------Pergola ---------- */}
-
-                  <div className="pergola">
-                      <div className="text">
-                          <label>
-                              Pergolas<strong> | </strong>
-                          </label>
-                          <p>Elevate Your Outdoors</p>
-                      </div>
-                      <img src="/images/originals/Pergolas/big-britgt-pergola.webp" 
-                      alt="Big bright pergola" loading="lazy" decoding="async" />
-                      <button onClick={switchToPergola}>Display More</button>
-                  </div>
-                  
-                  {/* -------Stair ---------- */}
-                  
-                  <div className="stair">
-                        <div className="text">
-                            <label>
-                                Stairs<strong> | </strong>
-                            </label>
-                            <p>Path To The Sky</p>
-                        </div>
-                        <img src="/images/originals/Stairs/custom-floating-stair-systems-small.webp" 
-                             alt="Custom floating stair systems" 
-                             loading="lazy"
-                             decoding="async"
-                        />
-                        <button onClick={switchToStair}>Display More</button>
-                    </div>
-                </div>
-              </AnimatedSection>
-              {/* -------Gallery Section -------  */}
-
-              {serviceTypeId !== 0  && (
-                  <div className="gallery-section">
-                      <h1>Service Gallery<strong> | </strong></h1>
-                      <div className="service-gallery-grid">
-
-                          {/* --------- Filtered by Materials: ----------- */}
-
-                          <div className="filtered-options">
-                            
-                            {(serviceTypeId === 1 || serviceTypeId === 2) && (
-                              <div className="filteredOptions">
-                                Filtered by:&nbsp;
-                                <select
-                                  value={selectedMateriaSelect}
-                                  onChange={e => setSelectedMateriaSelect(Number(e.target.value))}
-                                >
-                                  {materialOptions.map(m => (
-                                    <option key={m.id} value={m.id}>
-                                      {m.name}
-                                    </option>
-                                  ))}
-                                </select>
-                              </div>
-                            )}
-                          </div>
-                          
-                          {/* ------Gallery Grid Section ------ */}
-
-                          <div className="gallery-grid">
-                            {filteredGallery.map((img) => (
-                              <div key={img.id} className="gallery-card" onClick={() => OpenModal(img)}>
-                                <img src={img.imageUrl} alt={img.name} loading="lazy" decoding="async" />
-                                <p>{img.name} <strong> | </strong></p>
-                              </div>
-                            ))}
-                          </div>
-                      </div>
-                  </div>
-              )}
-          <div>
-            <AnimatedSection>
-              <Suspense fallback={null}>
-                <HomeImprovement />
-              </Suspense>
-            </AnimatedSection>
-          </div>
-
+          <GalleryShowcase
+            gallery={GalleryList}
+            categories={galleryCategories}
+            fenceMaterials={TypeOfFenceMaterialOptions}
+            pergolaMaterials={TypeOfPergolaMaterialOptions}
+            defaultCategory={1}
+            allMaterialsId={7}
+            title="SERVICE GALLERY"
+          />
+          <Suspense fallback={null}>
+            <HomeImprovement />
+          </Suspense>
+          
           
 
             

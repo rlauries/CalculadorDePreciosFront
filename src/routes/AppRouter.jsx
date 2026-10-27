@@ -17,7 +17,7 @@ import { NickSonyIsle } from '../pages/public/ProyectPages/NickSonyIsle/NickSony
 import { TrussCalculatorPage } from '../pages/public/TrussCalculatorPage/TrussCalculatorPage.tsx';
 import { JustinHollywoodCladding } from '../pages/public/ProyectPages/JustinHollywoodCladding/JustinHollywoodCladding.tsx';
 import { ContactFooter } from '../componets/ContactFooter/ContactFooter.tsx';
-
+import { JonathanCoralSpringStair } from '../pages/public/ProyectPages/JonathanCoralSpringStair/JonathanCoralSpringStair.tsx';  
 
 // Footer navigation links
 const footerNavigation = [
@@ -102,6 +102,8 @@ export const AppRouter = () => {
             <Route path="/claddings/justin-hollywood-cladding" 
                    element={<JustinHollywoodCladding />} 
             />
+            <Route path="/stairs/jonathan-coral-springs" 
+                   element={<JonathanCoralSpringStair />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

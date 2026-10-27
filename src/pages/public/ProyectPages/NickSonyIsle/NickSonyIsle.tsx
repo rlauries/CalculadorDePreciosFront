@@ -108,9 +108,9 @@ export const NickSonyIsle = () => {
     image: seo.image,
     location: seo.location,
     service: seo.service
-});
+  });
 
-<SEO
+  <SEO
     title={seo.title}
     description={seo.description}
     canonical={seo.canonical}
@@ -133,7 +133,7 @@ export const NickSonyIsle = () => {
             }
         ])
     ]}
-/>
+  />
 
   return (
       <>  

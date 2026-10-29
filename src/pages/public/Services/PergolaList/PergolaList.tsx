@@ -13,6 +13,7 @@ import BreadcrumbSchema from "../../../../componets/SEO/BreadcrumbSchema.ts";
 import SITE_CONFIG from "../../../../componets/SEO/siteConfig.js";
 import ServiceSchema from "../../../../componets/SEO/ServiceSchema.ts";
 import VideoSchema from "../../../../componets/SEO/VideoSchema.ts";
+import PergolaAssembly from "../../../../componets/PergolaAssembly/PergolaAssembly.tsx";
 
 
 const DesignTailorCard = lazy(() =>
@@ -30,69 +31,27 @@ const AnimatedShowCaseCarousel = lazy(() =>
     .then(module => ({ default: module.AnimatedShowCaseCarousel }))
 );
 
-const FeatureShowcaseCarousel = lazy(() =>
-  import("../../../../componets/FeatureShowcaseCarousel/FeatureShowcaseCarousel.tsx")
-    .then(module => ({ default: module.FeatureShowcaseCarousel }))
-);
+
 
 const BannerImageHalf = lazy(() =>
   import("../../../../componets/Half-Image-Banner/BannerImageHalf.tsx")
     .then(module => ({ default: module.BannerImageHalf }))
 );
 
-interface FeaturedPergola {
-  id: number;
-  name: string;
-  imageUrl: string;
-  linkTo: string;
-}
+
 
 interface Slide {
   id: number;
   image: string;
 }
 
-const featuredPergolas: FeaturedPergola[] = [
-  {
-    id: 1,
-    name: "Steel",
-    imageUrl: "/images/originals/Pergolas/Pergola-Steel.webp",
-    linkTo: "/pergolas/steel"
-  },
-  {
-    id: 2,
-    name: "Aluminum",
-    imageUrl: "/images/originals/Pergolas/Pergola-Aluminum.webp",
-    linkTo: "/pergolas/aluminum"
-  },
-  {
-    id: 3,
-    name: "Wood",
-    imageUrl: "/images/originals/Pergolas/Pergola-Wood.webp",
-    linkTo: "/pergolas/wood"
-  },
-  {
-    id: 4,
-    name: "Insulated",
-    imageUrl: "/images/originals/Pergolas/pergola-insulated.webp",
-    linkTo: "/pergolas/insulated"
-  },
-  {
-    id: 5,
-    name: "LED Light",
-    imageUrl: "/images/originals/Pergolas/string-light-pergola.webp",
-    linkTo: "/pergolas/ledlight"
-  },
-  
-];
-
 
 const slides: Slide[] = [
   { id: 1, image: "/images/originals/Pergolas/Targa-Large-main.webp" },
   { id: 2, image: "/images/originals/Pergolas/Smart-Technology-Customization-for-Ultimate-Control.webp" },
-  { id: 3, image: "/images/originals/Pergolas/beauty.webp" },
+  { id: 3, image: "/images/originals/Pergolas/cladding-pergola-ceiling.webp" },
   { id: 4, image: "/images/originals/Pergolas/big-britgt-pergola.webp" },
-  { id: 5, image: "/images/originals/Pergolas/Pergola-moderna.webp" },
+  { id: 5, image: "/images/originals/Pergolas/Pergola-moderna.png" },
   
 ];
 
@@ -177,12 +136,7 @@ const PergolaList = () => {
           <Suspense fallback={null}>
 
             <AnimatedSection>
-              <FeatureShowcaseCarousel
-                title="OUR SYSTEMS"
-                subtitle="Project Showcase"
-                mainImage="/images/originals/Fences/rail-view.webp"
-                items={featuredPergolas}
-              />
+              <PergolaAssembly />
             </AnimatedSection>
 
             

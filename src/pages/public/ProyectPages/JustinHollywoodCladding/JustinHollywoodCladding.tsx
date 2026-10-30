@@ -169,7 +169,7 @@ export const JustinHollywoodCladding = () => {
           <ProjectVideo
               description="This project showcases the transformation of a standard covered patio into a modern outdoor living space."
               thumbnailUrl="/images/Projects-done/07-26-Justing-Hollywood/Image/after.webp"
-              localVideoUrl="/images/Projects-done/07-26-Justing-Hollywood/Footage/Justin-Hollywood-Cladding.mp4"
+              localVideoUrl="/images/Projects-done/07-26-Justing-Hollywood/videos/Justin-Hollywood-Cladding.mp4"
           />
           <ProjectsCTA/>
         </main>
